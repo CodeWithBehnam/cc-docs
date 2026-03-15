@@ -240,6 +240,28 @@ Curated practical tips from daily Claude Code usage. Each file is focused on a s
 | `tips/multi-session.md` | Parallel sessions, worktrees, and agent coordination |
 | `tips/security.md` | Security-first habits and safeguards for safe automation |
 
+### Skills (`skills/`)
+
+Drop-in skill directories. Copy a skill directory to `.claude/skills/` in any project, or to `~/.claude/skills/` for personal use across all projects. Invoke with `/skill-name` or let Claude auto-invoke when relevant.
+
+| File | Command | Type | Description |
+|------|---------|------|-------------|
+| `skills/commit/SKILL.md` | `/commit` | Task | Run tests, generate a conventional commit message, and commit |
+| `skills/pr/SKILL.md` | `/pr [base]` | Task | Push branch and create a PR with generated title and description via `gh` |
+| `skills/review/SKILL.md` | `/review` | Research | Review current diff for bugs, security issues, and style problems |
+| `skills/fix-issue/SKILL.md` | `/fix-issue <number>` | Task | Read a GitHub issue, implement fix, write tests, and commit |
+| `skills/tdd/SKILL.md` | `/tdd <feature>` | Task | Red-green-refactor TDD cycle: failing test first, then implement, then clean up |
+| `skills/refactor/SKILL.md` | `/refactor <target>` | Task | Refactor a file or function while preserving behavior, with test verification |
+| `skills/explain/SKILL.md` | `/explain [target]` | Research | Explain code with analogy, ASCII diagram, and step-by-step walkthrough |
+| `skills/security-scan/SKILL.md` | `/security-scan [path]` | Research | Audit codebase for OWASP Top 10 vulnerabilities with structured report |
+| `skills/api-conventions/SKILL.md` | (auto-loaded) | Reference | REST API design conventions applied when writing or reviewing API code |
+| `skills/doc-gen/SKILL.md` | `/doc-gen <target>` | Task | Generate or update inline docs and README files for a module |
+| `skills/migrate/SKILL.md` | `/migrate <path> <target>` | Task | Migrate code from one framework or pattern to another |
+| `skills/debug/SKILL.md` | `/debug <error>` | Task | Systematic debugging: reproduce, isolate with hypothesis testing, fix, verify |
+| `skills/onboard/SKILL.md` | `/onboard` | Research | Generate codebase overview with architecture diagram, key files, and conventions |
+| `skills/changelog/SKILL.md` | `/changelog [version]` | Task | Generate categorized changelog from git history since last release tag |
+| `skills/perf-audit/SKILL.md` | `/perf-audit [target]` | Research | Find performance bottlenecks: N+1 queries, slow algorithms, memory issues |
+
 ### Commands (`commands/`)
 
 Drop-in slash command files. Copy to `.claude/commands/` in any project. Invoke with `/command-name` (or `/command-name <argument>`) inside a Claude Code session.
