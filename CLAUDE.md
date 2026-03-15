@@ -218,3 +218,9 @@ Ready-to-use, copy-paste-able templates. **Use these as starting points** when a
 | `claude-code-docs/tools-reference.md` | Built-in tools reference |
 | `claude-code-docs/changelog.md` | Full changelog of Claude Code releases |
 | `claude-code-docs/llms.txt` | Raw doc index used by the download script |
+
+### Community Resources
+
+| File | Description |
+|------|-------------|
+| `awesome.md` | Curated "Awesome Claude Code" list - official resources, MCP servers, plugins, CLAUDE.md starters, tools, cloud setup, and enterprise guides |
