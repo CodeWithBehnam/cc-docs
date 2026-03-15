@@ -300,6 +300,91 @@ Production-ready bash hook scripts and a settings example. Copy scripts to `.cla
 | `hooks/scripts/inject-context.sh` | SessionStart (compact) - re-injects git branch, recent commits, and project reminder after compaction |
 | `hooks/scripts/stop-check.sh` | Stop - checks for uncommitted changes and asks Claude to commit before finishing |
 
+### Community Hooks (`hooks/community/`)
+
+Community-contributed hook configurations and scripts from [davila7/claude-code-templates](https://github.com/davila7/claude-code-templates) (MIT). Each `.json` file is a hook configuration and each `.sh`/`.py` file is a supporting script. See `hooks/community/README.md` for installation instructions and a settings.json example.
+
+#### automation/ - Build, Deploy, and Notification Hooks
+
+| File | Event Type | Description |
+|------|-----------|-------------|
+| `agents-md-loader.json` | SessionStart | Loads AGENTS.md at session start for cross-platform AI assistant compatibility |
+| `build-on-change.json` | PostToolUse | Triggers build (npm, make, cargo, maven, gradle) on source file changes |
+| `change-logger.json` + `.py` | PostToolUse | Logs file mutations to CSV for session review |
+| `dependency-checker.json` | PostToolUse | Runs security audits when dependency files are modified |
+| `deployment-health-monitor.json` | PostToolUse, SessionStart | Monitors Vercel deployment status and health |
+| `discord-notifications.json` | Stop, SubagentStop | Simple Discord notification on session end |
+| `discord-detailed-notifications.json` | SessionStart, Stop | Detailed Discord notifications with duration and memory |
+| `discord-error-notifications.json` | PreToolUse, PostToolUse, Notification | Discord alerts for long-running operations |
+| `simple-notifications.json` | PostToolUse | Cross-platform desktop notifications on tool completion |
+| `slack-notifications.json` | Stop, SubagentStop | Simple Slack notification on session end |
+| `slack-detailed-notifications.json` | SessionStart, Stop | Detailed Slack notifications with duration and memory |
+| `slack-error-notifications.json` | PreToolUse, PostToolUse, Notification | Slack alerts for long-running operations |
+| `telegram-notifications.json` | Stop, SubagentStop | Simple Telegram notification on session end |
+| `telegram-detailed-notifications.json` | SessionStart, Stop | Detailed Telegram notifications with duration and memory |
+| `telegram-error-notifications.json` | PreToolUse, PostToolUse, Notification | Telegram alerts for long-running operations |
+| `telegram-pr-webhook.json` + `.py` | PostToolUse | Sends PR URL and Vercel preview link to Telegram |
+| `vercel-auto-deploy.json` | PostToolUse | Auto-triggers Vercel deployments on code changes |
+| `vercel-environment-sync.json` | PostToolUse, SessionStart | Validates .env files and provides Vercel sync options |
+
+#### development-tools/ - Linting, Formatting, Debugging, Backup, Quality Gates
+
+| File | Event Type | Description |
+|------|-----------|-------------|
+| `change-tracker.json` | PostToolUse | Logs file changes to ~/.claude/changes.log |
+| `command-logger.json` | PreToolUse | Logs tool usage to ~/.claude/command-log.txt |
+| `debug-window.json` + `.sh` | SessionStart, SessionEnd | Opens live debug log window with --debug flag |
+| `file-backup.json` | PreToolUse | Timestamped backups in .backups/ before edits |
+| `lint-on-save.json` | PostToolUse | Runs ESLint, Pylint, or RuboCop after edits |
+| `nextjs-code-quality-enforcer.json` | PostToolUse | Enforces Next.js App Router and component patterns |
+| `smart-formatting.json` | PostToolUse | Auto-formats with Prettier, Black, gofmt, rustfmt, php-cs-fixer |
+| `worktree-ghostty.json` + `.sh` | WorktreeCreate, WorktreeRemove | 3-panel Ghostty layout for worktrees (macOS) |
+| `plan-gate.json` + `.sh` | PreToolUse | Warns if editing without an approved .spec.md (non-blocking) |
+| `scope-guard.json` + `.sh` | Stop | Detects out-of-scope file modifications (non-blocking) |
+| `tdd-gate.json` + `.sh` | PreToolUse | Blocks production code edits without a test file (TDD enforcement) |
+
+#### git/ - Commit Validation, Branch Naming, Push Protection
+
+| File | Event Type | Description |
+|------|-----------|-------------|
+| `conventional-commits.json` + `.py` | PreToolUse | Enforces conventional commit format (feat, fix, docs, etc.) |
+| `prevent-direct-push.json` + `.py` | PreToolUse | Blocks direct pushes to main/develop, enforces Git Flow |
+| `validate-branch-name.json` + `.py` | PreToolUse | Validates Git Flow branch naming on checkout |
+| `auto-git-add.json` | PostToolUse | Auto-stages modified files with git add |
+| `smart-commit.json` | PostToolUse | Auto-generates commit messages and creates commits |
+
+#### monitoring/ - Notifications, Tracing, Performance
+
+| File | Event Type | Description |
+|------|-----------|-------------|
+| `desktop-notification-on-stop.json` | Stop | Desktop notification when Claude finishes responding |
+| `langsmith-tracing.json` + `.sh` | Stop | Sends conversation traces to LangSmith for analysis |
+| `performance-budget-guard.json` | PostToolUse | Monitors Next.js bundle size against budget limits |
+| `performance-monitor.json` | PreToolUse, PostToolUse | Records CPU, memory, and timing to CSV |
+
+#### post-tool/ - After Tool Execution
+
+| File | Event Type | Description |
+|------|-----------|-------------|
+| `format-javascript-files.json` | PostToolUse | Prettier formatting on JS/TS files after edits |
+| `format-python-files.json` | PostToolUse | Black formatting on Python files after edits |
+| `git-add-changes.json` | PostToolUse | git add on files after Edit or Write |
+| `run-tests-after-changes.json` | PostToolUse | Runs test:quick after edits if package.json exists |
+| `security-scanner.json` | PostToolUse | Scans for vulnerabilities using semgrep, bandit, gitleaks |
+| `test-runner.json` | PostToolUse | Runs tests (npm, pytest, rspec) based on file type |
+
+#### pre-tool/ - Before Tool Execution
+
+| File | Event Type | Description |
+|------|-----------|-------------|
+| `backup-before-edit.json` | PreToolUse | Timestamped backup before any Edit operation |
+| `console-log-cleaner.json` | PreToolUse | Warns about console.log on production branches |
+| `dangerous-command-blocker.json` + `.py` | PreToolUse | Multi-level security: blocks catastrophic commands, protects critical paths |
+| `file-protection.json` | PreToolUse | Blocks edits to system paths, production configs, vendor dirs |
+| `notify-before-bash.json` | PreToolUse | Notification before Bash command execution |
+| `secret-scanner.json` + `.py` | PreToolUse | Scans for hardcoded secrets from 30+ providers before commits |
+| `update-search-year.json` | PreToolUse | Appends current year to WebSearch queries |
+
 ### Agents (`agents/`)
 
 Drop-in subagent files. Copy any `.md` file to `.claude/agents/` in your project (or `~/.claude/agents/` for personal use) and it becomes available immediately. See `agents/README.md` for installation instructions and full descriptions.
