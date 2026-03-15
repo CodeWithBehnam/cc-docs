@@ -30,20 +30,154 @@ A GitHub Actions workflow runs every hour, downloads the latest docs, and commit
 
 ## Documentation
 
-The [`claude-code-docs/`](claude-code-docs/) folder contains all doc pages, organized by category.
+The [`claude-code-docs/`](claude-code-docs/) folder contains the **complete official Claude Code documentation** - 65+ pages mirrored from [code.claude.com/docs](https://code.claude.com/docs) and updated hourly. These are the full, unabridged docs with all details, examples, and edge cases.
 
-| Category | Docs |
+> **Start here** if you're new: [overview](claude-code-docs/overview.md) -> [quickstart](claude-code-docs/quickstart.md) -> [best-practices](claude-code-docs/best-practices.md)
+
+<details>
+<summary><b>Getting Started</b> (4 pages) - Install, understand, get productive</summary>
+
+| Doc | What You'll Learn |
 |---|---|
-| **Getting Started** | [overview](claude-code-docs/overview.md) &#183; [quickstart](claude-code-docs/quickstart.md) &#183; [setup](claude-code-docs/setup.md) &#183; [how-claude-code-works](claude-code-docs/how-claude-code-works.md) |
-| **Core Usage** | [interactive-mode](claude-code-docs/interactive-mode.md) &#183; [cli-reference](claude-code-docs/cli-reference.md) &#183; [commands](claude-code-docs/commands.md) &#183; [common-workflows](claude-code-docs/common-workflows.md) &#183; [best-practices](claude-code-docs/best-practices.md) &#183; [code-review](claude-code-docs/code-review.md) &#183; [keybindings](claude-code-docs/keybindings.md) &#183; [fast-mode](claude-code-docs/fast-mode.md) &#183; [output-styles](claude-code-docs/output-styles.md) &#183; [terminal-config](claude-code-docs/terminal-config.md) |
-| **Memory & Settings** | [memory](claude-code-docs/memory.md) &#183; [settings](claude-code-docs/settings.md) &#183; [model-config](claude-code-docs/model-config.md) &#183; [permissions](claude-code-docs/permissions.md) &#183; [env-vars](claude-code-docs/env-vars.md) &#183; [statusline](claude-code-docs/statusline.md) |
-| **Extensibility** | [features-overview](claude-code-docs/features-overview.md) &#183; [skills](claude-code-docs/skills.md) &#183; [sub-agents](claude-code-docs/sub-agents.md) &#183; [agent-teams](claude-code-docs/agent-teams.md) &#183; [plugins](claude-code-docs/plugins.md) &#183; [plugins-reference](claude-code-docs/plugins-reference.md) &#183; [discover-plugins](claude-code-docs/discover-plugins.md) &#183; [plugin-marketplaces](claude-code-docs/plugin-marketplaces.md) &#183; [hooks](claude-code-docs/hooks.md) &#183; [hooks-guide](claude-code-docs/hooks-guide.md) &#183; [mcp](claude-code-docs/mcp.md) |
-| **IDE Integrations** | [vs-code](claude-code-docs/vs-code.md) &#183; [jetbrains](claude-code-docs/jetbrains.md) &#183; [chrome](claude-code-docs/chrome.md) &#183; [desktop](claude-code-docs/desktop.md) &#183; [desktop-quickstart](claude-code-docs/desktop-quickstart.md) &#183; [claude-code-on-the-web](claude-code-docs/claude-code-on-the-web.md) |
-| **CI/CD & Automation** | [headless](claude-code-docs/headless.md) &#183; [github-actions](claude-code-docs/github-actions.md) &#183; [gitlab-ci-cd](claude-code-docs/gitlab-ci-cd.md) &#183; [remote-control](claude-code-docs/remote-control.md) &#183; [scheduled-tasks](claude-code-docs/scheduled-tasks.md) &#183; [slack](claude-code-docs/slack.md) |
-| **Cloud Providers** | [amazon-bedrock](claude-code-docs/amazon-bedrock.md) &#183; [google-vertex-ai](claude-code-docs/google-vertex-ai.md) &#183; [microsoft-foundry](claude-code-docs/microsoft-foundry.md) &#183; [llm-gateway](claude-code-docs/llm-gateway.md) |
-| **Enterprise & Security** | [authentication](claude-code-docs/authentication.md) &#183; [security](claude-code-docs/security.md) &#183; [sandboxing](claude-code-docs/sandboxing.md) &#183; [network-config](claude-code-docs/network-config.md) &#183; [server-managed-settings](claude-code-docs/server-managed-settings.md) &#183; [third-party-integrations](claude-code-docs/third-party-integrations.md) &#183; [data-usage](claude-code-docs/data-usage.md) &#183; [zero-data-retention](claude-code-docs/zero-data-retention.md) &#183; [legal-and-compliance](claude-code-docs/legal-and-compliance.md) |
-| **Operations** | [costs](claude-code-docs/costs.md) &#183; [analytics](claude-code-docs/analytics.md) &#183; [monitoring-usage](claude-code-docs/monitoring-usage.md) &#183; [checkpointing](claude-code-docs/checkpointing.md) &#183; [devcontainer](claude-code-docs/devcontainer.md) &#183; [troubleshooting](claude-code-docs/troubleshooting.md) |
-| **Reference** | [tools-reference](claude-code-docs/tools-reference.md) &#183; [changelog](claude-code-docs/changelog.md) &#183; [llms.txt](claude-code-docs/llms.txt) |
+| [overview](claude-code-docs/overview.md) | What Claude Code is, key capabilities, agentic coding workflow |
+| [quickstart](claude-code-docs/quickstart.md) | Install, authenticate, first session, essential slash commands |
+| [setup](claude-code-docs/setup.md) | Advanced install options, shell completion, system requirements, updating |
+| [how-claude-code-works](claude-code-docs/how-claude-code-works.md) | Architecture deep dive: agentic loop, context management, tool execution |
+
+</details>
+
+<details>
+<summary><b>Core Usage</b> (10 pages) - Daily workflow, commands, shortcuts</summary>
+
+| Doc | What You'll Learn |
+|---|---|
+| [interactive-mode](claude-code-docs/interactive-mode.md) | REPL interface, slash commands, @-mentions, multi-turn conversations |
+| [cli-reference](claude-code-docs/cli-reference.md) | Every CLI flag, option, and command with examples |
+| [commands](claude-code-docs/commands.md) | All slash commands: /help, /model, /permissions, /memory, and more |
+| [common-workflows](claude-code-docs/common-workflows.md) | Explore-fix, refactor, test, PR creation, plan mode, session management |
+| [best-practices](claude-code-docs/best-practices.md) | Verification strategies, prompt techniques, CLAUDE.md tips, multi-session patterns |
+| [code-review](claude-code-docs/code-review.md) | Managed review service, multi-agent review, REVIEW.md, trigger modes |
+| [keybindings](claude-code-docs/keybindings.md) | Keyboard shortcuts and custom keybinding configuration |
+| [fast-mode](claude-code-docs/fast-mode.md) | Faster output with same model, toggle behavior |
+| [output-styles](claude-code-docs/output-styles.md) | Output formatting: markdown rendering, verbosity, width control |
+| [terminal-config](claude-code-docs/terminal-config.md) | Terminal optimization: fonts, colors, Unicode support, recommended terminals |
+
+</details>
+
+<details>
+<summary><b>Memory & Settings</b> (6 pages) - Configuration, permissions, environment</summary>
+
+| Doc | What You'll Learn |
+|---|---|
+| [memory](claude-code-docs/memory.md) | CLAUDE.md files, path-specific rules, auto-memory, imports, organization-wide policies |
+| [settings](claude-code-docs/settings.md) | All config options, settings scopes (user/project/managed), precedence rules |
+| [model-config](claude-code-docs/model-config.md) | Model aliases (opus/sonnet/haiku), effort levels, extended context (1M), switching |
+| [permissions](claude-code-docs/permissions.md) | Permission modes, allow/deny/ask rules, wildcard patterns, file path restrictions |
+| [env-vars](claude-code-docs/env-vars.md) | Every environment variable: auth, proxy, debug, model overrides, feature flags |
+| [statusline](claude-code-docs/statusline.md) | Customize the status bar: model, cost, token count, session info |
+
+</details>
+
+<details>
+<summary><b>Extensibility</b> (11 pages) - Skills, hooks, MCP, plugins, agents</summary>
+
+| Doc | What You'll Learn |
+|---|---|
+| [features-overview](claude-code-docs/features-overview.md) | Extension architecture overview: how skills, hooks, MCP, agents, and plugins layer |
+| [skills](claude-code-docs/skills.md) | Create slash commands with frontmatter, templates, scripts, invocation control |
+| [sub-agents](claude-code-docs/sub-agents.md) | Create specialized agents with restricted tools, memory, isolation, hooks |
+| [agent-teams](claude-code-docs/agent-teams.md) | Multi-agent coordination, parallel exploration, task dependencies, quality gates |
+| [plugins](claude-code-docs/plugins.md) | Create plugins bundling skills, agents, hooks, MCP, and LSP servers |
+| [plugins-reference](claude-code-docs/plugins-reference.md) | Plugin manifest schema, component types, CLI commands, lifecycle |
+| [discover-plugins](claude-code-docs/discover-plugins.md) | Find and install community plugins, marketplace browsing |
+| [plugin-marketplaces](claude-code-docs/plugin-marketplaces.md) | Create and host plugin marketplaces for distribution |
+| [hooks](claude-code-docs/hooks.md) | Hook events reference, types (command/prompt/agent), exit codes, matchers, JSON output |
+| [hooks-guide](claude-code-docs/hooks-guide.md) | Practical recipes: auto-format, file protection, notifications, verification |
+| [mcp](claude-code-docs/mcp.md) | Connect external tools via MCP: setup, .mcp.json, OAuth, popular integrations |
+
+</details>
+
+<details>
+<summary><b>IDE Integrations</b> (6 pages) - VS Code, JetBrains, Chrome, Desktop, Web</summary>
+
+| Doc | What You'll Learn |
+|---|---|
+| [vs-code](claude-code-docs/vs-code.md) | VS Code extension: inline chat, terminal integration, keybindings |
+| [jetbrains](claude-code-docs/jetbrains.md) | JetBrains plugin: IntelliJ, PyCharm, WebStorm, and other IDEs |
+| [chrome](claude-code-docs/chrome.md) | Chrome extension for web-based Claude Code (beta) |
+| [desktop](claude-code-docs/desktop.md) | Desktop app: features, configuration, native integration |
+| [desktop-quickstart](claude-code-docs/desktop-quickstart.md) | Get running with the desktop app in minutes |
+| [claude-code-on-the-web](claude-code-docs/claude-code-on-the-web.md) | Browser-based Claude Code experience |
+
+</details>
+
+<details>
+<summary><b>CI/CD & Automation</b> (6 pages) - GitHub Actions, GitLab, headless, Slack</summary>
+
+| Doc | What You'll Learn |
+|---|---|
+| [headless](claude-code-docs/headless.md) | Non-interactive mode: `-p` flag, JSON output, streaming, JSON schema validation |
+| [github-actions](claude-code-docs/github-actions.md) | claude-code-action: PR review, issue implementation, triggers, Bedrock/Vertex |
+| [gitlab-ci-cd](claude-code-docs/gitlab-ci-cd.md) | GitLab CI pipelines: MR review, comment triggers, OIDC auth, MCP integration |
+| [remote-control](claude-code-docs/remote-control.md) | Access local sessions from phone/tablet/browser, server mode, QR codes |
+| [scheduled-tasks](claude-code-docs/scheduled-tasks.md) | /loop for recurring tasks, cron scheduling, reminders, skill re-invocation |
+| [slack](claude-code-docs/slack.md) | Slack integration: coding tasks from channels, status updates, PR creation |
+
+</details>
+
+<details>
+<summary><b>Cloud Providers</b> (4 pages) - Bedrock, Vertex AI, Foundry, gateways</summary>
+
+| Doc | What You'll Learn |
+|---|---|
+| [amazon-bedrock](claude-code-docs/amazon-bedrock.md) | AWS Bedrock setup: credentials, SSO, cross-region inference, guardrails, IAM |
+| [google-vertex-ai](claude-code-docs/google-vertex-ai.md) | Google Vertex AI setup: gcloud auth, regions, 1M context, model pinning |
+| [microsoft-foundry](claude-code-docs/microsoft-foundry.md) | Microsoft Foundry integration and configuration |
+| [llm-gateway](claude-code-docs/llm-gateway.md) | LLM gateway proxies: LiteLLM, key rotation, multi-provider routing, audit |
+
+</details>
+
+<details>
+<summary><b>Enterprise & Security</b> (9 pages) - Auth, sandboxing, compliance, privacy</summary>
+
+| Doc | What You'll Learn |
+|---|---|
+| [authentication](claude-code-docs/authentication.md) | Auth methods: API keys, OAuth, SSO, token management |
+| [security](claude-code-docs/security.md) | Security model, permission system, threat mitigations, safe practices |
+| [sandboxing](claude-code-docs/sandboxing.md) | OS-level isolation: filesystem rules, network restrictions, sandbox modes |
+| [network-config](claude-code-docs/network-config.md) | Proxy setup, custom CA certificates, mTLS, credential refresh, domain allowlist |
+| [server-managed-settings](claude-code-docs/server-managed-settings.md) | Org-wide settings delivery, policy enforcement, model restrictions (Teams/Enterprise) |
+| [third-party-integrations](claude-code-docs/third-party-integrations.md) | Enterprise deployment options and partner integrations |
+| [data-usage](claude-code-docs/data-usage.md) | What data is collected, how it's used, privacy controls |
+| [zero-data-retention](claude-code-docs/zero-data-retention.md) | ZDR configuration, verification, and limitations |
+| [legal-and-compliance](claude-code-docs/legal-and-compliance.md) | Compliance certifications, data processing terms |
+
+</details>
+
+<details>
+<summary><b>Operations</b> (6 pages) - Costs, monitoring, debugging, containers</summary>
+
+| Doc | What You'll Learn |
+|---|---|
+| [costs](claude-code-docs/costs.md) | Cost tracking, budget limits (`--max-budget-usd`), optimization strategies |
+| [analytics](claude-code-docs/analytics.md) | Team usage analytics dashboard, reports, tracking |
+| [monitoring-usage](claude-code-docs/monitoring-usage.md) | Usage metrics, API monitoring, performance tracking |
+| [checkpointing](claude-code-docs/checkpointing.md) | Auto-checkpoints, /rewind, restore options, session forking, summarization |
+| [devcontainer](claude-code-docs/devcontainer.md) | Dev container setup with pre-configured security, firewall, isolation |
+| [troubleshooting](claude-code-docs/troubleshooting.md) | Common errors, diagnostic commands, fixes, debug mode |
+
+</details>
+
+<details>
+<summary><b>Reference</b> (3 pages)</summary>
+
+| Doc | What You'll Learn |
+|---|---|
+| [tools-reference](claude-code-docs/tools-reference.md) | Every built-in tool: Read, Edit, Bash, Grep, Glob, Agent, and more |
+| [changelog](claude-code-docs/changelog.md) | Full release history with features, fixes, and breaking changes |
+| [llms.txt](claude-code-docs/llms.txt) | Raw doc index used by the download script |
+
+</details>
 
 ## Cheatsheets
 
