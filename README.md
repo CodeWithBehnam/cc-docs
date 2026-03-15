@@ -13,10 +13,10 @@
   <img src="https://img.shields.io/badge/docs-65%2B%20pages-5A29E0?style=flat-square" alt="65+ Doc Pages">
   <img src="https://img.shields.io/badge/cheatsheets-64-29E05A?style=flat-square" alt="64 Cheatsheets">
   <img src="https://img.shields.io/badge/templates-33-E05A29?style=flat-square" alt="33 Templates">
-  <img src="https://img.shields.io/badge/skills-15-FF6B6B?style=flat-square" alt="15 Skills">
-  <img src="https://img.shields.io/badge/agents-12-6B6BFF?style=flat-square" alt="12 Agents">
-  <img src="https://img.shields.io/badge/commands-12-FFB86B?style=flat-square" alt="12 Commands">
-  <img src="https://img.shields.io/badge/hooks-10-6BFFB8?style=flat-square" alt="10 Hook Scripts">
+  <img src="https://img.shields.io/badge/skills-194_(15%20core%20%2B%20179%20community)-FF6B6B?style=flat-square" alt="194 Skills">
+  <img src="https://img.shields.io/badge/agents-143_(12%20core%20%2B%20131%20community)-6B6BFF?style=flat-square" alt="143 Agents">
+  <img src="https://img.shields.io/badge/commands-99_(12%20core%20%2B%2087%20community)-FFB86B?style=flat-square" alt="99 Commands">
+  <img src="https://img.shields.io/badge/hooks-75_(10%20core%20%2B%2065%20community)-6BFFB8?style=flat-square" alt="75 Hook Scripts">
   <img src="https://img.shields.io/badge/rules-8-FF6BFF?style=flat-square" alt="8 Rules">
   <img src="https://img.shields.io/badge/updates-hourly-blue?style=flat-square" alt="Hourly Updates">
 </p>
@@ -34,10 +34,10 @@ A GitHub Actions workflow runs every hour, downloads the latest docs, and commit
 | `claude-code-docs/` | 65+ full doc pages mirrored from code.claude.com/docs |
 | `cheatsheets/` | 64 scannable quick-reference sheets (one per doc page) |
 | `templates/` | 33 copy-paste-able templates across 9 categories |
-| `skills/` | 15 drop-in skills (`.claude/skills/`) for commit, PR, review, TDD, security, and more |
-| `agents/` | 12 drop-in subagents (`.claude/agents/`) for code review, debugging, testing, and more |
-| `commands/` | 12 drop-in slash commands (`.claude/commands/`) for common workflows |
-| `hooks/` | 10 executable hook scripts with settings.json wiring examples |
+| `skills/` | **194 skills** - 15 core + 179 community skills in 16 categories |
+| `agents/` | **143 agents** - 12 core + 131 community agents in 10 categories |
+| `commands/` | **99 commands** - 12 core + 87 community commands in 12 categories |
+| `hooks/` | **75 hooks** - 10 core scripts + 65 community hooks in 6 categories |
 | `rules/` | 8 language-specific coding rules (`.claude/rules/`) for TypeScript, Python, Go, and more |
 | `tips/` | 7 curated tips files covering productivity, prompting, debugging, cost optimization |
 | `guides/` | 7 step-by-step workflow guides (TDD, security audit, onboarding, CI/CD setup) |
@@ -441,12 +441,12 @@ The [`templates/`](templates/) folder has 33 ready-to-use, copy-paste-able templ
 
 ## Skills
 
-The [`skills/`](skills/) folder has **15 ready-to-use skill directories**. Copy any skill to `.claude/skills/` in your project (or `~/.claude/skills/` for all projects). Invoke with `/skill-name` or let Claude auto-invoke when relevant.
+The [`skills/`](skills/) folder has **194 skills** - 15 core skills plus 179 community skills organized into 16 categories. Copy any skill to `.claude/skills/` in your project (or `~/.claude/skills/` for all projects). Invoke with `/skill-name` or let Claude auto-invoke when relevant.
 
 > **Skills vs Commands:** Skills support directories with supporting files, frontmatter for invocation control, and subagent execution. Commands are simpler single-file alternatives. Both create slash commands.
 
 <details>
-<summary><b>Task Skills</b> (10 skills) - Workflows you invoke manually</summary>
+<summary><b>Core Task Skills</b> (10 skills) - Workflows you invoke manually</summary>
 
 | Skill | Command | Description |
 |---|---|---|
@@ -463,7 +463,7 @@ The [`skills/`](skills/) folder has **15 ready-to-use skill directories**. Copy 
 </details>
 
 <details>
-<summary><b>Research Skills</b> (4 skills) - Run in isolated subagents</summary>
+<summary><b>Core Research Skills</b> (5 skills) - Run in isolated subagents</summary>
 
 | Skill | Command | Description |
 |---|---|---|
@@ -476,7 +476,7 @@ The [`skills/`](skills/) folder has **15 ready-to-use skill directories**. Copy 
 </details>
 
 <details>
-<summary><b>Reference Skills</b> (1 skill) - Auto-loaded background knowledge</summary>
+<summary><b>Core Reference Skills</b> (1 skill) - Auto-loaded background knowledge</summary>
 
 | Skill | Description |
 |---|---|
@@ -484,12 +484,38 @@ The [`skills/`](skills/) folder has **15 ready-to-use skill directories**. Copy 
 
 </details>
 
+<details>
+<summary><b>Community Skills</b> (179 skills in 16 categories) - From community repos</summary>
+
+Sources: [wshobson/agents](https://github.com/wshobson/agents), [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code), [garrytan/gstack](https://github.com/garrytan/gstack). Each skill is in its own subdirectory with a `SKILL.md` file and optional reference files.
+
+| Category | Count | What's Inside |
+|---|---|---|
+| [`api-architecture/`](skills/api-architecture/) | 10 | REST/GraphQL design, microservices, CQRS, event sourcing, saga orchestration, OpenAPI |
+| [`backend-development/`](skills/backend-development/) | 17 | Workflow orchestration, error handling, auth patterns, .NET, Node.js, monorepo tooling |
+| [`frontend-development/`](skills/frontend-development/) | 17 | Next.js App Router, React state, Tailwind, design systems, accessibility, mobile UI |
+| [`language-specific/`](skills/language-specific/) | 23 | Python (15 skills), TypeScript, Go concurrency, Rust async, Bash defensive scripting |
+| [`devops-infrastructure/`](skills/devops-infrastructure/) | 19 | CI/CD pipelines, K8s, Terraform, GitOps, service mesh, secrets, incident runbooks |
+| [`testing-quality/`](skills/testing-quality/) | 8 | E2E testing, TDD workflow, code review, JS/Python testing patterns, eval harness |
+| [`security/`](skills/security/) | 12 | STRIDE threat modeling, SAST, PCI compliance, GDPR, binary analysis, reverse engineering |
+| [`ai-ml/`](skills/ai-ml/) | 11 | RAG, prompt engineering, LangChain, LLM evaluation, embeddings, vector search, ML pipelines |
+| [`business/`](skills/business/) | 15 | Market sizing, financial modeling, Stripe/PayPal, risk metrics, investor materials |
+| [`content-research/`](skills/content-research/) | 8 | Article writing, deep research, market research, content engine, video editing |
+| [`productivity/`](skills/productivity/) | 12 | QA workflows, code reviews, shipping, browser testing, retros, ADRs, changelog automation |
+| [`team-workflow/`](skills/team-workflow/) | 11 | Multi-reviewer coordination, parallel debugging, task decomposition, agent orchestration |
+| [`data-engineering/`](skills/data-engineering/) | 6 | Airflow DAGs, dbt, Spark optimization, SQL tuning, PostgreSQL |
+| [`observability/`](skills/observability/) | 4 | Distributed tracing, Grafana dashboards, Prometheus, SLO/SLI |
+| [`blockchain/`](skills/blockchain/) | 4 | Solidity security, DeFi protocols, NFT standards, Web3 testing |
+| [`game-embedded/`](skills/game-embedded/) | 2 | Godot GDScript, Unity ECS patterns |
+
+</details>
+
 ## Agents
 
-The [`agents/`](agents/) folder has **12 ready-to-use subagent files**. Copy any `.md` file to `.claude/agents/` in your project (or `~/.claude/agents/` for all projects).
+The [`agents/`](agents/) folder has **143 agents** - 12 core agents plus 131 community agents organized into 10 categories. Copy any `.md` file to `.claude/agents/` in your project (or `~/.claude/agents/` for all projects).
 
 <details>
-<summary><b>All 12 Agents</b> - Specialized AI assistants for delegation</summary>
+<summary><b>Core Agents</b> (12 agents) - Battle-tested, ready to use</summary>
 
 | Agent | Model | Description |
 |---|---|---|
@@ -508,12 +534,32 @@ The [`agents/`](agents/) folder has **12 ready-to-use subagent files**. Copy any
 
 </details>
 
+<details>
+<summary><b>Community Agents</b> (131 agents in 10 categories) - From VoltAgent</summary>
+
+Source: [VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents) (MIT license).
+
+| Category | Count | What's Inside |
+|---|---|---|
+| [`core-development/`](agents/core-development/) | 10 | API designer, backend/frontend/fullstack developer, mobile, Electron, GraphQL, microservices, UI, WebSocket |
+| [`language-specialists/`](agents/language-specialists/) | 26 | Angular, C++, C#, Django, .NET, Elixir, Flutter, Go, Java, JS, Kotlin, Laravel, Next.js, PHP, PowerShell, Python, Rails, React, Rust, Spring Boot, SQL, Swift, TypeScript, Vue |
+| [`infrastructure/`](agents/infrastructure/) | 16 | Azure, cloud architecture, databases, deployment, DevOps, Docker, incidents, K8s, networking, platform, security, SRE, Terraform, Terragrunt, Windows |
+| [`quality-security/`](agents/quality-security/) | 14 | Accessibility, architecture review, chaos engineering, code review, compliance, debugging, error detective, penetration testing, performance, QA, security audit, test automation |
+| [`data-ai/`](agents/data-ai/) | 12 | AI engineering, data analysis/engineering/science, database optimization, LLM architecture, ML/MLOps, NLP, PostgreSQL, prompt engineering |
+| [`developer-experience/`](agents/developer-experience/) | 13 | Build systems, CLI tools, dependencies, documentation, DX optimization, Git workflows, legacy modernization, MCP development, refactoring, Slack, tooling |
+| [`specialized-domains/`](agents/specialized-domains/) | 12 | API docs, blockchain, embedded systems, fintech, gaming, IoT, M365, mobile apps, payments, quant analysis, risk management, SEO |
+| [`business-product/`](agents/business-product/) | 11 | Business analysis, content marketing, customer success, legal, product/project management, sales engineering, Scrum, technical writing, UX research, WordPress |
+| [`meta-orchestration/`](agents/meta-orchestration/) | 10 | Agent installation/organization, context management, error coordination, IT ops, knowledge synthesis, multi-agent coordination, performance monitoring, task distribution, workflows |
+| [`research-analysis/`](agents/research-analysis/) | 7 | Competitive analysis, data/market research, research analysis, scientific literature, search, trend analysis |
+
+</details>
+
 ## Commands
 
-The [`commands/`](commands/) folder has **12 ready-to-use slash command files**. Copy any `.md` file to `.claude/commands/` in your project.
+The [`commands/`](commands/) folder has **99 commands** - 12 core commands plus 87 community commands organized into 12 categories. Copy any `.md` file to `.claude/commands/` in your project.
 
 <details>
-<summary><b>All 12 Commands</b> - Slash commands for common workflows</summary>
+<summary><b>Core Commands</b> (12 commands) - Essential daily workflows</summary>
 
 | Command | Argument | Description |
 |---|---|---|
@@ -532,12 +578,34 @@ The [`commands/`](commands/) folder has **12 ready-to-use slash command files**.
 
 </details>
 
+<details>
+<summary><b>Community Commands</b> (87 commands in 12 categories) - From community repos</summary>
+
+Sources: [wshobson/agents](https://github.com/wshobson/agents), [davila7/claude-code-templates](https://github.com/davila7/claude-code-templates) (MIT license).
+
+| Category | Count | What's Inside |
+|---|---|---|
+| [`development/`](commands/development/) | 10 | Feature scaffolding (Python, TypeScript, Rust, React), full-stack, multi-platform, design systems |
+| [`git-workflow/`](commands/git-workflow/) | 12 | Git quality gates, onboarding, Conductor project management (6), worktree management (4) |
+| [`team-management/`](commands/team-management/) | 12 | Agent team orchestration (spawn/status/delegate/feature/review/debug/shutdown), standup notes |
+| [`testing/`](commands/testing/) | 8 | TDD cycle (red/green/refactor), test generation, API mocking, performance testing |
+| [`refactoring/`](commands/refactoring/) | 7 | Refactor with SOLID principles, tech debt analysis, dependency audit, context save/restore |
+| [`data-migration/`](commands/data-migration/) | 7 | Data pipelines, SQL migrations, code migration, dependency upgrades, legacy modernization |
+| [`debugging/`](commands/debugging/) | 6 | Error analysis, error tracing, smart debug, distributed tracing, incident response |
+| [`review-quality/`](commands/review-quality/) | 6 | Full review orchestrator, PR enhancement, AI-powered review, multi-agent review |
+| [`ai-tools/`](commands/ai-tools/) | 5 | AI assistant building, LangGraph agents, prompt optimization, agent improvement |
+| [`deployment-infra/`](commands/deployment-infra/) | 5 | CI/CD automation, config validation, cost optimization, monitoring, SLO implementation |
+| [`security/`](commands/security/) | 5 | SAST scanning, security hardening, dependency vulnerabilities, compliance, XSS scanning |
+| [`documentation/`](commands/documentation/) | 4 | Doc generation, code explanation, C4 architecture docs, blog articles |
+
+</details>
+
 ## Hook Scripts
 
-The [`hooks/`](hooks/) folder has **10 executable bash scripts** and a [settings-examples.json](hooks/settings-examples.json) showing how to wire them into `.claude/settings.json`.
+The [`hooks/`](hooks/) folder has **75 hooks** - 10 core bash scripts plus 65 community hook configurations organized into 6 categories. Wire them into `.claude/settings.json`.
 
 <details>
-<summary><b>All 10 Hook Scripts</b> - Automated workflow enforcement</summary>
+<summary><b>Core Hook Scripts</b> (10 scripts) - Production-ready workflow enforcement</summary>
 
 | Script | Event | Description |
 |---|---|---|
@@ -551,6 +619,22 @@ The [`hooks/`](hooks/) folder has **10 executable bash scripts** and a [settings
 | [test-after-edit.sh](hooks/scripts/test-after-edit.sh) | PostToolUse | Auto-run related test file after edits |
 | [inject-context.sh](hooks/scripts/inject-context.sh) | SessionStart | Re-inject context after compaction |
 | [stop-check.sh](hooks/scripts/stop-check.sh) | Stop | Check for uncommitted changes before stopping |
+
+</details>
+
+<details>
+<summary><b>Community Hooks</b> (65 hooks in 6 categories) - From davila7/claude-code-templates</summary>
+
+Source: [davila7/claude-code-templates](https://github.com/davila7/claude-code-templates) (MIT license). Each `.json` file is a hook configuration, `.sh`/`.py` files are supporting scripts. See [`hooks/community/README.md`](hooks/community/README.md) for installation instructions.
+
+| Category | Count | What's Inside |
+|---|---|---|
+| [`automation/`](hooks/community/automation/) | 20 | Discord/Slack/Telegram notifications (simple, detailed, error), Vercel auto-deploy, build-on-change, dependency checker, deployment health monitor |
+| [`development-tools/`](hooks/community/development-tools/) | 16 | Smart formatting, lint-on-save, file backup, debug window, TDD gate, plan gate, scope guard, Next.js code quality enforcer, worktree Ghostty layout |
+| [`pre-tool/`](hooks/community/pre-tool/) | 9 | Backup before edit, console.log cleaner, dangerous command blocker, file protection, secret scanner (30+ providers), WebSearch year updater |
+| [`git/`](hooks/community/git/) | 8 | Conventional commits enforcer, prevent direct push to main, branch name validation, auto-git-add, smart commit |
+| [`post-tool/`](hooks/community/post-tool/) | 6 | JS/Python formatters, git-add-changes, test runner (multi-framework), security scanner (semgrep/bandit/gitleaks) |
+| [`monitoring/`](hooks/community/monitoring/) | 5 | Desktop notification on stop, LangSmith tracing, performance budget guard, CPU/memory performance monitor |
 
 </details>
 
