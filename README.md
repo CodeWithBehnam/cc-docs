@@ -13,6 +13,11 @@
   <img src="https://img.shields.io/badge/docs-65%2B%20pages-5A29E0?style=flat-square" alt="65+ Doc Pages">
   <img src="https://img.shields.io/badge/cheatsheets-64-29E05A?style=flat-square" alt="64 Cheatsheets">
   <img src="https://img.shields.io/badge/templates-33-E05A29?style=flat-square" alt="33 Templates">
+  <img src="https://img.shields.io/badge/skills-15-FF6B6B?style=flat-square" alt="15 Skills">
+  <img src="https://img.shields.io/badge/agents-12-6B6BFF?style=flat-square" alt="12 Agents">
+  <img src="https://img.shields.io/badge/commands-12-FFB86B?style=flat-square" alt="12 Commands">
+  <img src="https://img.shields.io/badge/hooks-10-6BFFB8?style=flat-square" alt="10 Hook Scripts">
+  <img src="https://img.shields.io/badge/rules-8-FF6BFF?style=flat-square" alt="8 Rules">
   <img src="https://img.shields.io/badge/updates-hourly-blue?style=flat-square" alt="Hourly Updates">
 </p>
 
@@ -24,9 +29,19 @@ A GitHub Actions workflow runs every hour, downloads the latest docs, and commit
 
 ## What's Included
 
-- `claude-code-docs/` - 65+ markdown doc pages covering CLI reference, hooks, plugins, settings, MCP, desktop, and more
-- `cheatsheets/` - scannable quick-reference for every doc page
-- `templates/` - 33 copy-paste-able templates across 9 categories (CLAUDE.md starters, CI/CD, MCP, plugins, permissions, cloud providers, agent teams, workflows, enterprise)
+| Folder | Contents |
+|---|---|
+| `claude-code-docs/` | 65+ full doc pages mirrored from code.claude.com/docs |
+| `cheatsheets/` | 64 scannable quick-reference sheets (one per doc page) |
+| `templates/` | 33 copy-paste-able templates across 9 categories |
+| `skills/` | 15 drop-in skills (`.claude/skills/`) for commit, PR, review, TDD, security, and more |
+| `agents/` | 12 drop-in subagents (`.claude/agents/`) for code review, debugging, testing, and more |
+| `commands/` | 12 drop-in slash commands (`.claude/commands/`) for common workflows |
+| `hooks/` | 10 executable hook scripts with settings.json wiring examples |
+| `rules/` | 8 language-specific coding rules (`.claude/rules/`) for TypeScript, Python, Go, and more |
+| `tips/` | 7 curated tips files covering productivity, prompting, debugging, cost optimization |
+| `guides/` | 7 step-by-step workflow guides (TDD, security audit, onboarding, CI/CD setup) |
+| `awesome.md` | Curated list of the best Claude Code resources, plugins, and tools |
 
 ## Documentation
 
@@ -423,6 +438,172 @@ The [`templates/`](templates/) folder has 33 ready-to-use, copy-paste-able templ
 |---|---|
 | [ENTERPRISE-NETWORK.md](templates/enterprise/ENTERPRISE-NETWORK.md) | Network config (proxy, custom CA, mTLS, credential refresh, firewall) |
 | [ENTERPRISE-MANAGED-SETTINGS.md](templates/enterprise/ENTERPRISE-MANAGED-SETTINGS.md) | Managed settings (org-wide permissions, model restrictions, audit) |
+
+## Skills
+
+The [`skills/`](skills/) folder has **15 ready-to-use skill directories**. Copy any skill to `.claude/skills/` in your project (or `~/.claude/skills/` for all projects). Invoke with `/skill-name` or let Claude auto-invoke when relevant.
+
+> **Skills vs Commands:** Skills support directories with supporting files, frontmatter for invocation control, and subagent execution. Commands are simpler single-file alternatives. Both create slash commands.
+
+<details>
+<summary><b>Task Skills</b> (10 skills) - Workflows you invoke manually</summary>
+
+| Skill | Command | Description |
+|---|---|---|
+| [commit](skills/commit/SKILL.md) | `/commit` | Run tests, generate conventional commit message, stage and commit |
+| [pr](skills/pr/SKILL.md) | `/pr [base]` | Push branch and create PR with auto-generated description via gh |
+| [fix-issue](skills/fix-issue/SKILL.md) | `/fix-issue <number>` | Read GitHub issue, implement fix, write tests, commit |
+| [tdd](skills/tdd/SKILL.md) | `/tdd <feature>` | Red-green-refactor TDD cycle |
+| [refactor](skills/refactor/SKILL.md) | `/refactor <target>` | Refactor while preserving behavior, with test verification |
+| [doc-gen](skills/doc-gen/SKILL.md) | `/doc-gen <target>` | Generate or update documentation for a module |
+| [migrate](skills/migrate/SKILL.md) | `/migrate <path> <target>` | Migrate code from one framework to another |
+| [debug](skills/debug/SKILL.md) | `/debug <error>` | Systematic debugging with hypothesis testing |
+| [changelog](skills/changelog/SKILL.md) | `/changelog [version]` | Generate changelog from git history |
+
+</details>
+
+<details>
+<summary><b>Research Skills</b> (4 skills) - Run in isolated subagents</summary>
+
+| Skill | Command | Description |
+|---|---|---|
+| [review](skills/review/SKILL.md) | `/review` | Review current diff for bugs, security, and style |
+| [explain](skills/explain/SKILL.md) | `/explain [target]` | Explain code with diagrams and analogies |
+| [security-scan](skills/security-scan/SKILL.md) | `/security-scan [path]` | OWASP Top 10 vulnerability audit |
+| [onboard](skills/onboard/SKILL.md) | `/onboard` | Generate codebase overview for new team members |
+| [perf-audit](skills/perf-audit/SKILL.md) | `/perf-audit [target]` | Find performance bottlenecks |
+
+</details>
+
+<details>
+<summary><b>Reference Skills</b> (1 skill) - Auto-loaded background knowledge</summary>
+
+| Skill | Description |
+|---|---|
+| [api-conventions](skills/api-conventions/SKILL.md) | REST API design conventions (auto-loaded when writing API code) |
+
+</details>
+
+## Agents
+
+The [`agents/`](agents/) folder has **12 ready-to-use subagent files**. Copy any `.md` file to `.claude/agents/` in your project (or `~/.claude/agents/` for all projects).
+
+<details>
+<summary><b>All 12 Agents</b> - Specialized AI assistants for delegation</summary>
+
+| Agent | Model | Description |
+|---|---|---|
+| [code-reviewer](agents/code-reviewer.md) | sonnet | Read-only code review for quality, security, best practices |
+| [security-auditor](agents/security-auditor.md) | opus | Deep OWASP security audit with severity ratings |
+| [test-writer](agents/test-writer.md) | sonnet | Write tests matching project framework and style |
+| [debugger](agents/debugger.md) | inherit | Hypothesis-driven root cause analysis |
+| [docs-writer](agents/docs-writer.md) | sonnet | Write JSDoc, docstrings, README content |
+| [refactorer](agents/refactorer.md) | sonnet | Refactor for readability, runs tests before/after |
+| [performance-analyst](agents/performance-analyst.md) | sonnet | Find N+1 queries, memory leaks, slow algorithms |
+| [db-reader](agents/db-reader.md) | haiku | Read-only database queries (blocks write SQL via hook) |
+| [api-designer](agents/api-designer.md) | sonnet | Design RESTful endpoints with OpenAPI output |
+| [migration-planner](agents/migration-planner.md) | inherit | Phased migration plans with scope analysis |
+| [dependency-checker](agents/dependency-checker.md) | haiku | Audit npm/pip/bundle/cargo for vulnerabilities |
+| [onboarding-guide](agents/onboarding-guide.md) | sonnet | Generate architecture overviews (uses project memory) |
+
+</details>
+
+## Commands
+
+The [`commands/`](commands/) folder has **12 ready-to-use slash command files**. Copy any `.md` file to `.claude/commands/` in your project.
+
+<details>
+<summary><b>All 12 Commands</b> - Slash commands for common workflows</summary>
+
+| Command | Argument | Description |
+|---|---|---|
+| [/commit](commands/commit.md) | - | Run tests, stage, generate conventional commit message |
+| [/pr](commands/pr.md) | - | Summarize changes, push, create PR with gh |
+| [/review](commands/review.md) | - | Diff against main, report by priority |
+| [/fix-issue](commands/fix-issue.md) | `<issue-number>` | Fetch issue, implement fix, write tests, commit |
+| [/tdd](commands/tdd.md) | `<feature>` | Red-green-refactor TDD cycle |
+| [/deploy](commands/deploy.md) | `<staging\|production>` | Run tests, build, deploy with safety checks |
+| [/lint-fix](commands/lint-fix.md) | - | Auto-detect linter, fix issues, report remainder |
+| [/deps-update](commands/deps-update.md) | - | Audit, list outdated, update safe ones, run tests |
+| [/explain](commands/explain.md) | `<file or symbol>` | ASCII diagram, analogy, walkthrough, gotchas |
+| [/release](commands/release.md) | `<version>` | Changelog, version bump, tag, push, GitHub release |
+| [/db-migrate](commands/db-migrate.md) | `<description>` | Generate migration with up/down, test rollback |
+| [/new-feature](commands/new-feature.md) | `<feature name>` | Scaffold following existing patterns |
+
+</details>
+
+## Hook Scripts
+
+The [`hooks/`](hooks/) folder has **10 executable bash scripts** and a [settings-examples.json](hooks/settings-examples.json) showing how to wire them into `.claude/settings.json`.
+
+<details>
+<summary><b>All 10 Hook Scripts</b> - Automated workflow enforcement</summary>
+
+| Script | Event | Description |
+|---|---|---|
+| [auto-format.sh](hooks/scripts/auto-format.sh) | PostToolUse | Run prettier/black/gofmt/rubocop after file edits |
+| [protect-files.sh](hooks/scripts/protect-files.sh) | PreToolUse | Block edits to .env, lockfiles, .git/, secrets |
+| [notify-desktop.sh](hooks/scripts/notify-desktop.sh) | Notification | Cross-platform desktop notification |
+| [lint-on-save.sh](hooks/scripts/lint-on-save.sh) | PostToolUse | Run linter after file edits (non-blocking) |
+| [block-dangerous-commands.sh](hooks/scripts/block-dangerous-commands.sh) | PreToolUse | Block rm -rf /, DROP TABLE, force-push to main |
+| [log-tool-usage.sh](hooks/scripts/log-tool-usage.sh) | PostToolUse | Append JSON lines to audit log |
+| [validate-sql.sh](hooks/scripts/validate-sql.sh) | PreToolUse | Block SQL mutations, allow SELECT only |
+| [test-after-edit.sh](hooks/scripts/test-after-edit.sh) | PostToolUse | Auto-run related test file after edits |
+| [inject-context.sh](hooks/scripts/inject-context.sh) | SessionStart | Re-inject context after compaction |
+| [stop-check.sh](hooks/scripts/stop-check.sh) | Stop | Check for uncommitted changes before stopping |
+
+</details>
+
+## Rules
+
+The [`rules/`](rules/) folder has **8 language-specific coding rules**. Copy to `.claude/rules/` in your project. Claude auto-loads a rule when working with files matching its glob patterns.
+
+<details>
+<summary><b>All 8 Rules</b> - Path-specific coding conventions</summary>
+
+| Rule | Globs | Description |
+|---|---|---|
+| [typescript](rules/typescript.md) | `**/*.ts`, `**/*.tsx` | Strict mode, no any, union types over enums, optional chaining |
+| [python](rules/python.md) | `**/*.py` | PEP 8, type hints, f-strings, pathlib, dataclasses |
+| [react](rules/react.md) | `**/*.tsx`, `**/*.jsx` | Functional components, hooks, accessibility, error boundaries |
+| [go](rules/go.md) | `**/*.go` | Error checks, table-driven tests, context first param |
+| [rails](rules/rails.md) | `**/*.rb`, `**/*.erb` | Fat models, thin controllers, scopes, service objects |
+| [rust](rules/rust.md) | `**/*.rs` | Result over panic, ? operator, minimize unsafe |
+| [sql](rules/sql.md) | `**/*.sql`, `**/migrations/**` | Reversible migrations, index foreign keys, BIGINT IDs |
+| [testing](rules/testing.md) | `**/*test*`, `**/*spec*` | Arrange-Act-Assert, one concept per test, no sleep |
+
+</details>
+
+## Tips & Tricks
+
+The [`tips/`](tips/) folder has **7 curated tips files** organized by topic. Practical, actionable techniques from daily Claude Code usage.
+
+| Topic | What You'll Learn |
+|---|---|
+| [Productivity](tips/productivity.md) | Session management, context control, keyboard shortcuts, /btw, /fork |
+| [Prompting](tips/prompting.md) | Prompt engineering specific to Claude Code, verification criteria, plan mode |
+| [Debugging](tips/debugging.md) | Systematic debugging, hypothesis testing, /rewind after failed fixes |
+| [Cost Optimization](tips/cost-optimization.md) | Token management, subagents for research, /effort, /fast, budget limits |
+| [Multi-Session](tips/multi-session.md) | Worktrees, fan-out patterns, writer/reviewer, agent teams |
+| [Security](tips/security.md) | Permission deny rules, /sandbox, hook-based protections, devcontainers |
+
+## Guides
+
+The [`guides/`](guides/) folder has **7 step-by-step workflow guides**. Each includes exact prompts to type and expected outcomes at each step.
+
+| Guide | When to Use |
+|---|---|
+| [TDD Workflow](guides/tdd-workflow.md) | Implementing features test-first with Claude Code |
+| [Security Audit](guides/security-audit.md) | Running a comprehensive security review |
+| [Onboarding a New Codebase](guides/onboarding-new-codebase.md) | First day on an unfamiliar project |
+| [Migration Playbook](guides/migration-playbook.md) | Migrating frameworks, libraries, or patterns |
+| [PR Review Workflow](guides/pr-review-workflow.md) | Professional code review with subagents |
+| [CI/CD Setup](guides/ci-cd-setup.md) | Adding Claude Code to GitHub Actions or GitLab CI |
+| [Monorepo Setup](guides/monorepo-setup.md) | Configuring layered CLAUDE.md and per-package skills |
+
+## Awesome Claude Code
+
+The [`awesome.md`](awesome.md) file is a curated list of the best Claude Code resources: official docs, community plugins, MCP servers, CLAUDE.md examples, guides, tools, and enterprise resources.
 
 ## How it works
 
