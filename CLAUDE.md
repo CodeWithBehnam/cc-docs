@@ -262,9 +262,9 @@ Drop-in skill directories. Copy a skill directory to `.claude/skills/` in any pr
 | `skills/changelog/SKILL.md` | `/changelog [version]` | Task | Generate categorized changelog from git history since last release tag |
 | `skills/perf-audit/SKILL.md` | `/perf-audit [target]` | Research | Find performance bottlenecks: N+1 queries, slow algorithms, memory issues |
 
-#### Community Skills (189 skills in 16 categories)
+#### Community Skills (222 skills in 16 categories)
 
-Imported from community repos: [wshobson/agents](https://github.com/wshobson/agents) (MIT), [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code), [garrytan/gstack](https://github.com/garrytan/gstack), [mitsuhiko/agent-stuff](https://github.com/mitsuhiko/agent-stuff). Each skill is in its own subdirectory under the category with a `SKILL.md` file and optional reference files.
+Imported from community repos: [wshobson/agents](https://github.com/wshobson/agents) (MIT), [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code), [garrytan/gstack](https://github.com/garrytan/gstack), [mitsuhiko/agent-stuff](https://github.com/mitsuhiko/agent-stuff), [EveryInc/compound-engineering-plugin](https://github.com/EveryInc/compound-engineering-plugin) (MIT). Each skill is in its own subdirectory under the category with a `SKILL.md` file and optional reference files.
 
 ##### `skills/api-architecture/` - API Design, REST, GraphQL, Microservices, CQRS, Event Sourcing (10 skills)
 
@@ -281,7 +281,7 @@ Imported from community repos: [wshobson/agents](https://github.com/wshobson/age
 | `openapi-spec-generation` | agents | Generate OpenAPI/Swagger specifications from code |
 | `api-design` | ecc | REST API design patterns (naming, status codes, pagination, versioning) |
 
-##### `skills/backend-development/` - Backend Patterns, Build Tools, Migrations (17 skills)
+##### `skills/backend-development/` - Backend Patterns, Build Tools, Migrations, Rails, Ruby Gems (20 skills)
 
 | Skill | Source | Description |
 |-------|--------|-------------|
@@ -302,8 +302,11 @@ Imported from community repos: [wshobson/agents](https://github.com/wshobson/age
 | `react-modernization` | agents | React class-to-hooks modernization patterns |
 | `backend-patterns` | ecc | Backend architecture patterns and best practices |
 | `coding-standards` | ecc | Code style and standards enforcement |
+| `dhh-rails-style` | ce | DHH's 37signals Rails coding style with REST purity, fat models, thin controllers |
+| `andrew-kane-gem-writer` | ce | Ruby gems following Andrew Kane patterns with clean, minimal APIs |
+| `dspy-ruby` | ce | DSPy.rb for building type-safe LLM applications in Ruby |
 
-##### `skills/frontend-development/` - React, Next.js, Design Systems, Mobile, Accessibility (17 skills)
+##### `skills/frontend-development/` - React, Next.js, Design Systems, Mobile, Accessibility, Browser Automation (19 skills)
 
 | Skill | Source | Description |
 |-------|--------|-------------|
@@ -324,8 +327,10 @@ Imported from community repos: [wshobson/agents](https://github.com/wshobson/age
 | `screen-reader-testing` | agents | Screen reader testing across platforms |
 | `frontend-patterns` | ecc | Frontend architecture patterns and best practices |
 | `frontend-slides` | ecc | Presentation slide generation with style presets |
+| `frontend-design` | ce | Distinctive production-grade frontend interfaces with high design quality |
+| `agent-browser` | ce | Browser automation using ref-based element selection for forms, screenshots, scraping |
 
-##### `skills/testing-quality/` - E2E Testing, TDD, Code Review, Verification, Browser Automation (11 skills)
+##### `skills/testing-quality/` - E2E Testing, TDD, Code Review, Verification, Browser Automation (12 skills)
 
 | Skill | Source | Description |
 |-------|--------|-------------|
@@ -340,6 +345,7 @@ Imported from community repos: [wshobson/agents](https://github.com/wshobson/age
 | `claude-bowser` | disler | Observable browser automation using Chrome MCP tools for UI testing and screenshots |
 | `playwright-bowser` | disler | Headless browser automation via Playwright CLI for parallel UI testing and scraping |
 | `web-browser` | mitsuhiko | CDP-based browser automation: navigate, screenshot, click, evaluate JS, monitor network |
+| `test-browser` | ce | Run browser tests on pages affected by current PR or branch |
 
 ##### `skills/security/` - Threat Modeling, SAST, Compliance, Reverse Engineering, Damage Control (14 skills)
 
@@ -360,7 +366,7 @@ Imported from community repos: [wshobson/agents](https://github.com/wshobson/age
 | `damage-control` | disler | Defense-in-depth protection via PreToolUse hooks: blocks dangerous commands, protects sensitive files, supports ask patterns |
 | `ghidra` | mitsuhiko | Reverse engineer binaries using Ghidra headless analyzer: decompile, extract functions, strings, symbols, call graphs |
 
-##### `skills/devops-infrastructure/` - CI/CD, K8s, Terraform, Cloud, Incident Response, Sandboxes (20 skills)
+##### `skills/devops-infrastructure/` - CI/CD, K8s, Terraform, Cloud, Incident Response, Sandboxes, Cloud Storage (21 skills)
 
 | Skill | Source | Description |
 |-------|--------|-------------|
@@ -384,6 +390,7 @@ Imported from community repos: [wshobson/agents](https://github.com/wshobson/age
 | `on-call-handoff-patterns` | agents | On-call handoff and escalation patterns |
 | `postmortem-writing` | agents | Blameless postmortem writing templates |
 | `agent-sandboxes` | disler | E2B sandbox management for isolated code execution, testing, and file operations |
+| `rclone` | ce | Upload and sync files across cloud storage providers (S3, R2, B2, GDrive, Dropbox) |
 
 ##### `skills/data-engineering/` - Airflow, dbt, Spark, Data Quality, SQL (6 skills)
 
@@ -396,7 +403,7 @@ Imported from community repos: [wshobson/agents](https://github.com/wshobson/age
 | `sql-optimization-patterns` | agents | SQL query optimization and indexing strategies |
 | `postgresql` | agents | PostgreSQL-specific patterns and best practices |
 
-##### `skills/ai-ml/` - LLM, RAG, Prompt Engineering, ML Pipelines, Embeddings (11 skills)
+##### `skills/ai-ml/` - LLM, RAG, Prompt Engineering, ML Pipelines, Embeddings, Agent Architecture, Image Generation (13 skills)
 
 | Skill | Source | Description |
 |-------|--------|-------------|
@@ -411,6 +418,8 @@ Imported from community repos: [wshobson/agents](https://github.com/wshobson/age
 | `ml-pipeline-workflow` | agents | ML pipeline workflow orchestration |
 | `claude-api` | ecc | Claude API integration patterns and usage |
 | `fal-ai-media` | ecc | fal.ai media generation API integration |
+| `agent-native-architecture` | ce | Agent-native app architecture with MCP tools, self-modification, and execution patterns |
+| `gemini-imagegen` | ce | Gemini API image generation and editing (text-to-image, style transfer, composition) |
 
 ##### `skills/language-specific/` - Python, TypeScript, Go, Rust, Shell (23 skills)
 
@@ -440,7 +449,7 @@ Imported from community repos: [wshobson/agents](https://github.com/wshobson/age
 | `bats-testing-patterns` | agents | Bash testing with BATS framework |
 | `shellcheck-configuration` | agents | ShellCheck linter configuration and usage |
 
-##### `skills/content-research/` - Writing, Research, SEO, Media, Web Search, Summarization (10 skills)
+##### `skills/content-research/` - Writing, Research, SEO, Media, Web Search, Summarization, Style Editing, Document Sharing (12 skills)
 
 | Skill | Source | Description |
 |-------|--------|-------------|
@@ -454,6 +463,8 @@ Imported from community repos: [wshobson/agents](https://github.com/wshobson/age
 | `video-editing` | ecc | Video editing workflow automation |
 | `native-web-search` | mitsuhiko | Native web search with concise summaries and full source URLs |
 | `summarize` | mitsuhiko | Convert URLs, PDFs, DOCX, HTML to Markdown via markitdown, with optional summarization |
+| `every-style-editor` | ce | Copy editing with style guide compliance and systematic line-by-line review |
+| `proof` | ce | Create, edit, comment on, and share markdown documents via Proof's web API |
 
 ##### `skills/business/` - Finance, Payments, Analytics, Hiring (15 skills)
 
@@ -518,7 +529,7 @@ Imported from community repos: [wshobson/agents](https://github.com/wshobson/age
 | `nft-standards` | agents | NFT standard implementations (ERC-721, ERC-1155) |
 | `web3-testing` | agents | Web3 and smart contract testing patterns |
 
-##### `skills/productivity/` - QA, Reviews, Shipping, Git, Documentation, Parallel Work, Mac Automation, Diagrams, Email (23 skills)
+##### `skills/productivity/` - QA, Reviews, Shipping, Git, Documentation, Parallel Work, Mac Automation, Diagrams, Email, Planning, Brainstorming, Skill Authoring, Coding Tutor (34 skills)
 
 | Skill | Source | Description |
 |-------|--------|-------------|
@@ -545,6 +556,17 @@ Imported from community repos: [wshobson/agents](https://github.com/wshobson/age
 | `mermaid` | mitsuhiko | Mermaid diagram validation and rendering using official Mermaid CLI |
 | `google-workspace` | mitsuhiko | Google Workspace APIs (Drive, Docs, Calendar, Gmail, Sheets, Slides) via local OAuth scripts |
 | `apple-mail` | mitsuhiko | Search, read, and extract attachments from Apple Mail local storage on macOS |
+| `ce-brainstorm` | ce | Collaborative brainstorming before planning implementation |
+| `ce-plan` | ce | Transform features into structured project plans |
+| `ce-review` | ce | Exhaustive multi-agent code reviews with worktrees |
+| `ce-work` | ce | Execute work plans efficiently while maintaining quality |
+| `ce-compound` | ce | Document solved problems to compound team knowledge |
+| `deepen-plan` | ce | Enhance plans with parallel research agents for depth and best practices |
+| `brainstorming` | ce | Pre-implementation brainstorming to explore intent and approaches |
+| `document-review` | ce | Refine brainstorm or plan documents before next workflow step |
+| `git-worktree` | ce | Git worktree management for isolated parallel development |
+| `create-agent-skills` | ce | Expert guidance for creating Claude Code skills and slash commands |
+| `coding-tutor` | ce | Personalized coding tutorials with spaced repetition and quizzes |
 
 ### Commands (`commands/`)
 
@@ -565,13 +587,13 @@ Drop-in slash command files. Copy to `.claude/commands/` in any project. Invoke 
 | `commands/db-migrate.md` | `/db-migrate` | `<migration description>` | Generate a migration file with up/down methods and test the rollback. |
 | `commands/new-feature.md` | `/new-feature` | `<feature name>` | Scaffold a new feature following existing patterns, with files, tests, and wired imports. |
 
-#### Community Commands (97 commands in 12 categories)
+#### Community Commands (100 commands in 12 categories)
 
-Sources: [wshobson/agents](https://github.com/wshobson/agents) (MIT), [davila7/claude-code-templates](https://github.com/davila7/claude-code-templates) (MIT), [disler](https://github.com/disler). Deduplicated where the same command appeared in multiple plugins; best version kept.
+Sources: [wshobson/agents](https://github.com/wshobson/agents) (MIT), [davila7/claude-code-templates](https://github.com/davila7/claude-code-templates) (MIT), [disler](https://github.com/disler), [EveryInc/compound-engineering-plugin](https://github.com/EveryInc/compound-engineering-plugin) (MIT). Deduplicated where the same command appeared in multiple plugins; best version kept.
 
 | Directory | Count | Description |
 |-----------|-------|-------------|
-| `commands/development/` | 17 | Feature development, scaffolding, build/plan execution, session priming, infinite agentic loops, team planning, quick plans, system start |
+| `commands/development/` | 20 | Feature development, scaffolding, build/plan execution, session priming, infinite agentic loops, team planning, quick plans, system start, coding tutor (quiz, teach, sync) |
 | `commands/review-quality/` | 7 | Full code review orchestrator, PR enhancement, AI-powered review, multi-agent review, design review, accessibility audit, parallel UI review |
 | `commands/testing/` | 8 | TDD cycle (red/green/refactor), test generation, API mocking, performance optimization, Python test runner |
 | `commands/debugging/` | 6 | Error analysis, error tracing, smart debug, distributed debug tracing, incident response, smart fix |
@@ -749,22 +771,23 @@ Drop-in subagent files. Copy any `.md` file to `.claude/agents/` in your project
 | `agents/dependency-checker.md` | haiku | Runs npm/pip/bundle/cargo audit and flags vulnerable and outdated packages. |
 | `agents/onboarding-guide.md` | sonnet | Generates architecture overviews, key file maps, and setup guides. Uses project memory. |
 
-#### Community Agents (158 agents in 13 categories)
+#### Community Agents (185 agents in 14 categories)
 
-Sources: [VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents) (MIT license), [disler](https://github.com/disler), [mitsuhiko/agent-prompts](https://github.com/mitsuhiko/agent-prompts).
+Sources: [VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents) (MIT license), [disler](https://github.com/disler), [mitsuhiko/agent-prompts](https://github.com/mitsuhiko/agent-prompts), [EveryInc/compound-engineering-plugin](https://github.com/EveryInc/compound-engineering-plugin) (MIT license).
 
 | Directory | Count | Description |
 |-----------|-------|-------------|
 | `agents/core-development/` | 10 | API design, backend, frontend, fullstack, mobile, Electron, GraphQL, microservices, UI, WebSocket |
 | `agents/language-specialists/` | 26 | Angular, C++, C#, Django, .NET, Elixir, Flutter, Go, Java, JS, Kotlin, Laravel, Next.js, PHP, PowerShell, Python, Rails, React, Rust, Spring Boot, SQL, Swift, TypeScript, Vue |
 | `agents/infrastructure/` | 16 | Azure, cloud architecture, databases, deployment, DevOps, Docker, incidents, Kubernetes, networking, platform, security, SRE, Terraform, Terragrunt, Windows |
-| `agents/quality-security/` | 15 | Accessibility, AD security, architecture review, chaos engineering, code review, compliance, debugging, penetration testing, performance, QA, security auditing, test automation, Bowser QA |
+| `agents/quality-security/` | 30 | Accessibility, AD security, architecture review, chaos engineering, code review, code simplicity, compliance, data integrity, data migration, debugging, deployment verification, DHH Rails review, frontend races, pattern recognition, penetration testing, performance, Python/Rails/TypeScript review (Kieran), QA, schema drift detection, security auditing, security sentinel, test automation, agent-native review, Bowser QA |
 | `agents/data-ai/` | 12 | AI engineering, data analysis, data engineering, data science, database optimization, LLM architecture, ML engineering, MLOps, NLP, PostgreSQL, prompt engineering |
-| `agents/developer-experience/` | 15 | Build systems, CLI tools, dependencies, documentation, DX optimization, Git workflows, legacy modernization, MCP development, PowerShell modules, refactoring, Slack, tooling, docs scraping, codebase scouting |
+| `agents/developer-experience/` | 18 | Bug reproduction, build systems, CLI tools, dependencies, documentation, DX optimization, Git workflows, legacy modernization, MCP development, PowerShell modules, PR comment resolution, refactoring, Slack, spec flow analysis, tooling, docs scraping, codebase scouting |
 | `agents/specialized-domains/` | 12 | API docs, blockchain, embedded systems, fintech, gaming, IoT, M365, mobile apps, payments, quantitative analysis, risk management, SEO |
 | `agents/business-product/` | 11 | Business analysis, content marketing, customer success, legal, product management, project management, sales engineering, Scrum, technical writing, UX research, WordPress |
 | `agents/meta-orchestration/` | 12 | Agent installation, agent organization, context management, error coordination, IT ops, knowledge synthesis, multi-agent coordination, performance monitoring, task distribution, workflow orchestration, meta-agent creation, work-completion summaries |
-| `agents/research-analysis/` | 10 | Competitive analysis, data research, market research, research analysis, scientific literature, search, trend analysis, citations, research lead, research subagent |
+| `agents/research-analysis/` | 15 | Best practices research, competitive analysis, data research, framework docs research, git history analysis, learnings research, market research, repo research, research analysis, scientific literature, search, trend analysis, citations, research lead, research subagent |
+| `agents/design/` | 4 | Design implementation review, design iteration, Figma design sync, Ankane README writer |
 | `agents/lang-engineering/` | 10 | Compiler, coroutine, language analysis, language architect, lexer, memory management, object system, parser, runtime, VM engineering for programming language development |
 | `agents/poc-engineering/` | 7 | Architecture design, detailed planning, implementation, problem analysis, programming lead, software architect, task breakdown for proof-of-concept development |
 | `agents/team/` | 2 | Builder (executes one task with validation hooks) and validator (read-only task verification) |
