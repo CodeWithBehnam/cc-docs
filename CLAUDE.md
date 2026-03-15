@@ -319,6 +319,21 @@ Drop-in subagent files. Copy any `.md` file to `.claude/agents/` in your project
 | `agents/dependency-checker.md` | haiku | Runs npm/pip/bundle/cargo audit and flags vulnerable and outdated packages. |
 | `agents/onboarding-guide.md` | sonnet | Generates architecture overviews, key file maps, and setup guides. Uses project memory. |
 
+### Guides (`guides/`)
+
+Step-by-step workflow guides for specific development scenarios. Each guide includes exact prompts to type, expected outcomes at each step, and references to relevant skills, agents, and hooks.
+
+| File | Description |
+|------|-------------|
+| `guides/README.md` | Index of all guides with descriptions and "when to use" guidance |
+| `guides/tdd-workflow.md` | Test-Driven Development - red-green-refactor cycle with Claude |
+| `guides/security-audit.md` | Security audit using OWASP Top 10, plan mode, and protection hooks |
+| `guides/onboarding-new-codebase.md` | First day on a new codebase - safe exploration to first change |
+| `guides/migration-playbook.md` | Migrating frameworks or libraries - scope, plan, safety nets, bulk migration |
+| `guides/pr-review-workflow.md` | Professional code review with subagents for deep dives |
+| `guides/ci-cd-setup.md` | Setting up Claude Code in GitHub Actions or GitLab CI/CD |
+| `guides/monorepo-setup.md` | Configuring layered CLAUDE.md files and per-package skills for monorepos |
+
 ### Reference
 
 | File | Description |
