@@ -106,6 +106,16 @@ done
 echo "Cleaned $cleaned files."
 
 echo ""
+
+# Step 3: Update the "Last docs pull" timestamp in README.md
+README="$REPO_DIR/README.md"
+if [[ -f "$README" ]]; then
+  TIMESTAMP="$(date -u '+%Y-%m-%d %H:%M UTC')"
+  sed -i "s|<!-- LAST_UPDATED -->.*<!-- /LAST_UPDATED -->|<!-- LAST_UPDATED -->$TIMESTAMP<!-- /LAST_UPDATED -->|" "$README"
+  echo "Updated README.md timestamp: $TIMESTAMP"
+fi
+
+echo ""
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo " Done: $downloaded downloaded, $failed failed (of $total)"
 echo " Cleaned: $cleaned files (removed JSX/MDX artifacts)"
