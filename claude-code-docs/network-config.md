@@ -8,9 +8,7 @@
 
 Claude Code supports various enterprise network and security configurations through environment variables. This includes routing traffic through corporate proxy servers, trusting custom Certificate Authorities (CA), and authenticating with mutual Transport Layer Security (mTLS) certificates for enhanced security.
 
-<Note>
   All environment variables shown on this page can also be configured in [`settings.json`](/en/settings).
-</Note>
 
 ## Proxy configuration
 
@@ -33,9 +31,7 @@ export NO_PROXY="localhost,192.168.1.1,example.com,.example.com"
 export NO_PROXY="*"
 ```
 
-<Note>
   Claude Code does not support SOCKS proxies.
-</Note>
 
 ### Basic authentication
 
@@ -45,9 +41,7 @@ If your proxy requires basic authentication, include credentials in the proxy UR
 export HTTPS_PROXY=http://username:password@proxy.example.com:8080
 ```
 
-<Warning>
   Avoid hardcoding passwords in scripts. Use environment variables or secure credential storage instead.
-</Warning>
 
   For proxies requiring advanced authentication (NTLM, Kerberos, etc.), consider using an LLM Gateway service that supports your authentication method.
 

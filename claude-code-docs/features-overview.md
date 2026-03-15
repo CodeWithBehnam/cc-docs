@@ -8,9 +8,7 @@
 
 Claude Code combines a model that reasons about your code with [built-in tools](/en/how-claude-code-works#tools) for file operations, search, execution, and web access. The built-in tools cover most coding tasks. This guide covers the extension layer: features you add to customize what Claude knows, connect it to external services, and automate workflows.
 
-<Note>
   For how the core agentic loop works, see [How Claude Code works](/en/how-claude-code-works).
-</Note>
 
 **New to Claude Code?** Start with [CLAUDE.md](/en/memory) for project conventions. Add other extensions as you need them.
 
@@ -47,7 +45,6 @@ Features range from always-on context that Claude sees every session, to on-dema
 
 Some features can seem similar. Here's how to tell them apart.
 
-<Tabs>
     Skills and subagents solve different problems:
 
     * **Skills** are reusable content you can load into any context
@@ -113,9 +110,7 @@ Some features can seem similar. Here's how to tell them apart.
 
     **Transition point:** If you're running parallel subagents but hitting context limits, or if your subagents need to communicate with each other, agent teams are the natural next step.
 
-    <Note>
       Agent teams are experimental and disabled by default. See [agent teams](/en/agent-teams) for setup and current limitations.
-    </Note>
 
     MCP connects Claude to external services. Skills extend what Claude knows, including how to use those services effectively.
 
@@ -132,7 +127,6 @@ Some features can seem similar. Here's how to tell them apart.
     **Skills** give Claude knowledge about how to use those tools effectively, plus workflows you can trigger with `/<name>`. A skill might include your team's database schema and query patterns, or a `/post-to-slack` workflow with your team's message formatting rules.
 
     Example: An MCP server connects Claude to your database. A skill teaches Claude your data model, common query patterns, and which tables to use for different tasks.
-</Tabs>
 
 ### Understand how features layer
 
@@ -180,7 +174,6 @@ Each feature loads at different points in your session. The tabs below explain w
 
 <img src="https://mintcdn.com/claude-code/c5r9_6tjPMzFdDDT/images/context-loading.svg?fit=max&auto=format&n=c5r9_6tjPMzFdDDT&q=85&s=729b5b634ba831d1d64772c6c9485b30" alt="Context loading: CLAUDE.md and MCP load at session start and stay in every request. Skills load descriptions at start, full content on invocation. Subagents get isolated context. Hooks run externally." width="720" height="410" data-path="images/context-loading.svg" />
 
-<Tabs>
     **When:** Session start
 
     **What loads:** Full content of all CLAUDE.md files (managed, user, and project levels).
@@ -223,8 +216,6 @@ Each feature loads at different points in your session. The tabs below explain w
     **What loads:** Nothing by default. Hooks run as external scripts.
 
     **Context cost:** Zero, unless the hook returns output that gets added as messages to your conversation.
-
-</Tabs>
 
 ## Learn more
 

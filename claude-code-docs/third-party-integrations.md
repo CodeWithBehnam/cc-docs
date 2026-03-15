@@ -126,7 +126,6 @@ The following examples show the environment variables to set in your shell or sh
 
 ### Amazon Bedrock
 
-<Tabs>
     Route Bedrock traffic through your corporate proxy by setting the following [environment variables](/en/env-vars):
 
     ```bash
@@ -148,11 +147,9 @@ The following examples show the environment variables to set in your shell or sh
     export ANTHROPIC_BEDROCK_BASE_URL='https://your-llm-gateway.com/bedrock'
     export CLAUDE_CODE_SKIP_BEDROCK_AUTH=1  # If gateway handles AWS auth
     ```
-</Tabs>
 
 ### Microsoft Foundry
 
-<Tabs>
     Route Foundry traffic through your corporate proxy by setting the following [environment variables](/en/env-vars):
 
     ```bash
@@ -175,11 +172,9 @@ The following examples show the environment variables to set in your shell or sh
     export ANTHROPIC_FOUNDRY_BASE_URL='https://your-llm-gateway.com'
     export CLAUDE_CODE_SKIP_FOUNDRY_AUTH=1  # If gateway handles Azure auth
     ```
-</Tabs>
 
 ### Google Vertex AI
 
-<Tabs>
     Route Vertex AI traffic through your corporate proxy by setting the following [environment variables](/en/env-vars):
 
     ```bash
@@ -202,7 +197,6 @@ The following examples show the environment variables to set in your shell or sh
     export ANTHROPIC_VERTEX_BASE_URL='https://your-llm-gateway.com/vertex'
     export CLAUDE_CODE_SKIP_VERTEX_AUTH=1  # If gateway handles GCP auth
     ```
-</Tabs>
 
   Use `/status` in Claude Code to verify your proxy and gateway configuration is applied correctly.
 

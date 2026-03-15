@@ -10,9 +10,7 @@ Server-managed settings allow administrators to centrally configure Claude Code 
 
 This approach is designed for organizations that do not have device management infrastructure in place, or need to manage settings for users on unmanaged devices.
 
-<Note>
   Server-managed settings are in public beta and available for [Claude for Teams](https://claude.com/pricing?utm_source=claude_code\&utm_medium=docs\&utm_content=server_settings_teams#team-&-enterprise) and [Claude for Enterprise](https://anthropic.com/contact-sales?utm_source=claude_code\&utm_medium=docs\&utm_content=server_settings_enterprise) customers. Features may evolve before general availability.
-</Note>
 
 ## Requirements
 
@@ -35,7 +33,6 @@ If your devices are enrolled in an MDM or endpoint management solution, endpoint
 
 ## Configure server-managed settings
 
-<Steps>
     In [Claude.ai](https://claude.ai), navigate to **Admin Settings > Claude Code > Managed settings**.
 
     Add your configuration as JSON. All [settings available in `settings.json`](/en/settings#available-settings) are supported, including [managed-only settings](/en/permissions#managed-only-settings) like `disableBypassPermissionsMode`.
@@ -57,7 +54,6 @@ If your devices are enrolled in an MDM or endpoint management solution, endpoint
     ```
 
     Save your changes. Claude Code clients receive the updated settings on their next startup or hourly polling cycle.
-</Steps>
 
 ### Verify settings delivery
 
@@ -113,9 +109,7 @@ Certain settings that could pose security risks require explicit user approval b
 
 When these settings are present, users see a security dialog explaining what is being configured. Users must approve to proceed. If a user rejects the settings, Claude Code exits.
 
-<Note>
   In non-interactive mode with the `-p` flag, Claude Code skips security dialogs and applies settings without user approval.
-</Note>
 
 ## Platform availability
 

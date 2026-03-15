@@ -204,9 +204,7 @@ When deploying Claude Code through [Bedrock](/en/amazon-bedrock), [Vertex AI](/e
 
 Without pinning, Claude Code uses model aliases (`sonnet`, `opus`, `haiku`) that resolve to the latest version. When Anthropic releases a new model, users whose accounts don't have the new version enabled will break silently.
 
-<Warning>
   Set all three model environment variables to specific version IDs as part of your initial setup. Skipping this step means a Claude Code update can break your users without any action on your part.
-</Warning>
 
 Use the following environment variables with version-specific model IDs for your provider:
 
@@ -226,9 +224,7 @@ export ANTHROPIC_DEFAULT_OPUS_MODEL='claude-opus-4-6[1m]'
 
 The `[1m]` suffix applies the 1M context window to all usage of that alias, including `opusplan`. Claude Code strips the suffix before sending the model ID to your provider. Only append `[1m]` when the underlying model supports 1M context, such as Opus 4.6 or Sonnet 4.6.
 
-<Note>
   The `settings.availableModels` allowlist still applies when using third-party providers. Filtering matches on the model alias (`opus`, `sonnet`, `haiku`), not the provider-specific model ID.
-</Note>
 
 ### Override model IDs per version
 

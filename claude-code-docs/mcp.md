@@ -228,17 +228,13 @@ With MCP servers connected, you can ask Claude Code to:
 
 Here are some commonly used MCP servers you can connect to Claude Code:
 
-<Warning>
   Use third party MCP servers at your own risk - Anthropic has not verified
   the correctness or security of all these servers.
   Make sure you trust MCP servers you are installing.
   Be especially careful when using MCP servers that could fetch untrusted
   content, as these can expose you to prompt injection risk.
-</Warning>
 
-<Note>
   **Need a specific integration?** [Find hundreds more MCP servers on GitHub](https://github.com/modelcontextprotocol/servers), or build your own using the [MCP SDK](https://modelcontextprotocol.io/quickstart/server).
-</Note>
 
 ## Installing MCP servers
 
@@ -262,9 +258,7 @@ claude mcp add --transport http secure-api https://api.example.com/mcp \
 
 ### Option 2: Add a remote SSE server
 
-<Warning>
   The SSE (Server-Sent Events) transport is deprecated. Use HTTP servers instead, where available.
-</Warning>
 
 ```bash
 # Basic syntax
@@ -291,7 +285,6 @@ claude mcp add --transport stdio --env AIRTABLE_API_KEY=YOUR_KEY airtable \
   -- npx -y airtable-mcp-server
 ```
 
-<Note>
   **Important: Option ordering**
 
   All options (`--transport`, `--env`, `--scope`, `--header`) must come **before** the server name. The `--` (double dash) then separates the server name from the command and arguments that get passed to the MCP server.
@@ -302,7 +295,6 @@ claude mcp add --transport stdio --env AIRTABLE_API_KEY=YOUR_KEY airtable \
   * `claude mcp add --transport stdio --env KEY=value myserver -- python server.py --port 8080` → runs `python server.py --port 8080` with `KEY=value` in environment
 
   This prevents conflicts between Claude's flags and the server's flags.
-</Note>
 
 ### Managing your servers
 
@@ -337,7 +329,6 @@ Claude Code supports MCP `list_changed` notifications, allowing MCP servers to d
   * Claude Code will display a warning when MCP tool output exceeds 10,000 tokens. To increase this limit, set the `MAX_MCP_OUTPUT_TOKENS` environment variable (for example, `MAX_MCP_OUTPUT_TOKENS=50000`)
   * Use `/mcp` to authenticate with remote servers that require OAuth 2.0 authentication
 
-<Warning>
   **Windows Users**: On native Windows (not WSL), local MCP servers that use `npx` require the `cmd /c` wrapper to ensure proper execution.
 
   ```bash
@@ -346,7 +337,6 @@ Claude Code supports MCP `list_changed` notifications, allowing MCP servers to d
   ```
 
   Without the `cmd /c` wrapper, you'll encounter "Connection closed" errors because Windows cannot directly execute `npx`. (See the note above for an explanation of the `--` parameter.)
-</Warning>
 
 ### Plugin-provided MCP servers
 
@@ -421,9 +411,7 @@ MCP servers can be configured at three different scope levels, each serving dist
 
 Local-scoped servers represent the default configuration level and are stored in `~/.claude.json` under your project's path. These servers remain private to you and are only accessible when working within the current project directory. This scope is ideal for personal development servers, experimental configurations, or servers containing sensitive credentials that shouldn't be shared.
 
-<Note>
   The term "local scope" for MCP servers differs from general local settings. MCP local-scoped servers are stored in `~/.claude.json` (your home directory), while general local settings use `.claude/settings.local.json` (in the project directory). See [Settings](/en/settings#settings-files) for details on settings file locations.
-</Note>
 
 ```bash
 # Add a local-scoped server (default)
@@ -475,13 +463,11 @@ Select your scope based on:
 * **Project scope**: Team-shared servers, project-specific tools, or services required for collaboration
 * **User scope**: Personal utilities needed across multiple projects, development tools, or frequently used services
 
-<Note>
   **Where are MCP servers stored?**
 
   * **User and local scope**: `~/.claude.json` (in the `mcpServers` field or under project paths)
   * **Project scope**: `.mcp.json` in your project root (checked into source control)
   * **Managed**: `managed-mcp.json` in system directories (see [Managed MCP configuration](#managed-mcp-configuration))
-</Note>
 
 ### Scope hierarchy and precedence
 
@@ -620,7 +606,6 @@ Find customers who haven't made a purchase in 90 days
 
 Many cloud-based MCP servers require authentication. Claude Code supports OAuth 2.0 for secure connections.
 
-<Steps>
     For example:
 
     ```bash
@@ -634,7 +619,6 @@ Many cloud-based MCP servers require authentication. Claude Code supports OAuth 
     ```
 
     Then follow the steps in your browser to login.
-</Steps>
 
   Tips:
 
@@ -661,14 +645,12 @@ claude mcp add --transport http \
 
 Some MCP servers don't support automatic OAuth setup. If you see an error like "Incompatible auth server: does not support dynamic client registration," the server requires pre-configured credentials. Register an OAuth app through the server's developer portal first, then provide the credentials when adding the server.
 
-<Steps>
     Create an app through the server's developer portal and note your client ID and client secret.
 
     Many servers also require a redirect URI. If so, choose a port and register a redirect URI in the format `http://localhost:PORT/callback`. Use that same port with `--callback-port` in the next step.
 
     Choose one of the following methods. The port used for `--callback-port` can be any available port. It just needs to match the redirect URI you registered in the previous step.
 
-    <Tabs>
         Use `--client-id` to pass your app's client ID. The `--client-secret` flag prompts for the secret with masked input:
 
         ```bash
@@ -699,10 +681,8 @@ Some MCP servers don't support automatic OAuth setup. If you see an error like "
           --client-id your-client-id --client-secret --callback-port 8080 \
           my-server https://mcp.example.com/mcp
         ```
-    </Tabs>
 
     Run `/mcp` in Claude Code and follow the browser login flow.
-</Steps>
 
   Tips:
 
@@ -738,7 +718,6 @@ The URL must use `https://`. This option requires Claude Code v2.1.64 or later.
 
 If you have a JSON configuration for an MCP server, you can add it directly:
 
-<Steps>
     ```bash
     # Basic syntax
     claude mcp add-json <name> '<json>'
@@ -756,7 +735,6 @@ If you have a JSON configuration for an MCP server, you can add it directly:
     ```bash
     claude mcp get weather-api
     ```
-</Steps>
 
   Tips:
 
@@ -768,7 +746,6 @@ If you have a JSON configuration for an MCP server, you can add it directly:
 
 If you've already configured MCP servers in Claude Desktop, you can import them:
 
-<Steps>
     ```bash
     # Basic syntax 
     claude mcp add-from-claude-desktop 
@@ -779,7 +756,6 @@ If you've already configured MCP servers in Claude Desktop, you can import them:
     ```bash
     claude mcp list 
     ```
-</Steps>
 
   Tips:
 
@@ -793,7 +769,6 @@ If you've already configured MCP servers in Claude Desktop, you can import them:
 
 If you've logged into Claude Code with a [Claude.ai](https://claude.ai) account, MCP servers you've added in Claude.ai are automatically available in Claude Code:
 
-<Steps>
     Add servers at [claude.ai/settings/connectors](https://claude.ai/settings/connectors). On Team and Enterprise plans, only admins can add servers.
 
     Complete any required authentication steps in Claude.ai.
@@ -805,7 +780,6 @@ If you've logged into Claude Code with a [Claude.ai](https://claude.ai) account,
     ```
 
     Claude.ai servers appear in the list with indicators showing they come from Claude.ai.
-</Steps>
 
 To disable claude.ai MCP servers in Claude Code, set the `ENABLE_CLAUDEAI_MCP_SERVERS` environment variable to `false`:
 
@@ -837,7 +811,6 @@ You can use this in Claude Desktop by adding this configuration to claude\_deskt
 }
 ```
 
-<Warning>
   **Configuring the executable path**: The `command` field must reference the Claude Code executable. If the `claude` command is not in your system's PATH, you'll need to specify the full path to the executable.
 
   To find the full path:
@@ -862,7 +835,6 @@ You can use this in Claude Desktop by adding this configuration to claude\_deskt
   ```
 
   Without the correct executable path, you'll encounter errors like `spawn claude ENOENT`.
-</Warning>
 
   Tips:
 
@@ -892,9 +864,7 @@ This is particularly useful when working with MCP servers that:
 * Generate detailed reports or documentation
 * Process extensive log files or debugging information
 
-<Warning>
   If you frequently encounter output warnings with specific MCP servers, consider increasing the limit or configuring the server to paginate or filter its responses.
-</Warning>
 
 ## Respond to MCP elicitation requests
 
@@ -915,7 +885,6 @@ MCP servers can expose resources that you can reference using @ mentions, simila
 
 ### Reference MCP resources
 
-<Steps>
     Type `@` in your prompt to see available resources from all connected MCP servers. Resources appear alongside files in the autocomplete menu.
 
     Use the format `@server:protocol://resource/path` to reference a resource:
@@ -933,7 +902,6 @@ MCP servers can expose resources that you can reference using @ mentions, simila
     ```text
     Compare @postgres:schema://users with @docs:file://database/user-model
     ```
-</Steps>
 
   Tips:
 
@@ -1005,7 +973,6 @@ MCP servers can expose prompts that become available as commands in Claude Code.
 
 ### Execute MCP prompts
 
-<Steps>
     Type `/` to see all available commands, including those from MCP servers. MCP prompts appear with the format `/mcp__servername__promptname`.
 
     ```text
@@ -1021,7 +988,6 @@ MCP servers can expose prompts that become available as commands in Claude Code.
     ```text
     /mcp__jira__create_issue "Bug in login flow" high
     ```
-</Steps>
 
   Tips:
 
@@ -1053,9 +1019,7 @@ System administrators deploy the configuration file to a system-wide directory:
 * Linux and WSL: `/etc/claude-code/managed-mcp.json`
 * Windows: `C:\Program Files\ClaudeCode\managed-mcp.json`
 
-<Note>
   These are system-wide paths (not user home directories like `~/Library/...`) that require administrator privileges. They are designed to be deployed by IT administrators.
-</Note>
 
 The `managed-mcp.json` file uses the same format as a standard `.mcp.json` file:
 
@@ -1086,9 +1050,7 @@ The `managed-mcp.json` file uses the same format as a standard `.mcp.json` file:
 
 Instead of taking exclusive control, administrators can allow users to configure their own MCP servers while enforcing restrictions on which servers are permitted. This approach uses `allowedMcpServers` and `deniedMcpServers` in the [managed settings file](/en/settings#settings-files).
 
-<Note>
   **Choosing between options**: Use Option 1 (`managed-mcp.json`) when you want to deploy a fixed set of servers with no user customization. Use Option 2 (allowlists/denylists) when you want to allow users to add their own servers within policy constraints.
-</Note>
 
 #### Restriction options
 
@@ -1246,6 +1208,4 @@ URL patterns support wildcards using `*` to match any sequence of characters. Th
 * **Denylist takes absolute precedence**: If a server matches a denylist entry (by name, command, or URL), it will be blocked even if it's on the allowlist
 * Name-based, command-based, and URL-based restrictions work together: a server passes if it matches **either** a name entry, a command entry, or a URL pattern (unless blocked by denylist)
 
-<Note>
   **When using `managed-mcp.json`**: Users cannot add MCP servers through `claude mcp add` or configuration files. The `allowedMcpServers` and `deniedMcpServers` settings still apply to filter which managed servers are actually loaded.
-</Note>

@@ -12,12 +12,10 @@ Claude Code is an AI-powered coding assistant that helps you build features, fix
 
 Choose your environment to get started. Most surfaces require a [Claude subscription](https://claude.com/pricing?utm_source=claude_code\&utm_medium=docs\&utm_content=overview_pricing) or [Anthropic Console](https://console.anthropic.com/) account. The Terminal CLI and VS Code also support [third-party providers](/en/third-party-integrations).
 
-<Tabs>
     The full-featured CLI for working with Claude Code directly in your terminal. Edit files, run commands, and manage your entire project from the command line.
 
     To install Claude Code, use one of the following methods:
 
-    <Tabs>
         **macOS, Linux, WSL:**
 
         ```bash
@@ -38,26 +36,19 @@ Choose your environment to get started. Most surfaces require a [Claude subscrip
 
         **Windows requires [Git for Windows](https://git-scm.com/downloads/win).** Install it first if you don't have it.
 
-        <Info>
           Native installations automatically update in the background to keep you on the latest version.
-        </Info>
 
         ```bash
         brew install --cask claude-code
         ```
 
-        <Info>
           Homebrew installations do not auto-update. Run `brew upgrade claude-code` periodically to get the latest features and security fixes.
-        </Info>
 
         ```powershell
         winget install Anthropic.ClaudeCode
         ```
 
-        <Info>
           WinGet installations do not auto-update. Run `winget upgrade Anthropic.ClaudeCode` periodically to get the latest features and security fixes.
-        </Info>
-    </Tabs>
 
     Then start Claude Code in any project:
 
@@ -102,13 +93,11 @@ Choose your environment to get started. Most surfaces require a [Claude subscrip
     Install the [Claude Code plugin](https://plugins.jetbrains.com/plugin/27310-claude-code-beta-) from the JetBrains Marketplace and restart your IDE.
 
     [Get started with JetBrains →](/en/jetbrains)
-</Tabs>
 
 ## What you can do
 
 Here are some of the ways you can use Claude Code:
 
-<AccordionGroup>
     Claude Code handles the tedious tasks that eat up your day: writing tests for untested code, fixing lint errors across a project, resolving merge conflicts, updating dependencies, and writing release notes.
 
     ```bash
@@ -160,7 +149,6 @@ Here are some of the ways you can use Claude Code:
     * Kick off a long-running task on the [web](/en/claude-code-on-the-web) or [iOS app](https://apps.apple.com/app/claude-by-anthropic/id6473753684), then pull it into your terminal with `/teleport`
     * Hand off a terminal session to the [Desktop app](/en/desktop) with `/desktop` for visual diff review
     * Route tasks from team chat: mention `@Claude` in [Slack](/en/slack) with a bug report and get a pull request back
-</AccordionGroup>
 
 ## Use Claude Code everywhere
 

@@ -52,7 +52,6 @@ Letting Claude jump straight to coding can produce code that solves the wrong pr
 
 The recommended workflow has four phases:
 
-<Steps>
     Enter Plan Mode. Claude reads files and answers questions without making changes.
 
     ```txt claude (Plan Mode)
@@ -81,15 +80,12 @@ The recommended workflow has four phases:
     ```txt claude (Normal Mode)
     commit with a descriptive message and open a PR
     ```
-</Steps>
 
-<Callout>
   Plan Mode is useful, but also adds overhead.
 
   For tasks where the scope is clear and the fix is small (like fixing a typo, adding a log line, or renaming a variable) ask Claude to do it directly.
 
   Planning is most useful when you're uncertain about the approach, when the change modifies multiple files, or when you're unfamiliar with the code being modified. If you could describe the diff in one sentence, skip the plan.
-</Callout>
 
 ***
 
@@ -192,9 +188,7 @@ By default, Claude Code requests permission for actions that might modify your s
 
 Alternatively, use `--dangerously-skip-permissions` to bypass all permission checks for contained workflows like fixing lint errors or generating boilerplate.
 
-<Warning>
   Letting Claude run arbitrary commands can result in data loss, system corruption, or data exfiltration via prompt injection. Only use `--dangerously-skip-permissions` in a sandbox without internet access.
-</Warning>
 
 Read more about [configuring permissions](/en/permissions) and [enabling sandboxing](/en/sandboxing).
 
@@ -391,9 +385,7 @@ Claude automatically checkpoints before changes. Double-tap `Escape` or run `/re
 
 Instead of carefully planning every move, you can tell Claude to try something risky. If it doesn't work, rewind and try a different approach. Checkpoints persist across sessions, so you can close your terminal and still rewind later.
 
-<Warning>
   Checkpoints only track changes made *by Claude*, not external processes. This isn't a replacement for git.
-</Warning>
 
 ### Resume conversations
 
@@ -461,7 +453,6 @@ You can do something similar with tests: have one Claude write tests, then anoth
 
 For large migrations or analyses, you can distribute work across many parallel Claude invocations:
 
-<Steps>
     Have Claude list all files that need migrating (e.g., `list all 2,000 Python files that need migrating`)
 
     ```bash
@@ -472,7 +463,6 @@ For large migrations or analyses, you can distribute work across many parallel C
     ```
 
     Refine your prompt based on what goes wrong with the first 2-3 files, then run on the full set. The `--allowedTools` flag restricts what Claude can do, which matters when you're running unattended.
-</Steps>
 
 You can also integrate Claude into existing data/processing pipelines:
 

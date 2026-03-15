@@ -8,11 +8,9 @@
 
 Skills extend what Claude can do. Create a `SKILL.md` file with instructions, and Claude adds it to its toolkit. Claude uses skills when relevant, or you can invoke one directly with `/skill-name`.
 
-<Note>
   For built-in commands like `/help` and `/compact`, see the [built-in commands reference](/en/commands).
 
   **Custom commands have been merged into skills.** A file at `.claude/commands/deploy.md` and a skill at `.claude/skills/deploy/SKILL.md` both create `/deploy` and work the same way. Your existing `.claude/commands/` files keep working. Skills add optional features: a directory for supporting files, frontmatter to [control whether you or Claude invokes them](#control-who-invokes-a-skill), and the ability for Claude to load them automatically when relevant.
-</Note>
 
 Claude Code skills follow the [Agent Skills](https://agentskills.io) open standard, which works across multiple AI tools. Claude Code extends the standard with additional features like [invocation control](#control-who-invokes-a-skill), [subagent execution](#run-skills-in-a-subagent), and [dynamic context injection](#inject-dynamic-context).
 
@@ -36,7 +34,6 @@ You invoke bundled skills the same way as any other skill: type `/` followed by 
 
 This example creates a skill that teaches Claude to explain code using visual diagrams and analogies. Since it uses default frontmatter, Claude can load it automatically when you ask how something works, or you can invoke it directly with `/explain-code`.
 
-<Steps>
     Create a directory for the skill in your personal skills folder. Personal skills are available across all your projects.
 
     ```bash
@@ -78,7 +75,6 @@ This example creates a skill that teaches Claude to explain code using visual di
     ```
 
     Either way, Claude should include an analogy and ASCII diagram in its explanation.
-</Steps>
 
 ### Where skills live
 
@@ -111,17 +107,13 @@ my-skill/
 
 The `SKILL.md` contains the main instructions and is required. Other files are optional and let you build more powerful skills: templates for Claude to fill in, example outputs showing the expected format, scripts Claude can execute, or detailed reference documentation. Reference these files from your `SKILL.md` so Claude knows what they contain and when to load them. See [Add supporting files](#add-supporting-files) for more details.
 
-<Note>
   Files in `.claude/commands/` still work and support the same [frontmatter](#frontmatter-reference). Skills are recommended since they support additional features like supporting files.
-</Note>
 
 #### Skills from additional directories
 
 Skills defined in `.claude/skills/` within directories added via `--add-dir` are loaded automatically and picked up by live change detection, so you can edit them during a session without restarting.
 
-<Note>
   CLAUDE.md files from `--add-dir` directories are not loaded by default. To load them, set `CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD=1`. See [Load from additional directories](/en/memory#load-from-additional-directories).
-</Note>
 
 ## Configure skills
 
@@ -273,9 +265,7 @@ Here's how the two fields affect invocation and context loading:
 | `disable-model-invocation: true` | Yes            | No                | Description not in context, full skill loads when you invoke |
 | `user-invocable: false`          | No             | Yes               | Description always in context, full skill loads when invoked |
 
-<Note>
   In a regular session, skill descriptions are loaded into context so Claude knows what's available, but full skill content only loads when invoked. [Subagents with preloaded skills](/en/sub-agents#preload-skills-into-subagents) work differently: the full skill content is injected at startup.
-</Note>
 
 ### Restrict tool access
 
@@ -379,9 +369,7 @@ This is preprocessing, not something Claude executes. Claude only sees the final
 
 Add `context: fork` to your frontmatter when you want a skill to run in isolation. The skill content becomes the prompt that drives the subagent. It won't have access to your conversation history.
 
-<Warning>
   `context: fork` only makes sense for skills with explicit instructions. If your skill contains guidelines like "use these API conventions" without a task, the subagent receives the guidelines but no actionable prompt, and returns without meaningful output.
-</Warning>
 
 Skills and [subagents](/en/sub-agents) work together in two directions:
 
@@ -448,9 +436,7 @@ Permission syntax: `Skill(name)` for exact match, `Skill(name *)` for prefix mat
 
 **Hide individual skills** by adding `disable-model-invocation: true` to their frontmatter. This removes the skill from Claude's context entirely.
 
-<Note>
   The `user-invocable` field only controls menu visibility, not Skill tool access. Use `disable-model-invocation: true` to block programmatic invocation.
-</Note>
 
 ## Share skills
 

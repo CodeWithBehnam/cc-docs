@@ -8,7 +8,6 @@
 
 ## Keyboard shortcuts
 
-<Note>
   Keyboard shortcuts may vary by platform and terminal. Press `?` to see available shortcuts for your environment.
 
   **macOS users**: Option/Alt key shortcuts (`Alt+B`, `Alt+F`, `Alt+Y`, `Alt+M`, `Alt+P`) require configuring Option as Meta in your terminal:
@@ -18,7 +17,6 @@
   * **VS Code**: settings → Profiles → Keys → set Left/Right Option key to "Esc+"
 
   See [Terminal configuration](/en/terminal-config) for details.
-</Note>
 
 ### General controls
 
@@ -58,9 +56,7 @@
 | :------- | :----------------------------------------- | :----------------------------------------------------------------------------------------------------------- |
 | `Ctrl+T` | Toggle syntax highlighting for code blocks | Only works inside the `/theme` picker menu. Controls whether code in Claude's responses uses syntax coloring |
 
-<Note>
   Syntax highlighting is only available in the native build of Claude Code.
-</Note>
 
 ### Multiline input
 
@@ -124,9 +120,7 @@ Enable vim-style editing with `/vim` command or configure permanently via `/conf
 | `;`             | Repeat last f/F/t/T motion                          |
 | `,`             | Repeat last f/F/t/T motion in reverse               |
 
-<Note>
   In vim normal mode, if the cursor is at the beginning or end of input and cannot move further, the arrow keys navigate command history instead.
-</Note>
 
 ### Editing (NORMAL mode)
 
@@ -296,9 +290,7 @@ When working on a branch with an open pull request, Claude Code displays a click
 
 `Cmd+click` (Mac) or `Ctrl+click` (Windows/Linux) the link to open the pull request in your browser. The status updates automatically every 60 seconds.
 
-<Note>
   PR status requires the `gh` CLI to be installed and authenticated (`gh auth login`).
-</Note>
 
 ## See also
 

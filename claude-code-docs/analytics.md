@@ -26,19 +26,14 @@ The Teams and Enterprise dashboard includes:
 
 ### Enable contribution metrics
 
-<Note>
   Contribution metrics are in public beta and available on Claude for Teams and Claude for Enterprise plans. These metrics only cover users within your claude.ai organization. Usage through the Claude Console API or third-party integrations is not included.
-</Note>
 
 Usage and adoption data is available for all Claude for Teams and Claude for Enterprise accounts. Contribution metrics require additional setup to connect your GitHub organization.
 
 You need the Owner role to configure analytics settings. A GitHub admin must install the GitHub app.
 
-<Warning>
   Contribution metrics are not available for organizations with [Zero Data Retention](/en/zero-data-retention) enabled. The analytics dashboard will show usage metrics only.
-</Warning>
 
-<Steps>
     A GitHub admin installs the Claude GitHub app on your organization's GitHub account at [github.com/apps/claude](https://github.com/apps/claude).
 
     A Claude Owner navigates to [claude.ai/admin-settings/claude-code](https://claude.ai/admin-settings/claude-code) and enables the Claude Code analytics feature.
@@ -46,7 +41,6 @@ You need the Owner role to configure analytics settings. A GitHub admin must ins
     On the same page, enable the "GitHub analytics" toggle.
 
     Complete the GitHub authentication flow and select which GitHub organizations to include in the analysis.
-</Steps>
 
 Data typically appears within 24 hours after enabling, with daily updates. If no data appears, you may see one of these messages:
 
@@ -57,9 +51,7 @@ Contribution metrics support GitHub Cloud and GitHub Enterprise Server.
 
 ### Review summary metrics
 
-<Note>
   These metrics are deliberately conservative and represent an underestimate of Claude Code's actual impact. Only lines and PRs where there is high confidence in Claude Code's involvement are counted.
-</Note>
 
 The dashboard displays these summary metrics at the top:
 
@@ -186,9 +178,7 @@ To query this data through GitHub, search for PRs labeled with `claude-code-assi
 
 API customers using the Claude Console can access analytics at [platform.claude.com/claude-code](https://platform.claude.com/claude-code). You need the UsageView permission to access the dashboard, which is granted to Developer, Billing, Admin, Owner, and Primary Owner roles.
 
-<Note>
   Contribution metrics with GitHub integration are not currently available for API customers. The Console dashboard shows usage and spend metrics only.
-</Note>
 
 The Console dashboard displays:
 
@@ -205,9 +195,7 @@ The team insights table shows per-user metrics:
 * **Spend this month**: per-user total API costs for the current month.
 * **Lines this month**: per-user total of accepted code lines for the current month.
 
-<Note>
   Spend figures in the Console dashboard are estimates for analytics purposes. For actual costs, refer to your billing page.
-</Note>
 
 ## Related resources
 

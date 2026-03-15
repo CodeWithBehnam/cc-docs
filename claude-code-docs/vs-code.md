@@ -30,13 +30,10 @@ Click the link for your IDE to install directly:
 
 Or in VS Code, press `Cmd+Shift+X` (Mac) or `Ctrl+Shift+X` (Windows/Linux) to open the Extensions view, search for "Claude Code", and click **Install**.
 
-<Note>If the extension doesn't appear after installation, restart VS Code or run "Developer: Reload Window" from the Command Palette.</Note>
-
 ## Get started
 
 Once installed, you can start using Claude Code through the VS Code interface:
 
-<Steps>
     Throughout VS Code, the Spark icon indicates Claude Code: <img src="https://mintcdn.com/claude-code/c5r9_6tjPMzFdDDT/images/vs-code-spark-icon.svg?fit=max&auto=format&n=c5r9_6tjPMzFdDDT&q=85&s=3ca45e00deadec8c8f4b4f807da94505" alt="Spark icon" style={{display: "inline", height: "0.85em", verticalAlign: "middle"}} width="16" height="16" data-path="images/vs-code-spark-icon.svg" />
 
     The quickest way to open Claude is to click the Spark icon in the **Editor Toolbar** (top-right corner of the editor). The icon only appears when you have a file open.
@@ -62,7 +59,6 @@ Once installed, you can start using Claude Code through the VS Code interface:
     When Claude wants to edit a file, it shows a side-by-side comparison of the original and proposed changes, then asks for permission. You can accept, reject, or tell Claude what to do instead.
 
         <img src="https://mintcdn.com/claude-code/FVYz38sRY-VuoGHA/images/vs-code-edits.png?fit=max&auto=format&n=FVYz38sRY-VuoGHA&q=85&s=e005f9b41c541c5c7c59c082f7c4841c" alt="VS Code showing a diff of Claude's proposed changes with a permission prompt asking whether to make the edit" width="3292" height="1876" data-path="images/vs-code-edits.png" />
-</Steps>
 
 For more ideas on what you can do with Claude Code, see [Common workflows](/en/common-workflows).
 
@@ -101,17 +97,13 @@ Click the dropdown at the top of the Claude Code panel to access your conversati
 
 If you use [Claude Code on the web](/en/claude-code-on-the-web), you can resume those remote sessions directly in VS Code. This requires signing in with **Claude.ai Subscription**, not Anthropic Console.
 
-<Steps>
     Click the **Past Conversations** dropdown at the top of the Claude Code panel.
 
     The dialog shows two tabs: Local and Remote. Click **Remote** to see sessions from claude.ai.
 
     Browse or search your remote sessions. Click any session to download it and continue the conversation locally.
-</Steps>
 
-<Note>
   Only web sessions started with a GitHub repository appear in the Remote tab. Resuming loads the conversation history locally; changes are not synced back to claude.ai.
-</Note>
 
 ## Customize your workflow
 
@@ -170,9 +162,7 @@ Switch to the **Marketplaces** tab to add or remove plugin sources:
 
 After making changes, a banner prompts you to restart Claude Code to apply the updates.
 
-<Note>
   Plugin management in VS Code uses the same CLI commands under the hood. Plugins and marketplaces you configure in the extension are also available in the CLI, and vice versa.
-</Note>
 
 For more about the plugin system, see [Plugins](/en/plugins) and [Plugin marketplaces](/en/plugin-marketplaces).
 
@@ -198,9 +188,7 @@ Open the Command Palette (`Cmd+Shift+P` on Mac or `Ctrl+Shift+P` on Windows/Linu
 
 Some shortcuts depend on which panel is "focused" (receiving keyboard input). When your cursor is in a code file, the editor is focused. When your cursor is in Claude's prompt box, Claude is focused. Use `Cmd+Esc` / `Ctrl+Esc` to toggle between them.
 
-<Note>
   These are VS Code commands for controlling the extension. Not all built-in Claude Code commands are available in the extension. See [VS Code extension vs. Claude Code CLI](#vs-code-extension-vs-claude-code-cli) for details.
-</Note>
 
 | Command                    | Shortcut                                                 | Description                                                                          |
 | -------------------------- | -------------------------------------------------------- | ------------------------------------------------------------------------------------ |
@@ -325,7 +313,6 @@ Each worktree maintains independent file state while sharing git history. This p
 
 By default, Claude Code connects directly to Anthropic's API. If your organization uses Amazon Bedrock, Google Vertex AI, or Microsoft Foundry to access Claude, configure the extension to use your provider instead:
 
-<Steps>
     Open the [Disable Login Prompt setting](vscode://settings/claudeCode.disableLoginPrompt) and check the box.
 
     You can also open VS Code settings (`Cmd+,` on Mac or `Ctrl+,` on Windows/Linux), search for "Claude Code login", and check **Disable Login Prompt**.
@@ -337,7 +324,6 @@ By default, Claude Code connects directly to Anthropic's API. If your organizati
     * [Claude Code on Microsoft Foundry](/en/microsoft-foundry)
 
     These guides cover configuring your provider in `~/.claude/settings.json`, which ensures your settings are shared between the VS Code extension and the CLI.
-</Steps>
 
 ## Security and privacy
 

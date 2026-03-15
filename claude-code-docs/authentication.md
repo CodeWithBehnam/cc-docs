@@ -42,19 +42,16 @@ For teams and organizations, you can configure Claude Code access in one of thes
 * **Claude for Teams**: self-service plan with collaboration features, admin tools, and billing management. Best for smaller teams.
 * **Claude for Enterprise**: adds SSO, domain capture, role-based permissions, compliance API, and managed policy settings for organization-wide Claude Code configurations. Best for larger organizations with security and compliance requirements.
 
-<Steps>
     Subscribe to [Claude for Teams](https://claude.com/pricing?utm_source=claude_code\&utm_medium=docs\&utm_content=authentication_teams_step#team-&-enterprise) or contact sales for [Claude for Enterprise](https://anthropic.com/contact-sales?utm_source=claude_code\&utm_medium=docs\&utm_content=authentication_enterprise_step).
 
     Invite team members from the admin dashboard.
 
     Team members install Claude Code and log in with their Claude.ai accounts.
-</Steps>
 
 ### Claude Console authentication
 
 For organizations that prefer API-based billing, you can set up access through the Claude Console.
 
-<Steps>
     Use your existing Claude Console account or create a new one.
 
     You can add users through either method:
@@ -73,19 +70,16 @@ For organizations that prefer API-based billing, you can set up access through t
     * [Check system requirements](/en/setup#system-requirements)
     * [Install Claude Code](/en/setup#install-claude-code)
     * Log in with Console account credentials
-</Steps>
 
 ### Cloud provider authentication
 
 For teams using Amazon Bedrock, Google Vertex AI, or Microsoft Foundry:
 
-<Steps>
     Follow the [Bedrock docs](/en/amazon-bedrock), [Vertex docs](/en/google-vertex-ai), or [Microsoft Foundry docs](/en/microsoft-foundry).
 
     Distribute the environment variables and instructions for generating cloud credentials to your users. Read more about how to [manage configuration here](/en/settings).
 
     Users can [install Claude Code](/en/setup#install-claude-code).
-</Steps>
 
 ## Credential management
 

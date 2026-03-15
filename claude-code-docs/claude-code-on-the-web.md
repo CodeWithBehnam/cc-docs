@@ -6,9 +6,7 @@
 
 > Run Claude Code tasks asynchronously on secure cloud infrastructure
 
-<Note>
   Claude Code on the web is currently in research preview.
-</Note>
 
 ## What is Claude Code on the web?
 
@@ -71,9 +69,7 @@ This lets you refine changes through multiple rounds of feedback without creatin
 
 You can start new tasks on the web from your terminal, or pull web sessions into your terminal to continue locally. Web sessions persist even if you close your laptop, and you can monitor them from anywhere including the Claude mobile app.
 
-<Note>
   Session handoff is one-way: you can pull web sessions into your terminal, but you can't push an existing terminal session to the web. The `--remote` flag creates a *new* web session for your current repository.
-</Note>
 
 ### From terminal to web
 
@@ -235,9 +231,7 @@ When you start a session in Claude Code on the web, here's what happens under th
 
 4. **Outcome**: When Claude completes its work, it will push the branch to remote. You will be able to create a PR for the branch.
 
-<Note>
   Claude operates entirely through the terminal and CLI tools available in the environment. It uses the pre-installed tools in the universal image and any additional tools you install through hooks or dependency management.
-</Note>
 
 **To add a new environment:** Select the current environment to open the environment selector, and then select "Add environment". This will open a dialog where you can specify the environment name, network access level, environment variables, and a [setup script](#setup-scripts).
 
@@ -245,14 +239,12 @@ When you start a session in Claude Code on the web, here's what happens under th
 
 **To select your default environment from the terminal:** If you have multiple environments configured, run `/remote-env` to choose which one to use when starting web sessions from your terminal with `--remote`. With a single environment, this command shows your current configuration.
 
-<Note>
   Environment variables must be specified as key-value pairs, in [`.env` format](https://www.dotenv.org/). For example:
 
   ```text
   API_KEY=your_api_key
   DEBUG=true
   ```
-</Note>
 
 ### Setup scripts
 
@@ -275,9 +267,7 @@ Setup scripts run only when creating a new session. They are skipped when resumi
 
 If the script exits non-zero, the session fails to start. Append `|| true` to non-critical commands to avoid blocking the session on a flaky install.
 
-<Note>
   Setup scripts that install packages need network access to reach registries. The default network access allows connections to [common package registries](#default-allowed-domains) including npm, PyPI, RubyGems, and crates.io. Scripts will fail to install packages if your environment has network access disabled.
-</Note>
 
 #### Setup scripts vs. SessionStart hooks
 
@@ -624,9 +614,7 @@ When using "Limited" network access, the following domains are allowed by defaul
 
 * \*.modelcontextprotocol.io
 
-<Note>
   Domains marked with `*` indicate wildcard subdomain matching. For example, `*.gcr.io` allows access to any subdomain of `gcr.io`.
-</Note>
 
 ### Security best practices for customized network access
 
@@ -641,9 +629,7 @@ Claude Code on the web provides strong security guarantees:
 * **Isolated virtual machines**: Each session runs in an isolated, Anthropic-managed VM
 * **Network access controls**: Network access is limited by default, and can be disabled
 
-<Note>
   When running with network access disabled, Claude Code is allowed to communicate with the Anthropic API which may still allow data to exit the isolated Claude Code VM.
-</Note>
 
 * **Credential protection**: Sensitive credentials (such as git credentials or signing keys) are never inside the sandbox with Claude Code. Authentication is handled through a secure proxy using scoped credentials
 * **Secure analysis**: Code is analyzed and modified within isolated VMs before creating PRs

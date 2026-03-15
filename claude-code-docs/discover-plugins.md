@@ -14,11 +14,9 @@ Looking to create and distribute your own marketplace? See [Create and distribut
 
 A marketplace is a catalog of plugins that someone else has created and shared. Using a marketplace is a two-step process:
 
-<Steps>
     This registers the catalog with Claude Code so you can browse what's available. No plugins are installed yet.
 
     Browse the catalog and install the plugins you want.
-</Steps>
 
 Think of it like adding an app store: adding the store gives you access to browse its collection, but you still choose which apps to download individually.
 
@@ -32,14 +30,12 @@ To install a plugin from the official marketplace:
 /plugin install plugin-name@claude-plugins-official
 ```
 
-<Note>
   The official marketplace is maintained by Anthropic. To submit a plugin to the official marketplace, use one of the in-app submission forms:
 
   * **Claude.ai**: [claude.ai/settings/plugins/submit](https://claude.ai/settings/plugins/submit)
   * **Console**: [platform.claude.com/plugins/submit](https://platform.claude.com/plugins/submit)
 
   To distribute plugins independently, [create your own marketplace](/en/plugin-marketplaces) and share it with users.
-</Note>
 
 The official marketplace includes several categories of plugins:
 
@@ -65,9 +61,7 @@ These plugins require the language server binary to be installed on your system.
 
 You can also [create your own LSP plugin](/en/plugins-reference#lsp-servers) for other languages.
 
-<Note>
   If you see `Executable not found in $PATH` in the `/plugin` Errors tab after installing a plugin, install the required binary from the table above.
-</Note>
 
 #### What Claude gains from code intelligence plugins
 
@@ -109,7 +103,6 @@ Customize how Claude responds:
 
 Anthropic also maintains a [demo plugins marketplace](https://github.com/anthropics/claude-code/tree/main/plugins) (`claude-code-plugins`) with example plugins that show what's possible with the plugin system. Unlike the official marketplace, you need to add this one manually.
 
-<Steps>
     From within Claude Code, run the `plugin marketplace add` command for the `anthropics/claude-code` marketplace:
 
     ```shell
@@ -154,7 +147,6 @@ Anthropic also maintains a [demo plugins marketplace](https://github.com/anthrop
     This stages your changes, generates a commit message, and creates the commit.
 
     Each plugin works differently. Check the plugin's description in the **Discover** tab or its homepage to learn what commands and capabilities it provides.
-</Steps>
 
 The rest of this guide covers all the ways you can add marketplaces, install plugins, and manage your configuration.
 
@@ -223,9 +215,7 @@ Add a remote `marketplace.json` file via URL:
 /plugin marketplace add https://example.com/marketplace.json
 ```
 
-<Note>
   URL-based marketplaces have some limitations compared to Git-based marketplaces. If you encounter "path not found" errors when installing plugins, see [Troubleshooting](/en/plugin-marketplaces#plugins-with-relative-paths-fail-in-url-based-marketplaces).
-</Note>
 
 ## Install plugins
 
@@ -245,9 +235,7 @@ You may also see plugins with **managed** scope—these are installed by adminis
 
 Run `/plugin` and go to the **Installed** tab to see your plugins grouped by scope.
 
-<Warning>
   Make sure you trust a plugin before installing it. Anthropic does not control what MCP servers, files, or other software are included in plugins and cannot verify that they work as intended. Check each plugin's homepage for more information.
-</Warning>
 
 ## Manage installed plugins
 
@@ -327,9 +315,7 @@ Remove a marketplace:
 /plugin marketplace remove marketplace-name
 ```
 
-<Warning>
   Removing a marketplace will uninstall any plugins you installed from it.
-</Warning>
 
 ### Configure auto-updates
 

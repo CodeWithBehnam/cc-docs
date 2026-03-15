@@ -6,9 +6,7 @@
 
 > Set up automated PR reviews that catch logic errors, security vulnerabilities, and regressions using multi-agent analysis of your full codebase
 
-<Note>
   Code Review is in research preview, available for [Teams and Enterprise](https://claude.ai/admin-settings/claude-code) subscriptions. It is not available for organizations with [Zero Data Retention](/en/zero-data-retention) enabled.
-</Note>
 
 Code Review analyzes your GitHub pull requests and posts findings as inline comments on the lines of code where it found issues. A fleet of specialized agents examine the code changes in the context of your full codebase, looking for logic errors, security vulnerabilities, broken edge cases, and subtle regressions.
 
@@ -51,7 +49,6 @@ By default, Code Review focuses on correctness: bugs that would break production
 
 An admin enables Code Review once for the organization and selects which repositories to include.
 
-<Steps>
     Go to [claude.ai/admin-settings/claude-code](https://claude.ai/admin-settings/claude-code) and find the Code Review section. You need admin access to your Claude organization and permission to install GitHub Apps in your GitHub organization.
 
     Click **Setup**. This begins the GitHub App installation flow.
@@ -73,7 +70,6 @@ An admin enables Code Review once for the organization and selects which reposit
     * **Manual**: reviews start only when someone [comments `@claude review` on a PR](#manually-trigger-reviews); subsequent pushes to that PR are then reviewed automatically
 
     Reviewing on every push runs the most reviews and costs the most. Manual mode is useful for high-traffic repos where you want to opt specific PRs into review, or to only start reviewing your PRs once they're ready.
-</Steps>
 
 The repositories table also shows the average cost per review for each repo based on recent activity. Use the row actions menu to turn Code Review on or off per repository, or to remove a repository entirely.
 

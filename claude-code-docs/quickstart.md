@@ -17,15 +17,12 @@ Make sure you have:
 * A code project to work with
 * A [Claude subscription](https://claude.com/pricing?utm_source=claude_code\&utm_medium=docs\&utm_content=quickstart_prereq) (Pro, Max, Teams, or Enterprise), [Claude Console](https://console.anthropic.com/) account, or access through a [supported cloud provider](/en/third-party-integrations)
 
-<Note>
   This guide covers the terminal CLI. Claude Code is also available on the [web](https://claude.ai/code), as a [desktop app](/en/desktop), in [VS Code](/en/vs-code) and [JetBrains IDEs](/en/jetbrains), in [Slack](/en/slack), and in CI/CD with [GitHub Actions](/en/github-actions) and [GitLab](/en/gitlab-ci-cd). See [all interfaces](/en/overview#use-claude-code-everywhere).
-</Note>
 
 ## Step 1: Install Claude Code
 
 To install Claude Code, use one of the following methods:
 
-<Tabs>
     **macOS, Linux, WSL:**
 
     ```bash
@@ -46,26 +43,19 @@ To install Claude Code, use one of the following methods:
 
     **Windows requires [Git for Windows](https://git-scm.com/downloads/win).** Install it first if you don't have it.
 
-    <Info>
       Native installations automatically update in the background to keep you on the latest version.
-    </Info>
 
     ```bash
     brew install --cask claude-code
     ```
 
-    <Info>
       Homebrew installations do not auto-update. Run `brew upgrade claude-code` periodically to get the latest features and security fixes.
-    </Info>
 
     ```powershell
     winget install Anthropic.ClaudeCode
     ```
 
-    <Info>
       WinGet installations do not auto-update. Run `winget upgrade Anthropic.ClaudeCode` periodically to get the latest features and security fixes.
-    </Info>
-</Tabs>
 
 ## Step 2: Log in to your account
 
@@ -138,9 +128,7 @@ how do I create custom skills in Claude Code?
 can Claude Code work with Docker?
 ```
 
-<Note>
   Claude Code reads your project files as needed. You don't have to manually add context.
-</Note>
 
 ## Step 5: Make your first code change
 
@@ -157,9 +145,7 @@ Claude Code will:
 3. Ask for your approval
 4. Make the edit
 
-<Note>
   Claude Code always asks for permission before modifying files. You can approve individual changes or enable "Accept all" mode for a session.
-</Note>
 
 ## Step 6: Use Git with Claude Code
 
@@ -262,7 +248,6 @@ See the [CLI reference](/en/cli-reference) for a complete list of commands.
 
 For more, see [best practices](/en/best-practices) and [common workflows](/en/common-workflows).
 
-<AccordionGroup>
     Instead of: "fix the bug"
 
     Try: "fix the login bug where users see a blank screen after entering wrong credentials"
@@ -289,7 +274,6 @@ For more, see [best practices](/en/best-practices) and [common workflows](/en/co
     * Use Tab for command completion
     * Press ↑ for command history
     * Type `/` to see all commands and skills
-</AccordionGroup>
 
 ## What's next?
 

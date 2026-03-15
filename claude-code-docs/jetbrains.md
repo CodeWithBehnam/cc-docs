@@ -35,9 +35,7 @@ Find and install the [Claude Code plugin](https://plugins.jetbrains.com/plugin/2
 
 If you haven't installed Claude Code yet, see [our quickstart guide](/en/quickstart) for installation instructions.
 
-<Note>
   After installing the plugin, you may need to restart your IDE completely for it to take effect.
-</Note>
 
 ## Usage
 
@@ -98,17 +96,13 @@ This allows the ESC key to properly interrupt Claude Code operations.
 
 ### Remote Development
 
-<Warning>
   When using JetBrains Remote Development, you must install the plugin in the remote host via **Settings → Plugin (Host)**.
-</Warning>
 
 The plugin must be installed on the remote host, not on your local client machine.
 
 ### WSL Configuration
 
-<Warning>
   WSL users may need additional configuration for IDE detection to work properly. See our [WSL troubleshooting guide](/en/troubleshooting#jetbrains-ide-not-detected-on-wsl2) for detailed setup instructions.
-</Warning>
 
 WSL configuration may require:
 

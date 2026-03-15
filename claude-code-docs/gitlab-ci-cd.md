@@ -6,15 +6,11 @@
 
 > Learn about integrating Claude Code into your development workflow with GitLab CI/CD
 
-<Info>
   Claude Code for GitLab CI/CD is currently in beta. Features and functionality may evolve as we refine the experience.
 
   This integration is maintained by GitLab. For support, see the following [GitLab issue](https://gitlab.com/gitlab-org/gitlab/-/issues/573776).
-</Info>
 
-<Note>
   This integration is built on top of the [Claude Code CLI and Agent SDK](https://platform.claude.com/docs/en/agent-sdk/overview), enabling programmatic use of Claude in your CI/CD jobs and custom automation workflows.
-</Note>
 
 ## Why use Claude Code with GitLab?
 
@@ -97,9 +93,7 @@ claude:
 
 After adding the job and your `ANTHROPIC_API_KEY` variable, test by running the job manually from **CI/CD** → **Pipelines**, or trigger it from an MR to let Claude propose updates in a branch and open an MR if needed.
 
-<Note>
   To run on AWS Bedrock or Google Vertex AI instead of the Claude API, see the [Using with AWS Bedrock & Google Vertex AI](#using-with-aws-bedrock--google-vertex-ai) section below for authentication and environment setup.
-</Note>
 
 ### Manual setup (recommended for production)
 
@@ -156,7 +150,6 @@ Claude locates the bug, implements a fix, and updates the branch or opens a new 
 
 For enterprise environments, you can run Claude Code entirely on your cloud infrastructure with the same developer experience.
 
-<Tabs>
     ### Prerequisites
 
     Before setting up Claude Code with AWS Bedrock, you need:
@@ -232,7 +225,6 @@ For enterprise environments, you can run Claude Code entirely on your cloud infr
     ```
 
     Use the Google Vertex AI job example above to authenticate without storing keys.
-</Tabs>
 
 ## Configuration examples
 
@@ -314,9 +306,7 @@ claude-bedrock:
     AWS_REGION: "us-west-2"
 ```
 
-<Note>
   Model IDs for Bedrock include region-specific prefixes (for example, `us.anthropic.claude-sonnet-4-6`). Pass the desired model via your job configuration or prompt if your workflow supports it.
-</Note>
 
 ### Google Vertex AI job example (Workload Identity Federation)
 
@@ -367,9 +357,7 @@ claude-vertex:
     CLOUD_ML_REGION: "us-east5"
 ```
 
-<Note>
   With Workload Identity Federation, you do not need to store service account keys. Use repository-specific trust conditions and least-privilege service accounts.
-</Note>
 
 ## Best practices
 
@@ -450,9 +438,7 @@ Claude Code supports these commonly used inputs:
 * `ANTHROPIC_API_KEY`: Required for the Claude API (not used for Bedrock/Vertex)
 * Provider-specific environment: `AWS_REGION`, project/region vars for Vertex
 
-<Note>
   Exact flags and parameters may vary by version of `@anthropic-ai/claude-code`. Run `claude --help` in your job to see supported options.
-</Note>
 
 ### Customizing Claude's behavior
 

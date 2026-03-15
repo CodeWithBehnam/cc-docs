@@ -10,9 +10,7 @@ Claude Code integrates with the Claude in Chrome browser extension to give you b
 
 Claude opens new tabs for browser tasks and shares your browser's login state, so it can access any site you're already signed into. Browser actions run in a visible Chrome window in real time. When Claude encounters a login page or CAPTCHA, it pauses and asks you to handle it manually.
 
-<Note>
   Chrome integration is in beta and currently works with Google Chrome and Microsoft Edge. It is not yet supported on Brave, Arc, or other Chromium-based browsers. WSL (Windows Subsystem for Linux) is also not supported.
-</Note>
 
 ## Capabilities
 
@@ -35,13 +33,10 @@ Before using Claude Code with Chrome, you need:
 * [Claude Code](/en/quickstart#step-1-install-claude-code) version 2.0.73 or higher
 * A direct Anthropic plan (Pro, Max, Teams, or Enterprise)
 
-<Note>
   Chrome integration is not available through third-party providers like Amazon Bedrock, Google Cloud Vertex AI, or Microsoft Foundry. If you access Claude exclusively through a third-party provider, you need a separate claude.ai account to use this feature.
-</Note>
 
 ## Get started in the CLI
 
-<Steps>
     Start Claude Code with the `--chrome` flag:
 
     ```bash
@@ -56,7 +51,6 @@ Before using Claude Code with Chrome, you need:
     Go to code.claude.com/docs, click on the search box,
     type "hooks", and tell me what results appear
     ```
-</Steps>
 
 Run `/chrome` at any time to check the connection status, manage permissions, or reconnect the extension.
 
@@ -68,9 +62,7 @@ To avoid passing `--chrome` each session, run `/chrome` and select "Enabled by d
 
 In the [VS Code extension](/en/vs-code#automate-browser-tasks-with-chrome), Chrome is available whenever the Chrome extension is installed. No additional flag is needed.
 
-<Note>
   Enabling Chrome by default in the CLI increases context usage since browser tools are always loaded. If you notice increased context consumption, disable this setting and use `--chrome` only when needed.
-</Note>
 
 ### Manage site permissions
 

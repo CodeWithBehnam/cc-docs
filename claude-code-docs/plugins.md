@@ -45,13 +45,10 @@ This quickstart walks you through creating a plugin with a custom skill. You'll 
 * Claude Code [installed and authenticated](/en/quickstart#step-1-install-claude-code)
 * Claude Code version 1.0.33 or later (run `claude --version` to check)
 
-<Note>
   If you don't see the `/plugin` command, update Claude Code to the latest version. See [Troubleshooting](/en/troubleshooting) for upgrade instructions.
-</Note>
 
 ### Create your first plugin
 
-<Steps>
     Every plugin lives in its own directory containing a manifest and your skills, agents, or hooks. Create one now:
 
     ```bash
@@ -121,11 +118,9 @@ This quickstart walks you through creating a plugin with a custom skill. You'll 
 
     You'll see Claude respond with a greeting. Run `/help` to see your skill listed under the plugin namespace.
 
-    <Note>
       **Why namespacing?** Plugin skills are always namespaced (like `/greet:hello`) to prevent conflicts when multiple plugins have skills with the same name.
 
       To change the namespace prefix, update the `name` field in `plugin.json`.
-    </Note>
 
     Make your skill dynamic by accepting user input. The `$ARGUMENTS` placeholder captures any text the user provides after the skill name.
 
@@ -148,7 +143,6 @@ This quickstart walks you through creating a plugin with a custom skill. You'll 
     ```
 
     Claude will greet you by name. For more on passing arguments to skills, see [Skills](/en/skills#pass-arguments-to-skills).
-</Steps>
 
 You've successfully created and tested a plugin with these key components:
 
@@ -162,9 +156,7 @@ You've successfully created and tested a plugin with these key components:
 
 You've created a plugin with a skill, but plugins can include much more: custom agents, hooks, MCP servers, and LSP servers.
 
-<Warning>
   **Common mistake**: Don't put `commands/`, `agents/`, `skills/`, or `hooks/` inside the `.claude-plugin/` directory. Only `plugin.json` goes inside `.claude-plugin/`. All other directories must be at the plugin root level.
-</Warning>
 
 | Directory         | Location    | Purpose                                                                        |
 | :---------------- | :---------- | :----------------------------------------------------------------------------- |
@@ -177,9 +169,7 @@ You've created a plugin with a skill, but plugins can include much more: custom 
 | `.lsp.json`       | Plugin root | LSP server configurations for code intelligence                                |
 | `settings.json`   | Plugin root | Default [settings](/en/settings) applied when the plugin is enabled            |
 
-<Note>
   **Next steps**: Ready to add more features? Jump to [Develop more complex plugins](#develop-more-complex-plugins) to add agents, hooks, MCP servers, and LSP servers. For complete technical specifications of all plugin components, see [Plugins reference](/en/plugins-reference).
-</Note>
 
 ## Develop more complex plugins
 
@@ -305,9 +295,7 @@ To submit a plugin to the official Anthropic marketplace, use one of the in-app 
 * **Claude.ai**: [claude.ai/settings/plugins/submit](https://claude.ai/settings/plugins/submit)
 * **Console**: [platform.claude.com/plugins/submit](https://platform.claude.com/plugins/submit)
 
-<Note>
   For complete technical specifications, debugging techniques, and distribution strategies, see [Plugins reference](/en/plugins-reference).
-</Note>
 
 ## Convert existing configurations to plugins
 
@@ -315,7 +303,6 @@ If you already have skills or hooks in your `.claude/` directory, you can conver
 
 ### Migration steps
 
-<Steps>
     Create a new plugin directory:
 
     ```bash
@@ -373,7 +360,6 @@ If you already have skills or hooks in your `.claude/` directory, you can conver
     ```
 
     Test each component: run your commands, check agents appear in `/agents`, and verify hooks trigger correctly.
-</Steps>
 
 ### What changes when migrating
 
@@ -384,9 +370,7 @@ If you already have skills or hooks in your `.claude/` directory, you can conver
 | Hooks in `settings.json`      | Hooks in `hooks/hooks.json`      |
 | Must manually copy to share   | Install with `/plugin install`   |
 
-<Note>
   After migrating, you can remove the original files from `.claude/` to avoid duplicates. The plugin version will take precedence when loaded.
-</Note>
 
 ## Next steps
 

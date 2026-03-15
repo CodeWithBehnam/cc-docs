@@ -96,21 +96,15 @@ Code through hierarchical settings:
     * Linux and WSL: `/etc/claude-code/`
     * Windows: `C:\Program Files\ClaudeCode\`
 
-    <Warning>
       The legacy Windows path `C:\ProgramData\ClaudeCode\managed-settings.json` is no longer supported as of v2.1.75. Administrators who deployed settings to that location must migrate files to `C:\Program Files\ClaudeCode\managed-settings.json`.
-    </Warning>
 
   See [managed settings](/en/permissions#managed-only-settings) and [Managed MCP configuration](/en/mcp#managed-mcp-configuration) for details.
 
-  <Note>
     Managed deployments can also restrict **plugin marketplace additions** using
     `strictKnownMarketplaces`. For more information, see [Managed marketplace restrictions](/en/plugin-marketplaces#managed-marketplace-restrictions).
-  </Note>
 * **Other configuration** is stored in `~/.claude.json`. This file contains your preferences (theme, notification settings, editor mode), OAuth session, [MCP server](/en/mcp) configurations for user and local scopes, per-project state (allowed tools, trust settings), and various caches. Project-scoped MCP servers are stored separately in `.mcp.json`.
 
-<Note>
   Claude Code automatically creates timestamped backups of configuration files and retains the five most recent backups to prevent data loss.
-</Note>
 
 ```JSON Example settings.json
 {
@@ -333,9 +327,7 @@ Claude Code adds attribution to git commits and pull requests. These are configu
 }
 ```
 
-<Note>
   The `attribution` setting takes precedence over the deprecated `includeCoAuthoredBy` setting. To hide all attribution, set `commit` and `pr` to empty strings.
-</Note>
 
 ### File suggestion settings
 
@@ -426,9 +418,7 @@ This hierarchy ensures that organizational policies are always enforced while st
 
 For example, if your user settings allow `Bash(npm run *)` but a project's shared settings deny it, the project setting takes precedence and the command is blocked.
 
-<Note>
   **Array settings merge across scopes.** When the same array-valued setting (such as `sandbox.filesystem.allowWrite` or `permissions.allow`) appears in multiple scopes, the arrays are **concatenated and deduplicated**, not replaced. This means lower-priority scopes can add entries without overriding those set by higher-priority scopes, and vice versa. For example, if managed settings set `allowWrite` to `["//opt/company-tools"]` and a user adds `["~/.kube"]`, both paths are included in the final configuration.
-</Note>
 
 ### Verify active settings
 
@@ -617,9 +607,7 @@ Fields: `url` (required), `ref` (optional: branch/tag/SHA), `path` (optional: su
 
 Fields: `url` (required), `headers` (optional: HTTP headers for authenticated access)
 
-<Note>
   URL-based marketplaces only download the `marketplace.json` file. They do not download plugin files from the server. Plugins in URL-based marketplaces must use external sources (GitHub, npm, or git URLs) rather than relative paths. For plugins with relative paths, use a Git-based marketplace instead. See [Troubleshooting](/en/plugin-marketplaces#plugins-with-relative-paths-fail-in-url-based-marketplaces) for details.
-</Note>
 
 4. **NPM packages**:
 

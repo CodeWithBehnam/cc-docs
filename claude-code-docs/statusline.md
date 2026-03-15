@@ -68,13 +68,10 @@ Run `/statusline` and ask it to remove or clear your status line (e.g., `/status
 
 This walkthrough shows what's happening under the hood by manually creating a status line that displays the current model, working directory, and context window usage percentage.
 
-<Note>Running [`/statusline`](#use-the-statusline-command) with a description of what you want configures all of this for you automatically.</Note>
-
 These examples use Bash scripts, which work on macOS and Linux. On Windows, see [Windows configuration](#windows-configuration) for PowerShell and Git Bash examples.
 
   <img src="https://mintcdn.com/claude-code/nibzesLaJVh4ydOq/images/statusline-quickstart.png?fit=max&auto=format&n=nibzesLaJVh4ydOq&q=85&s=696445e59ca0059213250651ad23db6b" alt="A status line showing model name, directory, and context percentage" width="726" height="164" data-path="images/statusline-quickstart.png" />
 
-<Steps>
     Claude Code sends JSON data to your script via stdin. This script uses [`jq`](https://jqlang.github.io/jq/), a command-line JSON parser you may need to install, to extract the model name, directory, and context percentage, then prints a formatted line.
 
     Save this to `~/.claude/statusline.sh` (where `~` is your home directory, such as `/Users/username` on macOS or `/home/username` on Linux):
@@ -112,7 +109,6 @@ These examples use Bash scripts, which work on macOS and Linux. On Windows, see 
     ```
 
     Your status line appears at the bottom of the interface. Settings reload automatically, but changes won't appear until your next interaction with Claude Code.
-</Steps>
 
 ## How status lines work
 
@@ -127,8 +123,6 @@ Your script runs after each new assistant message, when the permission mode chan
 * **Multiple lines**: each `echo` or `print` statement displays as a separate row. See the [multi-line example](#display-multiple-lines).
 * **Colors**: use [ANSI escape codes](https://en.wikipedia.org/wiki/ANSI_escape_code#Colors) like `\033[32m` for green (terminal must support them). See the [git status example](#git-status-with-colors).
 * **Links**: use [OSC 8 escape sequences](https://en.wikipedia.org/wiki/ANSI_escape_code#OSC) to make text clickable (Cmd+click on macOS, Ctrl+click on Windows/Linux). Requires a terminal that supports hyperlinks like iTerm2, Kitty, or WezTerm. See the [clickable links example](#clickable-links).
-
-<Note>The status line runs locally and does not consume API tokens. It temporarily hides during certain UI interactions, including autocomplete suggestions, the help menu, and permission prompts.</Note>
 
 ## Available data
 
@@ -266,7 +260,6 @@ Display the current model and context window usage with a visual progress bar. E
 
   <img src="https://mintcdn.com/claude-code/nibzesLaJVh4ydOq/images/statusline-context-window-usage.png?fit=max&auto=format&n=nibzesLaJVh4ydOq&q=85&s=15b58ab3602f036939145dde3165c6f7" alt="A status line showing model name and a progress bar with percentage" width="448" height="152" data-path="images/statusline-context-window-usage.png" />
 
-<CodeGroup>
   ```bash Bash
   #!/bin/bash
   # Read all of stdin into a variable
@@ -322,7 +315,6 @@ Display the current model and context window usage with a visual progress bar. E
       console.log(`[${model}] ${bar} ${pct}%`);
   });
   ```
-</CodeGroup>
 
 ### Git status with colors
 
@@ -332,7 +324,6 @@ Show git branch with color-coded indicators for staged and modified files. This 
 
 Each script checks if the current directory is a git repository, counts staged and modified files, and displays color-coded indicators:
 
-<CodeGroup>
   ```bash Bash
   #!/bin/bash
   input=$(cat)
@@ -414,7 +405,6 @@ Each script checks if the current directory is a git repository, counts staged a
       }
   });
   ```
-</CodeGroup>
 
 ### Cost and duration tracking
 
@@ -424,7 +414,6 @@ Each script formats cost as currency and converts milliseconds to minutes and se
 
   <img src="https://mintcdn.com/claude-code/nibzesLaJVh4ydOq/images/statusline-cost-tracking.png?fit=max&auto=format&n=nibzesLaJVh4ydOq&q=85&s=e3444a51fe6f3440c134bd5f1f08ad29" alt="A status line showing model name, session cost, and duration" width="588" height="180" data-path="images/statusline-cost-tracking.png" />
 
-<CodeGroup>
   ```bash Bash
   #!/bin/bash
   input=$(cat)
@@ -473,7 +462,6 @@ Each script formats cost as currency and converts milliseconds to minutes and se
       console.log(`[${model}] 💰 $${cost.toFixed(2)} | ⏱️ ${mins}m ${secs}s`);
   });
   ```
-</CodeGroup>
 
 ### Display multiple lines
 
@@ -483,7 +471,6 @@ Your script can output multiple lines to create a richer display. Each `echo` st
 
 This example combines several techniques: threshold-based colors (green under 70%, yellow 70-89%, red 90%+), a progress bar, and git branch info. Each `print` or `echo` statement creates a separate row:
 
-<CodeGroup>
   ```bash Bash
   #!/bin/bash
   input=$(cat)
@@ -577,7 +564,6 @@ This example combines several techniques: threshold-based colors (green under 70
       console.log(`${barColor}${bar}${RESET} ${pct}% | ${YELLOW}$${cost.toFixed(2)}${RESET} | ⏱️ ${mins}m ${secs}s`);
   });
   ```
-</CodeGroup>
 
 ### Clickable links
 
@@ -587,7 +573,6 @@ This example creates a clickable link to your GitHub repository. It reads the gi
 
 Each script gets the git remote URL, converts SSH format to HTTPS, and wraps the repo name in OSC 8 escape codes. The Bash version uses `printf '%b'` which interprets backslash escapes more reliably than `echo -e` across different shells:
 
-<CodeGroup>
   ```bash Bash
   #!/bin/bash
   input=$(cat)
@@ -655,7 +640,6 @@ Each script gets the git remote URL, converts SSH format to HTTPS, and wraps the
       }
   });
   ```
-</CodeGroup>
 
 ### Cache expensive operations
 
@@ -665,7 +649,6 @@ Use a stable, fixed filename for the cache file like `/tmp/statusline-git-cache`
 
 Each script checks if the cache file is missing or older than 5 seconds before running git commands:
 
-<CodeGroup>
   ```bash Bash
   #!/bin/bash
   input=$(cat)
@@ -783,13 +766,11 @@ Each script checks if the cache file is missing or older than 5 seconds before r
       }
   });
   ```
-</CodeGroup>
 
 ### Windows configuration
 
 On Windows, Claude Code runs status line commands through Git Bash. You can invoke PowerShell from that shell:
 
-<CodeGroup>
   ```json settings.json
   {
     "statusLine": {
@@ -812,11 +793,9 @@ On Windows, Claude Code runs status line commands through Git Bash. You can invo
       Write-Host "$dirname [$model]"
   }
   ```
-</CodeGroup>
 
 Or run a Bash script directly:
 
-<CodeGroup>
   ```json settings.json
   {
     "statusLine": {
@@ -834,7 +813,6 @@ Or run a Bash script directly:
   dirname="${cwd##*[/\\]}"
   echo "$dirname [$model]"
   ```
-</CodeGroup>
 
 ## Tips
 

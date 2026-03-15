@@ -18,7 +18,6 @@ For other ways to extend Claude Code, see [skills](/en/skills) for giving Claude
 
 To create a hook, add a `hooks` block to a [settings file](#configure-hook-location). This walkthrough creates a desktop notification hook, so you get alerted whenever Claude is waiting for your input instead of watching the terminal.
 
-<Steps>
     Open `~/.claude/settings.json` and add a `Notification` hook. The example below uses `osascript` for macOS; see [Get notified when Claude needs input](#get-notified-when-claude-needs-input) for Linux and Windows commands.
 
     ```json
@@ -44,7 +43,6 @@ To create a hook, add a `hooks` block to a [settings file](#configure-hook-locat
     Type `/hooks` to open the hooks browser. You'll see a list of all available hook events, with a count next to each event that has hooks configured. Select `Notification` to confirm your new hook appears in the list. Selecting the hook shows its details: the event, matcher, type, source file, and command.
 
     Press `Esc` to return to the CLI. Ask Claude to do something that requires permission, then switch away from the terminal. You should receive a desktop notification.
-</Steps>
 
   The `/hooks` menu is read-only. To add, modify, or remove hooks, edit your settings JSON directly or ask Claude to make the change.
 
@@ -66,7 +64,6 @@ Get a desktop notification whenever Claude finishes working and needs your input
 
 This hook uses the `Notification` event, which fires when Claude is waiting for input or permission. Each tab below uses the platform's native notification command. Add this to `~/.claude/settings.json`:
 
-<Tabs>
     ```json
     {
       "hooks": {
@@ -120,7 +117,6 @@ This hook uses the `Notification` event, which fires when Claude is waiting for 
       }
     }
     ```
-</Tabs>
 
 ### Auto-format code after edits
 
@@ -146,9 +142,7 @@ This hook uses the `PostToolUse` event with an `Edit|Write` matcher, so it runs 
 }
 ```
 
-<Note>
   The Bash examples on this page use `jq` for JSON parsing. Install it with `brew install jq` (macOS), `apt-get install jq` (Debian/Ubuntu), or see [`jq` downloads](https://jqlang.github.io/jq/download/).
-</Note>
 
 ### Block edits to protected files
 
@@ -156,7 +150,6 @@ Prevent Claude from modifying sensitive files like `.env`, `package-lock.json`, 
 
 This example uses a separate script file that the hook calls. The script checks the target file path against a list of protected patterns and exits with code 2 to block the edit.
 
-<Steps>
     Save this to `.claude/hooks/protect-files.sh`:
 
     ```bash
@@ -203,7 +196,6 @@ This example uses a separate script file that the hook calls. The script checks 
       }
     }
     ```
-</Steps>
 
 ### Re-inject context after compaction
 
@@ -340,9 +332,7 @@ The exit code determines what happens next:
 
 Exit codes give you two options: allow or block. For more control, exit 0 and print a JSON object to stdout instead.
 
-<Note>
   Use exit 2 to block with a stderr message, or exit 0 with JSON for structured control. Don't mix them: Claude Code ignores JSON when you exit 2.
-</Note>
 
 For example, a `PreToolUse` hook can deny a tool call and tell Claude why, or escalate it to the user for approval:
 
@@ -403,7 +393,6 @@ Each event type matches on a specific field. Matchers support exact strings and 
 
 A few more examples showing matchers on different event types:
 
-<Tabs>
     Match only `Bash` tool calls and log each command to a file. The `PostToolUse` event fires after the command completes, so `tool_input.command` contains what ran. The hook receives the event data as JSON on stdin, and `jq -r '.tool_input.command'` extracts just the command string, which `>>` appends to the log file:
 
     ```json
@@ -465,7 +454,6 @@ A few more examples showing matchers on different event types:
       }
     }
     ```
-</Tabs>
 
 For full matcher syntax, see the [Hooks reference](/en/hooks#configuration).
 

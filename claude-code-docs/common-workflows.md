@@ -14,7 +14,6 @@ This page covers practical workflows for everyday development: exploring unfamil
 
 Suppose you've just joined a new project and need to understand its structure quickly.
 
-<Steps>
     ```bash
     cd /path/to/project 
     ```
@@ -38,7 +37,6 @@ Suppose you've just joined a new project and need to understand its structure qu
     ```text
     how is authentication handled?
     ```
-</Steps>
 
   Tips:
 
@@ -50,7 +48,6 @@ Suppose you've just joined a new project and need to understand its structure qu
 
 Suppose you need to locate code related to a specific feature or functionality.
 
-<Steps>
     ```text
     find the files that handle user authentication
     ```
@@ -62,7 +59,6 @@ Suppose you need to locate code related to a specific feature or functionality.
     ```text
     trace the login process from front-end to database
     ```
-</Steps>
 
   Tips:
 
@@ -76,7 +72,6 @@ Suppose you need to locate code related to a specific feature or functionality.
 
 Suppose you've encountered an error message and need to find and fix its source.
 
-<Steps>
     ```text
     I'm seeing an error when I run npm test
     ```
@@ -88,7 +83,6 @@ Suppose you've encountered an error message and need to find and fix its source.
     ```text
     update user.ts to add the null check you suggested
     ```
-</Steps>
 
   Tips:
 
@@ -102,7 +96,6 @@ Suppose you've encountered an error message and need to find and fix its source.
 
 Suppose you need to update old code to use modern patterns and practices.
 
-<Steps>
     ```text
     find deprecated API usage in our codebase
     ```
@@ -118,7 +111,6 @@ Suppose you need to update old code to use modern patterns and practices.
     ```text
     run tests for the refactored code
     ```
-</Steps>
 
   Tips:
 
@@ -132,7 +124,6 @@ Suppose you need to update old code to use modern patterns and practices.
 
 Suppose you want to use specialized AI subagents to handle specific tasks more effectively.
 
-<Steps>
     ```text
     /agents
     ```
@@ -167,7 +158,6 @@ Suppose you want to use specialized AI subagents to handle specific tasks more e
     * When Claude should use this agent
     * Which tools it can access
     * A system prompt describing the agent's role and behavior
-</Steps>
 
   Tips:
 
@@ -251,7 +241,6 @@ See [settings documentation](/en/settings#available-settings) for more configura
 
 Suppose you need to add tests for uncovered code.
 
-<Steps>
     ```text
     find functions in NotificationsService.swift that are not covered by tests
     ```
@@ -267,7 +256,6 @@ Suppose you need to add tests for uncovered code.
     ```text
     run the new tests and fix any failures
     ```
-</Steps>
 
 Claude can generate tests that follow your project's existing patterns and conventions. When asking for tests, be specific about what behavior you want to verify. Claude examines your existing test files to match the style, frameworks, and assertion patterns already in use.
 
@@ -279,7 +267,6 @@ For comprehensive coverage, ask Claude to identify edge cases you might have mis
 
 You can create pull requests by asking Claude directly ("create a pr for my changes"), or guide Claude through it step-by-step:
 
-<Steps>
     ```text
     summarize the changes I've made to the authentication module
     ```
@@ -291,7 +278,6 @@ You can create pull requests by asking Claude directly ("create a pr for my chan
     ```text
     enhance the PR description with more context about the security improvements
     ```
-</Steps>
 
 When you create a PR using `gh pr create`, the session is automatically linked to that PR. You can resume it later with `claude --from-pr <number>`.
 
@@ -301,7 +287,6 @@ When you create a PR using `gh pr create`, the session is automatically linked t
 
 Suppose you need to add or update documentation for your code.
 
-<Steps>
     ```text
     find functions without proper JSDoc comments in the auth module
     ```
@@ -317,7 +302,6 @@ Suppose you need to add or update documentation for your code.
     ```text
     check if the documentation follows our project standards
     ```
-</Steps>
 
   Tips:
 
@@ -331,7 +315,6 @@ Suppose you need to add or update documentation for your code.
 
 Suppose you need to work with images in your codebase, and you want Claude's help analyzing image content.
 
-<Steps>
     You can use any of these methods:
 
     1. Drag and drop an image into the Claude Code window
@@ -365,7 +348,6 @@ Suppose you need to work with images in your codebase, and you want Claude's hel
     ```text
     What HTML structure would recreate this component?
     ```
-</Steps>
 
   Tips:
 
@@ -381,7 +363,6 @@ Suppose you need to work with images in your codebase, and you want Claude's hel
 
 Use @ to quickly include files or directories without waiting for Claude to read them.
 
-<Steps>
     ```text
     Explain the logic in @src/utils/auth.js
     ```
@@ -399,7 +380,6 @@ Use @ to quickly include files or directories without waiting for Claude to read
     ```
 
     This fetches data from connected MCP servers using the format @server:resource. See [MCP resources](/en/mcp#use-mcp-resources) for details.
-</Steps>
 
   Tips:
 
@@ -418,9 +398,7 @@ Additionally, Opus 4.6 and Sonnet 4.6 support adaptive reasoning: instead of a f
 
 Extended thinking is particularly valuable for complex architectural decisions, challenging bugs, multi-step implementation planning, and evaluating tradeoffs between different approaches.
 
-<Note>
   Phrases like "think", "think hard", and "think more" are interpreted as regular prompt instructions and don't allocate thinking tokens.
-</Note>
 
 ### Configure thinking mode
 
@@ -446,9 +424,7 @@ Extended thinking controls how much internal reasoning Claude performs before re
 
 `MAX_THINKING_TOKENS` is ignored on Opus 4.6 and Sonnet 4.6, since adaptive reasoning controls thinking depth instead. The one exception: setting `MAX_THINKING_TOKENS=0` still disables thinking entirely on any model. To disable adaptive thinking and revert to the fixed thinking budget, set `CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING=1`. See [environment variables](/en/env-vars).
 
-<Warning>
   You're charged for all thinking tokens used, even though Claude 4 models show summarized thinking
-</Warning>
 
 ***
 
@@ -468,7 +444,6 @@ Sessions are stored per project directory. The `/resume` picker shows sessions f
 
 Give sessions descriptive names to find them later. This is a best practice when working on multiple tasks or features.
 
-<Steps>
     Name a session at startup with `-n`:
 
     ```bash
@@ -494,7 +469,6 @@ Give sessions descriptive names to find them later. This is a best practice when
     ```text
     /resume auth-refactor
     ```
-</Steps>
 
 ### Use the session picker
 
@@ -620,10 +594,8 @@ For automated coordination of parallel sessions with shared tasks and messaging,
 
 When you kick off a long-running task and switch to another window, you can set up desktop notifications so you know when Claude finishes or needs your input. This uses the `Notification` [hook event](/en/hooks-guide#get-notified-when-claude-needs-input), which fires whenever Claude is waiting for permission, idle and ready for a new prompt, or completing authentication.
 
-<Steps>
     Open `~/.claude/settings.json` and add a `Notification` hook that calls your platform's native notification command:
 
-    <Tabs>
         ```json
         {
           "hooks": {
@@ -677,7 +649,6 @@ When you kick off a long-running task and switch to another window, you can set 
           }
         }
         ```
-    </Tabs>
 
     If your settings file already has a `hooks` key, merge the `Notification` entry into it rather than overwriting. You can also ask Claude to write the hook for you by describing what you want in the CLI.
 
@@ -691,7 +662,6 @@ When you kick off a long-running task and switch to another window, you can set 
     | `elicitation_dialog` | Claude is asking you a question                 |
 
     Type `/hooks` and select `Notification` to confirm the hook appears. Selecting it shows the command that will run. To test it end-to-end, ask Claude to run a command that requires permission and switch away from the terminal, or ask Claude to trigger a notification directly.
-</Steps>
 
 For the complete event schema and notification types, see the [Notification reference](/en/hooks#notification).
 
@@ -742,7 +712,6 @@ cat build-error.txt | claude -p 'concisely explain the root cause of this build 
 
 Suppose you need Claude's output in a specific format, especially when integrating Claude Code into scripts or other tools.
 
-<Steps>
     ```bash
     cat data.txt | claude -p 'summarize this data' --output-format text > summary.txt
     ```
@@ -760,7 +729,6 @@ Suppose you need Claude's output in a specific format, especially when integrati
     ```
 
     This outputs a series of JSON objects in real-time as Claude processes the request. Each message is a valid JSON object, but the entire output is not valid JSON if concatenated.
-</Steps>
 
   Tips:
 
@@ -800,9 +768,7 @@ how do I configure Claude Code for Amazon Bedrock?
 what are the limitations of Claude Code?
 ```
 
-<Note>
   Claude provides documentation-based answers to these questions. For executable examples and hands-on demonstrations, refer to the specific workflow sections above.
-</Note>
 
   Tips:
 

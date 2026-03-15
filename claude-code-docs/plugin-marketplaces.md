@@ -25,7 +25,6 @@ Once your marketplace is live, you can update it by pushing changes to your repo
 
 This example creates a marketplace with one plugin: a `/quality-review` skill for code reviews. You'll create the directory structure, add a skill, create the plugin manifest and marketplace catalog, then install and test it.
 
-<Steps>
     ```bash
     mkdir -p my-marketplace/.claude-plugin
     mkdir -p my-marketplace/plugins/quality-review-plugin/.claude-plugin
@@ -89,15 +88,12 @@ This example creates a marketplace with one plugin: a `/quality-review` skill fo
     ```shell
     /review
     ```
-</Steps>
 
 To learn more about what plugins can do, including hooks, agents, MCP servers, and LSP servers, see [Plugins](/en/plugins).
 
-<Note>
   **How plugins are installed**: When users install a plugin, Claude Code copies the plugin directory to a cache location. This means plugins can't reference files outside their directory using paths like `../shared-utils`, because those files won't be copied.
 
   If you need to share files across plugins, use symlinks (which are followed during copying). See [Plugin caching and file resolution](/en/plugins-reference#plugin-caching-and-file-resolution) for details.
-</Note>
 
 ## Create the marketplace file
 
@@ -144,9 +140,7 @@ Each plugin entry needs at minimum a `name` and `source` (where to fetch it from
 | `owner`   | object | Marketplace maintainer information ([see fields below](#owner-fields))                                                                                                 |                |
 | `plugins` | array  | List of available plugins                                                                                                                                              | See below      |
 
-<Note>
   **Reserved names**: The following marketplace names are reserved for official Anthropic use and cannot be used by third-party marketplaces: `claude-code-marketplace`, `claude-code-plugins`, `claude-plugins-official`, `anthropic-marketplace`, `anthropic-plugins`, `agent-skills`, `life-sciences`. Names that impersonate official marketplaces (like `official-claude-plugins` or `anthropic-tools-v2`) are also blocked.
-</Note>
 
 ### Owner fields
 
@@ -216,14 +210,12 @@ Once a plugin is cloned or copied into the local machine, it is copied into the 
 | `npm`         | object                          | `package`, `version?`, `registry?`    | Installed via `npm install`                                                         |
 | `pip`         | object                          | `package`, `version?`, `registry?`    | Installed via pip                                                                   |
 
-<Note>
   **Marketplace sources vs plugin sources**: These are different concepts that control different things.
 
   * **Marketplace source** — where to fetch the `marketplace.json` catalog itself. Set when users run `/plugin marketplace add` or in `extraKnownMarketplaces` settings. Supports `ref` (branch/tag) but not `sha`.
   * **Plugin source** — where to fetch an individual plugin listed in the marketplace. Set in the `source` field of each plugin entry inside `marketplace.json`. Supports both `ref` (branch/tag) and `sha` (exact commit).
 
   For example, a marketplace hosted at `acme-corp/plugin-catalog` (marketplace source) can list a plugin fetched from `acme-corp/code-formatter` (plugin source). The marketplace source and plugin source point to different repositories and are pinned independently.
-</Note>
 
 ### Relative paths
 
@@ -238,9 +230,7 @@ For plugins in the same repository, use a path starting with `./`:
 
 Paths resolve relative to the marketplace root, which is the directory containing `.claude-plugin/`. In the example above, `./plugins/my-plugin` points to `<repo>/plugins/my-plugin`, even though `marketplace.json` lives at `<repo>/.claude-plugin/marketplace.json`. Do not use `../` to climb out of `.claude-plugin/`.
 
-<Note>
   Relative paths only work when users add your marketplace via Git (GitHub, GitLab, or git URL). If users add your marketplace via a direct URL to the `marketplace.json` file, relative paths will not resolve correctly. For URL-based distribution, use GitHub, npm, or git URL sources instead. See [Troubleshooting](#plugins-with-relative-paths-fail-in-url-based-marketplaces) for details.
-</Note>
 
 ### GitHub repositories
 
@@ -501,9 +491,7 @@ Set the token in your shell configuration (for example, `.bashrc`, `.zshrc`) or 
 export GITHUB_TOKEN=ghp_xxxxxxxxxxxxxxxxxxxx
 ```
 
-<Note>
   For CI/CD environments, configure the token as a secret environment variable. GitHub Actions automatically provides `GITHUB_TOKEN` for repositories in the same organization.
-</Note>
 
 ### Test locally before distribution
 
@@ -618,9 +606,7 @@ Allow filesystem-based marketplaces from a specific directory using regex patter
 
 Use `".*"` as the `pathPattern` to allow any filesystem path while still controlling network sources with `hostPattern`.
 
-<Note>
   `strictKnownMarketplaces` restricts what users can add, but does not register marketplaces on its own. To make allowed marketplaces available automatically without users running `/plugin marketplace add`, pair it with [`extraKnownMarketplaces`](/en/settings#extraknownmarketplaces) in the same `managed-settings.json`. See [Using both together](/en/settings#strictknownmarketplaces).
-</Note>
 
 #### How restrictions work
 
@@ -641,17 +627,13 @@ For complete configuration details including all supported source types and comp
 
 Plugin versions determine cache paths and update detection. You can specify the version in the plugin manifest (`plugin.json`) or in the marketplace entry (`marketplace.json`).
 
-<Warning>
   When possible, avoid setting the version in both places. The plugin manifest always wins silently, which can cause the marketplace version to be ignored. For relative-path plugins, set the version in the marketplace entry. For all other plugin sources, set it in the plugin manifest.
-</Warning>
 
 #### Set up release channels
 
 To support "stable" and "latest" release channels for your plugins, you can set up two marketplaces that point to different refs or SHAs of the same repo. You can then assign the two marketplaces to different user groups through [managed settings](/en/settings#settings-files).
 
-<Warning>
   The plugin's `plugin.json` must declare a different `version` at each pinned ref or commit. If two refs or commits have the same manifest version, Claude Code treats them as identical and skips the update.
-</Warning>
 
 ##### Example
 

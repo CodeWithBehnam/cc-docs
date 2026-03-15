@@ -21,9 +21,7 @@ ZDR for Claude Code on Claude for Enterprise applies only to Anthropic's direct 
 
 ZDR covers Claude Code inference on Claude for Enterprise.
 
-<Warning>
   ZDR is enabled on a per-organization basis. Each new organization requires ZDR to be enabled separately by your Anthropic account team. ZDR does not automatically apply to new organizations created under the same account. Contact your account team to enable ZDR for any new organizations.
-</Warning>
 
 ### What ZDR covers
 

@@ -113,9 +113,7 @@ After you open a pull request, a CI status bar appears in the session. Claude Co
 
 Use the **Auto-fix** and **Auto-merge** toggles in the CI status bar to enable either option. Claude Code also sends a desktop notification when CI finishes.
 
-<Note>
   PR monitoring requires the [GitHub CLI (`gh`)](https://cli.github.com/) to be installed and authenticated on your machine. If `gh` is not installed, Desktop prompts you to install it the first time you try to create a PR.
-</Note>
 
 ## Manage sessions
 
@@ -127,9 +125,7 @@ Click **+ New session** in the sidebar to work on multiple tasks in parallel. Fo
 
 Worktrees are stored in `<project-root>/.claude/worktrees/` by default. You can change this to a custom directory in Settings → Claude Code under "Worktree location". You can also set a branch prefix that gets prepended to every worktree branch name, which is useful for keeping Claude-created branches organized. To remove a worktree when you're done, hover over the session in the sidebar and click the archive icon.
 
-<Note>
   Session isolation requires [Git](https://git-scm.com/downloads). Most Macs include Git by default. Run `git --version` in Terminal to check. On Windows, Git is required for the Code tab to work: [download Git for Windows](https://git-scm.com/downloads/win), install it, and restart the app. If you run into Git errors, try a Cowork session to help troubleshoot your setup.
-</Note>
 
 Use the filter icon at the top of the sidebar to filter sessions by status (Active, Archived) and environment (Local, Cloud). To rename a session or check context usage, click the session title in the toolbar at the top of the active session. When context fills up, Claude automatically summarizes the conversation and continues working. You can also type `/compact` to trigger summarization earlier and free up context space. See [the context window](/en/how-claude-code-works#the-context-window) for details on how compaction works.
 
@@ -248,7 +244,6 @@ When Claude picks a different port, it passes the assigned port to your server v
 
 These configurations show common setups for different project types:
 
-<Tabs>
     This configuration runs a Next.js app using Yarn on port 3000:
 
     ```json
@@ -307,7 +302,6 @@ These configurations show common setups for different project types:
       ]
     }
     ```
-</Tabs>
 
 ## Schedule recurring tasks
 
@@ -315,9 +309,7 @@ Scheduled tasks start a new local session automatically at a time and frequency 
 
 Tasks run on your machine, so the desktop app must be open and your computer awake for them to fire. See [How scheduled tasks run](#how-scheduled-tasks-run) for details on missed runs and catch-up behavior.
 
-<Note>
   By default, scheduled tasks run against whatever state your working directory is in, including uncommitted changes. Enable the worktree toggle in the prompt input to give each run its own isolated Git worktree, the same way [parallel sessions](#work-in-parallel-with-sessions) work.
-</Note>
 
 To create a scheduled task, click **Schedule** in the sidebar, then **+ New task**. Configure these fields:
 
@@ -495,9 +487,7 @@ Desktop and CLI read the same configuration files, so your setup carries over:
 * **[Settings](/en/settings)** in `~/.claude.json` and `~/.claude/settings.json` are shared. Permission rules, allowed tools, and other settings in `settings.json` apply to Desktop sessions.
 * **Models**: Sonnet, Opus, and Haiku are available in both. In Desktop, select the model from the dropdown next to the send button before starting a session. You cannot change the model during an active session.
 
-<Note>
   **MCP servers: desktop chat app vs Claude Code**: MCP servers configured for the Claude Desktop chat app in `claude_desktop_config.json` are separate from Claude Code and will not appear in the Code tab. To use MCP servers in Claude Code, configure them in `~/.claude.json` or your project's `.mcp.json` file. See [MCP configuration](/en/mcp#installing-mcp-servers) for details.
-</Note>
 
 ### Feature comparison
 

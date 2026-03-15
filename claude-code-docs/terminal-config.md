@@ -24,9 +24,7 @@ You have several options for entering line breaks into Claude Code:
 
 Run `/terminal-setup` within Claude Code to automatically configure Shift+Enter for VS Code, Alacritty, Zed, and Warp.
 
-<Note>
   The `/terminal-setup` command is only visible in terminals that require manual configuration. If you're using iTerm2, WezTerm, Ghostty, or Kitty, you won't see this command because Shift+Enter already works natively.
-</Note>
 
 **Set up Option+Enter (VS Code, iTerm2 or macOS Terminal.app)**
 

@@ -90,7 +90,6 @@ Now suppose Claude Code decides to run `Bash "rm -rf /tmp/build"`. Here's what h
 
   <img src="https://mintcdn.com/claude-code/c5r9_6tjPMzFdDDT/images/hook-resolution.svg?fit=max&auto=format&n=c5r9_6tjPMzFdDDT&q=85&s=ad667ee6d86ab2276aa48a4e73e220df" alt="Hook resolution flow: PreToolUse event fires, matcher checks for Bash match, hook handler runs, result returns to Claude Code" width="780" height="290" data-path="images/hook-resolution.svg" />
 
-<Steps>
     The `PreToolUse` event fires. Claude Code sends the tool input as JSON on stdin to the hook:
 
     ```json
@@ -114,7 +113,6 @@ Now suppose Claude Code decides to run `Bash "rm -rf /tmp/build"`. Here's what h
     If the command had been safe (like `npm test`), the script would hit `exit 0` instead, which tells Claude Code to allow the tool call with no further action.
 
     Claude Code reads the JSON decision, blocks the tool call, and shows Claude the reason.
-</Steps>
 
 The [Configuration](#configuration) section below documents the full schema, and each [hook event](#hook-events) section documents what input your command receives and what output it can return.
 
@@ -128,9 +126,7 @@ Hooks are defined in JSON settings files. The configuration has three levels of 
 
 See [How a hook resolves](#how-a-hook-resolves) above for a complete walkthrough with an annotated example.
 
-<Note>
   This page uses specific terms for each level: **hook event** for the lifecycle point, **matcher group** for the filter, and **hook handler** for the shell command, HTTP endpoint, prompt, or agent that runs. "Hook" on its own refers to the general feature.
-</Note>
 
 ### Hook locations
 
@@ -317,7 +313,6 @@ Use environment variables to reference hook scripts relative to the project or p
 * `$CLAUDE_PROJECT_DIR`: the project root. Wrap in quotes to handle paths with spaces.
 * `${CLAUDE_PLUGIN_ROOT}`: the plugin's root directory, for scripts bundled with a [plugin](/en/plugins).
 
-<Tabs>
     This example uses `$CLAUDE_PROJECT_DIR` to run a style checker from the project's `.claude/hooks/` directory after any `Write` or `Edit` tool call:
 
     ```json
@@ -363,7 +358,6 @@ Use environment variables to reference hook scripts relative to the project or p
     ```
 
     See the [plugin components reference](/en/plugins-reference#hooks) for details on creating plugin hooks.
-</Tabs>
 
 ### Hooks in skills and agents
 
@@ -525,9 +519,7 @@ Unlike command hooks, HTTP hooks cannot signal a blocking error through status c
 
 Exit codes let you allow or block, but JSON output gives you finer-grained control. Instead of exiting with code 2 to block, exit 0 and print a JSON object to stdout. Claude Code reads specific fields from that JSON to control behavior, including [decision control](#decision-control) for blocking, allowing, or escalating to the user.
 
-<Note>
   You must choose one approach per hook, not both: either use exit codes alone for signaling, or exit 0 and print JSON for structured control. Claude Code only processes JSON on exit 0. If you exit 2, any JSON is ignored.
-</Note>
 
 Your hook's stdout must contain only the JSON object. If your shell profile prints text on startup, it can interfere with JSON parsing. See [JSON validation failed](/en/hooks-guide#json-validation-failed) in the troubleshooting guide.
 
@@ -567,7 +559,6 @@ Not every event supports blocking or controlling behavior through JSON. The even
 
 Here are examples of each pattern in action:
 
-<Tabs>
     Used by `UserPromptSubmit`, `PostToolUse`, `PostToolUseFailure`, `Stop`, `SubagentStop`, and `ConfigChange`. The only value is `"block"`. To allow the action to proceed, omit `decision` from your JSON, or exit 0 without any JSON at all:
 
     ```json
@@ -604,7 +595,6 @@ Here are examples of each pattern in action:
       }
     }
     ```
-</Tabs>
 
 For extended examples including Bash command validation, prompt filtering, and auto-approval scripts, see [What you can automate](/en/hooks-guide#what-you-can-automate) in the guide and the [Bash command validator reference implementation](https://github.com/anthropics/claude-code/blob/main/examples/hooks/bash_command_validator_example.py).
 
@@ -699,9 +689,7 @@ exit 0
 
 Any variables written to this file will be available in all subsequent Bash commands that Claude Code executes during the session.
 
-<Note>
   `CLAUDE_ENV_FILE` is available for SessionStart hooks. Other hook types do not have access to this variable.
-</Note>
 
 ### InstructionsLoaded
 
@@ -790,10 +778,8 @@ To block a prompt, return a JSON object with `decision` set to `"block"`:
 }
 ```
 
-<Note>
   The JSON format isn't required for simple use cases. To add context, you can print plain text to stdout with exit code 0. Use JSON when you need to
   block prompts or want more structured control.
-</Note>
 
 ### PreToolUse
 
@@ -925,9 +911,7 @@ When a hook returns `"ask"`, the permission prompt displayed to the user include
 }
 ```
 
-<Note>
   PreToolUse previously used top-level `decision` and `reason` fields, but these are deprecated for this event. Use `hookSpecificOutput.permissionDecision` and `hookSpecificOutput.permissionDecisionReason` instead. The deprecated values `"approve"` and `"block"` map to `"allow"` and `"deny"` respectively. Other events like PostToolUse and Stop continue to use top-level `decision` and `reason` as their current format.
-</Note>
 
 ### PermissionRequest
 
@@ -1967,9 +1951,7 @@ Async hooks have several constraints compared to synchronous hooks:
 
 Command hooks run with your system user's full permissions.
 
-<Warning>
   Command hooks execute shell commands with your full user permissions. They can modify, delete, or access any files your user account can access. Review and test all hook commands before adding them to your configuration.
-</Warning>
 
 ### Security best practices
 

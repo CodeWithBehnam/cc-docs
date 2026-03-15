@@ -15,9 +15,7 @@ Before configuring Claude Code with Bedrock, ensure you have:
 * AWS CLI installed and configured (optional - only needed if you don't have another mechanism for getting credentials)
 * Appropriate IAM permissions
 
-<Note>
   If you are deploying Claude Code to multiple users, [pin your model versions](#4-pin-model-versions) to prevent breakage when Anthropic releases new models.
-</Note>
 
 ## Setup
 
@@ -126,9 +124,7 @@ When enabling Bedrock for Claude Code, keep the following in mind:
 
 ### 4. Pin model versions
 
-<Warning>
   Pin specific model versions for every deployment. If you use model aliases (`sonnet`, `opus`, `haiku`) without pinning, Claude Code may attempt to use a newer model version that isn't available in your Bedrock account, breaking existing users when Anthropic releases updates.
-</Warning>
 
 Set these environment variables to specific Bedrock model IDs:
 
@@ -160,8 +156,6 @@ export ANTHROPIC_MODEL='arn:aws:bedrock:us-east-2:your-account-id:application-in
 # Optional: Disable prompt caching if needed
 export DISABLE_PROMPT_CACHING=1
 ```
-
-<Note>[Prompt caching](https://platform.claude.com/docs/en/build-with-claude/prompt-caching) may not be available in all regions.</Note>
 
 #### Map each model version to an inference profile
 
@@ -225,9 +219,7 @@ For more restrictive permissions, you can limit the Resource to specific inferen
 
 For details, see [Bedrock IAM documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/security-iam.html).
 
-<Note>
   Create a dedicated AWS account for Claude Code to simplify cost tracking and access control.
-</Note>
 
 ## AWS Guardrails
 

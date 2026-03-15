@@ -33,9 +33,7 @@ The gateway must expose to clients at least one of the following API formats:
 
 Failure to forward headers or preserve body fields may result in reduced functionality or inability to use Claude Code features.
 
-<Note>
   Claude Code determines which features to enable based on the API format. When using the Anthropic Messages format with Bedrock or Vertex, you may need to set environment variable `CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS=1`.
-</Note>
 
 ## Configuration
 
@@ -47,9 +45,7 @@ If you have configured custom model names in your gateway, use the environment v
 
 ## LiteLLM configuration
 
-<Note>
   LiteLLM is a third-party proxy service. Anthropic doesn't endorse, maintain, or audit LiteLLM's security or functionality. This guide is provided for informational purposes and may become outdated. Use at your own discretion.
-</Note>
 
 ### Prerequisites
 

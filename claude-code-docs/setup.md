@@ -35,7 +35,6 @@ Claude Code runs on the following platforms and configurations:
 
 To install Claude Code, use one of the following methods:
 
-<Tabs>
     **macOS, Linux, WSL:**
 
     ```bash
@@ -56,26 +55,19 @@ To install Claude Code, use one of the following methods:
 
     **Windows requires [Git for Windows](https://git-scm.com/downloads/win).** Install it first if you don't have it.
 
-    <Info>
       Native installations automatically update in the background to keep you on the latest version.
-    </Info>
 
     ```bash
     brew install --cask claude-code
     ```
 
-    <Info>
       Homebrew installations do not auto-update. Run `brew upgrade claude-code` periodically to get the latest features and security fixes.
-    </Info>
 
     ```powershell
     winget install Anthropic.ClaudeCode
     ```
 
-    <Info>
       WinGet installations do not auto-update. Run `winget upgrade Anthropic.ClaudeCode` periodically to get the latest features and security fixes.
-    </Info>
-</Tabs>
 
 After installation completes, open a terminal in the project you want to work in and start Claude Code:
 
@@ -155,13 +147,11 @@ Native installations automatically update in the background. You can [configure 
 
 Claude Code checks for updates on startup and periodically while running. Updates download and install in the background, then take effect the next time you start Claude Code.
 
-<Note>
   Homebrew and WinGet installations do not auto-update. Use `brew upgrade claude-code` or `winget upgrade Anthropic.ClaudeCode` to update manually.
 
   **Known issue:** Claude Code may notify you of updates before the new version is available in these package managers. If an upgrade fails, wait and try again later.
 
   Homebrew keeps old versions on disk after upgrades. Run `brew cleanup claude-code` periodically to reclaim disk space.
-</Note>
 
 ### Configure release channel
 
@@ -210,7 +200,6 @@ The native installer accepts either a specific version number or a release chann
 
 To install the latest version (default):
 
-<Tabs>
     ```bash
     curl -fsSL https://claude.ai/install.sh | bash
     ```
@@ -222,11 +211,9 @@ To install the latest version (default):
     ```batch
     curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd
     ```
-</Tabs>
 
 To install the stable version:
 
-<Tabs>
     ```bash
     curl -fsSL https://claude.ai/install.sh | bash -s stable
     ```
@@ -238,11 +225,9 @@ To install the stable version:
     ```batch
     curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd stable && del install.cmd
     ```
-</Tabs>
 
 To install a specific version number:
 
-<Tabs>
     ```bash
     curl -fsSL https://claude.ai/install.sh | bash -s 1.0.58
     ```
@@ -254,7 +239,6 @@ To install a specific version number:
     ```batch
     curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd 1.0.58 && del install.cmd
     ```
-</Tabs>
 
 ### Deprecated npm installation
 
@@ -282,9 +266,7 @@ If you need npm installation for compatibility reasons, you must have [Node.js 1
 npm install -g @anthropic-ai/claude-code
 ```
 
-<Warning>
   Do NOT use `sudo npm install -g` as this can lead to permission issues and security risks. If you encounter permission errors, see [troubleshooting permission errors](/en/troubleshooting#permission-errors-during-installation).
-</Warning>
 
 ### Binary integrity and code signing
 
@@ -303,7 +285,6 @@ To remove Claude Code, follow the instructions for your installation method.
 
 Remove the Claude Code binary and version files:
 
-<Tabs>
     ```bash
     rm -f ~/.local/bin/claude
     rm -rf ~/.local/share/claude
@@ -313,7 +294,6 @@ Remove the Claude Code binary and version files:
     Remove-Item -Path "$env:USERPROFILE\.local\bin\claude.exe" -Force
     Remove-Item -Path "$env:USERPROFILE\.local\share\claude" -Recurse -Force
     ```
-</Tabs>
 
 ### Homebrew installation
 
@@ -341,13 +321,10 @@ npm uninstall -g @anthropic-ai/claude-code
 
 ### Remove configuration files
 
-<Warning>
   Removing configuration files will delete all your settings, allowed tools, MCP server configurations, and session history.
-</Warning>
 
 To remove Claude Code settings and cached data:
 
-<Tabs>
     ```bash
     # Remove user settings and state
     rm -rf ~/.claude
@@ -367,4 +344,3 @@ To remove Claude Code settings and cached data:
     Remove-Item -Path ".claude" -Recurse -Force
     Remove-Item -Path ".mcp.json" -Force
     ```
-</Tabs>

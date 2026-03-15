@@ -6,17 +6,13 @@
 
 > Customize keyboard shortcuts in Claude Code with a keybindings configuration file.
 
-<Note>
   Customizable keyboard shortcuts require Claude Code v2.1.18 or later. Check your version with `claude --version`.
-</Note>
 
 Claude Code supports customizable keyboard shortcuts. Run `/keybindings` to create or open your configuration file at `~/.claude/keybindings.json`.
 
 ## Configuration file
 
 The keybindings configuration file is an object with a `bindings` array. Each block specifies a context and a map of keystrokes to actions.
-
-<Note>Changes to the keybindings file are automatically detected and applied without restarting Claude Code.</Note>
 
 | Field      | Description                                        |
 | :--------- | :------------------------------------------------- |

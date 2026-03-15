@@ -64,7 +64,6 @@ If installation succeeded but you get a `command not found` or `not recognized` 
 
 Check if the install directory is in your PATH by listing your PATH entries and filtering for `local/bin`:
 
-<Tabs>
     ```bash
     echo $PATH | tr ':' '\n' | grep local/bin
     ```
@@ -119,13 +118,11 @@ Check if the install directory is in your PATH by listing your PATH entries and 
     ```batch
     claude --version
     ```
-</Tabs>
 
 ### Check for conflicting installations
 
 Multiple Claude Code installations can cause version mismatches or unexpected behavior. Check what's installed:
 
-<Tabs>
     List all `claude` binaries found in your PATH:
 
     ```bash
@@ -150,7 +147,6 @@ Multiple Claude Code installations can cause version mismatches or unexpected be
     where.exe claude
     Test-Path "$env:LOCALAPPDATA\Claude Code\claude.exe"
     ```
-</Tabs>
 
 If you find multiple installations, keep only one. The native install at `~/.local/bin/claude` is recommended. Remove any extra installations:
 
@@ -557,15 +553,12 @@ If nvm is properly loaded but Windows paths still take priority, you can explici
 export PATH="$HOME/.nvm/versions/node/$(node -v)/bin:$PATH"
 ```
 
-<Warning>
   Avoid disabling Windows PATH importing via `appendWindowsPath = false` as this breaks the ability to call Windows executables from WSL. Similarly, avoid uninstalling Node.js from Windows if you use it for Windows development.
-</Warning>
 
 ### WSL2 sandbox setup
 
 [Sandboxing](/en/sandboxing) is supported on WSL2 but requires installing additional packages. If you see an error like "Sandbox requires socat and bubblewrap" when running `/sandbox`, install the dependencies:
 
-<Tabs>
     ```bash
     sudo apt-get install bubblewrap socat
     ```
@@ -573,7 +566,6 @@ export PATH="$HOME/.nvm/versions/node/$(node -v)/bin:$PATH"
     ```bash
     sudo dnf install bubblewrap socat
     ```
-</Tabs>
 
 WSL1 does not support sandboxing. If you see "Sandboxing requires WSL2", you need to upgrade to WSL2 or run Claude Code without sandboxing.
 
@@ -673,9 +665,7 @@ rm -rf .claude/
 rm .mcp.json
 ```
 
-<Warning>
   This will remove all your settings, MCP server configurations, and session history.
-</Warning>
 
 ## Performance and stability
 
@@ -723,9 +713,7 @@ Then set `USE_BUILTIN_RIPGREP=0` in your [environment](/en/env-vars).
 
 Disk read performance penalties when [working across file systems on WSL](https://learn.microsoft.com/en-us/windows/wsl/filesystems) may result in fewer-than-expected matches when using Claude Code on WSL. Search still functions, but returns fewer results than on a native filesystem.
 
-<Note>
   `/doctor` will show Search as OK in this case.
-</Note>
 
 **Solutions:**
 
@@ -774,9 +762,7 @@ networkingMode=mirrored
 
 Then restart WSL with `wsl --shutdown` from PowerShell.
 
-<Note>
   These networking issues only affect WSL2. WSL1 uses the host's network directly and doesn't require these configurations.
-</Note>
 
 For additional JetBrains configuration tips, see the [JetBrains IDE guide](/en/jetbrains#plugin-settings).
 

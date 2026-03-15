@@ -8,9 +8,7 @@
 
 Subagents are specialized AI assistants that handle specific types of tasks. Each subagent runs in its own context window with a custom system prompt, specific tool access, and independent permissions. When Claude encounters a task that matches a subagent's description, it delegates to that subagent, which works independently and returns results.
 
-<Note>
   If you need multiple agents working in parallel and communicating with each other, see [agent teams](/en/agent-teams) instead. Subagents work within a single session; agent teams coordinate across separate sessions.
-</Note>
 
 Subagents help you:
 
@@ -28,7 +26,6 @@ Claude Code includes several built-in subagents like **Explore**, **Plan**, and 
 
 Claude Code includes built-in subagents that Claude automatically uses when appropriate. Each inherits the parent conversation's permissions with additional tool restrictions.
 
-<Tabs>
     A fast, read-only agent optimized for searching and analyzing codebases.
 
     * **Model**: Haiku (fast, low-latency)
@@ -62,7 +59,6 @@ Claude Code includes built-in subagents that Claude automatically uses when appr
     | Bash              | Inherits | Running terminal commands in a separate context          |
     | statusline-setup  | Sonnet   | When you run `/statusline` to configure your status line |
     | Claude Code Guide | Haiku    | When you ask questions about Claude Code features        |
-</Tabs>
 
 Beyond these built-in subagents, you can create your own with custom prompts, tool restrictions, permission modes, hooks, and skills. The following sections show how to get started and customize subagents.
 
@@ -72,7 +68,6 @@ Subagents are defined in Markdown files with YAML frontmatter. You can [create t
 
 This walkthrough guides you through creating a user-level subagent with the `/agent` command. The subagent reviews code and suggests improvements for the codebase.
 
-<Steps>
     In Claude Code, run:
 
     ```text
@@ -104,7 +99,6 @@ This walkthrough guides you through creating a user-level subagent with the `/ag
     ```
 
     Claude delegates to your new subagent, which scans the codebase and returns improvement suggestions.
-</Steps>
 
 You now have a subagent you can use in any project on your machine to analyze codebases and suggest improvements.
 
@@ -166,9 +160,7 @@ The `--agents` flag accepts JSON with the same [frontmatter](#supported-frontmat
 
 Subagent files use YAML frontmatter for configuration, followed by the system prompt in Markdown:
 
-<Note>
   Subagents are loaded at session start. If you create a subagent by manually adding a file, restart your session or use `/agents` to load it immediately.
-</Note>
 
 ```markdown
 ---
@@ -236,8 +228,6 @@ disallowedTools: Write, Edit
 
 When an agent runs as the main thread with `claude --agent`, it can spawn subagents using the Agent tool. To restrict which subagent types it can spawn, use `Agent(agent_type)` syntax in the `tools` field.
 
-<Note>In version 2.1.63, the Task tool was renamed to Agent. Existing `Task(...)` references in settings and agent definitions still work as aliases.</Note>
-
 ```yaml
 ---
 name: coordinator
@@ -295,9 +285,7 @@ The `permissionMode` field controls how the subagent handles permission prompts.
 | `bypassPermissions` | Skip all permission checks                                         |
 | `plan`              | Plan mode (read-only exploration)                                  |
 
-<Warning>
   Use `bypassPermissions` with caution. It skips all permission checks, allowing the subagent to execute any operation without approval.
-</Warning>
 
 If the parent uses `bypassPermissions`, this takes precedence and cannot be overridden.
 
@@ -319,9 +307,7 @@ Implement API endpoints. Follow the conventions and patterns from the preloaded 
 
 The full content of each skill is injected into the subagent's context, not just made available for invocation. Subagents don't inherit skills from the parent conversation; you must list them explicitly.
 
-<Note>
   This is the inverse of [running a skill in a subagent](/en/skills#run-skills-in-a-subagent). With `skills` in a subagent, the subagent controls the system prompt and loads skill content. With `context: fork` in a skill, the skill content is injected into the agent you specify. Both use the same underlying system.
-</Note>
 
 #### Enable persistent memory
 
@@ -551,9 +537,7 @@ Research the authentication, database, and API modules in parallel using separat
 
 Each subagent explores its area independently, then Claude synthesizes the findings. This works best when the research paths don't depend on each other.
 
-<Warning>
   When subagents complete, their results return to your main conversation. Running many subagents that each return detailed results can consume significant context.
-</Warning>
 
 For tasks that need sustained parallelism or exceed your context window, [agent teams](/en/agent-teams) give each worker its own independent context.
 
@@ -584,9 +568,7 @@ Consider [Skills](/en/skills) instead when you want reusable prompts or workflow
 
 For a quick question about something already in your conversation, use [`/btw`](/en/interactive-mode#side-questions-with-btw) instead of a subagent. It sees your full context but has no tool access, and the answer is discarded rather than added to history.
 
-<Note>
   Subagents cannot spawn other subagents. If your workflow requires nested delegation, use [Skills](/en/skills) or [chain subagents](#chain-subagents) from the main conversation.
-</Note>
 
 ### Manage subagent context
 

@@ -35,9 +35,7 @@ export OTEL_LOGS_EXPORT_INTERVAL=5000     # 5 seconds (default: 5000ms)
 claude
 ```
 
-<Note>
   The default export intervals are 60 seconds for metrics and 5 seconds for logs. During setup, you may want to use shorter intervals for debugging purposes. Remember to reset these for production use.
-</Note>
 
 For full configuration options, see the [OpenTelemetry specification](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/protocol/exporter.md#configuration-options).
 
@@ -60,9 +58,7 @@ Example managed settings configuration:
 }
 ```
 
-<Note>
   Managed settings can be distributed via MDM (Mobile Device Management) or other device management solutions. Environment variables defined in the managed settings file have high precedence and cannot be overridden by users.
-</Note>
 
 ## Configuration details
 
@@ -145,7 +141,6 @@ These custom attributes will be included in all metrics and events, allowing you
 * Create team-specific dashboards
 * Set up alerts for specific teams
 
-<Warning>
   **Important formatting requirements for OTEL\_RESOURCE\_ATTRIBUTES:**
 
   The `OTEL_RESOURCE_ATTRIBUTES` environment variable uses comma-separated key=value pairs with strict formatting requirements:
@@ -170,7 +165,6 @@ These custom attributes will be included in all metrics and events, allowing you
   ```
 
   Note: wrapping values in quotes doesn't escape spaces. For example, `org.name="My Company"` results in the literal value `"My Company"` (with quotes included), not `My Company`.
-</Warning>
 
 ### Example configurations
 
@@ -341,9 +335,7 @@ When a user submits a prompt, Claude Code may make multiple API calls and run se
 
 To trace all activity triggered by a single prompt, filter your events by a specific `prompt.id` value. This returns the user\_prompt event, any api\_request events, and any tool\_result events that occurred while processing that prompt.
 
-<Note>
   `prompt.id` is intentionally excluded from metrics because each prompt generates a unique ID, which would create an ever-growing number of time series. Use it for event-level analysis and audit trails only.
-</Note>
 
 #### User prompt event
 
@@ -461,9 +453,7 @@ The `claude_code.cost.usage` metric helps with:
 * Tracking usage trends across teams or individuals
 * Identifying high-usage sessions for optimization
 
-<Note>
   Cost metrics are approximations. For official billing data, refer to your API provider (Claude Console, AWS Bedrock, or Google Cloud Vertex).
-</Note>
 
 ### Alerting and segmentation
 

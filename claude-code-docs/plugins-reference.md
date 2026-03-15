@@ -226,9 +226,7 @@ LSP integration provides:
 | `restartOnCrash`        | Whether to automatically restart the server if it crashes |
 | `maxRestarts`           | Maximum number of restart attempts before giving up       |
 
-<Warning>
   **You must install the language server binary separately.** LSP plugins configure how Claude Code connects to a language server, but they don't include the server itself. If you see `Executable not found in $PATH` in the `/plugin` Errors tab, install the required binary for your language.
-</Warning>
 
 **Available LSP plugins:**
 
@@ -435,9 +433,7 @@ enterprise-plugin/
 └── CHANGELOG.md             # Version history
 ```
 
-<Warning>
   The `.claude-plugin/` directory contains the `plugin.json` file. All other directories (commands/, agents/, skills/, hooks/) must be at the plugin root, not inside `.claude-plugin/`.
-</Warning>
 
 ### File locations reference
 
@@ -691,11 +687,9 @@ Follow semantic versioning for plugin releases:
 * Document changes in a `CHANGELOG.md` file
 * Use pre-release versions like `2.0.0-beta.1` for testing
 
-<Warning>
   Claude Code uses the version to determine whether to update your plugin. If you change your plugin's code but don't bump the version in `plugin.json`, your plugin's existing users won't see your changes due to caching.
 
   If your plugin is within a [marketplace](/en/plugin-marketplaces) directory, you can manage the version through `marketplace.json` instead and omit the `version` field from `plugin.json`.
-</Warning>
 
 ***
 

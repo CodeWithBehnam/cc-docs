@@ -96,9 +96,7 @@ For personal preferences you don't want to check in, import a file from your hom
 - @~/.claude/my-project-instructions.md
 ```
 
-<Warning>
   The first time Claude Code encounters external imports in a project, it shows an approval dialog listing the files. If you decline, the imports stay disabled and the dialog does not appear again.
-</Warning>
 
 For a more structured approach to organizing instructions, see [`.claude/rules/`](#organize-rules-with-clauderules).
 
@@ -124,9 +122,7 @@ CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD=1 claude --add-dir ../shared-config
 
 For larger projects, you can organize instructions into multiple files using the `.claude/rules/` directory. This keeps instructions modular and easier for teams to maintain. Rules can also be [scoped to specific file paths](#path-specific-rules), so they only load into context when Claude works with matching files, reducing noise and saving context space.
 
-<Note>
   Rules load into context every session or when matching files are opened. For task-specific instructions that don't need to be in context all the time, use [skills](/en/skills) instead, which only load when you invoke them or when Claude determines they're relevant to your prompt.
-</Note>
 
 #### Set up rules
 
@@ -214,13 +210,11 @@ For organizations deploying Claude Code across teams, you can centralize instruc
 
 Organizations can deploy a centrally managed CLAUDE.md that applies to all users on a machine. This file cannot be excluded by individual settings.
 
-<Steps>
     * macOS: `/Library/Application Support/ClaudeCode/CLAUDE.md`
     * Linux and WSL: `/etc/claude-code/CLAUDE.md`
     * Windows: `C:\Program Files\ClaudeCode\CLAUDE.md`
 
     Use MDM, Group Policy, Ansible, or similar tools to distribute the file across developer machines. See [managed settings](/en/permissions#managed-settings) for other organization-wide configuration options.
-</Steps>
 
 #### Exclude specific CLAUDE.md files
 
@@ -245,9 +239,7 @@ Managed policy CLAUDE.md files cannot be excluded. This ensures organization-wid
 
 Auto memory lets Claude accumulate knowledge across sessions without you writing anything. Claude saves notes for itself as it works: build commands, debugging insights, architecture notes, code style preferences, and workflow habits. Claude doesn't save something every session. It decides what's worth remembering based on whether the information would be useful in a future conversation.
 
-<Note>
   Auto memory requires Claude Code v2.1.59 or later. Check your version with `claude --version`.
-</Note>
 
 ### Enable or disable auto memory
 

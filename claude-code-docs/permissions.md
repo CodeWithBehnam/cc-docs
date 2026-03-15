@@ -40,9 +40,7 @@ Claude Code supports several permission modes that control how tools are approve
 | `dontAsk`           | Auto-denies tools unless pre-approved via `/permissions` or `permissions.allow` rules |
 | `bypassPermissions` | Skips all permission prompts (requires safe environment, see warning below)           |
 
-<Warning>
   `bypassPermissions` mode disables all permission checks. Only use this in isolated environments like containers or VMs where Claude Code cannot cause damage. Administrators can prevent this mode by setting `disableBypassPermissionsMode` to `"disable"` in [managed settings](#managed-settings).
-</Warning>
 
 ## Permission rule syntax
 
@@ -109,7 +107,6 @@ When `*` appears at the end with a space before it (like `Bash(ls *)`), it enfor
 
   Claude Code is aware of shell operators (like `&&`) so a prefix match rule like `Bash(safe-cmd *)` won't give it permission to run the command `safe-cmd && other-cmd`.
 
-<Warning>
   Bash permission patterns that try to constrain command arguments are fragile. For example, `Bash(curl http://github.com/ *)` intends to restrict curl to GitHub URLs, but won't match variations like:
 
   * Options before URL: `curl -X GET http://github.com/...`
@@ -125,7 +122,6 @@ When `*` appears at the end with a space before it (like `Bash(ls *)`), it enfor
   * Instructing Claude Code about your allowed curl patterns via CLAUDE.md
 
   Note that using WebFetch alone does not prevent network access. If Bash is allowed, Claude can still use `curl`, `wget`, or other tools to reach any URL.
-</Warning>
 
 ### Read and Edit
 
@@ -140,9 +136,7 @@ Read and Edit rules both follow the [gitignore](https://git-scm.com/docs/gitigno
 | `/path`            | Path **relative to project root**      | `Edit(/src/**/*.ts)`             | `<project root>/src/**/*.ts`   |
 | `path` or `./path` | Path **relative to current directory** | `Read(*.env)`                    | `<cwd>/*.env`                  |
 
-<Warning>
   A pattern like `/Users/alice/file` is NOT an absolute path. It's relative to the project root. Use `//Users/alice/file` for absolute paths.
-</Warning>
 
 Examples:
 
@@ -151,9 +145,7 @@ Examples:
 * `Edit(//tmp/scratch.txt)`: edits the absolute path `/tmp/scratch.txt`
 * `Read(src/**)`: reads from `<current-directory>/src/`
 
-<Note>
   In gitignore patterns, `*` matches files in a single directory while `**` matches recursively across directories. To allow all file access, use just the tool name without parentheses: `Read`, `Edit`, or `Write`.
-</Note>
 
 ### WebFetch
 

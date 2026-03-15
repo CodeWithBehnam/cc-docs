@@ -6,9 +6,7 @@
 
 > Continue a local Claude Code session from your phone, tablet, or any browser using Remote Control. Works with claude.ai/code and the Claude mobile app.
 
-<Note>
   Remote Control is available on all plans. Team and Enterprise admins must first enable Claude Code in [admin settings](https://claude.ai/admin-settings/claude-code).
-</Note>
 
 Remote Control connects [claude.ai/code](https://claude.ai/code) or the Claude app for [iOS](https://apps.apple.com/us/app/claude-by-anthropic/id6473753684) and [Android](https://play.google.com/store/apps/details?id=com.anthropic.claude) to a Claude Code session running on your machine. Start a task at your desk, then pick it up from your phone on the couch or a browser on another computer.
 
@@ -20,9 +18,7 @@ When you start a Remote Control session on your machine, Claude keeps running lo
 
 Unlike [Claude Code on the web](/en/claude-code-on-the-web), which runs on cloud infrastructure, Remote Control sessions run directly on your machine and interact with your local filesystem. The web and mobile interfaces are just a window into that local session.
 
-<Note>
   Remote Control requires Claude Code v2.1.51 or later. Check your version with `claude --version`.
-</Note>
 
 This page covers setup, how to start and connect to sessions, and how Remote Control compares to Claude Code on the web.
 
@@ -38,7 +34,6 @@ Before using Remote Control, confirm that your environment meets these condition
 
 You can start a dedicated Remote Control server, start an interactive session with Remote Control enabled, or connect a session that's already running.
 
-<Tabs>
     Navigate to your project directory and run:
 
     ```bash
@@ -84,7 +79,6 @@ You can start a dedicated Remote Control server, start an interactive session wi
     ```
 
     This starts a Remote Control session that carries over your current conversation history and displays a session URL and QR code you can use to [connect from another device](#connect-from-another-device). The `--verbose`, `--sandbox`, and `--no-sandbox` flags are not available with this command.
-</Tabs>
 
 ### Connect from another device
 

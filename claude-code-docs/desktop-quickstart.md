@@ -22,13 +22,10 @@ The desktop app has three tabs:
 
 Chat and Cowork are covered in the [Claude Desktop support articles](https://support.claude.com/en/collections/16163169-claude-desktop). This page focuses on the **Code** tab.
 
-<Note>
   Claude Code requires a [Pro, Max, Teams, or Enterprise subscription](https://claude.com/pricing?utm_source=claude_code\&utm_medium=docs\&utm_content=desktop_quickstart_pricing).
-</Note>
 
 ## Install
 
-<Steps>
     Download Claude for your platform.
 
         Universal build for Intel and Apple Silicon
@@ -42,7 +39,6 @@ Chat and Cowork are covered in the [Claude Desktop support articles](https://sup
     Launch Claude from your Applications folder (macOS) or Start menu (Windows). Sign in with your Anthropic account.
 
     Click the **Code** tab at the top center. If clicking Code prompts you to upgrade, you need to [subscribe to a paid plan](https://claude.com/pricing?utm_source=claude_code\&utm_medium=docs\&utm_content=desktop_quickstart_upgrade) first. If it prompts you to sign in online, complete the sign-in and restart the app. If you see a 403 error, see [authentication troubleshooting](/en/desktop#403-or-authentication-errors-in-the-code-tab).
-</Steps>
 
 The desktop app includes Claude Code. You don't need to install Node.js or the CLI separately. To use `claude` from the terminal, install the CLI separately. See [Get started with the CLI](/en/quickstart).
 
@@ -50,7 +46,6 @@ The desktop app includes Claude Code. You don't need to install Node.js or the C
 
 With the Code tab open, choose a project and give Claude something to do.
 
-<Steps>
     Select **Local** to run Claude on your machine using your files directly. Click **Select folder** and choose your project directory.
 
       Start with a small project you know well. It's the fastest way to see what Claude Code can do. On Windows, [Git](https://git-scm.com/downloads/win) must be installed for local sessions to work. Most Macs include Git by default.
@@ -77,7 +72,6 @@ With the Code tab open, choose a project and give Claude something to do.
     3. Real-time updates as Claude works through your request
 
     If you reject a change, Claude will ask how you'd like to proceed differently. Your files aren't modified until you accept.
-</Steps>
 
 ## Now what?
 

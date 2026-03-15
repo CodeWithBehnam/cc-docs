@@ -10,12 +10,10 @@ The reference [devcontainer setup](https://github.com/anthropics/claude-code/tre
 
 The container's enhanced security measures (isolation and firewall rules) allow you to run `claude --dangerously-skip-permissions` to bypass permission prompts for unattended operation.
 
-<Warning>
   While the devcontainer provides substantial protections, no system is completely immune to all attacks.
   When executed with `--dangerously-skip-permissions`, devcontainers don't prevent a malicious project from exfiltrating anything accessible in the devcontainer including Claude Code credentials.
   We recommend only using devcontainers when developing with trusted repositories.
   Always maintain good security practices and monitor Claude's activities.
-</Warning>
 
 ## Key features
 
