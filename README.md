@@ -26,6 +26,23 @@ A GitHub Actions workflow runs every hour, downloads the latest docs, and commit
 - `claude-code-docs/` - 65+ markdown doc pages
 - `templates/` with CLAUDE.md templates for hooks, skills, and sub-agents
 
+## Documentation
+
+The [`claude-code-docs/`](claude-code-docs/) folder contains all doc pages, organized by category.
+
+| Category | Docs |
+|---|---|
+| **Getting Started** | [overview](claude-code-docs/overview.md) &#183; [quickstart](claude-code-docs/quickstart.md) &#183; [setup](claude-code-docs/setup.md) &#183; [how-claude-code-works](claude-code-docs/how-claude-code-works.md) |
+| **Core Usage** | [interactive-mode](claude-code-docs/interactive-mode.md) &#183; [cli-reference](claude-code-docs/cli-reference.md) &#183; [commands](claude-code-docs/commands.md) &#183; [common-workflows](claude-code-docs/common-workflows.md) &#183; [best-practices](claude-code-docs/best-practices.md) &#183; [code-review](claude-code-docs/code-review.md) &#183; [keybindings](claude-code-docs/keybindings.md) &#183; [fast-mode](claude-code-docs/fast-mode.md) &#183; [output-styles](claude-code-docs/output-styles.md) &#183; [terminal-config](claude-code-docs/terminal-config.md) |
+| **Memory & Settings** | [memory](claude-code-docs/memory.md) &#183; [settings](claude-code-docs/settings.md) &#183; [model-config](claude-code-docs/model-config.md) &#183; [permissions](claude-code-docs/permissions.md) &#183; [env-vars](claude-code-docs/env-vars.md) &#183; [statusline](claude-code-docs/statusline.md) |
+| **Extensibility** | [features-overview](claude-code-docs/features-overview.md) &#183; [skills](claude-code-docs/skills.md) &#183; [sub-agents](claude-code-docs/sub-agents.md) &#183; [agent-teams](claude-code-docs/agent-teams.md) &#183; [plugins](claude-code-docs/plugins.md) &#183; [plugins-reference](claude-code-docs/plugins-reference.md) &#183; [discover-plugins](claude-code-docs/discover-plugins.md) &#183; [plugin-marketplaces](claude-code-docs/plugin-marketplaces.md) &#183; [hooks](claude-code-docs/hooks.md) &#183; [hooks-guide](claude-code-docs/hooks-guide.md) &#183; [mcp](claude-code-docs/mcp.md) |
+| **IDE Integrations** | [vs-code](claude-code-docs/vs-code.md) &#183; [jetbrains](claude-code-docs/jetbrains.md) &#183; [chrome](claude-code-docs/chrome.md) &#183; [desktop](claude-code-docs/desktop.md) &#183; [desktop-quickstart](claude-code-docs/desktop-quickstart.md) &#183; [claude-code-on-the-web](claude-code-docs/claude-code-on-the-web.md) |
+| **CI/CD & Automation** | [headless](claude-code-docs/headless.md) &#183; [github-actions](claude-code-docs/github-actions.md) &#183; [gitlab-ci-cd](claude-code-docs/gitlab-ci-cd.md) &#183; [remote-control](claude-code-docs/remote-control.md) &#183; [scheduled-tasks](claude-code-docs/scheduled-tasks.md) &#183; [slack](claude-code-docs/slack.md) |
+| **Cloud Providers** | [amazon-bedrock](claude-code-docs/amazon-bedrock.md) &#183; [google-vertex-ai](claude-code-docs/google-vertex-ai.md) &#183; [microsoft-foundry](claude-code-docs/microsoft-foundry.md) &#183; [llm-gateway](claude-code-docs/llm-gateway.md) |
+| **Enterprise & Security** | [authentication](claude-code-docs/authentication.md) &#183; [security](claude-code-docs/security.md) &#183; [sandboxing](claude-code-docs/sandboxing.md) &#183; [network-config](claude-code-docs/network-config.md) &#183; [server-managed-settings](claude-code-docs/server-managed-settings.md) &#183; [third-party-integrations](claude-code-docs/third-party-integrations.md) &#183; [data-usage](claude-code-docs/data-usage.md) &#183; [zero-data-retention](claude-code-docs/zero-data-retention.md) &#183; [legal-and-compliance](claude-code-docs/legal-and-compliance.md) |
+| **Operations** | [costs](claude-code-docs/costs.md) &#183; [analytics](claude-code-docs/analytics.md) &#183; [monitoring-usage](claude-code-docs/monitoring-usage.md) &#183; [checkpointing](claude-code-docs/checkpointing.md) &#183; [devcontainer](claude-code-docs/devcontainer.md) &#183; [troubleshooting](claude-code-docs/troubleshooting.md) |
+| **Reference** | [tools-reference](claude-code-docs/tools-reference.md) &#183; [changelog](claude-code-docs/changelog.md) &#183; [llms.txt](claude-code-docs/llms.txt) |
+
 ## Cheatsheets
 
 The [`cheatsheets/`](cheatsheets/) folder has a scannable quick-reference for every doc page - tables, key commands, and gotchas at a glance.
