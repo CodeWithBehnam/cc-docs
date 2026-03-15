@@ -634,6 +634,26 @@ Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines
 
 This project follows the [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md) and is licensed under [MIT](LICENSE).
 
+## Related Projects
+
+Other great Claude Code community projects worth checking out:
+
+| Repository | Stars | Focus |
+|---|---|---|
+| [anthropics/claude-code](https://github.com/anthropics/claude-code) | 78k+ | Official Claude Code repository |
+| [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) | 11k+ | Official Anthropic-managed plugin directory |
+| [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code) | 77k+ | Skills, instincts, memory, and security optimization system |
+| [hesreallyhim/awesome-claude-code](https://github.com/hesreallyhim/awesome-claude-code) | 28k+ | Curated list of skills, hooks, commands, and plugins |
+| [sickn33/antigravity-awesome-skills](https://github.com/sickn33/antigravity-awesome-skills) | 24k+ | 1000+ agentic skills collection |
+| [VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents) | 13k+ | 100+ specialized subagents |
+| [VoltAgent/awesome-agent-skills](https://github.com/VoltAgent/awesome-agent-skills) | 11k+ | 500+ agent skills from dev teams and community |
+| [SuperClaude-Org/SuperClaude_Framework](https://github.com/SuperClaude-Org/SuperClaude_Framework) | 21k+ | Configuration framework with specialized commands and personas |
+| [wshobson/agents](https://github.com/wshobson/agents) | 31k+ | Multi-agent orchestration for Claude Code |
+| [shanraisshan/claude-code-best-practice](https://github.com/shanraisshan/claude-code-best-practice) | 16k+ | Best practices collection |
+| [coleam00/context-engineering-intro](https://github.com/coleam00/context-engineering-intro) | 12k+ | Context engineering strategies for Claude Code |
+| [davila7/claude-code-templates](https://github.com/davila7/claude-code-templates) | 22k+ | CLI tool for configuring and monitoring Claude Code |
+| [garrytan/gstack](https://github.com/garrytan/gstack) | 13k+ | Opinionated Claude Code setup with 6 tools |
+
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=CodeWithBehnam/cc-docs&type=Date)](https://star-history.com/#CodeWithBehnam/cc-docs&Date)
