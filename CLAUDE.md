@@ -6,7 +6,7 @@
 
 ## Workflow Rules
 
-- After making changes, always commit and push to the remote repository.
+- After making changes, always update this CLAUDE.md file to reflect any added, removed, or renamed files, then commit and push to the remote repository.
 
 This repo contains the official Claude Code documentation, downloaded from <https://code.claude.com/docs>. Doc files live in the `claude-code-docs/` folder.
 
