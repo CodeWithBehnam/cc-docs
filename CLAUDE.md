@@ -1,5 +1,9 @@
 # Claude Code Documentation Index
 
+## Writing Rules
+
+- NEVER use em-dashes ('—') in any generated text. Use commas, periods, parentheses, or regular hyphens instead.
+
 This folder contains the official Claude Code documentation, downloaded from <https://code.claude.com/docs>.
 
 ## Maintenance
