@@ -211,6 +211,21 @@ Ready-to-use, copy-paste-able templates. **Use these as starting points** when a
 | `ENTERPRISE-NETWORK.md` | Network config (proxy, custom CA, mTLS, credential refresh, firewall) |
 | `ENTERPRISE-MANAGED-SETTINGS.md` | Managed settings (org-wide permissions, model restrictions, audit) |
 
+### Rules (`rules/`)
+
+Drop-in path-specific rules files. Copy to `.claude/rules/` in any project. Claude loads a rules file automatically when working with files that match its `globs` pattern.
+
+| File | Glob Patterns | Description |
+|------|---------------|-------------|
+| `rules/typescript.md` | `**/*.ts`, `**/*.tsx` | Strict TypeScript: no `any`, union types over enums, proper generics, const-first, optional chaining |
+| `rules/python.md` | `**/*.py` | PEP 8, type hints on all signatures, f-strings, pathlib, dataclasses, logging, specific exception handling |
+| `rules/react.md` | `**/*.tsx`, `**/*.jsx` | Functional components, custom hooks, named exports, accessibility, composition over inheritance, error boundaries |
+| `rules/go.md` | `**/*.go` | Immediate error checks, table-driven tests, context as first param, small interfaces, standard project layout |
+| `rules/rails.md` | `**/*.rb`, `**/*.erb` | Fat models/thin controllers, model-level validation, strong params, scopes, service objects, I18n |
+| `rules/rust.md` | `**/*.rs` | Result over panic, `?` operator, custom error types, prefer borrows, derive macros, minimize unsafe |
+| `rules/sql.md` | `**/*.sql`, `**/migrations/**` | snake_case naming, BIGINT IDs, reversible migrations with up/down, transactions, index foreign keys |
+| `rules/testing.md` | `**/*test*`, `**/*spec*`, `**/test/**`, `**/tests/**`, `**/spec/**` | Arrange-Act-Assert, one concept per test, descriptive names, no sleep/timeouts, clean up test data |
+
 ### Reference
 
 | File | Description |
