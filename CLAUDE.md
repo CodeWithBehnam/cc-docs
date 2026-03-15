@@ -240,6 +240,25 @@ Curated practical tips from daily Claude Code usage. Each file is focused on a s
 | `tips/multi-session.md` | Parallel sessions, worktrees, and agent coordination |
 | `tips/security.md` | Security-first habits and safeguards for safe automation |
 
+### Commands (`commands/`)
+
+Drop-in slash command files. Copy to `.claude/commands/` in any project. Invoke with `/command-name` (or `/command-name <argument>`) inside a Claude Code session.
+
+| File | Command | Argument | Description |
+|------|---------|----------|-------------|
+| `commands/commit.md` | `/commit` | (none) | Run tests, stage changes, generate a conventional commit message, and commit. |
+| `commands/pr.md` | `/pr` | (none) | Summarize branch changes vs main, generate title and description, push, and create a PR with `gh`. |
+| `commands/review.md` | `/review` | (none) | Diff the current branch against main and report findings by priority: critical, warning, suggestion. |
+| `commands/fix-issue.md` | `/fix-issue` | `<issue-number>` | Fetch a GitHub issue, implement the fix, write tests, and commit with a closing reference. |
+| `commands/tdd.md` | `/tdd` | `<feature description>` | Implement a feature using strict TDD: red, green, refactor cycle. |
+| `commands/deploy.md` | `/deploy` | `<staging\|production>` | Run tests, build, and deploy to the target environment with safety checks. |
+| `commands/lint-fix.md` | `/lint-fix` | (none) | Detect the project linter, auto-fix all fixable issues, and report what remains. |
+| `commands/deps-update.md` | `/deps-update` | (none) | Audit for vulnerabilities, list outdated packages, update safe ones, and run tests. |
+| `commands/explain.md` | `/explain` | `<file or symbol>` | Explain code with an ASCII diagram, analogy, step-by-step walkthrough, and common gotchas. |
+| `commands/release.md` | `/release` | `<version e.g. 1.2.0>` | Update changelog, bump version, commit, tag, push, and create a GitHub release. |
+| `commands/db-migrate.md` | `/db-migrate` | `<migration description>` | Generate a migration file with up/down methods and test the rollback. |
+| `commands/new-feature.md` | `/new-feature` | `<feature name>` | Scaffold a new feature following existing patterns, with files, tests, and wired imports. |
+
 ### Reference
 
 | File | Description |
