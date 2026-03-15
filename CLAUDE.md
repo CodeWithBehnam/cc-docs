@@ -125,13 +125,90 @@ When updating these docs (via `Scripts/download-cc-docs.sh`), **you must also up
 
 ### Templates (`templates/`)
 
-Ready-to-use templates for creating new Claude Code extensions. **Use these as starting points** when asked to create skills, subagents, or hooks.
+Ready-to-use, copy-paste-able templates. **Use these as starting points** when asked to create skills, subagents, hooks, or set up any Claude Code feature.
+
+#### Core Extension Templates
 
 | File | Description |
 |------|-------------|
-| `templates/SKILL-TEMPLATE.md` | Comprehensive skill templates - reference, task, research, codegen, and script-powered patterns |
-| `templates/SUBAGENT-TEMPLATE.md` | Comprehensive subagent templates - reviewer, debugger, domain expert, with-hooks, memory, background, and worktree patterns |
-| `templates/HOOKS-TEMPLATE.md` | Comprehensive hooks templates - formatter, protector, notifier, auditor, verifier, and all hook event types |
+| `templates/SKILL-TEMPLATE.md` | Skill patterns - reference, task, research, codegen, script-powered |
+| `templates/SUBAGENT-TEMPLATE.md` | Subagent patterns - reviewer, debugger, domain expert, hooks, memory, background, worktree |
+| `templates/HOOKS-TEMPLATE.md` | Hook patterns - formatter, protector, notifier, auditor, verifier, all event types |
+
+#### CLAUDE.md Starters (`templates/claude-md-starters/`)
+
+| File | Description |
+|------|-------------|
+| `CLAUDE-MD-PYTHON.md` | Python project starter with pytest, ruff, uv/pip/poetry, Django/FastAPI variants |
+| `CLAUDE-MD-TYPESCRIPT.md` | TypeScript/Node.js starter with ESLint, Prettier, npm/pnpm/bun variants |
+| `CLAUDE-MD-REACT.md` | React/Next.js starter with App Router, Tailwind, Vite/shadcn variants |
+| `CLAUDE-MD-RAILS.md` | Ruby on Rails starter with RSpec, Rubocop, Hotwire, API-only variant |
+| `CLAUDE-MD-MONOREPO.md` | Monorepo starter with path-specific rules, workspace conventions, imports |
+
+#### CI/CD Workflows (`templates/ci-cd/`)
+
+| File | Description |
+|------|-------------|
+| `GITHUB-ACTIONS-PR-REVIEW.md` | GitHub Actions PR review with custom rules, Bedrock/Vertex options |
+| `GITHUB-ACTIONS-ISSUE-IMPL.md` | GitHub Actions auto-implement issues and create PRs |
+| `GITLAB-CI-REVIEW.md` | GitLab CI MR review with MCP, Bedrock OIDC, Vertex WIF |
+| `HEADLESS-SCRIPTS.md` | Shell scripts for batch migration, pre-commit, JSON output, lint-fix |
+
+#### MCP Integrations (`templates/mcp-integrations/`)
+
+| File | Description |
+|------|-------------|
+| `MCP-GITHUB.md` | GitHub API access via MCP (issues, PRs, code search) |
+| `MCP-DATABASE.md` | Database access (PostgreSQL, MySQL, SQLite) with read-only safety |
+| `MCP-SLACK-NOTION.md` | Team tools (Slack, Notion, Linear, Jira, Sentry) |
+| `MCP-CUSTOM-SERVER.md` | Build your own MCP server (Node.js, Python, HTTP) |
+
+#### Plugins (`templates/plugins/`)
+
+| File | Description |
+|------|-------------|
+| `PLUGIN-MINIMAL.md` | Minimal plugin scaffold with single skill |
+| `PLUGIN-FULL.md` | Full plugin with skills, agents, hooks, MCP |
+| `PLUGIN-LSP.md` | Code intelligence plugin with LSP server |
+
+#### Permissions & Security (`templates/permissions-security/`)
+
+| File | Description |
+|------|-------------|
+| `PERMISSIONS-DEVELOPMENT.md` | Dev permission presets (balanced, Python, Rails, Go, restrictive, open) |
+| `PERMISSIONS-CICD.md` | CI/CD safe mode (read-only, test-running, controlled edits, cost controls) |
+| `SANDBOX-DEVCONTAINER.md` | Devcontainer with firewall, sandbox settings, Codespaces |
+
+#### Cloud Providers (`templates/cloud-providers/`)
+
+| File | Description |
+|------|-------------|
+| `AWS-BEDROCK-SETUP.md` | AWS Bedrock setup (credentials, SSO, model pinning, guardrails) |
+| `GCP-VERTEX-SETUP.md` | Google Vertex AI setup (gcloud, regions, 1M context) |
+| `LLM-GATEWAY-SETUP.md` | LLM gateway/proxy setup (LiteLLM, key rotation, multi-provider) |
+
+#### Agent Teams (`templates/agent-teams/`)
+
+| File | Description |
+|------|-------------|
+| `AGENT-TEAM-CODE-REVIEW.md` | Multi-agent code review (security + performance + test coverage) |
+| `AGENT-TEAM-FEATURE-DEV.md` | Feature dev team (architect + implementer + test writer) |
+| `AGENT-TEAM-DEBUGGING.md` | Debug team (log analyst + code tracer + hypothesis tester) |
+
+#### Workflow Automation (`templates/workflow-automation/`)
+
+| File | Description |
+|------|-------------|
+| `SCHEDULED-TASKS.md` | Scheduled tasks (monitoring, PR checks, cron, reminders) |
+| `REVIEW-MD-TEMPLATE.md` | REVIEW.md templates for TypeScript, Python, Rails, Go, monorepo |
+| `REMOTE-CONTROL-SETUP.md` | Remote control (server mode, mobile access, concurrent sessions) |
+
+#### Enterprise (`templates/enterprise/`)
+
+| File | Description |
+|------|-------------|
+| `ENTERPRISE-NETWORK.md` | Network config (proxy, custom CA, mTLS, credential refresh, firewall) |
+| `ENTERPRISE-MANAGED-SETTINGS.md` | Managed settings (org-wide permissions, model restrictions, audit) |
 
 ### Reference
 
