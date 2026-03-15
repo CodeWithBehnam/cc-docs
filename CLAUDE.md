@@ -281,6 +281,25 @@ Drop-in slash command files. Copy to `.claude/commands/` in any project. Invoke 
 | `commands/db-migrate.md` | `/db-migrate` | `<migration description>` | Generate a migration file with up/down methods and test the rollback. |
 | `commands/new-feature.md` | `/new-feature` | `<feature name>` | Scaffold a new feature following existing patterns, with files, tests, and wired imports. |
 
+#### Community Commands (87 commands in 12 categories)
+
+Sources: [wshobson/agents](https://github.com/wshobson/agents) (MIT), [davila7/claude-code-templates](https://github.com/davila7/claude-code-templates) (MIT). Deduplicated where the same command appeared in multiple plugins; best version kept.
+
+| Directory | Count | Description |
+|-----------|-------|-------------|
+| `commands/development/` | 10 | Feature development, scaffolding (Python, TypeScript, Rust, React), full-stack, multi-platform, design systems, data-driven features |
+| `commands/review-quality/` | 6 | Full code review orchestrator, PR enhancement, AI-powered review, multi-agent review, design review, accessibility audit |
+| `commands/testing/` | 8 | TDD cycle (red/green/refactor), test generation, API mocking, performance optimization, Python test runner |
+| `commands/debugging/` | 6 | Error analysis, error tracing, smart debug, distributed debug tracing, incident response, smart fix |
+| `commands/deployment-infra/` | 5 | CI/CD workflow automation, config validation, cloud cost optimization, monitoring setup, SLO implementation |
+| `commands/documentation/` | 4 | Doc generation, code explanation, C4 architecture documentation, blog article creation |
+| `commands/git-workflow/` | 12 | Git workflow with quality gates, onboarding, Conductor project management (6 commands), worktree management (4 commands) |
+| `commands/security/` | 5 | SAST scanning, security hardening, dependency vulnerability scanning, compliance checks, XSS scanning |
+| `commands/team-management/` | 12 | Agent team orchestration (spawn/status/delegate/feature/review/debug/shutdown), issue resolution, standup notes, business case, financials, market analysis |
+| `commands/data-migration/` | 7 | Data pipelines, SQL migrations, migration observability, code migration, dependency upgrades, legacy modernization, ML pipelines |
+| `commands/ai-tools/` | 5 | AI assistant building, LangGraph agents, prompt optimization, agent improvement, multi-agent optimization |
+| `commands/refactoring/` | 7 | Refactor with SOLID principles, tech debt analysis, dependency audit, context save/restore, cache cleanup, Python linting |
+
 ### Hook Scripts (`hooks/`)
 
 Production-ready bash hook scripts and a settings example. Copy scripts to `.claude/hooks/` in any project and wire them up via `.claude/settings.json`.
