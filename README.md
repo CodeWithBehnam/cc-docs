@@ -13,9 +13,9 @@
   <img src="https://img.shields.io/badge/docs-65%2B%20pages-5A29E0?style=flat-square" alt="65+ Doc Pages">
   <img src="https://img.shields.io/badge/cheatsheets-64-29E05A?style=flat-square" alt="64 Cheatsheets">
   <img src="https://img.shields.io/badge/templates-33-E05A29?style=flat-square" alt="33 Templates">
-  <img src="https://img.shields.io/badge/skills-215_(15%20core%20%2B%20200%20community)-FF6B6B?style=flat-square" alt="215 Skills">
-  <img src="https://img.shields.io/badge/agents-170_(12%20core%20%2B%20158%20community)-6B6BFF?style=flat-square" alt="170 Agents">
-  <img src="https://img.shields.io/badge/commands-109_(12%20core%20%2B%2097%20community)-FFB86B?style=flat-square" alt="109 Commands">
+  <img src="https://img.shields.io/badge/skills-237_(15%20core%20%2B%20222%20community)-FF6B6B?style=flat-square" alt="237 Skills">
+  <img src="https://img.shields.io/badge/agents-197_(12%20core%20%2B%20185%20community)-6B6BFF?style=flat-square" alt="197 Agents">
+  <img src="https://img.shields.io/badge/commands-112_(12%20core%20%2B%20100%20community)-FFB86B?style=flat-square" alt="112 Commands">
   <img src="https://img.shields.io/badge/hooks-108_(10%20core%20%2B%2098%20community)-6BFFB8?style=flat-square" alt="108 Hook Scripts">
   <img src="https://img.shields.io/badge/output--styles-11-B86BFF?style=flat-square" alt="11 Output Styles">
   <img src="https://img.shields.io/badge/rules-8-FF6BFF?style=flat-square" alt="8 Rules">
@@ -35,9 +35,9 @@ A GitHub Actions workflow runs every hour, downloads the latest docs, and commit
 | `claude-code-docs/` | 65+ full doc pages mirrored from code.claude.com/docs |
 | `cheatsheets/` | 64 scannable quick-reference sheets (one per doc page) |
 | `templates/` | 33 copy-paste-able templates across 9 categories |
-| `skills/` | **215 skills** - 15 core + 200 community skills in 16 categories |
-| `agents/` | **170 agents** - 12 core + 158 community agents in 13 categories |
-| `commands/` | **109 commands** - 12 core + 97 community commands in 12 categories |
+| `skills/` | **237 skills** - 15 core + 222 community skills in 16 categories |
+| `agents/` | **197 agents** - 12 core + 185 community agents in 14 categories |
+| `commands/` | **112 commands** - 12 core + 100 community commands in 12 categories |
 | `hooks/` | **108 hooks** - 10 core scripts + 98 community hooks (6 categories + Python hooks mastery) |
 | `output-styles/` | 11 drop-in output style configurations for Claude Code |
 | `rules/` | 8 language-specific coding rules (`.claude/rules/`) for TypeScript, Python, Go, and more |
@@ -443,7 +443,7 @@ The [`templates/`](templates/) folder has 33 ready-to-use, copy-paste-able templ
 
 ## Skills
 
-The [`skills/`](skills/) folder has **215 skills** - 15 core skills plus 200 community skills organized into 16 categories. Copy any skill to `.claude/skills/` in your project (or `~/.claude/skills/` for all projects). Invoke with `/skill-name` or let Claude auto-invoke when relevant.
+The [`skills/`](skills/) folder has **237 skills** - 15 core skills plus 222 community skills organized into 16 categories. Copy any skill to `.claude/skills/` in your project (or `~/.claude/skills/` for all projects). Invoke with `/skill-name` or let Claude auto-invoke when relevant.
 
 > **Skills vs Commands:** Skills support directories with supporting files, frontmatter for invocation control, and subagent execution. Commands are simpler single-file alternatives. Both create slash commands.
 
@@ -487,23 +487,23 @@ The [`skills/`](skills/) folder has **215 skills** - 15 core skills plus 200 com
 </details>
 
 <details>
-<summary><b>Community Skills</b> (200 skills in 16 categories) - From community repos</summary>
+<summary><b>Community Skills</b> (222 skills in 16 categories) - From community repos</summary>
 
-Sources: [wshobson/agents](https://github.com/wshobson/agents), [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code), [garrytan/gstack](https://github.com/garrytan/gstack), [disler](https://github.com/disler), [mitsuhiko/agent-stuff](https://github.com/mitsuhiko/agent-stuff). Each skill is in its own subdirectory with a `SKILL.md` file and optional reference files.
+Sources: [wshobson/agents](https://github.com/wshobson/agents), [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code), [garrytan/gstack](https://github.com/garrytan/gstack), [disler](https://github.com/disler), [mitsuhiko/agent-stuff](https://github.com/mitsuhiko/agent-stuff), [EveryInc/compound-engineering-plugin](https://github.com/EveryInc/compound-engineering-plugin). Each skill is in its own subdirectory with a `SKILL.md` file and optional reference files.
 
 | Category | Count | What's Inside |
 |---|---|---|
 | [`api-architecture/`](skills/api-architecture/) | 10 | REST/GraphQL design, microservices, CQRS, event sourcing, saga orchestration, OpenAPI |
-| [`backend-development/`](skills/backend-development/) | 17 | Workflow orchestration, error handling, auth patterns, .NET, Node.js, monorepo tooling |
-| [`frontend-development/`](skills/frontend-development/) | 17 | Next.js App Router, React state, Tailwind, design systems, accessibility, mobile UI |
+| [`backend-development/`](skills/backend-development/) | 20 | Workflow orchestration, error handling, auth patterns, .NET, Node.js, DHH Rails style, Andrew Kane gems, DSPy.rb |
+| [`frontend-development/`](skills/frontend-development/) | 19 | Next.js App Router, React state, Tailwind, design systems, accessibility, mobile UI, agent-browser, frontend-design |
 | [`language-specific/`](skills/language-specific/) | 23 | Python (15 skills), TypeScript, Go concurrency, Rust async, Bash defensive scripting |
-| [`devops-infrastructure/`](skills/devops-infrastructure/) | 20 | CI/CD pipelines, K8s, Terraform, GitOps, service mesh, secrets, agent sandboxes |
-| [`testing-quality/`](skills/testing-quality/) | 11 | E2E testing, TDD, code review, JS/Python testing, browser automation (Bowser, Playwright, CDP) |
+| [`devops-infrastructure/`](skills/devops-infrastructure/) | 21 | CI/CD pipelines, K8s, Terraform, GitOps, service mesh, secrets, agent sandboxes, rclone |
+| [`testing-quality/`](skills/testing-quality/) | 12 | E2E testing, TDD, code review, JS/Python testing, browser automation, test-browser |
 | [`security/`](skills/security/) | 14 | STRIDE threat modeling, SAST, PCI/GDPR compliance, binary analysis, damage control, Ghidra RE |
-| [`ai-ml/`](skills/ai-ml/) | 11 | RAG, prompt engineering, LangChain, LLM evaluation, embeddings, vector search, ML pipelines |
+| [`ai-ml/`](skills/ai-ml/) | 13 | RAG, prompt engineering, LangChain, LLM eval, embeddings, vector search, agent-native architecture, Gemini imagegen |
 | [`business/`](skills/business/) | 15 | Market sizing, financial modeling, Stripe/PayPal, risk metrics, investor materials |
-| [`content-research/`](skills/content-research/) | 10 | Article writing, deep research, market research, content engine, video editing, web search, summarization |
-| [`productivity/`](skills/productivity/) | 24 | QA, code reviews, shipping, justfile, worktrees, fork-terminal, meta-skill, library, Mac control, tmux, mermaid, Google Workspace, Apple Mail |
+| [`content-research/`](skills/content-research/) | 12 | Article writing, deep research, market research, content engine, video editing, web search, summarization, style editing, Proof docs |
+| [`productivity/`](skills/productivity/) | 35 | QA, code reviews, shipping, justfile, worktrees, fork-terminal, meta-skill, library, Mac control, tmux, mermaid, Google Workspace, CE workflow (brainstorm/plan/review/work/compound), create-agent-skills, coding-tutor |
 | [`team-workflow/`](skills/team-workflow/) | 11 | Multi-reviewer coordination, parallel debugging, task decomposition, agent orchestration |
 | [`data-engineering/`](skills/data-engineering/) | 6 | Airflow DAGs, dbt, Spark optimization, SQL tuning, PostgreSQL |
 | [`observability/`](skills/observability/) | 5 | Distributed tracing, Grafana dashboards, Prometheus, SLO/SLI, Sentry error tracking |
@@ -514,7 +514,7 @@ Sources: [wshobson/agents](https://github.com/wshobson/agents), [affaan-m/everyt
 
 ## Agents
 
-The [`agents/`](agents/) folder has **170 agents** - 12 core agents plus 158 community agents organized into 13 categories. Copy any `.md` file to `.claude/agents/` in your project (or `~/.claude/agents/` for all projects).
+The [`agents/`](agents/) folder has **197 agents** - 12 core agents plus 185 community agents organized into 14 categories. Copy any `.md` file to `.claude/agents/` in your project (or `~/.claude/agents/` for all projects).
 
 <details>
 <summary><b>Core Agents</b> (12 agents) - Battle-tested, ready to use</summary>
@@ -537,31 +537,32 @@ The [`agents/`](agents/) folder has **170 agents** - 12 core agents plus 158 com
 </details>
 
 <details>
-<summary><b>Community Agents</b> (158 agents in 13 categories) - From VoltAgent, disler, and mitsuhiko</summary>
+<summary><b>Community Agents</b> (185 agents in 14 categories) - From VoltAgent, disler, mitsuhiko, and EveryInc</summary>
 
-Sources: [VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents), [disler](https://github.com/disler), [mitsuhiko/agent-prompts](https://github.com/mitsuhiko/agent-prompts) (MIT license).
+Sources: [VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents), [disler](https://github.com/disler), [mitsuhiko/agent-prompts](https://github.com/mitsuhiko/agent-prompts), [EveryInc/compound-engineering-plugin](https://github.com/EveryInc/compound-engineering-plugin) (MIT license).
 
 | Category | Count | What's Inside |
 |---|---|---|
 | [`core-development/`](agents/core-development/) | 10 | API designer, backend/frontend/fullstack developer, mobile, Electron, GraphQL, microservices, UI, WebSocket |
 | [`language-specialists/`](agents/language-specialists/) | 26 | Angular, C++, C#, Django, .NET, Elixir, Flutter, Go, Java, JS, Kotlin, Laravel, Next.js, PHP, PowerShell, Python, Rails, React, Rust, Spring Boot, SQL, Swift, TypeScript, Vue |
 | [`infrastructure/`](agents/infrastructure/) | 16 | Azure, cloud architecture, databases, deployment, DevOps, Docker, incidents, K8s, networking, platform, security, SRE, Terraform, Terragrunt, Windows |
-| [`quality-security/`](agents/quality-security/) | 15 | Accessibility, architecture review, chaos engineering, code review, compliance, debugging, error detective, penetration testing, performance, QA, security audit, test automation, browser QA |
+| [`quality-security/`](agents/quality-security/) | 30 | Architecture review, code simplicity, data integrity/migration, deployment verification, DHH Rails, Kieran Python/Rails/TypeScript, pattern recognition, performance oracle, schema drift, security sentinel, frontend races, agent-native, plus original VoltAgent agents |
 | [`data-ai/`](agents/data-ai/) | 12 | AI engineering, data analysis/engineering/science, database optimization, LLM architecture, ML/MLOps, NLP, PostgreSQL, prompt engineering |
-| [`developer-experience/`](agents/developer-experience/) | 15 | Build systems, CLI tools, dependencies, documentation, DX optimization, Git workflows, legacy modernization, MCP development, refactoring, Slack, tooling, docs scraping, scout reports |
+| [`developer-experience/`](agents/developer-experience/) | 18 | Build systems, CLI tools, dependencies, documentation, DX optimization, Git workflows, legacy modernization, MCP, refactoring, docs scraping, scout reports, bug reproduction, PR comment resolution, spec flow analysis |
 | [`specialized-domains/`](agents/specialized-domains/) | 12 | API docs, blockchain, embedded systems, fintech, gaming, IoT, M365, mobile apps, payments, quant analysis, risk management, SEO |
 | [`business-product/`](agents/business-product/) | 11 | Business analysis, content marketing, customer success, legal, product/project management, sales engineering, Scrum, technical writing, UX research, WordPress |
 | [`meta-orchestration/`](agents/meta-orchestration/) | 12 | Agent installation/organization, context management, error coordination, IT ops, knowledge synthesis, multi-agent coordination, performance monitoring, task distribution, workflows, meta-agent, work-completion-summary |
-| [`research-analysis/`](agents/research-analysis/) | 10 | Competitive analysis, data/market research, research analysis, scientific literature, search, trend analysis, citations, research lead/subagent |
+| [`research-analysis/`](agents/research-analysis/) | 15 | Competitive analysis, data/market research, research analysis, scientific literature, search, trend analysis, citations, research lead/subagent, best-practices researcher, framework docs, git history, learnings, repo analyst |
 | [`lang-engineering/`](agents/lang-engineering/) | 10 | Compiler, lexer, parser, runtime, VM, coroutine, memory, object system, language analysis, language architect |
 | [`poc-engineering/`](agents/poc-engineering/) | 7 | Architecture design, detailed planning, implementation, problem analysis, programming lead, software architect, task breakdown |
+| [`design/`](agents/design/) | 4 | Design implementation reviewer, design iterator, Figma design sync, Ankane README writer |
 | [`team/`](agents/team/) | 2 | Builder (implementation) and validator (quality assurance) team agents for paired workflows |
 
 </details>
 
 ## Commands
 
-The [`commands/`](commands/) folder has **109 commands** - 12 core commands plus 97 community commands organized into 12 categories. Copy any `.md` file to `.claude/commands/` in your project.
+The [`commands/`](commands/) folder has **112 commands** - 12 core commands plus 100 community commands organized into 12 categories. Copy any `.md` file to `.claude/commands/` in your project.
 
 <details>
 <summary><b>Core Commands</b> (12 commands) - Essential daily workflows</summary>
@@ -584,13 +585,13 @@ The [`commands/`](commands/) folder has **109 commands** - 12 core commands plus
 </details>
 
 <details>
-<summary><b>Community Commands</b> (97 commands in 12 categories) - From community repos</summary>
+<summary><b>Community Commands</b> (100 commands in 12 categories) - From community repos</summary>
 
-Sources: [wshobson/agents](https://github.com/wshobson/agents), [davila7/claude-code-templates](https://github.com/davila7/claude-code-templates), [disler](https://github.com/disler) (MIT license).
+Sources: [wshobson/agents](https://github.com/wshobson/agents), [davila7/claude-code-templates](https://github.com/davila7/claude-code-templates), [disler](https://github.com/disler), [EveryInc/compound-engineering-plugin](https://github.com/EveryInc/compound-engineering-plugin) (MIT license).
 
 | Category | Count | What's Inside |
 |---|---|---|
-| [`development/`](commands/development/) | 17 | Feature scaffolding, build, cook, prime, plan, quick-plan, start, infinite agentic loop |
+| [`development/`](commands/development/) | 20 | Feature scaffolding, build, cook, prime, plan, quick-plan, start, infinite loop, quiz-me, teach-me, sync-tutorials |
 | [`git-workflow/`](commands/git-workflow/) | 12 | Git quality gates, onboarding, Conductor project management (6), worktree management (4) |
 | [`team-management/`](commands/team-management/) | 12 | Agent team orchestration (spawn/status/delegate/feature/review/debug/shutdown), standup notes |
 | [`testing/`](commands/testing/) | 8 | TDD cycle (red/green/refactor), test generation, API mocking, performance testing |
@@ -773,6 +774,7 @@ Other great Claude Code community projects worth checking out:
 | [disler/fork-repository-skill](https://github.com/disler/fork-repository-skill) | 138+ | Fork agent to work in parallel terminals |
 | [mitsuhiko/agent-stuff](https://github.com/mitsuhiko/agent-stuff) | 1.6k+ | Script-powered skills from the creator of Flask: Ghidra RE, Sentry, tmux, web-browser, OpenSCAD |
 | [mitsuhiko/agent-prompts](https://github.com/mitsuhiko/agent-prompts) | 101+ | Specialized agents for language engineering (compiler, lexer, parser, VM) and POC engineering |
+| [EveryInc/compound-engineering-plugin](https://github.com/EveryInc/compound-engineering-plugin) | - | Compound engineering workflow: 27 review/research/design agents, 46 skills, CE brainstorm-plan-review-work cycle |
 
 ## Star History
 
