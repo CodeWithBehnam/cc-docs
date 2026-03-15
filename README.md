@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://mintcdn.com/claude-code/c5r9_6tjPMzFdDDT/logo/light.svg?fit=max&auto=format&n=c5r9_6tjPMzFdDDT&q=85&s=78fd01ff4f4340295a4f66e2ea54903c" alt="Claude Code" width="80">
+  <img src="https://mintcdn.com/claude-code/c5r9_6tjPMzFdDDT/logo/light.svg?fit=max&auto=format&n=c5r9_6tjPMzFdDDT&q=85&s=78fd01ff4f4340295a4f66e2ea54903c" alt="Claude Code" width="120">
 </p>
 
 <h1 align="center">Claude Code Docs</h1>
@@ -23,13 +23,14 @@ A GitHub Actions workflow runs every hour, downloads the latest docs, and commit
 ## What's Included
 
 - 65+ markdown doc pages covering CLI reference, hooks, plugins, settings, MCP, desktop, and more
-- `cheatsheets/` — concise quick-reference for every doc page
-- `llms.txt` index file
+- `cheatsheets/` - concise quick-reference for every doc page
+- `claude-code-docs/llms.txt` index file
+- `claude-code-docs/` - 65+ markdown doc pages
 - `templates/` with CLAUDE.md templates for hooks, skills, and sub-agents
 
 ## Cheatsheets
 
-The [`cheatsheets/`](cheatsheets/) folder has a scannable quick-reference for every doc page — tables, key commands, and gotchas at a glance.
+The [`cheatsheets/`](cheatsheets/) folder has a scannable quick-reference for every doc page - tables, key commands, and gotchas at a glance.
 
 | Category | Cheatsheets |
 |---|---|

@@ -4,8 +4,8 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-CLAUDE_DIR="$(cd "$SCRIPT_DIR/../.." && pwd)"
-DOCS_DIR="$CLAUDE_DIR/cc-docs"
+REPO_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
+DOCS_DIR="$REPO_DIR/claude-code-docs"
 
 LLMS_TXT="https://code.claude.com/docs/llms.txt"
 
