@@ -304,6 +304,8 @@ Production-ready bash hook scripts and a settings example. Copy scripts to `.cla
 
 Drop-in subagent files. Copy any `.md` file to `.claude/agents/` in your project (or `~/.claude/agents/` for personal use) and it becomes available immediately. See `agents/README.md` for installation instructions and full descriptions.
 
+#### Core Agents
+
 | File | Model | Description |
 |------|-------|-------------|
 | `agents/code-reviewer.md` | sonnet | Read-only code review - quality, security, best practices. Proactive. |
@@ -318,6 +320,23 @@ Drop-in subagent files. Copy any `.md` file to `.claude/agents/` in your project
 | `agents/migration-planner.md` | inherit | Phased migration plans with scope analysis and verification steps. |
 | `agents/dependency-checker.md` | haiku | Runs npm/pip/bundle/cargo audit and flags vulnerable and outdated packages. |
 | `agents/onboarding-guide.md` | sonnet | Generates architecture overviews, key file maps, and setup guides. Uses project memory. |
+
+#### Community Agents (131 agents in 10 categories)
+
+Source: [VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents) (MIT license).
+
+| Directory | Count | Description |
+|-----------|-------|-------------|
+| `agents/core-development/` | 10 | API design, backend, frontend, fullstack, mobile, Electron, GraphQL, microservices, UI, WebSocket |
+| `agents/language-specialists/` | 26 | Angular, C++, C#, Django, .NET, Elixir, Flutter, Go, Java, JS, Kotlin, Laravel, Next.js, PHP, PowerShell, Python, Rails, React, Rust, Spring Boot, SQL, Swift, TypeScript, Vue |
+| `agents/infrastructure/` | 16 | Azure, cloud architecture, databases, deployment, DevOps, Docker, incidents, Kubernetes, networking, platform, security, SRE, Terraform, Terragrunt, Windows |
+| `agents/quality-security/` | 14 | Accessibility, AD security, architecture review, chaos engineering, code review, compliance, debugging, penetration testing, performance, QA, security auditing, test automation |
+| `agents/data-ai/` | 12 | AI engineering, data analysis, data engineering, data science, database optimization, LLM architecture, ML engineering, MLOps, NLP, PostgreSQL, prompt engineering |
+| `agents/developer-experience/` | 13 | Build systems, CLI tools, dependencies, documentation, DX optimization, Git workflows, legacy modernization, MCP development, PowerShell modules, refactoring, Slack, tooling |
+| `agents/specialized-domains/` | 12 | API docs, blockchain, embedded systems, fintech, gaming, IoT, M365, mobile apps, payments, quantitative analysis, risk management, SEO |
+| `agents/business-product/` | 11 | Business analysis, content marketing, customer success, legal, product management, project management, sales engineering, Scrum, technical writing, UX research, WordPress |
+| `agents/meta-orchestration/` | 10 | Agent installation, agent organization, context management, error coordination, IT ops, knowledge synthesis, multi-agent coordination, performance monitoring, task distribution, workflow orchestration |
+| `agents/research-analysis/` | 7 | Competitive analysis, data research, market research, research analysis, scientific literature, search, trend analysis |
 
 ### Guides (`guides/`)
 
