@@ -4,6 +4,10 @@
 
 - NEVER use em-dashes ('—') in any generated text. Use commas, periods, parentheses, or regular hyphens instead.
 
+## Workflow Rules
+
+- After making changes, always commit and push to the remote repository.
+
 This repo contains the official Claude Code documentation, downloaded from <https://code.claude.com/docs>. Doc files live in the `claude-code-docs/` folder.
 
 ## Maintenance
@@ -29,6 +33,8 @@ When updating these docs (via `Scripts/download-cc-docs.sh`), **you must also up
 | `claude-code-docs/cli-reference.md` | Full CLI reference - flags, options, commands |
 | `claude-code-docs/common-workflows.md` | Common workflows and usage patterns |
 | `claude-code-docs/best-practices.md` | Best practices for effective Claude Code usage |
+| `claude-code-docs/code-review.md` | Code review workflows and best practices |
+| `claude-code-docs/commands.md` | Slash commands reference |
 | `claude-code-docs/keybindings.md` | Customize keyboard shortcuts |
 | `claude-code-docs/fast-mode.md` | Speed up responses with fast mode |
 | `claude-code-docs/output-styles.md` | Configure output formatting styles |
@@ -42,6 +48,7 @@ When updating these docs (via `Scripts/download-cc-docs.sh`), **you must also up
 | `claude-code-docs/settings.md` | Full settings reference - all configuration options |
 | `claude-code-docs/model-config.md` | Model configuration - choosing and switching models |
 | `claude-code-docs/permissions.md` | Configure tool permissions and approval modes |
+| `claude-code-docs/env-vars.md` | Environment variables reference |
 | `claude-code-docs/statusline.md` | Customize the status line display |
 
 ### Extensibility
@@ -79,6 +86,7 @@ When updating these docs (via `Scripts/download-cc-docs.sh`), **you must also up
 | `claude-code-docs/github-actions.md` | Claude Code in GitHub Actions |
 | `claude-code-docs/gitlab-ci-cd.md` | Claude Code in GitLab CI/CD |
 | `claude-code-docs/remote-control.md` | Continue local sessions from any device |
+| `claude-code-docs/scheduled-tasks.md` | Schedule recurring tasks |
 | `claude-code-docs/slack.md` | Claude Code in Slack |
 
 ### Cloud Providers
@@ -101,6 +109,7 @@ When updating these docs (via `Scripts/download-cc-docs.sh`), **you must also up
 | `claude-code-docs/server-managed-settings.md` | Server-managed settings (public beta) |
 | `claude-code-docs/third-party-integrations.md` | Enterprise deployment overview |
 | `claude-code-docs/data-usage.md` | Data usage and privacy |
+| `claude-code-docs/zero-data-retention.md` | Zero data retention configuration |
 | `claude-code-docs/legal-and-compliance.md` | Legal and compliance information |
 
 ### Operations
@@ -128,5 +137,6 @@ Ready-to-use templates for creating new Claude Code extensions. **Use these as s
 
 | File | Description |
 |------|-------------|
+| `claude-code-docs/tools-reference.md` | Built-in tools reference |
 | `claude-code-docs/changelog.md` | Full changelog of Claude Code releases |
 | `claude-code-docs/llms.txt` | Raw doc index used by the download script |

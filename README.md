@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://mintcdn.com/claude-code/c5r9_6tjPMzFdDDT/logo/light.svg?fit=max&auto=format&n=c5r9_6tjPMzFdDDT&q=85&s=78fd01ff4f4340295a4f66e2ea54903c" alt="Claude Code" width="180">
+  <img src="https://mintcdn.com/claude-code/c5r9_6tjPMzFdDDT/logo/light.svg?fit=max&auto=format&n=c5r9_6tjPMzFdDDT&q=85&s=78fd01ff4f4340295a4f66e2ea54903c" alt="Claude Code" width="360">
 </p>
 
 <h1 align="center">Claude Code Docs</h1>
@@ -36,15 +36,15 @@ The [`cheatsheets/`](cheatsheets/) folder has a scannable quick-reference for ev
 |---|---|
 | **Getting Started** | [overview](cheatsheets/overview.md) &#183; [quickstart](cheatsheets/quickstart.md) &#183; [setup](cheatsheets/setup.md) &#183; [authentication](cheatsheets/authentication.md) &#183; [features-overview](cheatsheets/features-overview.md) |
 | **Usage** | [interactive-mode](cheatsheets/interactive-mode.md) &#183; [cli-reference](cheatsheets/cli-reference.md) &#183; [commands](cheatsheets/commands.md) &#183; [keybindings](cheatsheets/keybindings.md) &#183; [common-workflows](cheatsheets/common-workflows.md) |
-| **Configuration** | [settings](cheatsheets/settings.md) &#183; [env-vars](cheatsheets/env-vars.md) &#183; [memory](cheatsheets/memory.md) &#183; [permissions](cheatsheets/permissions.md) &#183; [model-config](cheatsheets/model-config.md) &#183; [output-styles](cheatsheets/output-styles.md) &#183; [fast-mode](cheatsheets/fast-mode.md) |
-| **Extensions** | [hooks](cheatsheets/hooks.md) &#183; [hooks-guide](cheatsheets/hooks-guide.md) &#183; [mcp](cheatsheets/mcp.md) &#183; [plugins](cheatsheets/plugins.md) &#183; [plugins-reference](cheatsheets/plugins-reference.md) &#183; [skills](cheatsheets/skills.md) |
+| **Configuration** | [settings](cheatsheets/settings.md) &#183; [env-vars](cheatsheets/env-vars.md) &#183; [memory](cheatsheets/memory.md) &#183; [permissions](cheatsheets/permissions.md) &#183; [model-config](cheatsheets/model-config.md) &#183; [output-styles](cheatsheets/output-styles.md) &#183; [fast-mode](cheatsheets/fast-mode.md) &#183; [statusline](cheatsheets/statusline.md) &#183; [server-managed-settings](cheatsheets/server-managed-settings.md) |
+| **Extensions** | [hooks](cheatsheets/hooks.md) &#183; [hooks-guide](cheatsheets/hooks-guide.md) &#183; [mcp](cheatsheets/mcp.md) &#183; [plugins](cheatsheets/plugins.md) &#183; [plugins-reference](cheatsheets/plugins-reference.md) &#183; [discover-plugins](cheatsheets/discover-plugins.md) &#183; [plugin-marketplaces](cheatsheets/plugin-marketplaces.md) &#183; [skills](cheatsheets/skills.md) |
 | **Agents** | [sub-agents](cheatsheets/sub-agents.md) &#183; [agent-teams](cheatsheets/agent-teams.md) &#183; [headless](cheatsheets/headless.md) &#183; [remote-control](cheatsheets/remote-control.md) &#183; [scheduled-tasks](cheatsheets/scheduled-tasks.md) |
-| **IDEs & Platforms** | [vs-code](cheatsheets/vs-code.md) &#183; [jetbrains](cheatsheets/jetbrains.md) &#183; [chrome](cheatsheets/chrome.md) &#183; [desktop](cheatsheets/desktop.md) &#183; [claude-code-on-the-web](cheatsheets/claude-code-on-the-web.md) &#183; [terminal-config](cheatsheets/terminal-config.md) |
-| **CI/CD** | [github-actions](cheatsheets/github-actions.md) &#183; [gitlab-ci-cd](cheatsheets/gitlab-ci-cd.md) &#183; [devcontainer](cheatsheets/devcontainer.md) |
+| **IDEs & Platforms** | [vs-code](cheatsheets/vs-code.md) &#183; [jetbrains](cheatsheets/jetbrains.md) &#183; [chrome](cheatsheets/chrome.md) &#183; [desktop](cheatsheets/desktop.md) &#183; [desktop-quickstart](cheatsheets/desktop-quickstart.md) &#183; [claude-code-on-the-web](cheatsheets/claude-code-on-the-web.md) &#183; [terminal-config](cheatsheets/terminal-config.md) |
+| **CI/CD** | [github-actions](cheatsheets/github-actions.md) &#183; [gitlab-ci-cd](cheatsheets/gitlab-ci-cd.md) &#183; [slack](cheatsheets/slack.md) &#183; [devcontainer](cheatsheets/devcontainer.md) |
 | **Cloud Providers** | [amazon-bedrock](cheatsheets/amazon-bedrock.md) &#183; [google-vertex-ai](cheatsheets/google-vertex-ai.md) &#183; [microsoft-foundry](cheatsheets/microsoft-foundry.md) &#183; [llm-gateway](cheatsheets/llm-gateway.md) |
-| **Security & Privacy** | [security](cheatsheets/security.md) &#183; [sandboxing](cheatsheets/sandboxing.md) &#183; [data-usage](cheatsheets/data-usage.md) &#183; [zero-data-retention](cheatsheets/zero-data-retention.md) &#183; [network-config](cheatsheets/network-config.md) |
-| **Monitoring** | [costs](cheatsheets/costs.md) &#183; [monitoring-usage](cheatsheets/monitoring-usage.md) &#183; [analytics](cheatsheets/analytics.md) |
-| **Reference** | [tools-reference](cheatsheets/tools-reference.md) &#183; [best-practices](cheatsheets/best-practices.md) &#183; [code-review](cheatsheets/code-review.md) &#183; [troubleshooting](cheatsheets/troubleshooting.md) &#183; [how-claude-code-works](cheatsheets/how-claude-code-works.md) |
+| **Security & Privacy** | [security](cheatsheets/security.md) &#183; [sandboxing](cheatsheets/sandboxing.md) &#183; [data-usage](cheatsheets/data-usage.md) &#183; [zero-data-retention](cheatsheets/zero-data-retention.md) &#183; [network-config](cheatsheets/network-config.md) &#183; [legal-and-compliance](cheatsheets/legal-and-compliance.md) &#183; [third-party-integrations](cheatsheets/third-party-integrations.md) |
+| **Monitoring** | [costs](cheatsheets/costs.md) &#183; [monitoring-usage](cheatsheets/monitoring-usage.md) &#183; [analytics](cheatsheets/analytics.md) &#183; [checkpointing](cheatsheets/checkpointing.md) |
+| **Reference** | [tools-reference](cheatsheets/tools-reference.md) &#183; [best-practices](cheatsheets/best-practices.md) &#183; [code-review](cheatsheets/code-review.md) &#183; [troubleshooting](cheatsheets/troubleshooting.md) &#183; [how-claude-code-works](cheatsheets/how-claude-code-works.md) &#183; [changelog](cheatsheets/changelog.md) |
 
 ## How it works
 
