@@ -226,6 +226,20 @@ Drop-in path-specific rules files. Copy to `.claude/rules/` in any project. Clau
 | `rules/sql.md` | `**/*.sql`, `**/migrations/**` | snake_case naming, BIGINT IDs, reversible migrations with up/down, transactions, index foreign keys |
 | `rules/testing.md` | `**/*test*`, `**/*spec*`, `**/test/**`, `**/tests/**`, `**/spec/**` | Arrange-Act-Assert, one concept per test, descriptive names, no sleep/timeouts, clean up test data |
 
+### Tips (`tips/`)
+
+Curated practical tips from daily Claude Code usage. Each file is focused on a specific area with actionable, immediately useful techniques.
+
+| File | Description |
+|------|-------------|
+| `tips/README.md` | Index of all tips files with quick-reference examples |
+| `tips/productivity.md` | Session management, context control, and daily workflow shortcuts |
+| `tips/prompting.md` | How to write prompts that get better results faster |
+| `tips/debugging.md` | Debugging strategies that save time and preserve context |
+| `tips/cost-optimization.md` | Reduce token usage and API costs without slowing down |
+| `tips/multi-session.md` | Parallel sessions, worktrees, and agent coordination |
+| `tips/security.md` | Security-first habits and safeguards for safe automation |
+
 ### Reference
 
 | File | Description |
