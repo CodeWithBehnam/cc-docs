@@ -13,10 +13,11 @@
   <img src="https://img.shields.io/badge/docs-65%2B%20pages-5A29E0?style=flat-square" alt="65+ Doc Pages">
   <img src="https://img.shields.io/badge/cheatsheets-64-29E05A?style=flat-square" alt="64 Cheatsheets">
   <img src="https://img.shields.io/badge/templates-33-E05A29?style=flat-square" alt="33 Templates">
-  <img src="https://img.shields.io/badge/skills-194_(15%20core%20%2B%20179%20community)-FF6B6B?style=flat-square" alt="194 Skills">
-  <img src="https://img.shields.io/badge/agents-143_(12%20core%20%2B%20131%20community)-6B6BFF?style=flat-square" alt="143 Agents">
-  <img src="https://img.shields.io/badge/commands-99_(12%20core%20%2B%2087%20community)-FFB86B?style=flat-square" alt="99 Commands">
-  <img src="https://img.shields.io/badge/hooks-75_(10%20core%20%2B%2065%20community)-6BFFB8?style=flat-square" alt="75 Hook Scripts">
+  <img src="https://img.shields.io/badge/skills-205_(15%20core%20%2B%20190%20community)-FF6B6B?style=flat-square" alt="205 Skills">
+  <img src="https://img.shields.io/badge/agents-150_(12%20core%20%2B%20138%20community)-6B6BFF?style=flat-square" alt="150 Agents">
+  <img src="https://img.shields.io/badge/commands-109_(12%20core%20%2B%2097%20community)-FFB86B?style=flat-square" alt="109 Commands">
+  <img src="https://img.shields.io/badge/hooks-108_(10%20core%20%2B%2098%20community)-6BFFB8?style=flat-square" alt="108 Hook Scripts">
+  <img src="https://img.shields.io/badge/output--styles-11-B86BFF?style=flat-square" alt="11 Output Styles">
   <img src="https://img.shields.io/badge/rules-8-FF6BFF?style=flat-square" alt="8 Rules">
   <img src="https://img.shields.io/badge/updates-hourly-blue?style=flat-square" alt="Hourly Updates">
 </p>
@@ -34,10 +35,11 @@ A GitHub Actions workflow runs every hour, downloads the latest docs, and commit
 | `claude-code-docs/` | 65+ full doc pages mirrored from code.claude.com/docs |
 | `cheatsheets/` | 64 scannable quick-reference sheets (one per doc page) |
 | `templates/` | 33 copy-paste-able templates across 9 categories |
-| `skills/` | **194 skills** - 15 core + 179 community skills in 16 categories |
-| `agents/` | **143 agents** - 12 core + 131 community agents in 10 categories |
-| `commands/` | **99 commands** - 12 core + 87 community commands in 12 categories |
-| `hooks/` | **75 hooks** - 10 core scripts + 65 community hooks in 6 categories |
+| `skills/` | **205 skills** - 15 core + 190 community skills in 16 categories |
+| `agents/` | **150 agents** - 12 core + 138 community agents in 11 categories |
+| `commands/` | **109 commands** - 12 core + 97 community commands in 12 categories |
+| `hooks/` | **108 hooks** - 10 core scripts + 98 community hooks (6 categories + Python hooks mastery) |
+| `output-styles/` | 11 drop-in output style configurations for Claude Code |
 | `rules/` | 8 language-specific coding rules (`.claude/rules/`) for TypeScript, Python, Go, and more |
 | `tips/` | 7 curated tips files covering productivity, prompting, debugging, cost optimization |
 | `guides/` | 7 step-by-step workflow guides (TDD, security audit, onboarding, CI/CD setup) |
@@ -441,7 +443,7 @@ The [`templates/`](templates/) folder has 33 ready-to-use, copy-paste-able templ
 
 ## Skills
 
-The [`skills/`](skills/) folder has **194 skills** - 15 core skills plus 179 community skills organized into 16 categories. Copy any skill to `.claude/skills/` in your project (or `~/.claude/skills/` for all projects). Invoke with `/skill-name` or let Claude auto-invoke when relevant.
+The [`skills/`](skills/) folder has **205 skills** - 15 core skills plus 190 community skills organized into 16 categories. Copy any skill to `.claude/skills/` in your project (or `~/.claude/skills/` for all projects). Invoke with `/skill-name` or let Claude auto-invoke when relevant.
 
 > **Skills vs Commands:** Skills support directories with supporting files, frontmatter for invocation control, and subagent execution. Commands are simpler single-file alternatives. Both create slash commands.
 
@@ -485,9 +487,9 @@ The [`skills/`](skills/) folder has **194 skills** - 15 core skills plus 179 com
 </details>
 
 <details>
-<summary><b>Community Skills</b> (179 skills in 16 categories) - From community repos</summary>
+<summary><b>Community Skills</b> (190 skills in 16 categories) - From community repos</summary>
 
-Sources: [wshobson/agents](https://github.com/wshobson/agents), [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code), [garrytan/gstack](https://github.com/garrytan/gstack). Each skill is in its own subdirectory with a `SKILL.md` file and optional reference files.
+Sources: [wshobson/agents](https://github.com/wshobson/agents), [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code), [garrytan/gstack](https://github.com/garrytan/gstack), [disler](https://github.com/disler). Each skill is in its own subdirectory with a `SKILL.md` file and optional reference files.
 
 | Category | Count | What's Inside |
 |---|---|---|
@@ -495,13 +497,13 @@ Sources: [wshobson/agents](https://github.com/wshobson/agents), [affaan-m/everyt
 | [`backend-development/`](skills/backend-development/) | 17 | Workflow orchestration, error handling, auth patterns, .NET, Node.js, monorepo tooling |
 | [`frontend-development/`](skills/frontend-development/) | 17 | Next.js App Router, React state, Tailwind, design systems, accessibility, mobile UI |
 | [`language-specific/`](skills/language-specific/) | 23 | Python (15 skills), TypeScript, Go concurrency, Rust async, Bash defensive scripting |
-| [`devops-infrastructure/`](skills/devops-infrastructure/) | 19 | CI/CD pipelines, K8s, Terraform, GitOps, service mesh, secrets, incident runbooks |
-| [`testing-quality/`](skills/testing-quality/) | 8 | E2E testing, TDD workflow, code review, JS/Python testing patterns, eval harness |
-| [`security/`](skills/security/) | 12 | STRIDE threat modeling, SAST, PCI compliance, GDPR, binary analysis, reverse engineering |
+| [`devops-infrastructure/`](skills/devops-infrastructure/) | 20 | CI/CD pipelines, K8s, Terraform, GitOps, service mesh, secrets, agent sandboxes |
+| [`testing-quality/`](skills/testing-quality/) | 10 | E2E testing, TDD, code review, JS/Python testing, browser automation (Bowser, Playwright) |
+| [`security/`](skills/security/) | 13 | STRIDE threat modeling, SAST, PCI/GDPR compliance, binary analysis, damage control |
 | [`ai-ml/`](skills/ai-ml/) | 11 | RAG, prompt engineering, LangChain, LLM evaluation, embeddings, vector search, ML pipelines |
 | [`business/`](skills/business/) | 15 | Market sizing, financial modeling, Stripe/PayPal, risk metrics, investor materials |
 | [`content-research/`](skills/content-research/) | 8 | Article writing, deep research, market research, content engine, video editing |
-| [`productivity/`](skills/productivity/) | 12 | QA workflows, code reviews, shipping, browser testing, retros, ADRs, changelog automation |
+| [`productivity/`](skills/productivity/) | 19 | QA, code reviews, shipping, justfile, worktrees, fork-terminal, meta-skill, library, Mac control |
 | [`team-workflow/`](skills/team-workflow/) | 11 | Multi-reviewer coordination, parallel debugging, task decomposition, agent orchestration |
 | [`data-engineering/`](skills/data-engineering/) | 6 | Airflow DAGs, dbt, Spark optimization, SQL tuning, PostgreSQL |
 | [`observability/`](skills/observability/) | 4 | Distributed tracing, Grafana dashboards, Prometheus, SLO/SLI |
@@ -512,7 +514,7 @@ Sources: [wshobson/agents](https://github.com/wshobson/agents), [affaan-m/everyt
 
 ## Agents
 
-The [`agents/`](agents/) folder has **143 agents** - 12 core agents plus 131 community agents organized into 10 categories. Copy any `.md` file to `.claude/agents/` in your project (or `~/.claude/agents/` for all projects).
+The [`agents/`](agents/) folder has **150 agents** - 12 core agents plus 138 community agents organized into 11 categories. Copy any `.md` file to `.claude/agents/` in your project (or `~/.claude/agents/` for all projects).
 
 <details>
 <summary><b>Core Agents</b> (12 agents) - Battle-tested, ready to use</summary>
@@ -535,28 +537,29 @@ The [`agents/`](agents/) folder has **143 agents** - 12 core agents plus 131 com
 </details>
 
 <details>
-<summary><b>Community Agents</b> (131 agents in 10 categories) - From VoltAgent</summary>
+<summary><b>Community Agents</b> (138 agents in 11 categories) - From VoltAgent and disler</summary>
 
-Source: [VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents) (MIT license).
+Sources: [VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents), [disler](https://github.com/disler) (MIT license).
 
 | Category | Count | What's Inside |
 |---|---|---|
 | [`core-development/`](agents/core-development/) | 10 | API designer, backend/frontend/fullstack developer, mobile, Electron, GraphQL, microservices, UI, WebSocket |
 | [`language-specialists/`](agents/language-specialists/) | 26 | Angular, C++, C#, Django, .NET, Elixir, Flutter, Go, Java, JS, Kotlin, Laravel, Next.js, PHP, PowerShell, Python, Rails, React, Rust, Spring Boot, SQL, Swift, TypeScript, Vue |
 | [`infrastructure/`](agents/infrastructure/) | 16 | Azure, cloud architecture, databases, deployment, DevOps, Docker, incidents, K8s, networking, platform, security, SRE, Terraform, Terragrunt, Windows |
-| [`quality-security/`](agents/quality-security/) | 14 | Accessibility, architecture review, chaos engineering, code review, compliance, debugging, error detective, penetration testing, performance, QA, security audit, test automation |
+| [`quality-security/`](agents/quality-security/) | 15 | Accessibility, architecture review, chaos engineering, code review, compliance, debugging, error detective, penetration testing, performance, QA, security audit, test automation, browser QA |
 | [`data-ai/`](agents/data-ai/) | 12 | AI engineering, data analysis/engineering/science, database optimization, LLM architecture, ML/MLOps, NLP, PostgreSQL, prompt engineering |
-| [`developer-experience/`](agents/developer-experience/) | 13 | Build systems, CLI tools, dependencies, documentation, DX optimization, Git workflows, legacy modernization, MCP development, refactoring, Slack, tooling |
+| [`developer-experience/`](agents/developer-experience/) | 15 | Build systems, CLI tools, dependencies, documentation, DX optimization, Git workflows, legacy modernization, MCP development, refactoring, Slack, tooling, docs scraping, scout reports |
 | [`specialized-domains/`](agents/specialized-domains/) | 12 | API docs, blockchain, embedded systems, fintech, gaming, IoT, M365, mobile apps, payments, quant analysis, risk management, SEO |
 | [`business-product/`](agents/business-product/) | 11 | Business analysis, content marketing, customer success, legal, product/project management, sales engineering, Scrum, technical writing, UX research, WordPress |
-| [`meta-orchestration/`](agents/meta-orchestration/) | 10 | Agent installation/organization, context management, error coordination, IT ops, knowledge synthesis, multi-agent coordination, performance monitoring, task distribution, workflows |
+| [`meta-orchestration/`](agents/meta-orchestration/) | 12 | Agent installation/organization, context management, error coordination, IT ops, knowledge synthesis, multi-agent coordination, performance monitoring, task distribution, workflows, meta-agent, work-completion-summary |
 | [`research-analysis/`](agents/research-analysis/) | 7 | Competitive analysis, data/market research, research analysis, scientific literature, search, trend analysis |
+| [`team/`](agents/team/) | 2 | Builder (implementation) and validator (quality assurance) team agents for paired workflows |
 
 </details>
 
 ## Commands
 
-The [`commands/`](commands/) folder has **99 commands** - 12 core commands plus 87 community commands organized into 12 categories. Copy any `.md` file to `.claude/commands/` in your project.
+The [`commands/`](commands/) folder has **109 commands** - 12 core commands plus 97 community commands organized into 12 categories. Copy any `.md` file to `.claude/commands/` in your project.
 
 <details>
 <summary><b>Core Commands</b> (12 commands) - Essential daily workflows</summary>
@@ -579,22 +582,22 @@ The [`commands/`](commands/) folder has **99 commands** - 12 core commands plus 
 </details>
 
 <details>
-<summary><b>Community Commands</b> (87 commands in 12 categories) - From community repos</summary>
+<summary><b>Community Commands</b> (97 commands in 12 categories) - From community repos</summary>
 
-Sources: [wshobson/agents](https://github.com/wshobson/agents), [davila7/claude-code-templates](https://github.com/davila7/claude-code-templates) (MIT license).
+Sources: [wshobson/agents](https://github.com/wshobson/agents), [davila7/claude-code-templates](https://github.com/davila7/claude-code-templates), [disler](https://github.com/disler) (MIT license).
 
 | Category | Count | What's Inside |
 |---|---|---|
-| [`development/`](commands/development/) | 10 | Feature scaffolding (Python, TypeScript, Rust, React), full-stack, multi-platform, design systems |
+| [`development/`](commands/development/) | 17 | Feature scaffolding, build, cook, prime, plan, quick-plan, start, infinite agentic loop |
 | [`git-workflow/`](commands/git-workflow/) | 12 | Git quality gates, onboarding, Conductor project management (6), worktree management (4) |
 | [`team-management/`](commands/team-management/) | 12 | Agent team orchestration (spawn/status/delegate/feature/review/debug/shutdown), standup notes |
 | [`testing/`](commands/testing/) | 8 | TDD cycle (red/green/refactor), test generation, API mocking, performance testing |
 | [`refactoring/`](commands/refactoring/) | 7 | Refactor with SOLID principles, tech debt analysis, dependency audit, context save/restore |
 | [`data-migration/`](commands/data-migration/) | 7 | Data pipelines, SQL migrations, code migration, dependency upgrades, legacy modernization |
 | [`debugging/`](commands/debugging/) | 6 | Error analysis, error tracing, smart debug, distributed tracing, incident response |
-| [`review-quality/`](commands/review-quality/) | 6 | Full review orchestrator, PR enhancement, AI-powered review, multi-agent review |
+| [`review-quality/`](commands/review-quality/) | 7 | Full review orchestrator, PR enhancement, AI-powered review, multi-agent review, UI review |
 | [`ai-tools/`](commands/ai-tools/) | 5 | AI assistant building, LangGraph agents, prompt optimization, agent improvement |
-| [`deployment-infra/`](commands/deployment-infra/) | 5 | CI/CD automation, config validation, cost optimization, monitoring, SLO implementation |
+| [`deployment-infra/`](commands/deployment-infra/) | 7 | CI/CD automation, config validation, cost optimization, monitoring, SLO, install, maintenance |
 | [`security/`](commands/security/) | 5 | SAST scanning, security hardening, dependency vulnerabilities, compliance, XSS scanning |
 | [`documentation/`](commands/documentation/) | 4 | Doc generation, code explanation, C4 architecture docs, blog articles |
 
@@ -602,7 +605,7 @@ Sources: [wshobson/agents](https://github.com/wshobson/agents), [davila7/claude-
 
 ## Hook Scripts
 
-The [`hooks/`](hooks/) folder has **75 hooks** - 10 core bash scripts plus 65 community hook configurations organized into 6 categories. Wire them into `.claude/settings.json`.
+The [`hooks/`](hooks/) folder has **108 hooks** - 10 core bash scripts plus 98 community hook configurations organized into 6 categories plus a comprehensive Python hooks mastery system. Wire them into `.claude/settings.json`.
 
 <details>
 <summary><b>Core Hook Scripts</b> (10 scripts) - Production-ready workflow enforcement</summary>
@@ -623,9 +626,9 @@ The [`hooks/`](hooks/) folder has **75 hooks** - 10 core bash scripts plus 65 co
 </details>
 
 <details>
-<summary><b>Community Hooks</b> (65 hooks in 6 categories) - From davila7/claude-code-templates</summary>
+<summary><b>Community Hooks</b> (98 hooks in 7 sections) - From davila7 and disler</summary>
 
-Source: [davila7/claude-code-templates](https://github.com/davila7/claude-code-templates) (MIT license). Each `.json` file is a hook configuration, `.sh`/`.py` files are supporting scripts. See [`hooks/community/README.md`](hooks/community/README.md) for installation instructions.
+Sources: [davila7/claude-code-templates](https://github.com/davila7/claude-code-templates), [disler/claude-code-hooks-mastery](https://github.com/disler/claude-code-hooks-mastery) (MIT license). See [`hooks/community/README.md`](hooks/community/README.md) for installation instructions.
 
 | Category | Count | What's Inside |
 |---|---|---|
@@ -635,6 +638,7 @@ Source: [davila7/claude-code-templates](https://github.com/davila7/claude-code-t
 | [`git/`](hooks/community/git/) | 8 | Conventional commits enforcer, prevent direct push to main, branch name validation, auto-git-add, smart commit |
 | [`post-tool/`](hooks/community/post-tool/) | 6 | JS/Python formatters, git-add-changes, test runner (multi-framework), security scanner (semgrep/bandit/gitleaks) |
 | [`monitoring/`](hooks/community/monitoring/) | 5 | Desktop notification on stop, LangSmith tracing, performance budget guard, CPU/memory performance monitor |
+| [`disler-hooks-mastery/`](hooks/community/disler-hooks-mastery/) | 33 | Complete Python hooks system: 13 lifecycle hooks (all event types), 4 validators (ruff, ty, file content, new file), LLM integrations (Anthropic, OpenAI, Ollama), TTS (ElevenLabs, OpenAI, pyttsx3), human-in-the-loop patterns, observability |
 
 </details>
 
@@ -670,6 +674,29 @@ The [`tips/`](tips/) folder has **7 curated tips files** organized by topic. Pra
 | [Cost Optimization](tips/cost-optimization.md) | Token management, subagents for research, /effort, /fast, budget limits |
 | [Multi-Session](tips/multi-session.md) | Worktrees, fan-out patterns, writer/reviewer, agent teams |
 | [Security](tips/security.md) | Permission deny rules, /sandbox, hook-based protections, devcontainers |
+
+## Output Styles
+
+The [`output-styles/`](output-styles/) folder has **11 drop-in output style files** from [disler](https://github.com/disler). Copy to `.claude/output-styles/` and select via `/output-style` in Claude Code.
+
+<details>
+<summary><b>All 11 Output Styles</b> - Customize Claude's response format</summary>
+
+| Style | Description |
+|---|---|
+| [bullet-points](output-styles/bullet-points.md) | Concise bullet-point format for scannable output |
+| [genui](output-styles/genui.md) | Generative UI components in responses |
+| [html-structured](output-styles/html-structured.md) | HTML-structured output for rich formatting |
+| [markdown-focused](output-styles/markdown-focused.md) | Clean markdown with headers and code blocks |
+| [observable-tools-diffs](output-styles/observable-tools-diffs.md) | Show tool calls and diffs visibly |
+| [observable-tools-diffs-tts](output-styles/observable-tools-diffs-tts.md) | Observable output with text-to-speech summaries |
+| [table-based](output-styles/table-based.md) | Tabular output format for structured data |
+| [tts-summary-base](output-styles/tts-summary-base.md) | Base template for TTS-friendly summaries |
+| [tts-summary](output-styles/tts-summary.md) | Text-to-speech optimized summary output |
+| [ultra-concise](output-styles/ultra-concise.md) | Minimal output, maximum signal |
+| [yaml-structured](output-styles/yaml-structured.md) | YAML-structured output format |
+
+</details>
 
 ## Guides
 
@@ -737,6 +764,11 @@ Other great Claude Code community projects worth checking out:
 | [coleam00/context-engineering-intro](https://github.com/coleam00/context-engineering-intro) | 12k+ | Context engineering strategies for Claude Code |
 | [davila7/claude-code-templates](https://github.com/davila7/claude-code-templates) | 22k+ | CLI tool for configuring and monitoring Claude Code |
 | [garrytan/gstack](https://github.com/garrytan/gstack) | 13k+ | Opinionated Claude Code setup with 6 tools |
+| [disler/claude-code-hooks-mastery](https://github.com/disler/claude-code-hooks-mastery) | 3.3k+ | Master Claude Code hooks with Python-based system, validators, LLM/TTS integrations |
+| [disler/claude-code-damage-control](https://github.com/disler/claude-code-damage-control) | 428+ | Safety skill preventing destructive actions with pattern-based damage control |
+| [disler/agent-sandbox-skill](https://github.com/disler/agent-sandbox-skill) | 340+ | Manage isolated sandbox environments for agent execution |
+| [disler/bowser](https://github.com/disler/bowser) | 193+ | Browser automation with composable skills, subagents, and justfile architecture |
+| [disler/fork-repository-skill](https://github.com/disler/fork-repository-skill) | 138+ | Fork agent to work in parallel terminals |
 
 ## Star History
 
