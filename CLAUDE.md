@@ -325,7 +325,7 @@ Imported from community repos: [wshobson/agents](https://github.com/wshobson/age
 | `frontend-patterns` | ecc | Frontend architecture patterns and best practices |
 | `frontend-slides` | ecc | Presentation slide generation with style presets |
 
-##### `skills/testing-quality/` - E2E Testing, TDD, Code Review, Verification (8 skills)
+##### `skills/testing-quality/` - E2E Testing, TDD, Code Review, Verification, Browser Automation (10 skills)
 
 | Skill | Source | Description |
 |-------|--------|-------------|
@@ -337,8 +337,10 @@ Imported from community repos: [wshobson/agents](https://github.com/wshobson/age
 | `ecc-tdd-workflow` | ecc | Test-driven development workflow automation |
 | `verification-loop` | ecc | Iterative verification loop for code correctness |
 | `eval-harness` | ecc | Evaluation harness for testing AI outputs |
+| `claude-bowser` | disler | Observable browser automation using Chrome MCP tools for UI testing and screenshots |
+| `playwright-bowser` | disler | Headless browser automation via Playwright CLI for parallel UI testing and scraping |
 
-##### `skills/security/` - Threat Modeling, SAST, Compliance, Reverse Engineering (12 skills)
+##### `skills/security/` - Threat Modeling, SAST, Compliance, Reverse Engineering, Damage Control (13 skills)
 
 | Skill | Source | Description |
 |-------|--------|-------------|
@@ -354,8 +356,9 @@ Imported from community repos: [wshobson/agents](https://github.com/wshobson/age
 | `memory-forensics` | agents | Memory forensics investigation techniques |
 | `protocol-reverse-engineering` | agents | Network protocol reverse engineering methods |
 | `security-review` | ecc | Security review workflow and checklist |
+| `damage-control` | disler | Defense-in-depth protection via PreToolUse hooks: blocks dangerous commands, protects sensitive files, supports ask patterns |
 
-##### `skills/devops-infrastructure/` - CI/CD, K8s, Terraform, Cloud, Incident Response (19 skills)
+##### `skills/devops-infrastructure/` - CI/CD, K8s, Terraform, Cloud, Incident Response, Sandboxes (20 skills)
 
 | Skill | Source | Description |
 |-------|--------|-------------|
@@ -378,6 +381,7 @@ Imported from community repos: [wshobson/agents](https://github.com/wshobson/age
 | `incident-runbook-templates` | agents | Incident response runbook templates |
 | `on-call-handoff-patterns` | agents | On-call handoff and escalation patterns |
 | `postmortem-writing` | agents | Blameless postmortem writing templates |
+| `agent-sandboxes` | disler | E2B sandbox management for isolated code execution, testing, and file operations |
 
 ##### `skills/data-engineering/` - Airflow, dbt, Spark, Data Quality, SQL (6 skills)
 
@@ -508,7 +512,7 @@ Imported from community repos: [wshobson/agents](https://github.com/wshobson/age
 | `nft-standards` | agents | NFT standard implementations (ERC-721, ERC-1155) |
 | `web3-testing` | agents | Web3 and smart contract testing patterns |
 
-##### `skills/productivity/` - QA, Reviews, Shipping, Git, Documentation (12 skills)
+##### `skills/productivity/` - QA, Reviews, Shipping, Git, Documentation, Parallel Work, Mac Automation (19 skills)
 
 | Skill | Source | Description |
 |-------|--------|-------------|
@@ -524,6 +528,13 @@ Imported from community repos: [wshobson/agents](https://github.com/wshobson/age
 | `git-advanced-workflows` | agents | Advanced Git workflows (rebase, bisect, worktrees) |
 | `architecture-decision-records` | agents | ADR creation and management |
 | `changelog-automation` | agents | Automated changelog generation from commits |
+| `fork-terminal` | disler | Fork agent sessions to parallel terminal windows using Claude Code, Codex, or Gemini CLI |
+| `just` | disler | Justfile task runner patterns with examples for Python, TypeScript, and Docker projects |
+| `meta-skill` | disler | Meta-skill for creating new Claude Code skills following best practices and documentation |
+| `the-library` | disler | Private-first distribution of skills, agents, and prompts across devices and teams |
+| `create-worktree-skill` | disler | Create fully configured git worktrees for parallel development with isolated ports and config |
+| `drive` | disler | Terminal automation CLI for AI agents via tmux sessions, commands, and parallel workloads |
+| `steer` | disler | macOS GUI automation via accessibility APIs: screenshots, clicks, typing, hotkeys, window management |
 
 ### Commands (`commands/`)
 
@@ -544,17 +555,17 @@ Drop-in slash command files. Copy to `.claude/commands/` in any project. Invoke 
 | `commands/db-migrate.md` | `/db-migrate` | `<migration description>` | Generate a migration file with up/down methods and test the rollback. |
 | `commands/new-feature.md` | `/new-feature` | `<feature name>` | Scaffold a new feature following existing patterns, with files, tests, and wired imports. |
 
-#### Community Commands (87 commands in 12 categories)
+#### Community Commands (97 commands in 12 categories)
 
-Sources: [wshobson/agents](https://github.com/wshobson/agents) (MIT), [davila7/claude-code-templates](https://github.com/davila7/claude-code-templates) (MIT). Deduplicated where the same command appeared in multiple plugins; best version kept.
+Sources: [wshobson/agents](https://github.com/wshobson/agents) (MIT), [davila7/claude-code-templates](https://github.com/davila7/claude-code-templates) (MIT), [disler](https://github.com/disler). Deduplicated where the same command appeared in multiple plugins; best version kept.
 
 | Directory | Count | Description |
 |-----------|-------|-------------|
-| `commands/development/` | 10 | Feature development, scaffolding (Python, TypeScript, Rust, React), full-stack, multi-platform, design systems, data-driven features |
-| `commands/review-quality/` | 6 | Full code review orchestrator, PR enhancement, AI-powered review, multi-agent review, design review, accessibility audit |
+| `commands/development/` | 17 | Feature development, scaffolding, build/plan execution, session priming, infinite agentic loops, team planning, quick plans, system start |
+| `commands/review-quality/` | 7 | Full code review orchestrator, PR enhancement, AI-powered review, multi-agent review, design review, accessibility audit, parallel UI review |
 | `commands/testing/` | 8 | TDD cycle (red/green/refactor), test generation, API mocking, performance optimization, Python test runner |
 | `commands/debugging/` | 6 | Error analysis, error tracing, smart debug, distributed debug tracing, incident response, smart fix |
-| `commands/deployment-infra/` | 5 | CI/CD workflow automation, config validation, cloud cost optimization, monitoring setup, SLO implementation |
+| `commands/deployment-infra/` | 7 | CI/CD workflow automation, config validation, cloud cost optimization, monitoring setup, SLO implementation, install/init hooks, maintenance hooks |
 | `commands/documentation/` | 4 | Doc generation, code explanation, C4 architecture documentation, blog article creation |
 | `commands/git-workflow/` | 12 | Git workflow with quality gates, onboarding, Conductor project management (6 commands), worktree management (4 commands) |
 | `commands/security/` | 5 | SAST scanning, security hardening, dependency vulnerability scanning, compliance checks, XSS scanning |
@@ -667,6 +678,46 @@ Community-contributed hook configurations and scripts from [davila7/claude-code-
 | `secret-scanner.json` + `.py` | PreToolUse | Scans for hardcoded secrets from 30+ providers before commits |
 | `update-search-year.json` | PreToolUse | Appends current year to WebSearch queries |
 
+#### disler-hooks-mastery/ - Comprehensive Python Hooks System
+
+Complete Python-based hooks framework by [disler](https://github.com/disler) (github.com/disler/claude-code-hooks-mastery, 3300+ stars). Covers every Claude Code hook event type with LLM-powered summaries, TTS announcements, automated code quality validation, multi-agent observability, and human-in-the-loop patterns. All scripts use `uv run --script`. See `hooks/community/disler-hooks-mastery/README.md` for full details.
+
+| File | Event Type | Description |
+|------|-----------|-------------|
+| `notification.py` | Notification | TTS alerts when agent needs user input |
+| `permission_request.py` | PermissionRequest | Auto-allows read-only ops, logs and optionally denies requests |
+| `post_tool_use.py` | PostToolUse | Logs all tool invocations to JSON |
+| `post_tool_use_failure.py` | PostToolUseFailure | Structured error logging with timestamps |
+| `pre_compact.py` | PreCompact | Logs compaction events, optional transcript backup |
+| `pre_tool_use.py` | PreToolUse | Blocks dangerous rm commands and .env access |
+| `session_end.py` | SessionEnd | Logs session end, optional cleanup |
+| `session_start.py` | SessionStart | Loads git/dev context, optional TTS |
+| `setup.py` | Setup | Detects project type, checks deps, installs |
+| `stop.py` | Stop | Transcript to chat.json, LLM completion via TTS |
+| `subagent_start.py` | SubagentStart | Logs agent spawn, optional TTS |
+| `subagent_stop.py` | SubagentStop | AI-summarized task completion, TTS with lock queue |
+| `user_prompt_submit.py` | UserPromptSubmit | Logs prompts, session data, LLM agent naming |
+| `send_event.py` | Any | Sends events to observability server |
+| `setup_init.py` | Setup (init) | Repo initialization (uv, npm, SQLite) |
+| `setup_maintenance.py` | Setup (maintenance) | Dependency upgrades, DB maintenance |
+| `validators/ruff_validator.py` | PostToolUse | Ruff linter validation on Python files |
+| `validators/ty_validator.py` | PostToolUse | Type checker validation on Python files |
+| `validators/validate_new_file.py` | Stop | Validates new file creation in a directory |
+| `validators/validate_file_contains.py` | Stop | Validates file contains required content |
+| `utils/llm/anth.py` | - | Anthropic API integration (haiku) |
+| `utils/llm/oai.py` | - | OpenAI API integration (gpt-4.1-nano) |
+| `utils/llm/ollama.py` | - | Ollama local LLM integration |
+| `utils/llm/task_summarizer.py` | - | Task summarization for TTS |
+| `utils/tts/elevenlabs_tts.py` | - | ElevenLabs TTS |
+| `utils/tts/openai_tts.py` | - | OpenAI TTS with streaming |
+| `utils/tts/pyttsx3_tts.py` | - | Offline pyttsx3 TTS |
+| `utils/tts/tts_queue.py` | - | File-based TTS lock for concurrent agents |
+| `utils/constants.py` | - | Shared constants and log helpers |
+| `utils/hitl.py` | - | Human-in-the-loop via WebSocket |
+| `utils/model_extractor.py` | - | Extract model name from transcripts |
+| `utils/summarizer.py` | - | Event summary generation |
+| `examples/hitl_example.py` | - | HITL usage example |
+
 ### Agents (`agents/`)
 
 Drop-in subagent files. Copy any `.md` file to `.claude/agents/` in your project (or `~/.claude/agents/` for personal use) and it becomes available immediately. See `agents/README.md` for installation instructions and full descriptions.
@@ -688,22 +739,23 @@ Drop-in subagent files. Copy any `.md` file to `.claude/agents/` in your project
 | `agents/dependency-checker.md` | haiku | Runs npm/pip/bundle/cargo audit and flags vulnerable and outdated packages. |
 | `agents/onboarding-guide.md` | sonnet | Generates architecture overviews, key file maps, and setup guides. Uses project memory. |
 
-#### Community Agents (131 agents in 10 categories)
+#### Community Agents (138 agents in 11 categories)
 
-Source: [VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents) (MIT license).
+Sources: [VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents) (MIT license), [disler](https://github.com/disler).
 
 | Directory | Count | Description |
 |-----------|-------|-------------|
 | `agents/core-development/` | 10 | API design, backend, frontend, fullstack, mobile, Electron, GraphQL, microservices, UI, WebSocket |
 | `agents/language-specialists/` | 26 | Angular, C++, C#, Django, .NET, Elixir, Flutter, Go, Java, JS, Kotlin, Laravel, Next.js, PHP, PowerShell, Python, Rails, React, Rust, Spring Boot, SQL, Swift, TypeScript, Vue |
 | `agents/infrastructure/` | 16 | Azure, cloud architecture, databases, deployment, DevOps, Docker, incidents, Kubernetes, networking, platform, security, SRE, Terraform, Terragrunt, Windows |
-| `agents/quality-security/` | 14 | Accessibility, AD security, architecture review, chaos engineering, code review, compliance, debugging, penetration testing, performance, QA, security auditing, test automation |
+| `agents/quality-security/` | 15 | Accessibility, AD security, architecture review, chaos engineering, code review, compliance, debugging, penetration testing, performance, QA, security auditing, test automation, Bowser QA |
 | `agents/data-ai/` | 12 | AI engineering, data analysis, data engineering, data science, database optimization, LLM architecture, ML engineering, MLOps, NLP, PostgreSQL, prompt engineering |
-| `agents/developer-experience/` | 13 | Build systems, CLI tools, dependencies, documentation, DX optimization, Git workflows, legacy modernization, MCP development, PowerShell modules, refactoring, Slack, tooling |
+| `agents/developer-experience/` | 15 | Build systems, CLI tools, dependencies, documentation, DX optimization, Git workflows, legacy modernization, MCP development, PowerShell modules, refactoring, Slack, tooling, docs scraping, codebase scouting |
 | `agents/specialized-domains/` | 12 | API docs, blockchain, embedded systems, fintech, gaming, IoT, M365, mobile apps, payments, quantitative analysis, risk management, SEO |
 | `agents/business-product/` | 11 | Business analysis, content marketing, customer success, legal, product management, project management, sales engineering, Scrum, technical writing, UX research, WordPress |
-| `agents/meta-orchestration/` | 10 | Agent installation, agent organization, context management, error coordination, IT ops, knowledge synthesis, multi-agent coordination, performance monitoring, task distribution, workflow orchestration |
+| `agents/meta-orchestration/` | 12 | Agent installation, agent organization, context management, error coordination, IT ops, knowledge synthesis, multi-agent coordination, performance monitoring, task distribution, workflow orchestration, meta-agent creation, work-completion summaries |
 | `agents/research-analysis/` | 7 | Competitive analysis, data research, market research, research analysis, scientific literature, search, trend analysis |
+| `agents/team/` | 2 | Builder (executes one task with validation hooks) and validator (read-only task verification) |
 
 ### Guides (`guides/`)
 
@@ -719,6 +771,25 @@ Step-by-step workflow guides for specific development scenarios. Each guide incl
 | `guides/pr-review-workflow.md` | Professional code review with subagents for deep dives |
 | `guides/ci-cd-setup.md` | Setting up Claude Code in GitHub Actions or GitLab CI/CD |
 | `guides/monorepo-setup.md` | Configuring layered CLAUDE.md files and per-package skills for monorepos |
+
+### Output Styles (`output-styles/`)
+
+Drop-in output style files that control how Claude Code formats responses. Copy to `.claude/output-styles/` in any project (or `~/.claude/output-styles/` for personal use). Select with `/output-style` or the `--output-style` CLI flag. Source: [disler](https://github.com/disler).
+
+| File | Description |
+|------|-------------|
+| `output-styles/README.md` | Index of all output styles with usage instructions |
+| `output-styles/bullet-points.md` | Hierarchical bullet points for quick scanning |
+| `output-styles/genui.md` | Generative UI - self-contained HTML documents with embedded styling, opened in browser |
+| `output-styles/html-structured.md` | Clean semantic HTML5 with proper document structure |
+| `output-styles/markdown-focused.md` | Full markdown features for maximum readability |
+| `output-styles/observable-tools-diffs.md` | Transparent reporting of tools used and git diff summaries after code changes |
+| `output-styles/observable-tools-diffs-tts.md` | Tool/diff reporting combined with text-to-speech audio announcements |
+| `output-styles/table-based.md` | Markdown tables for organizing comparisons, steps, and analysis results |
+| `output-styles/tts-summary-base.md` | Audio task completion announcements via text-to-speech (base version) |
+| `output-styles/tts-summary.md` | Audio task completion with git diff reporting and text-to-speech |
+| `output-styles/ultra-concise.md` | Minimal words, maximum speed - direct actions only, no filler |
+| `output-styles/yaml-structured.md` | Structured YAML format with hierarchical key-value pairs |
 
 ### Reference
 

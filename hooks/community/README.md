@@ -184,4 +184,26 @@ This example combines:
 
 ## Source
 
-All hooks in this directory are from [davila7/claude-code-templates](https://github.com/davila7/claude-code-templates), licensed under MIT.
+All hooks above are from [davila7/claude-code-templates](https://github.com/davila7/claude-code-templates), licensed under MIT.
+
+---
+
+## disler-hooks-mastery/ - Comprehensive Python Hooks System
+
+A complete Python-based hooks framework by [disler](https://github.com/disler) covering every Claude Code hook event type. Includes LLM-powered task summaries, text-to-speech announcements, automated code quality validation (ruff, ty), multi-agent observability, and human-in-the-loop patterns.
+
+**Key features:**
+
+- **13 lifecycle hook scripts** - one for every Claude Code hook event (SessionStart, SessionEnd, Setup, Stop, PreToolUse, PostToolUse, PostToolUseFailure, PermissionRequest, PreCompact, Notification, SubagentStart, SubagentStop, UserPromptSubmit)
+- **4 validators** - ruff linter, ty type checker, new file validation, content validation
+- **3 LLM integrations** - Anthropic, OpenAI, and Ollama (local) for generating completion messages, agent names, and task summaries
+- **3 TTS providers** - ElevenLabs, OpenAI, and pyttsx3 (offline), with a file-based lock queue for concurrent agents
+- **Observability** - send events to a monitoring server, extract model info, generate event summaries
+- **Human-in-the-loop** - ask questions, request permissions, or present choices via WebSocket callbacks
+- **Setup hooks** - repository initialization and maintenance (dependency installation, database setup)
+
+All scripts use `uv run --script` for zero-config dependency management and fail gracefully.
+
+See [`disler-hooks-mastery/README.md`](disler-hooks-mastery/README.md) for the full file listing, installation instructions, and settings.json examples.
+
+Source repos: [disler/claude-code-hooks-mastery](https://github.com/disler/claude-code-hooks-mastery) (3300+ stars), [disler/claude-code-hooks-multi-agent-observability](https://github.com/disler/claude-code-hooks-multi-agent-observability), [disler/install-and-maintain](https://github.com/disler/install-and-maintain). All MIT license.
