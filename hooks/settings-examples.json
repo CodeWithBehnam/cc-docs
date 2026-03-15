@@ -1,0 +1,114 @@
+{
+  "_comment": "Example .claude/settings.json wiring all 10 hook scripts. Copy to your project's .claude/settings.json and adjust paths. Scripts are referenced via $CLAUDE_PROJECT_DIR so the hook works from any subdirectory.",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "_comment": "Block edits to .env, lock files, .git/, and paths containing 'secret' or 'credential'.",
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/hooks/scripts/protect-files.sh"
+          }
+        ]
+      },
+      {
+        "_comment": "Block dangerous shell commands: rm -rf /, DROP TABLE, force-push to main, curl|bash.",
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/hooks/scripts/block-dangerous-commands.sh"
+          }
+        ]
+      },
+      {
+        "_comment": "Block SQL mutation statements (INSERT, UPDATE, DELETE, DROP, CREATE, ALTER, TRUNCATE). Allows SELECT.",
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/hooks/scripts/validate-sql.sh"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "_comment": "Auto-format edited files: prettier (.ts/.js), black (.py), gofmt (.go), rubocop (.rb).",
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/hooks/scripts/auto-format.sh"
+          }
+        ]
+      },
+      {
+        "_comment": "Run linter on edited files: ESLint (.ts/.js/.tsx/.jsx), ruff (.py), rubocop (.rb). Non-blocking.",
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/hooks/scripts/lint-on-save.sh"
+          }
+        ]
+      },
+      {
+        "_comment": "Log every tool use (tool name, file path, command) as a JSON line to ~/.claude/tool-usage.log.",
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/hooks/scripts/log-tool-usage.sh"
+          }
+        ]
+      },
+      {
+        "_comment": "Find and run a related test file after a source file is edited. Non-blocking.",
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/hooks/scripts/test-after-edit.sh"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "_comment": "Send a native desktop notification. Cross-platform: macOS, Linux, Windows.",
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/hooks/scripts/notify-desktop.sh"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "_comment": "After context compaction, re-inject git branch, recent commits, and a project reminder.",
+        "matcher": "compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/hooks/scripts/inject-context.sh"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "_comment": "Before Claude finishes, check for uncommitted changes and ask it to commit them.",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/hooks/scripts/stop-check.sh"
+          }
+        ]
+      }
+    ]
+  }
+}

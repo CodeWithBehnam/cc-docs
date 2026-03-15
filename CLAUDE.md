@@ -259,6 +259,25 @@ Drop-in slash command files. Copy to `.claude/commands/` in any project. Invoke 
 | `commands/db-migrate.md` | `/db-migrate` | `<migration description>` | Generate a migration file with up/down methods and test the rollback. |
 | `commands/new-feature.md` | `/new-feature` | `<feature name>` | Scaffold a new feature following existing patterns, with files, tests, and wired imports. |
 
+### Hook Scripts (`hooks/`)
+
+Production-ready bash hook scripts and a settings example. Copy scripts to `.claude/hooks/` in any project and wire them up via `.claude/settings.json`.
+
+| File | Description |
+|------|-------------|
+| `hooks/README.md` | Index of all hook scripts with event types, matchers, and usage instructions |
+| `hooks/settings-examples.json` | Complete settings.json example wiring all 10 scripts with correct event types and matchers |
+| `hooks/scripts/auto-format.sh` | PostToolUse - runs prettier, black, gofmt, or rubocop after a file is saved |
+| `hooks/scripts/protect-files.sh` | PreToolUse - blocks edits to .env, lock files, .git/, and secret/credential paths |
+| `hooks/scripts/notify-desktop.sh` | Notification - cross-platform desktop notification (macOS, Linux, Windows) |
+| `hooks/scripts/lint-on-save.sh` | PostToolUse - runs ESLint, ruff, or rubocop after a file is saved (non-blocking) |
+| `hooks/scripts/block-dangerous-commands.sh` | PreToolUse - blocks rm -rf /, DROP TABLE, force-push to main, curl/wget piped to bash |
+| `hooks/scripts/log-tool-usage.sh` | PostToolUse - appends JSON lines to ~/.claude/tool-usage.log for every tool call |
+| `hooks/scripts/validate-sql.sh` | PreToolUse - blocks SQL mutations (INSERT, UPDATE, DELETE, DROP, etc.); allows SELECT |
+| `hooks/scripts/test-after-edit.sh` | PostToolUse - finds and runs related test file after a source file is edited (non-blocking) |
+| `hooks/scripts/inject-context.sh` | SessionStart (compact) - re-injects git branch, recent commits, and project reminder after compaction |
+| `hooks/scripts/stop-check.sh` | Stop - checks for uncommitted changes and asks Claude to commit before finishing |
+
 ### Reference
 
 | File | Description |
