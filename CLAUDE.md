@@ -300,6 +300,25 @@ Production-ready bash hook scripts and a settings example. Copy scripts to `.cla
 | `hooks/scripts/inject-context.sh` | SessionStart (compact) - re-injects git branch, recent commits, and project reminder after compaction |
 | `hooks/scripts/stop-check.sh` | Stop - checks for uncommitted changes and asks Claude to commit before finishing |
 
+### Agents (`agents/`)
+
+Drop-in subagent files. Copy any `.md` file to `.claude/agents/` in your project (or `~/.claude/agents/` for personal use) and it becomes available immediately. See `agents/README.md` for installation instructions and full descriptions.
+
+| File | Model | Description |
+|------|-------|-------------|
+| `agents/code-reviewer.md` | sonnet | Read-only code review - quality, security, best practices. Proactive. |
+| `agents/security-auditor.md` | opus | Deep OWASP security audit with severity ratings. Read-only. |
+| `agents/test-writer.md` | sonnet | Writes tests matching the project's framework and style. |
+| `agents/debugger.md` | inherit | Hypothesis-driven root cause analysis with fix applied. |
+| `agents/docs-writer.md` | sonnet | Writes JSDoc, docstrings, and README content matching project conventions. |
+| `agents/refactorer.md` | sonnet | Refactors for readability while preserving behavior. Runs tests before and after. |
+| `agents/performance-analyst.md` | sonnet | Finds N+1 queries, memory leaks, inefficient algorithms, missing indexes. Read-only. |
+| `agents/db-reader.md` | haiku | Read-only database queries. PreToolUse hook blocks all write SQL operations. |
+| `agents/api-designer.md` | sonnet | Designs RESTful endpoints following REST conventions with OpenAPI output. |
+| `agents/migration-planner.md` | inherit | Phased migration plans with scope analysis and verification steps. |
+| `agents/dependency-checker.md` | haiku | Runs npm/pip/bundle/cargo audit and flags vulnerable and outdated packages. |
+| `agents/onboarding-guide.md` | sonnet | Generates architecture overviews, key file maps, and setup guides. Uses project memory. |
+
 ### Reference
 
 | File | Description |
