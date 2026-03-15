@@ -262,6 +262,269 @@ Drop-in skill directories. Copy a skill directory to `.claude/skills/` in any pr
 | `skills/changelog/SKILL.md` | `/changelog [version]` | Task | Generate categorized changelog from git history since last release tag |
 | `skills/perf-audit/SKILL.md` | `/perf-audit [target]` | Research | Find performance bottlenecks: N+1 queries, slow algorithms, memory issues |
 
+#### Community Skills (179 skills in 16 categories)
+
+Imported from community repos: [wshobson/agents](https://github.com/wshobson/agents) (MIT), [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code), [garrytan/gstack](https://github.com/garrytan/gstack). Each skill is in its own subdirectory under the category with a `SKILL.md` file and optional reference files.
+
+##### `skills/api-architecture/` - API Design, REST, GraphQL, Microservices, CQRS, Event Sourcing (10 skills)
+
+| Skill | Source | Description |
+|-------|--------|-------------|
+| `api-design-principles` | agents | REST/GraphQL API design principles with checklists and templates |
+| `microservices-patterns` | agents | Microservices communication, decomposition, and resilience patterns |
+| `cqrs-implementation` | agents | Command Query Responsibility Segregation for scalable architectures |
+| `event-store-design` | agents | Event store design for event-sourced systems |
+| `saga-orchestration` | agents | Saga pattern for distributed transaction orchestration |
+| `projection-patterns` | agents | Read model projection patterns for CQRS |
+| `architecture-patterns` | agents | Software architecture patterns (hexagonal, clean, layered) |
+| `fastapi-templates` | agents | FastAPI project scaffolding templates |
+| `openapi-spec-generation` | agents | Generate OpenAPI/Swagger specifications from code |
+| `api-design` | ecc | REST API design patterns (naming, status codes, pagination, versioning) |
+
+##### `skills/backend-development/` - Backend Patterns, Build Tools, Migrations (17 skills)
+
+| Skill | Source | Description |
+|-------|--------|-------------|
+| `workflow-orchestration-patterns` | agents | Workflow orchestration patterns (Temporal, step functions) |
+| `temporal-python-testing` | agents | Testing Temporal workflows in Python (unit, integration, replay) |
+| `error-handling-patterns` | agents | Error handling strategies across languages and frameworks |
+| `auth-implementation-patterns` | agents | Authentication and authorization implementation patterns |
+| `debugging-strategies` | agents | Systematic debugging strategies and techniques |
+| `dotnet-backend-patterns` | agents | .NET backend patterns with EF Core and Dapper |
+| `nodejs-backend-patterns` | agents | Node.js backend architecture and patterns |
+| `monorepo-management` | agents | Monorepo tooling and management strategies |
+| `bazel-build-optimization` | agents | Bazel build system optimization techniques |
+| `nx-workspace-patterns` | agents | Nx workspace configuration and patterns |
+| `turborepo-caching` | agents | Turborepo caching strategies for monorepos |
+| `angular-migration` | agents | Angular version migration strategies |
+| `database-migration` | agents | Database migration planning and execution |
+| `dependency-upgrade` | agents | Safe dependency upgrade workflows |
+| `react-modernization` | agents | React class-to-hooks modernization patterns |
+| `backend-patterns` | ecc | Backend architecture patterns and best practices |
+| `coding-standards` | ecc | Code style and standards enforcement |
+
+##### `skills/frontend-development/` - React, Next.js, Design Systems, Mobile, Accessibility (17 skills)
+
+| Skill | Source | Description |
+|-------|--------|-------------|
+| `nextjs-app-router-patterns` | agents | Next.js App Router patterns (RSC, layouts, streaming) |
+| `react-state-management` | agents | React state management strategies (Context, Zustand, Jotai) |
+| `tailwind-design-system` | agents | Tailwind CSS design system architecture |
+| `react-native-architecture` | agents | React Native app architecture patterns |
+| `design-system-patterns` | agents | Design system component architecture and theming |
+| `responsive-design` | agents | Responsive design with container queries and fluid layouts |
+| `interaction-design` | agents | Microinteractions, scroll animations, and motion design |
+| `visual-design-foundations` | agents | Typography, color systems, spacing, and iconography |
+| `web-component-design` | agents | Web component patterns, CSS styling, and accessibility |
+| `ui-accessibility-compliance` | agents | WCAG compliance, ARIA patterns, and mobile accessibility |
+| `mobile-ios-design` | agents | iOS HIG patterns and SwiftUI components |
+| `mobile-android-design` | agents | Material 3 theming and Compose components |
+| `react-native-design` | agents | React Native styling, navigation, and Reanimated patterns |
+| `wcag-audit-patterns` | agents | WCAG audit methodology and testing patterns |
+| `screen-reader-testing` | agents | Screen reader testing across platforms |
+| `frontend-patterns` | ecc | Frontend architecture patterns and best practices |
+| `frontend-slides` | ecc | Presentation slide generation with style presets |
+
+##### `skills/testing-quality/` - E2E Testing, TDD, Code Review, Verification (8 skills)
+
+| Skill | Source | Description |
+|-------|--------|-------------|
+| `e2e-testing-patterns` | agents | End-to-end testing patterns and strategies |
+| `code-review-excellence` | agents | Code review best practices and checklists |
+| `javascript-testing-patterns` | agents | JavaScript/TypeScript testing patterns (Jest, Vitest) |
+| `python-testing-patterns` | agents | Python testing patterns (pytest fixtures, mocking) |
+| `ecc-e2e-testing` | ecc | E2E testing workflows and automation |
+| `ecc-tdd-workflow` | ecc | Test-driven development workflow automation |
+| `verification-loop` | ecc | Iterative verification loop for code correctness |
+| `eval-harness` | ecc | Evaluation harness for testing AI outputs |
+
+##### `skills/security/` - Threat Modeling, SAST, Compliance, Reverse Engineering (12 skills)
+
+| Skill | Source | Description |
+|-------|--------|-------------|
+| `sast-configuration` | agents | Static application security testing configuration |
+| `stride-analysis-patterns` | agents | STRIDE threat modeling methodology |
+| `attack-tree-construction` | agents | Attack tree construction for threat analysis |
+| `security-requirement-extraction` | agents | Extract security requirements from specifications |
+| `threat-mitigation-mapping` | agents | Map threats to mitigations and controls |
+| `pci-compliance` | agents | PCI DSS compliance patterns for payment processing |
+| `gdpr-data-handling` | agents | GDPR-compliant data handling patterns |
+| `anti-reversing-techniques` | agents | Anti-reverse-engineering protection techniques |
+| `binary-analysis-patterns` | agents | Binary analysis and disassembly patterns |
+| `memory-forensics` | agents | Memory forensics investigation techniques |
+| `protocol-reverse-engineering` | agents | Network protocol reverse engineering methods |
+| `security-review` | ecc | Security review workflow and checklist |
+
+##### `skills/devops-infrastructure/` - CI/CD, K8s, Terraform, Cloud, Incident Response (19 skills)
+
+| Skill | Source | Description |
+|-------|--------|-------------|
+| `deployment-pipeline-design` | agents | CI/CD pipeline architecture and design |
+| `github-actions-templates` | agents | GitHub Actions workflow templates |
+| `gitlab-ci-patterns` | agents | GitLab CI/CD pipeline patterns |
+| `secrets-management` | agents | Secrets management strategies (Vault, AWS SM, SOPS) |
+| `gitops-workflow` | agents | GitOps with ArgoCD setup and sync policies |
+| `helm-chart-scaffolding` | agents | Helm chart scaffolding with validation scripts |
+| `k8s-manifest-generator` | agents | Kubernetes manifest generation (deployments, services, configmaps) |
+| `k8s-security-policies` | agents | Kubernetes RBAC and network policy patterns |
+| `terraform-module-library` | agents | Terraform module library (AWS-focused) |
+| `multi-cloud-architecture` | agents | Multi-cloud deployment architecture |
+| `cloud-cost-optimization` | agents | Cloud cost optimization strategies |
+| `hybrid-cloud-networking` | agents | Hybrid cloud networking patterns |
+| `istio-traffic-management` | agents | Istio service mesh traffic management |
+| `linkerd-patterns` | agents | Linkerd service mesh patterns |
+| `mtls-configuration` | agents | Mutual TLS configuration for service-to-service auth |
+| `service-mesh-observability` | agents | Service mesh observability and monitoring |
+| `incident-runbook-templates` | agents | Incident response runbook templates |
+| `on-call-handoff-patterns` | agents | On-call handoff and escalation patterns |
+| `postmortem-writing` | agents | Blameless postmortem writing templates |
+
+##### `skills/data-engineering/` - Airflow, dbt, Spark, Data Quality, SQL (6 skills)
+
+| Skill | Source | Description |
+|-------|--------|-------------|
+| `airflow-dag-patterns` | agents | Apache Airflow DAG design patterns |
+| `data-quality-frameworks` | agents | Data quality validation frameworks |
+| `dbt-transformation-patterns` | agents | dbt transformation and modeling patterns |
+| `spark-optimization` | agents | Apache Spark performance optimization |
+| `sql-optimization-patterns` | agents | SQL query optimization and indexing strategies |
+| `postgresql` | agents | PostgreSQL-specific patterns and best practices |
+
+##### `skills/ai-ml/` - LLM, RAG, Prompt Engineering, ML Pipelines, Embeddings (11 skills)
+
+| Skill | Source | Description |
+|-------|--------|-------------|
+| `rag-implementation` | agents | Retrieval-Augmented Generation implementation patterns |
+| `prompt-engineering-patterns` | agents | Prompt engineering with templates, few-shot, and chain-of-thought |
+| `langchain-architecture` | agents | LangChain application architecture patterns |
+| `llm-evaluation` | agents | LLM output evaluation methodologies |
+| `embedding-strategies` | agents | Text embedding strategies and model selection |
+| `hybrid-search-implementation` | agents | Hybrid search combining vector and keyword retrieval |
+| `similarity-search-patterns` | agents | Similarity search algorithms and optimization |
+| `vector-index-tuning` | agents | Vector index tuning (HNSW, IVF, PQ) |
+| `ml-pipeline-workflow` | agents | ML pipeline workflow orchestration |
+| `claude-api` | ecc | Claude API integration patterns and usage |
+| `fal-ai-media` | ecc | fal.ai media generation API integration |
+
+##### `skills/language-specific/` - Python, TypeScript, Go, Rust, Shell (23 skills)
+
+| Skill | Source | Description |
+|-------|--------|-------------|
+| `python-performance-optimization` | agents | Python performance profiling and optimization |
+| `python-resilience` | agents | Python resilience patterns (retries, circuit breakers) |
+| `python-project-structure` | agents | Python project layout and structure conventions |
+| `python-configuration` | agents | Python configuration management patterns |
+| `python-background-jobs` | agents | Python background job processing (Celery, RQ) |
+| `python-observability` | agents | Python observability (logging, metrics, tracing) |
+| `python-error-handling` | agents | Python error handling best practices |
+| `python-anti-patterns` | agents | Common Python anti-patterns and fixes |
+| `python-code-style` | agents | Python code style and formatting conventions |
+| `python-resource-management` | agents | Python resource management (context managers, cleanup) |
+| `python-type-safety` | agents | Python type hints and mypy configuration |
+| `uv-package-manager` | agents | uv package manager usage patterns |
+| `python-design-patterns` | agents | Python design patterns (factory, strategy, observer) |
+| `python-packaging` | agents | Python packaging and distribution (pyproject.toml, wheels) |
+| `async-python-patterns` | agents | Async Python patterns (asyncio, aiohttp) |
+| `modern-javascript-patterns` | agents | Modern JavaScript patterns (ES2024+, modules, iterators) |
+| `typescript-advanced-types` | agents | TypeScript advanced types (conditional, mapped, template literal) |
+| `go-concurrency-patterns` | agents | Go concurrency patterns (goroutines, channels, sync) |
+| `memory-safety-patterns` | agents | Memory safety patterns for systems programming |
+| `rust-async-patterns` | agents | Rust async patterns (tokio, futures, streams) |
+| `bash-defensive-patterns` | agents | Bash defensive scripting (set -euo, traps, quoting) |
+| `bats-testing-patterns` | agents | Bash testing with BATS framework |
+| `shellcheck-configuration` | agents | ShellCheck linter configuration and usage |
+
+##### `skills/content-research/` - Writing, Research, SEO, Media (8 skills)
+
+| Skill | Source | Description |
+|-------|--------|-------------|
+| `article-writing` | ecc | Long-form article writing workflow |
+| `deep-research` | ecc | Deep research with structured analysis |
+| `market-research` | ecc | Market research and competitive analysis |
+| `content-engine` | ecc | Content production pipeline automation |
+| `exa-search` | ecc | Exa search API integration for research |
+| `crosspost` | ecc | Cross-platform content distribution |
+| `x-api` | ecc | X (Twitter) API integration for posting |
+| `video-editing` | ecc | Video editing workflow automation |
+
+##### `skills/business/` - Finance, Payments, Analytics, Hiring (15 skills)
+
+| Skill | Source | Description |
+|-------|--------|-------------|
+| `market-sizing-analysis` | agents | TAM/SAM/SOM market sizing with data sources |
+| `startup-financial-modeling` | agents | Startup financial modeling and projections |
+| `startup-metrics-framework` | agents | Startup KPI and metrics framework |
+| `competitive-landscape` | agents | Competitive landscape analysis |
+| `team-composition-analysis` | agents | Team composition and hiring analysis |
+| `data-storytelling` | agents | Data storytelling and visualization narratives |
+| `kpi-dashboard-design` | agents | KPI dashboard design patterns |
+| `stripe-integration` | agents | Stripe payment integration patterns |
+| `paypal-integration` | agents | PayPal payment integration patterns |
+| `billing-automation` | agents | Billing and subscription automation |
+| `backtesting-frameworks` | agents | Quantitative trading backtesting frameworks |
+| `risk-metrics-calculation` | agents | Financial risk metrics (VaR, Sharpe, drawdown) |
+| `employment-contract-templates` | agents | Employment contract templates and patterns |
+| `investor-materials` | ecc | Investor deck and materials preparation |
+| `investor-outreach` | ecc | Investor outreach workflow automation |
+
+##### `skills/observability/` - Monitoring, Tracing, Grafana, Prometheus, SLOs (4 skills)
+
+| Skill | Source | Description |
+|-------|--------|-------------|
+| `distributed-tracing` | agents | Distributed tracing setup (OpenTelemetry, Jaeger) |
+| `grafana-dashboards` | agents | Grafana dashboard design and provisioning |
+| `prometheus-configuration` | agents | Prometheus configuration and alerting rules |
+| `slo-implementation` | agents | SLO/SLI definition and error budget policies |
+
+##### `skills/team-workflow/` - Coordination, Parallel Work, Agent Teams (11 skills)
+
+| Skill | Source | Description |
+|-------|--------|-------------|
+| `multi-reviewer-patterns` | agents | Multi-reviewer code review coordination |
+| `parallel-debugging` | agents | Parallel debugging with hypothesis testing |
+| `parallel-feature-development` | agents | Parallel feature development with file ownership |
+| `task-coordination-strategies` | agents | Task decomposition and dependency management |
+| `team-communication-protocols` | agents | Team communication and messaging patterns |
+| `team-composition-patterns` | agents | Agent team composition and role selection |
+| `context-driven-development` | agents | Context-driven development with artifact templates |
+| `track-management` | agents | Development track management and switching |
+| `workflow-patterns` | agents | Workflow patterns for agent orchestration |
+| `dmux-workflows` | ecc | Dmux parallel session workflows |
+| `strategic-compact` | ecc | Strategic context compaction for long sessions |
+
+##### `skills/game-embedded/` - Game Development (Unity, Godot) (2 skills)
+
+| Skill | Source | Description |
+|-------|--------|-------------|
+| `godot-gdscript-patterns` | agents | Godot GDScript patterns and best practices |
+| `unity-ecs-patterns` | agents | Unity ECS architecture patterns |
+
+##### `skills/blockchain/` - Solidity, DeFi, NFT, Web3 (4 skills)
+
+| Skill | Source | Description |
+|-------|--------|-------------|
+| `solidity-security` | agents | Solidity smart contract security patterns |
+| `defi-protocol-templates` | agents | DeFi protocol implementation templates |
+| `nft-standards` | agents | NFT standard implementations (ERC-721, ERC-1155) |
+| `web3-testing` | agents | Web3 and smart contract testing patterns |
+
+##### `skills/productivity/` - QA, Reviews, Shipping, Git, Documentation (12 skills)
+
+| Skill | Source | Description |
+|-------|--------|-------------|
+| `qa` | gstack | Systematic QA testing with diff-aware, full, quick, and regression modes |
+| `browse` | gstack | Fast headless browser for QA testing and site dogfooding |
+| `gstack-review` | gstack | Code review with checklist, triage, and TODO formatting |
+| `ship` | gstack | Ship workflow - tests, build, deploy with safety checks |
+| `retro` | gstack | Sprint retrospective facilitation |
+| `plan-ceo-review` | gstack | CEO-level plan review and feedback |
+| `plan-eng-review` | gstack | Engineering plan review and feedback |
+| `setup-browser-cookies` | gstack | Browser cookie setup for authenticated testing |
+| `gstack-upgrade` | gstack | Gstack self-upgrade workflow |
+| `git-advanced-workflows` | agents | Advanced Git workflows (rebase, bisect, worktrees) |
+| `architecture-decision-records` | agents | ADR creation and management |
+| `changelog-automation` | agents | Automated changelog generation from commits |
+
 ### Commands (`commands/`)
 
 Drop-in slash command files. Copy to `.claude/commands/` in any project. Invoke with `/command-name` (or `/command-name <argument>`) inside a Claude Code session.
