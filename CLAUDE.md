@@ -262,9 +262,9 @@ Drop-in skill directories. Copy a skill directory to `.claude/skills/` in any pr
 | `skills/changelog/SKILL.md` | `/changelog [version]` | Task | Generate categorized changelog from git history since last release tag |
 | `skills/perf-audit/SKILL.md` | `/perf-audit [target]` | Research | Find performance bottlenecks: N+1 queries, slow algorithms, memory issues |
 
-#### Community Skills (179 skills in 16 categories)
+#### Community Skills (189 skills in 16 categories)
 
-Imported from community repos: [wshobson/agents](https://github.com/wshobson/agents) (MIT), [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code), [garrytan/gstack](https://github.com/garrytan/gstack). Each skill is in its own subdirectory under the category with a `SKILL.md` file and optional reference files.
+Imported from community repos: [wshobson/agents](https://github.com/wshobson/agents) (MIT), [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code), [garrytan/gstack](https://github.com/garrytan/gstack), [mitsuhiko/agent-stuff](https://github.com/mitsuhiko/agent-stuff). Each skill is in its own subdirectory under the category with a `SKILL.md` file and optional reference files.
 
 ##### `skills/api-architecture/` - API Design, REST, GraphQL, Microservices, CQRS, Event Sourcing (10 skills)
 
@@ -325,7 +325,7 @@ Imported from community repos: [wshobson/agents](https://github.com/wshobson/age
 | `frontend-patterns` | ecc | Frontend architecture patterns and best practices |
 | `frontend-slides` | ecc | Presentation slide generation with style presets |
 
-##### `skills/testing-quality/` - E2E Testing, TDD, Code Review, Verification, Browser Automation (10 skills)
+##### `skills/testing-quality/` - E2E Testing, TDD, Code Review, Verification, Browser Automation (11 skills)
 
 | Skill | Source | Description |
 |-------|--------|-------------|
@@ -339,8 +339,9 @@ Imported from community repos: [wshobson/agents](https://github.com/wshobson/age
 | `eval-harness` | ecc | Evaluation harness for testing AI outputs |
 | `claude-bowser` | disler | Observable browser automation using Chrome MCP tools for UI testing and screenshots |
 | `playwright-bowser` | disler | Headless browser automation via Playwright CLI for parallel UI testing and scraping |
+| `web-browser` | mitsuhiko | CDP-based browser automation: navigate, screenshot, click, evaluate JS, monitor network |
 
-##### `skills/security/` - Threat Modeling, SAST, Compliance, Reverse Engineering, Damage Control (13 skills)
+##### `skills/security/` - Threat Modeling, SAST, Compliance, Reverse Engineering, Damage Control (14 skills)
 
 | Skill | Source | Description |
 |-------|--------|-------------|
@@ -357,6 +358,7 @@ Imported from community repos: [wshobson/agents](https://github.com/wshobson/age
 | `protocol-reverse-engineering` | agents | Network protocol reverse engineering methods |
 | `security-review` | ecc | Security review workflow and checklist |
 | `damage-control` | disler | Defense-in-depth protection via PreToolUse hooks: blocks dangerous commands, protects sensitive files, supports ask patterns |
+| `ghidra` | mitsuhiko | Reverse engineer binaries using Ghidra headless analyzer: decompile, extract functions, strings, symbols, call graphs |
 
 ##### `skills/devops-infrastructure/` - CI/CD, K8s, Terraform, Cloud, Incident Response, Sandboxes (20 skills)
 
@@ -438,7 +440,7 @@ Imported from community repos: [wshobson/agents](https://github.com/wshobson/age
 | `bats-testing-patterns` | agents | Bash testing with BATS framework |
 | `shellcheck-configuration` | agents | ShellCheck linter configuration and usage |
 
-##### `skills/content-research/` - Writing, Research, SEO, Media (8 skills)
+##### `skills/content-research/` - Writing, Research, SEO, Media, Web Search, Summarization (10 skills)
 
 | Skill | Source | Description |
 |-------|--------|-------------|
@@ -450,6 +452,8 @@ Imported from community repos: [wshobson/agents](https://github.com/wshobson/age
 | `crosspost` | ecc | Cross-platform content distribution |
 | `x-api` | ecc | X (Twitter) API integration for posting |
 | `video-editing` | ecc | Video editing workflow automation |
+| `native-web-search` | mitsuhiko | Native web search with concise summaries and full source URLs |
+| `summarize` | mitsuhiko | Convert URLs, PDFs, DOCX, HTML to Markdown via markitdown, with optional summarization |
 
 ##### `skills/business/` - Finance, Payments, Analytics, Hiring (15 skills)
 
@@ -471,7 +475,7 @@ Imported from community repos: [wshobson/agents](https://github.com/wshobson/age
 | `investor-materials` | ecc | Investor deck and materials preparation |
 | `investor-outreach` | ecc | Investor outreach workflow automation |
 
-##### `skills/observability/` - Monitoring, Tracing, Grafana, Prometheus, SLOs (4 skills)
+##### `skills/observability/` - Monitoring, Tracing, Grafana, Prometheus, SLOs, Sentry (5 skills)
 
 | Skill | Source | Description |
 |-------|--------|-------------|
@@ -479,6 +483,7 @@ Imported from community repos: [wshobson/agents](https://github.com/wshobson/age
 | `grafana-dashboards` | agents | Grafana dashboard design and provisioning |
 | `prometheus-configuration` | agents | Prometheus configuration and alerting rules |
 | `slo-implementation` | agents | SLO/SLI definition and error budget policies |
+| `sentry` | mitsuhiko | Fetch and analyze Sentry issues, events, transactions, and logs for debugging and root cause analysis |
 
 ##### `skills/team-workflow/` - Coordination, Parallel Work, Agent Teams (11 skills)
 
@@ -496,12 +501,13 @@ Imported from community repos: [wshobson/agents](https://github.com/wshobson/age
 | `dmux-workflows` | ecc | Dmux parallel session workflows |
 | `strategic-compact` | ecc | Strategic context compaction for long sessions |
 
-##### `skills/game-embedded/` - Game Development (Unity, Godot) (2 skills)
+##### `skills/game-embedded/` - Game Development (Unity, Godot), 3D Modeling (3 skills)
 
 | Skill | Source | Description |
 |-------|--------|-------------|
 | `godot-gdscript-patterns` | agents | Godot GDScript patterns and best practices |
 | `unity-ecs-patterns` | agents | Unity ECS architecture patterns |
+| `openscad` | mitsuhiko | 3D modeling with OpenSCAD: preview, validate, extract params, export STL for 3D printing |
 
 ##### `skills/blockchain/` - Solidity, DeFi, NFT, Web3 (4 skills)
 
@@ -512,7 +518,7 @@ Imported from community repos: [wshobson/agents](https://github.com/wshobson/age
 | `nft-standards` | agents | NFT standard implementations (ERC-721, ERC-1155) |
 | `web3-testing` | agents | Web3 and smart contract testing patterns |
 
-##### `skills/productivity/` - QA, Reviews, Shipping, Git, Documentation, Parallel Work, Mac Automation (19 skills)
+##### `skills/productivity/` - QA, Reviews, Shipping, Git, Documentation, Parallel Work, Mac Automation, Diagrams, Email (23 skills)
 
 | Skill | Source | Description |
 |-------|--------|-------------|
@@ -535,6 +541,10 @@ Imported from community repos: [wshobson/agents](https://github.com/wshobson/age
 | `create-worktree-skill` | disler | Create fully configured git worktrees for parallel development with isolated ports and config |
 | `drive` | disler | Terminal automation CLI for AI agents via tmux sessions, commands, and parallel workloads |
 | `steer` | disler | macOS GUI automation via accessibility APIs: screenshots, clicks, typing, hotkeys, window management |
+| `tmux` | mitsuhiko | Remote control tmux sessions for interactive CLIs (python, gdb, etc.) via keystrokes and pane scraping |
+| `mermaid` | mitsuhiko | Mermaid diagram validation and rendering using official Mermaid CLI |
+| `google-workspace` | mitsuhiko | Google Workspace APIs (Drive, Docs, Calendar, Gmail, Sheets, Slides) via local OAuth scripts |
+| `apple-mail` | mitsuhiko | Search, read, and extract attachments from Apple Mail local storage on macOS |
 
 ### Commands (`commands/`)
 
@@ -739,9 +749,9 @@ Drop-in subagent files. Copy any `.md` file to `.claude/agents/` in your project
 | `agents/dependency-checker.md` | haiku | Runs npm/pip/bundle/cargo audit and flags vulnerable and outdated packages. |
 | `agents/onboarding-guide.md` | sonnet | Generates architecture overviews, key file maps, and setup guides. Uses project memory. |
 
-#### Community Agents (138 agents in 11 categories)
+#### Community Agents (158 agents in 13 categories)
 
-Sources: [VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents) (MIT license), [disler](https://github.com/disler).
+Sources: [VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents) (MIT license), [disler](https://github.com/disler), [mitsuhiko/agent-prompts](https://github.com/mitsuhiko/agent-prompts).
 
 | Directory | Count | Description |
 |-----------|-------|-------------|
@@ -754,7 +764,9 @@ Sources: [VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/
 | `agents/specialized-domains/` | 12 | API docs, blockchain, embedded systems, fintech, gaming, IoT, M365, mobile apps, payments, quantitative analysis, risk management, SEO |
 | `agents/business-product/` | 11 | Business analysis, content marketing, customer success, legal, product management, project management, sales engineering, Scrum, technical writing, UX research, WordPress |
 | `agents/meta-orchestration/` | 12 | Agent installation, agent organization, context management, error coordination, IT ops, knowledge synthesis, multi-agent coordination, performance monitoring, task distribution, workflow orchestration, meta-agent creation, work-completion summaries |
-| `agents/research-analysis/` | 7 | Competitive analysis, data research, market research, research analysis, scientific literature, search, trend analysis |
+| `agents/research-analysis/` | 10 | Competitive analysis, data research, market research, research analysis, scientific literature, search, trend analysis, citations, research lead, research subagent |
+| `agents/lang-engineering/` | 10 | Compiler, coroutine, language analysis, language architect, lexer, memory management, object system, parser, runtime, VM engineering for programming language development |
+| `agents/poc-engineering/` | 7 | Architecture design, detailed planning, implementation, problem analysis, programming lead, software architect, task breakdown for proof-of-concept development |
 | `agents/team/` | 2 | Builder (executes one task with validation hooks) and validator (read-only task verification) |
 
 ### Guides (`guides/`)
