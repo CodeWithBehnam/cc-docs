@@ -110,7 +110,17 @@ echo ""
 # Step 3: Update the "Last docs pull" timestamp in README.md
 README="$REPO_DIR/README.md"
 if [[ -f "$README" ]]; then
-  TIMESTAMP="$(date -u '+%Y-%m-%d %H:%M UTC')"
+  UTC_TS="$(date -u '+%Y-%m-%d %H:%M')"
+  PT_TS="$(TZ='America/Los_Angeles' date '+%H:%M')"
+  ET_TS="$(TZ='America/New_York' date '+%H:%M')"
+  CET_TS="$(TZ='Europe/Berlin' date '+%H:%M')"
+  IST_TS="$(TZ='Asia/Kolkata' date '+%H:%M')"
+  JST_TS="$(TZ='Asia/Tokyo' date '+%H:%M')"
+  # Add +1 suffix if the local date is ahead of UTC date
+  UTC_DATE="$(date -u '+%Y-%m-%d')"
+  IST_SUFFIX="" && [[ "$(TZ='Asia/Kolkata' date '+%Y-%m-%d')" != "$UTC_DATE" ]] && IST_SUFFIX="+1"
+  JST_SUFFIX="" && [[ "$(TZ='Asia/Tokyo' date '+%Y-%m-%d')" != "$UTC_DATE" ]] && JST_SUFFIX="+1"
+  TIMESTAMP="${UTC_TS} UTC / ${PT_TS} PT / ${ET_TS} ET / ${CET_TS} CET / ${IST_TS}${IST_SUFFIX} IST / ${JST_TS}${JST_SUFFIX} JST"
   sed -i "s|<!-- LAST_UPDATED -->.*<!-- /LAST_UPDATED -->|<!-- LAST_UPDATED -->$TIMESTAMP<!-- /LAST_UPDATED -->|" "$README"
   echo "Updated README.md timestamp: $TIMESTAMP"
 fi
