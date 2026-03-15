@@ -13,8 +13,8 @@
   <img src="https://img.shields.io/badge/docs-65%2B%20pages-5A29E0?style=flat-square" alt="65+ Doc Pages">
   <img src="https://img.shields.io/badge/cheatsheets-64-29E05A?style=flat-square" alt="64 Cheatsheets">
   <img src="https://img.shields.io/badge/templates-33-E05A29?style=flat-square" alt="33 Templates">
-  <img src="https://img.shields.io/badge/skills-205_(15%20core%20%2B%20190%20community)-FF6B6B?style=flat-square" alt="205 Skills">
-  <img src="https://img.shields.io/badge/agents-150_(12%20core%20%2B%20138%20community)-6B6BFF?style=flat-square" alt="150 Agents">
+  <img src="https://img.shields.io/badge/skills-215_(15%20core%20%2B%20200%20community)-FF6B6B?style=flat-square" alt="215 Skills">
+  <img src="https://img.shields.io/badge/agents-170_(12%20core%20%2B%20158%20community)-6B6BFF?style=flat-square" alt="170 Agents">
   <img src="https://img.shields.io/badge/commands-109_(12%20core%20%2B%2097%20community)-FFB86B?style=flat-square" alt="109 Commands">
   <img src="https://img.shields.io/badge/hooks-108_(10%20core%20%2B%2098%20community)-6BFFB8?style=flat-square" alt="108 Hook Scripts">
   <img src="https://img.shields.io/badge/output--styles-11-B86BFF?style=flat-square" alt="11 Output Styles">
@@ -35,8 +35,8 @@ A GitHub Actions workflow runs every hour, downloads the latest docs, and commit
 | `claude-code-docs/` | 65+ full doc pages mirrored from code.claude.com/docs |
 | `cheatsheets/` | 64 scannable quick-reference sheets (one per doc page) |
 | `templates/` | 33 copy-paste-able templates across 9 categories |
-| `skills/` | **205 skills** - 15 core + 190 community skills in 16 categories |
-| `agents/` | **150 agents** - 12 core + 138 community agents in 11 categories |
+| `skills/` | **215 skills** - 15 core + 200 community skills in 16 categories |
+| `agents/` | **170 agents** - 12 core + 158 community agents in 13 categories |
 | `commands/` | **109 commands** - 12 core + 97 community commands in 12 categories |
 | `hooks/` | **108 hooks** - 10 core scripts + 98 community hooks (6 categories + Python hooks mastery) |
 | `output-styles/` | 11 drop-in output style configurations for Claude Code |
@@ -443,7 +443,7 @@ The [`templates/`](templates/) folder has 33 ready-to-use, copy-paste-able templ
 
 ## Skills
 
-The [`skills/`](skills/) folder has **205 skills** - 15 core skills plus 190 community skills organized into 16 categories. Copy any skill to `.claude/skills/` in your project (or `~/.claude/skills/` for all projects). Invoke with `/skill-name` or let Claude auto-invoke when relevant.
+The [`skills/`](skills/) folder has **215 skills** - 15 core skills plus 200 community skills organized into 16 categories. Copy any skill to `.claude/skills/` in your project (or `~/.claude/skills/` for all projects). Invoke with `/skill-name` or let Claude auto-invoke when relevant.
 
 > **Skills vs Commands:** Skills support directories with supporting files, frontmatter for invocation control, and subagent execution. Commands are simpler single-file alternatives. Both create slash commands.
 
@@ -487,9 +487,9 @@ The [`skills/`](skills/) folder has **205 skills** - 15 core skills plus 190 com
 </details>
 
 <details>
-<summary><b>Community Skills</b> (190 skills in 16 categories) - From community repos</summary>
+<summary><b>Community Skills</b> (200 skills in 16 categories) - From community repos</summary>
 
-Sources: [wshobson/agents](https://github.com/wshobson/agents), [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code), [garrytan/gstack](https://github.com/garrytan/gstack), [disler](https://github.com/disler). Each skill is in its own subdirectory with a `SKILL.md` file and optional reference files.
+Sources: [wshobson/agents](https://github.com/wshobson/agents), [affaan-m/everything-claude-code](https://github.com/affaan-m/everything-claude-code), [garrytan/gstack](https://github.com/garrytan/gstack), [disler](https://github.com/disler), [mitsuhiko/agent-stuff](https://github.com/mitsuhiko/agent-stuff). Each skill is in its own subdirectory with a `SKILL.md` file and optional reference files.
 
 | Category | Count | What's Inside |
 |---|---|---|
@@ -498,23 +498,23 @@ Sources: [wshobson/agents](https://github.com/wshobson/agents), [affaan-m/everyt
 | [`frontend-development/`](skills/frontend-development/) | 17 | Next.js App Router, React state, Tailwind, design systems, accessibility, mobile UI |
 | [`language-specific/`](skills/language-specific/) | 23 | Python (15 skills), TypeScript, Go concurrency, Rust async, Bash defensive scripting |
 | [`devops-infrastructure/`](skills/devops-infrastructure/) | 20 | CI/CD pipelines, K8s, Terraform, GitOps, service mesh, secrets, agent sandboxes |
-| [`testing-quality/`](skills/testing-quality/) | 10 | E2E testing, TDD, code review, JS/Python testing, browser automation (Bowser, Playwright) |
-| [`security/`](skills/security/) | 13 | STRIDE threat modeling, SAST, PCI/GDPR compliance, binary analysis, damage control |
+| [`testing-quality/`](skills/testing-quality/) | 11 | E2E testing, TDD, code review, JS/Python testing, browser automation (Bowser, Playwright, CDP) |
+| [`security/`](skills/security/) | 14 | STRIDE threat modeling, SAST, PCI/GDPR compliance, binary analysis, damage control, Ghidra RE |
 | [`ai-ml/`](skills/ai-ml/) | 11 | RAG, prompt engineering, LangChain, LLM evaluation, embeddings, vector search, ML pipelines |
 | [`business/`](skills/business/) | 15 | Market sizing, financial modeling, Stripe/PayPal, risk metrics, investor materials |
-| [`content-research/`](skills/content-research/) | 8 | Article writing, deep research, market research, content engine, video editing |
-| [`productivity/`](skills/productivity/) | 19 | QA, code reviews, shipping, justfile, worktrees, fork-terminal, meta-skill, library, Mac control |
+| [`content-research/`](skills/content-research/) | 10 | Article writing, deep research, market research, content engine, video editing, web search, summarization |
+| [`productivity/`](skills/productivity/) | 24 | QA, code reviews, shipping, justfile, worktrees, fork-terminal, meta-skill, library, Mac control, tmux, mermaid, Google Workspace, Apple Mail |
 | [`team-workflow/`](skills/team-workflow/) | 11 | Multi-reviewer coordination, parallel debugging, task decomposition, agent orchestration |
 | [`data-engineering/`](skills/data-engineering/) | 6 | Airflow DAGs, dbt, Spark optimization, SQL tuning, PostgreSQL |
-| [`observability/`](skills/observability/) | 4 | Distributed tracing, Grafana dashboards, Prometheus, SLO/SLI |
+| [`observability/`](skills/observability/) | 5 | Distributed tracing, Grafana dashboards, Prometheus, SLO/SLI, Sentry error tracking |
 | [`blockchain/`](skills/blockchain/) | 4 | Solidity security, DeFi protocols, NFT standards, Web3 testing |
-| [`game-embedded/`](skills/game-embedded/) | 2 | Godot GDScript, Unity ECS patterns |
+| [`game-embedded/`](skills/game-embedded/) | 3 | Godot GDScript, Unity ECS patterns, OpenSCAD 3D modeling |
 
 </details>
 
 ## Agents
 
-The [`agents/`](agents/) folder has **150 agents** - 12 core agents plus 138 community agents organized into 11 categories. Copy any `.md` file to `.claude/agents/` in your project (or `~/.claude/agents/` for all projects).
+The [`agents/`](agents/) folder has **170 agents** - 12 core agents plus 158 community agents organized into 13 categories. Copy any `.md` file to `.claude/agents/` in your project (or `~/.claude/agents/` for all projects).
 
 <details>
 <summary><b>Core Agents</b> (12 agents) - Battle-tested, ready to use</summary>
@@ -537,9 +537,9 @@ The [`agents/`](agents/) folder has **150 agents** - 12 core agents plus 138 com
 </details>
 
 <details>
-<summary><b>Community Agents</b> (138 agents in 11 categories) - From VoltAgent and disler</summary>
+<summary><b>Community Agents</b> (158 agents in 13 categories) - From VoltAgent, disler, and mitsuhiko</summary>
 
-Sources: [VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents), [disler](https://github.com/disler) (MIT license).
+Sources: [VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents), [disler](https://github.com/disler), [mitsuhiko/agent-prompts](https://github.com/mitsuhiko/agent-prompts) (MIT license).
 
 | Category | Count | What's Inside |
 |---|---|---|
@@ -552,7 +552,9 @@ Sources: [VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/
 | [`specialized-domains/`](agents/specialized-domains/) | 12 | API docs, blockchain, embedded systems, fintech, gaming, IoT, M365, mobile apps, payments, quant analysis, risk management, SEO |
 | [`business-product/`](agents/business-product/) | 11 | Business analysis, content marketing, customer success, legal, product/project management, sales engineering, Scrum, technical writing, UX research, WordPress |
 | [`meta-orchestration/`](agents/meta-orchestration/) | 12 | Agent installation/organization, context management, error coordination, IT ops, knowledge synthesis, multi-agent coordination, performance monitoring, task distribution, workflows, meta-agent, work-completion-summary |
-| [`research-analysis/`](agents/research-analysis/) | 7 | Competitive analysis, data/market research, research analysis, scientific literature, search, trend analysis |
+| [`research-analysis/`](agents/research-analysis/) | 10 | Competitive analysis, data/market research, research analysis, scientific literature, search, trend analysis, citations, research lead/subagent |
+| [`lang-engineering/`](agents/lang-engineering/) | 10 | Compiler, lexer, parser, runtime, VM, coroutine, memory, object system, language analysis, language architect |
+| [`poc-engineering/`](agents/poc-engineering/) | 7 | Architecture design, detailed planning, implementation, problem analysis, programming lead, software architect, task breakdown |
 | [`team/`](agents/team/) | 2 | Builder (implementation) and validator (quality assurance) team agents for paired workflows |
 
 </details>
@@ -769,6 +771,8 @@ Other great Claude Code community projects worth checking out:
 | [disler/agent-sandbox-skill](https://github.com/disler/agent-sandbox-skill) | 340+ | Manage isolated sandbox environments for agent execution |
 | [disler/bowser](https://github.com/disler/bowser) | 193+ | Browser automation with composable skills, subagents, and justfile architecture |
 | [disler/fork-repository-skill](https://github.com/disler/fork-repository-skill) | 138+ | Fork agent to work in parallel terminals |
+| [mitsuhiko/agent-stuff](https://github.com/mitsuhiko/agent-stuff) | 1.6k+ | Script-powered skills from the creator of Flask: Ghidra RE, Sentry, tmux, web-browser, OpenSCAD |
+| [mitsuhiko/agent-prompts](https://github.com/mitsuhiko/agent-prompts) | 101+ | Specialized agents for language engineering (compiler, lexer, parser, VM) and POC engineering |
 
 ## Star History
 
