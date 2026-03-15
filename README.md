@@ -44,6 +44,16 @@ The [`cheatsheets/`](cheatsheets/) folder has a scannable quick-reference for ev
 | **Monitoring** | [costs](cheatsheets/costs.md) &#183; [monitoring-usage](cheatsheets/monitoring-usage.md) &#183; [analytics](cheatsheets/analytics.md) &#183; [checkpointing](cheatsheets/checkpointing.md) |
 | **Reference** | [tools-reference](cheatsheets/tools-reference.md) &#183; [best-practices](cheatsheets/best-practices.md) &#183; [code-review](cheatsheets/code-review.md) &#183; [troubleshooting](cheatsheets/troubleshooting.md) &#183; [how-claude-code-works](cheatsheets/how-claude-code-works.md) &#183; [changelog](cheatsheets/changelog.md) |
 
+## Templates
+
+The [`templates/`](templates/) folder has ready-to-use templates for creating Claude Code extensions. Copy them into your project's `.claude/` directory and customize.
+
+| Template | Description |
+|---|---|
+| [SKILL-TEMPLATE.md](templates/SKILL-TEMPLATE.md) | Skill templates - reference, task, research, codegen, and script-powered patterns |
+| [SUBAGENT-TEMPLATE.md](templates/SUBAGENT-TEMPLATE.md) | Subagent templates - reviewer, debugger, domain expert, with-hooks, memory, background, and worktree patterns |
+| [HOOKS-TEMPLATE.md](templates/HOOKS-TEMPLATE.md) | Hooks templates - formatter, protector, notifier, auditor, verifier, and all hook event types |
+
 ## How it works
 
 1. `Scripts/download-cc-docs.sh` fetches the doc index from `code.claude.com/docs/llms.txt`
