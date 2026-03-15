@@ -134,6 +134,7 @@ Ready-to-use, copy-paste-able templates. **Use these as starting points** when a
 | `templates/SKILL-TEMPLATE.md` | Skill patterns - reference, task, research, codegen, script-powered |
 | `templates/SUBAGENT-TEMPLATE.md` | Subagent patterns - reviewer, debugger, domain expert, hooks, memory, background, worktree |
 | `templates/HOOKS-TEMPLATE.md` | Hook patterns - formatter, protector, notifier, auditor, verifier, all event types |
+| `templates/HOOKS-RECIPES.md` | 10 production-ready hook recipes - dangerous command blocker, network guard, git safety, auto-lint, test runner, commit validator, audit logger, Slack notifier, context injector, auto-commit |
 
 #### CLAUDE.md Starters (`templates/claude-md-starters/`)
 
