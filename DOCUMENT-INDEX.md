@@ -419,6 +419,84 @@ Sources: [VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/
 | `guides/ci-cd-setup.md` | Setting up Claude Code in GitHub Actions or GitLab CI/CD |
 | `guides/monorepo-setup.md` | Configuring layered CLAUDE.md files and per-package skills for monorepos |
 
+## Cheatsheets (`cheatsheets/`)
+
+Condensed quick-reference versions of every official doc topic. One file per topic, covering the same ground as `claude-code-docs/` in a shorter format.
+
+| File | Description |
+|------|-------------|
+| `cheatsheets/README.md` | Index of all cheatsheets |
+| `cheatsheets/overview.md` | Claude Code overview |
+| `cheatsheets/quickstart.md` | Quickstart guide |
+| `cheatsheets/setup.md` | Setup and installation |
+| `cheatsheets/how-claude-code-works.md` | Architecture and inner workings |
+| `cheatsheets/interactive-mode.md` | Interactive (REPL) mode |
+| `cheatsheets/cli-reference.md` | CLI flags, options, commands |
+| `cheatsheets/common-workflows.md` | Common workflow patterns |
+| `cheatsheets/best-practices.md` | Best practices |
+| `cheatsheets/code-review.md` | Code review workflows |
+| `cheatsheets/commands.md` | Slash commands |
+| `cheatsheets/keybindings.md` | Keyboard shortcuts |
+| `cheatsheets/fast-mode.md` | Fast mode |
+| `cheatsheets/output-styles.md` | Output formatting styles |
+| `cheatsheets/terminal-config.md` | Terminal setup |
+| `cheatsheets/memory.md` | Memory and CLAUDE.md files |
+| `cheatsheets/settings.md` | Settings reference |
+| `cheatsheets/model-config.md` | Model configuration |
+| `cheatsheets/permissions.md` | Tool permissions and approval modes |
+| `cheatsheets/env-vars.md` | Environment variables |
+| `cheatsheets/statusline.md` | Status line display |
+| `cheatsheets/features-overview.md` | Extension points overview |
+| `cheatsheets/skills.md` | Skills (slash commands) |
+| `cheatsheets/sub-agents.md` | Custom subagents |
+| `cheatsheets/agent-teams.md` | Agent team orchestration |
+| `cheatsheets/plugins.md` | Plugin creation |
+| `cheatsheets/plugins-reference.md` | Plugins technical reference |
+| `cheatsheets/discover-plugins.md` | Discover and install plugins |
+| `cheatsheets/plugin-marketplaces.md` | Plugin marketplace distribution |
+| `cheatsheets/hooks.md` | Hooks technical reference |
+| `cheatsheets/hooks-guide.md` | Hooks practical guide |
+| `cheatsheets/mcp.md` | MCP integration |
+| `cheatsheets/vs-code.md` | VS Code integration |
+| `cheatsheets/jetbrains.md` | JetBrains integration |
+| `cheatsheets/chrome.md` | Chrome integration |
+| `cheatsheets/desktop.md` | Desktop app |
+| `cheatsheets/desktop-quickstart.md` | Desktop quickstart |
+| `cheatsheets/claude-code-on-the-web.md` | Claude Code on the web |
+| `cheatsheets/headless.md` | Headless (non-interactive) mode |
+| `cheatsheets/github-actions.md` | GitHub Actions |
+| `cheatsheets/gitlab-ci-cd.md` | GitLab CI/CD |
+| `cheatsheets/remote-control.md` | Remote control |
+| `cheatsheets/scheduled-tasks.md` | Scheduled tasks |
+| `cheatsheets/slack.md` | Slack integration |
+| `cheatsheets/amazon-bedrock.md` | Amazon Bedrock |
+| `cheatsheets/google-vertex-ai.md` | Google Vertex AI |
+| `cheatsheets/microsoft-foundry.md` | Microsoft Foundry |
+| `cheatsheets/llm-gateway.md` | LLM gateway configuration |
+| `cheatsheets/authentication.md` | Authentication setup |
+| `cheatsheets/security.md` | Security model |
+| `cheatsheets/sandboxing.md` | Sandboxing and isolation |
+| `cheatsheets/network-config.md` | Enterprise network config |
+| `cheatsheets/server-managed-settings.md` | Server-managed settings |
+| `cheatsheets/third-party-integrations.md` | Enterprise deployment |
+| `cheatsheets/data-usage.md` | Data usage and privacy |
+| `cheatsheets/zero-data-retention.md` | Zero data retention |
+| `cheatsheets/legal-and-compliance.md` | Legal and compliance |
+| `cheatsheets/costs.md` | Cost management |
+| `cheatsheets/analytics.md` | Team usage analytics |
+| `cheatsheets/monitoring-usage.md` | Usage monitoring |
+| `cheatsheets/checkpointing.md` | Checkpointing |
+| `cheatsheets/devcontainer.md` | Development containers |
+| `cheatsheets/troubleshooting.md` | Troubleshooting |
+| `cheatsheets/tools-reference.md` | Built-in tools reference |
+| `cheatsheets/changelog.md` | Changelog |
+
+## Docs (`docs/`)
+
+| File | Description |
+|------|-------------|
+| `docs/brainstorms/2026-03-15-hooks-recipes-brainstorm.md` | Hooks recipes brainstorm and planning document |
+
 ## Output Styles (`output-styles/`)
 
 Drop-in output style files. Copy to `.claude/output-styles/` in any project or `~/.claude/output-styles/` for personal use. Select with `/output-style` or `--output-style` CLI flag.
