@@ -47,9 +47,9 @@ If your devices are enrolled in an MDM or endpoint management solution, endpoint
           "Read(./.env)",
           "Read(./.env.*)",
           "Read(./secrets/**)"
-        ]
-      },
-      "disableBypassPermissionsMode": "disable"
+        ],
+        "disableBypassPermissionsMode": "disable"
+      }
     }
     ```
 
