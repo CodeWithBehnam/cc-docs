@@ -66,7 +66,7 @@ Beyond these built-in subagents, you can create your own with custom prompts, to
 
 Subagents are defined in Markdown files with YAML frontmatter. You can [create them manually](#write-subagent-files) or use the `/agents` command.
 
-This walkthrough guides you through creating a user-level subagent with the `/agent` command. The subagent reviews code and suggests improvements for the codebase.
+This walkthrough guides you through creating a user-level subagent with the `/agents` command. The subagent reviews code and suggests improvements for the codebase.
 
     In Claude Code, run:
 
@@ -74,7 +74,7 @@ This walkthrough guides you through creating a user-level subagent with the `/ag
     /agents
     ```
 
-    Select **Create new agent**, then choose **User-level**. This saves the subagent to `~/.claude/agents/` so it's available in all your projects.
+    Select **Create new agent**, then choose **Personal**. This saves the subagent to `~/.claude/agents/` so it's available in all your projects.
 
     Select **Generate with Claude**. When prompted, describe the subagent:
 
@@ -84,7 +84,7 @@ This walkthrough guides you through creating a user-level subagent with the `/ag
     each issue, show the current code, and provide an improved version.
     ```
 
-    Claude generates the system prompt and configuration. Press `e` to open it in your editor if you want to customize it.
+    Claude generates the identifier, description, and system prompt for you.
 
     For a read-only reviewer, deselect everything except **Read-only tools**. If you keep all tools selected, the subagent inherits all tools available to the main conversation.
 
@@ -92,7 +92,9 @@ This walkthrough guides you through creating a user-level subagent with the `/ag
 
     Pick a background color for the subagent. This helps you identify which subagent is running in the UI.
 
-    Save the subagent. It's available immediately (no restart needed). Try it:
+    Select **Enable** to give the subagent a [persistent memory directory](#enable-persistent-memory) at `~/.claude/agent-memory/`. The subagent uses this to accumulate insights across conversations, such as codebase patterns and recurring issues. Select **None** if you don't want the subagent to persist learnings.
+
+    Review the configuration summary. Press `s` or `Enter` to save, or press `e` to save and edit the file in your editor. The subagent is available immediately. Try it:
 
     ```text
     Use the code-improver agent to suggest improvements in this project
@@ -284,10 +286,10 @@ The `permissionMode` field controls how the subagent handles permission prompts.
 | `default`           | Standard permission checking with prompts                          |
 | `acceptEdits`       | Auto-accept file edits                                             |
 | `dontAsk`           | Auto-deny permission prompts (explicitly allowed tools still work) |
-| `bypassPermissions` | Skip all permission checks                                         |
+| `bypassPermissions` | Skip permission prompts                                            |
 | `plan`              | Plan mode (read-only exploration)                                  |
 
-  Use `bypassPermissions` with caution. It skips all permission checks, allowing the subagent to execute any operation without approval.
+  Use `bypassPermissions` with caution. It skips permission prompts, allowing the subagent to execute operations without approval. Writes to `.git`, `.claude`, `.vscode`, and `.idea` directories still prompt for confirmation, except for `.claude/commands`, `.claude/agents`, and `.claude/skills`. See [permission modes](/en/permissions#permission-modes) for details.
 
 If the parent uses `bypassPermissions`, this takes precedence and cannot be overridden.
 
