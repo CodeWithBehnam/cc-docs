@@ -24,10 +24,10 @@ Think of it like adding an app store: adding the store gives you access to brows
 
 The official Anthropic marketplace (`claude-plugins-official`) is automatically available when you start Claude Code. Run `/plugin` and go to the **Discover** tab to browse what's available.
 
-To install a plugin from the official marketplace:
+To install a plugin from the official marketplace, use `/plugin install <name>@claude-plugins-official`. For example, to install the GitHub integration:
 
 ```shell
-/plugin install plugin-name@claude-plugins-official
+/plugin install github@claude-plugins-official
 ```
 
   The official marketplace is maintained by Anthropic. To submit a plugin to the official marketplace, use one of the in-app submission forms:

@@ -208,7 +208,6 @@ Once a plugin is cloned or copied into the local machine, it is copied into the 
 | `url`         | object                          | `url`, `ref?`, `sha?`              | Git URL source                                                                      |
 | `git-subdir`  | object                          | `url`, `path`, `ref?`, `sha?`      | Subdirectory within a git repo. Clones sparsely to minimize bandwidth for monorepos |
 | `npm`         | object                          | `package`, `version?`, `registry?` | Installed via `npm install`                                                         |
-| `pip`         | object                          | `package`, `version?`, `registry?` | Installed via pip                                                                   |
 
   **Marketplace sources vs plugin sources**: These are different concepts that control different things.
 
