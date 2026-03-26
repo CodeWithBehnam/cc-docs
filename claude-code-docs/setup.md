@@ -95,6 +95,8 @@ If Claude Code can't find your Git Bash installation, set the path in your [sett
 }
 ```
 
+Claude Code can also run PowerShell natively on Windows as an opt-in preview. See [PowerShell tool](/en/tools-reference#powershell-tool) for setup and limitations.
+
 **Option 2: WSL**
 
 Both WSL 1 and WSL 2 are supported. WSL 2 supports [sandboxing](/en/sandboxing) for enhanced security. WSL 1 does not support sandboxing.
