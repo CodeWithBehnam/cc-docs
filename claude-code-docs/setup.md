@@ -278,7 +278,7 @@ Each release publishes a `manifest.json` containing SHA256 checksums for every p
 
 #### Verify the manifest signature
 
-The following steps require a POSIX shell with `gpg` and `curl`. On Windows, run them in Git Bash or WSL.
+Steps 1-3 require a POSIX shell with `gpg` and `curl`. On Windows, run them in Git Bash or WSL. Step 4 includes a PowerShell option.
 
     The release signing key is published at a fixed URL.
 
