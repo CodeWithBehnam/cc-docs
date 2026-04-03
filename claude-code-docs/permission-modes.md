@@ -149,6 +149,7 @@ When the plan is ready, Claude presents it and asks how to proceed. From that pr
 * Approve and accept edits
 * Approve and manually review each edit
 * Keep planning, which sends your feedback back to Claude for another round
+* Select **No, refine with Ultraplan on Claude Code on the web**, which sends the plan to an [ultraplan](/en/ultraplan) session for browser-based review
 
 Each approve option also offers to clear the planning context first.
 
@@ -271,6 +272,7 @@ Permission modes set the baseline approval behavior. For control over individual
 
 * [Permissions](/en/permissions): permission rules, syntax, managed policies
 * [Hooks](/en/hooks): custom permission logic, lifecycle scripting
+* [Ultraplan](/en/ultraplan): run plan mode in a Claude Code on the web session with browser-based review
 * [Security](/en/security): security safeguards and best practices
 * [Sandboxing](/en/sandboxing): filesystem and network isolation for Bash commands
 * [Non-interactive mode](/en/headless): run Claude Code programmatically with the `-p` flag
