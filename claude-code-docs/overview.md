@@ -88,7 +88,7 @@ Choose your environment to get started. Most surfaces require a [Claude subscrip
 
     Start coding at [claude.ai/code](https://claude.ai/code).
 
-    [Get started on the web →](/en/claude-code-on-the-web#getting-started)
+    [Get started on the web →](/en/web-quickstart)
 
     A plugin for IntelliJ IDEA, PyCharm, WebStorm, and other JetBrains IDEs with interactive diff viewing and selection context sharing.
 
@@ -128,7 +128,7 @@ Here are some of the ways you can use Claude Code:
 
     Spawn [multiple Claude Code agents](/en/sub-agents) that work on different parts of a task simultaneously. A lead agent coordinates the work, assigns subtasks, and merges results.
 
-    For fully custom workflows, the [Agent SDK](https://platform.claude.com/docs/en/agent-sdk/overview) lets you build your own agents powered by Claude Code's tools and capabilities, with full control over orchestration, tool access, and permissions.
+    For fully custom workflows, the [Agent SDK](/en/agent-sdk/overview) lets you build your own agents powered by Claude Code's tools and capabilities, with full control over orchestration, tool access, and permissions.
 
     Claude Code is composable and follows the Unix philosophy. Pipe logs into it, run it in CI, or chain it with other tools:
 
@@ -175,7 +175,7 @@ Beyond the [Terminal](/en/quickstart), [VS Code](/en/vs-code), [JetBrains](/en/j
 | Get automatic code review on every PR                                           | [GitHub Code Review](/en/code-review)                                                                              |
 | Route bug reports from Slack to pull requests                                   | [Slack](/en/slack)                                                                                                 |
 | Debug live web applications                                                     | [Chrome](/en/chrome)                                                                                               |
-| Build custom agents for your own workflows                                      | [Agent SDK](https://platform.claude.com/docs/en/agent-sdk/overview)                                                |
+| Build custom agents for your own workflows                                      | [Agent SDK](/en/agent-sdk/overview)                                                                                |
 
 ## Next steps
 
