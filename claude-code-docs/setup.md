@@ -18,7 +18,7 @@ Claude Code runs on the following platforms and configurations:
   * Ubuntu 20.04+
   * Debian 10+
   * Alpine Linux 3.19+
-* **Hardware**: 4 GB+ RAM
+* **Hardware**: 4 GB+ RAM, x64 or ARM64 processor
 * **Network**: internet connection required. See [network configuration](/en/network-config#network-access-requirements).
 * **Shell**: Bash, Zsh, PowerShell, or CMD. On Windows, [Git for Windows](https://git-scm.com/downloads/win) is required.
 * **Location**: [Anthropic supported countries](https://www.anthropic.com/supported-countries)
