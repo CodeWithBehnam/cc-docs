@@ -146,11 +146,11 @@ and Sonnet's efficiency for execution.
 
 Three levels persist across sessions: **low**, **medium**, and **high**. A fourth level, **max**, provides the deepest reasoning with no constraint on token spending, so responses are slower and cost more than at `high`. `max` is available on Opus 4.6 only and does not persist across sessions except through the `CLAUDE_CODE_EFFORT_LEVEL` environment variable.
 
-Opus 4.6 and Sonnet 4.6 default to medium effort. This applies to all providers, including Bedrock, Vertex AI, and direct API access.
+The default effort level depends on your plan. Pro and Max subscribers default to medium effort. All other users default to high effort: API key, Team, Enterprise, and third-party provider (Bedrock, Vertex AI, Foundry) users.
 
-Medium is the recommended level for most coding tasks: it balances speed and reasoning depth, and higher levels can cause the model to overthink routine work. Reserve `high` or `max` for tasks that genuinely benefit from deeper reasoning, such as hard debugging problems or complex architectural decisions.
+Your plan's default suits most coding tasks. Raise effort for work that benefits from deeper reasoning, such as hard debugging problems or complex architectural decisions. Higher levels can cause the model to overthink routine work.
 
-For one-off deep reasoning without changing your session setting, include "ultrathink" in your prompt to trigger high effort for that turn.
+For one-off deep reasoning without changing your session setting, include "ultrathink" in your prompt to trigger high effort for that turn. This has no effect if your session is already at high or max.
 
 **Setting effort:**
 
