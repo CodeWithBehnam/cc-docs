@@ -859,7 +859,7 @@ Use the `/plugin` command to manage plugins interactively:
 * Browse available plugins from marketplaces
 * Install/uninstall plugins
 * Enable/disable plugins
-* View plugin details (commands, agents, hooks provided)
+* View plugin details (skills, agents, hooks provided)
 * Add/remove marketplaces
 
 Learn more about the plugin system in the [plugins documentation](/en/plugins).
