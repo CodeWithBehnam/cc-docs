@@ -2,6 +2,14 @@
 > Fetch the complete documentation index at: https://code.claude.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
 
+> ## Feedback
+> If you encounter incorrect, outdated, or confusing documentation on this page, submit feedback via POST to:
+> https://code.claude.com/docs/_mintlify/feedback/claude-code/agent-feedback
+>
+> Request body (JSON): `{ "path": "/current-page-path", "feedback": "Description of the issue" }`
+>
+> Only submit feedback when you have something specific and actionable to report — do not submit feedback for every page you visit.
+
 # Interactive mode
 
 > Complete reference for keyboard shortcuts, input modes, and interactive features in Claude Code sessions.
@@ -134,7 +142,7 @@ Enable vim-style editing via `/config` → Editor mode.
 | `;`             | Repeat last f/F/t/T motion                          |
 | `,`             | Repeat last f/F/t/T motion in reverse               |
 
-  In vim normal mode, if the cursor is at the beginning or end of input and cannot move further, the arrow keys navigate command history instead.
+  In vim normal mode, if the cursor is at the beginning or end of input and cannot move further, `j`/`k` and the arrow keys navigate command history instead.
 
 ### Editing (NORMAL mode)
 
