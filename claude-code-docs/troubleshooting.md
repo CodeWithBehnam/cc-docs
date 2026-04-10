@@ -166,7 +166,7 @@ Uninstall an npm global install:
 npm uninstall -g @anthropic-ai/claude-code
 ```
 
-Remove a Homebrew install on macOS:
+Remove a Homebrew install on macOS (use `claude-code@latest` if you installed that cask):
 
 ```bash
 brew uninstall --cask claude-code

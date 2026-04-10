@@ -54,7 +54,9 @@ Choose your environment to get started. Most surfaces require a [Claude subscrip
         brew install --cask claude-code
         ```
 
-          Homebrew installations do not auto-update. Run `brew upgrade claude-code` periodically to get the latest features and security fixes.
+        Homebrew offers two casks. `claude-code` tracks the stable release channel, which is typically about a week behind and skips releases with major regressions. `claude-code@latest` tracks the latest channel and receives new versions as soon as they ship.
+
+          Homebrew installations do not auto-update. Run `brew upgrade claude-code` or `brew upgrade claude-code@latest`, depending on which cask you installed, to get the latest features and security fixes.
 
         ```powershell
         winget install Anthropic.ClaudeCode
