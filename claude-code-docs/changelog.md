@@ -10,6 +10,10 @@ This page is generated from the [CHANGELOG.md on GitHub](https://github.com/anth
 
 Run `claude --version` to check your installed version.
 
+<Update label="2.1.107" description="April 14, 2026">
+  * Show thinking hints sooner during long operations
+</Update>
+
 <Update label="2.1.105" description="April 13, 2026">
   * Added `path` parameter to the `EnterWorktree` tool to switch into an existing worktree of the current repository
   * Added PreCompact hook support: hooks can now block compaction by exiting with code 2 or returning `{"decision":"block"}`
