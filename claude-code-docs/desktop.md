@@ -673,11 +673,6 @@ If MCP server toggles don't respond or servers fail to connect on Windows, check
 
 * **PATH not updated after install**: open a new terminal window. PATH updates only apply to new terminal sessions.
 * **Concurrent installation error**: if you see an error about another installation in progress but there isn't one, try running the installer as Administrator.
-* **ARM64**: Windows ARM64 devices are fully supported.
-
-### Cowork tab unavailable on Intel Macs
-
-The Cowork tab requires Apple Silicon (M1 or later) on macOS. On Windows, Cowork is available on all supported hardware. The Chat and Code tabs work normally on Intel Macs.
 
 ### "Branch doesn't exist yet" when opening in CLI
 
