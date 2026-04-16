@@ -405,6 +405,8 @@ npm uninstall -g @anthropic-ai/claude-code
 
   Removing configuration files will delete all your settings, allowed tools, MCP server configurations, and session history.
 
+The VS Code extension, the JetBrains plugin, and the Desktop app also write to `~/.claude/`. If any of them is still installed, the directory is recreated the next time it runs. To remove Claude Code completely, uninstall the [VS Code extension](/en/vs-code#uninstall-the-extension), the JetBrains plugin, and the Desktop app before deleting these files.
+
 To remove Claude Code settings and cached data:
 
     ```bash
