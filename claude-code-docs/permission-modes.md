@@ -126,7 +126,7 @@ Each approve option also offers to clear the planning context first.
 
 ## Eliminate prompts with auto mode
 
-  Auto mode requires Claude Code v2.1.83 or later. On Max, Team, Enterprise, and Anthropic API plans, auto mode appears in the `Shift+Tab` cycle without the `--enable-auto-mode` flag.
+  Auto mode requires Claude Code v2.1.83 or later.
 
 Auto mode lets Claude execute without permission prompts. A separate classifier model reviews actions before they run, blocking anything that escalates beyond your request, targets unrecognized infrastructure, or appears driven by hostile content Claude read.
 
@@ -163,9 +163,8 @@ The classifier trusts your working directory and your repo's configured remotes.
 * Reading `.env` and sending credentials to their matching API
 * Read-only HTTP requests
 * Pushing to the branch you started on or one Claude created
-* Sandbox network access requests
 
-Run `claude auto-mode defaults` to see the full rule lists. If routine actions get blocked, an administrator can add trusted repos, buckets, and services via the `autoMode.environment` setting: see [Configure the auto mode classifier](/en/permissions#configure-the-auto-mode-classifier).
+Sandbox network access requests are routed through the classifier rather than allowed by default. Run `claude auto-mode defaults` to see the full rule lists. If routine actions get blocked, an administrator can add trusted repos, buckets, and services via the `autoMode.environment` setting: see [Configure the auto mode classifier](/en/permissions#configure-the-auto-mode-classifier).
 
 ### When auto mode falls back
 
@@ -205,7 +204,7 @@ Repeated blocks usually mean the classifier is missing context about your infras
 
 ## Allow only pre-approved tools with dontAsk mode
 
-`dontAsk` mode auto-denies every tool that is not explicitly allowed. Only actions matching your `permissions.allow` rules can execute; explicit `ask` rules are also denied rather than prompting. This makes the mode fully non-interactive for CI pipelines or restricted environments where you pre-define exactly what Claude may do.
+`dontAsk` mode auto-denies every tool call that would otherwise prompt. Only actions matching your `permissions.allow` rules and [read-only Bash commands](/en/permissions#read-only-commands) can execute; explicit `ask` rules are denied rather than prompting. This makes the mode fully non-interactive for CI pipelines or restricted environments where you pre-define exactly what Claude may do.
 
 Set it at startup with the flag:
 

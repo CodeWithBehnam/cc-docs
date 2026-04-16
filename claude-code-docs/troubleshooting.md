@@ -753,6 +753,8 @@ Claude Code is designed to work with most development environments, but may cons
 2. Close and restart Claude Code between major tasks
 3. Consider adding large build directories to your `.gitignore` file
 
+If memory usage stays high after these steps, run `/heapdump` to write a JavaScript heap snapshot and a memory breakdown to `~/Desktop`. The breakdown shows resident set size, JS heap, array buffers, and unaccounted native memory, which helps identify whether the growth is in JavaScript objects or in native code. Open the `.heapsnapshot` file in Chrome DevTools under Memory → Load to inspect retainers. Attach both files when reporting a memory issue on [GitHub](https://github.com/anthropics/claude-code/issues).
+
 ### Auto-compaction stops with a thrashing error
 
 If you see `Autocompact is thrashing: the context refilled to the limit...`, automatic compaction succeeded but a file or tool output immediately refilled the context window several times in a row. Claude Code stops retrying to avoid wasting API calls on a loop that isn't making progress.
@@ -939,7 +941,7 @@ If you're experiencing issues not covered here:
    * Installation type, version, and search functionality
    * Auto-update status and available versions
    * Invalid settings files (malformed JSON, incorrect types)
-   * MCP server configuration errors
+   * MCP server configuration errors, including the same server name defined in multiple scopes with different endpoints
    * Keybinding configuration problems
    * Context usage warnings (large CLAUDE.md files, high MCP token usage, unreachable permission rules)
    * Plugin and agent loading errors
