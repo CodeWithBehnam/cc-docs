@@ -23,7 +23,7 @@ This page walks through [setting up a basic status line](#set-up-a-status-line),
 
 ## Set up a status line
 
-Use the [`/statusline` command](#use-the-statusline-command) to have Claude Code generate a script for you, or [manually create a script](#manually-configure-a-status-line) and add it to your settings.
+Use the [`/statusline` command](#use-the-%2Fstatusline-command) to have Claude Code generate a script for you, or [manually create a script](#manually-configure-a-status-line) and add it to your settings.
 
 ### Use the /statusline command
 
