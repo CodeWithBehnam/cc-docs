@@ -872,7 +872,7 @@ If you've already configured MCP servers in Claude Desktop, you can import them:
 
 If you've logged into Claude Code with a [Claude.ai](https://claude.ai) account, MCP servers you've added in Claude.ai are automatically available in Claude Code:
 
-    Add servers at [claude.ai/settings/connectors](https://claude.ai/settings/connectors). On Team and Enterprise plans, only admins can add servers.
+    Add servers at [claude.ai/customize/connectors](https://claude.ai/customize/connectors). On Team and Enterprise plans, only admins can add servers.
 
     Complete any required authentication steps in Claude.ai.
 
