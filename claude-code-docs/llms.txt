@@ -4,7 +4,6 @@
 
 ## Docs
 
-- [Set up Claude Code for your organization](https://code.claude.com/docs/en/admin-setup.md): A decision map for administrators deploying Claude Code, covering API providers, managed settings, policy enforcement, usage monitoring, and data handling.
 - [How the agent loop works](https://code.claude.com/docs/en/agent-sdk/agent-loop.md): Understand the message lifecycle, tool execution, context window, and architecture that power your SDK agents.
 - [Use Claude Code features in the SDK](https://code.claude.com/docs/en/agent-sdk/claude-code-features.md): Load project instructions, skills, hooks, and other Claude Code features into your SDK agents.
 - [Track cost and usage](https://code.claude.com/docs/en/agent-sdk/cost-tracking.md): Learn how to track token usage, deduplicate parallel tool calls, and estimate costs with the Claude Agent SDK.
@@ -22,7 +21,6 @@
 - [Agent SDK reference - Python](https://code.claude.com/docs/en/agent-sdk/python.md): Complete API reference for the Python Agent SDK, including all functions, types, and classes.
 - [Quickstart](https://code.claude.com/docs/en/agent-sdk/quickstart.md): Get started with the Python or TypeScript Agent SDK to build AI agents that work autonomously
 - [Securely deploying AI agents](https://code.claude.com/docs/en/agent-sdk/secure-deployment.md): A guide to securing Claude Code and Agent SDK deployments with isolation, credential management, and network controls
-- [Persist sessions to external storage](https://code.claude.com/docs/en/agent-sdk/session-storage.md): Mirror session transcripts to S3, Redis, or your own backend so any host can resume them.
 - [Work with sessions](https://code.claude.com/docs/en/agent-sdk/sessions.md): How sessions persist agent conversation history, and when to use continue, resume, and fork to return to a prior run.
 - [Agent Skills in the SDK](https://code.claude.com/docs/en/agent-sdk/skills.md): Extend Claude with specialized capabilities using Agent Skills in the Claude Agent SDK
 - [Slash Commands in the SDK](https://code.claude.com/docs/en/agent-sdk/slash-commands.md): Learn how to use slash commands to control Claude Code sessions through the SDK
