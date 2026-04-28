@@ -702,12 +702,14 @@ When you kick off a long-running task and switch to another window, you can set 
 
     By default the hook fires on all notification types. To fire only for specific events, set the `matcher` field to one of these values:
 
-    | Matcher              | Fires when                                      |
-    | :------------------- | :---------------------------------------------- |
-    | `permission_prompt`  | Claude needs you to approve a tool use          |
-    | `idle_prompt`        | Claude is done and waiting for your next prompt |
-    | `auth_success`       | Authentication completes                        |
-    | `elicitation_dialog` | Claude is asking you a question                 |
+    | Matcher                | Fires when                                             |
+    | :--------------------- | :----------------------------------------------------- |
+    | `permission_prompt`    | Claude needs you to approve a tool use                 |
+    | `idle_prompt`          | Claude is done and waiting for your next prompt        |
+    | `auth_success`         | Authentication completes                               |
+    | `elicitation_dialog`   | An MCP server opens an elicitation form                |
+    | `elicitation_complete` | An MCP elicitation form is submitted or dismissed      |
+    | `elicitation_response` | An MCP elicitation response is sent back to the server |
 
     Type `/hooks` and select `Notification` to confirm the hook appears. Selecting it shows the command that will run. To test it end-to-end, ask Claude to run a command that requires permission and switch away from the terminal, or ask Claude to trigger a notification directly.
 
