@@ -45,6 +45,8 @@ Some Claude Code shortcuts use the Option key, such as Option+Enter for a newlin
 
     Open Settings → Profiles → Keys → General and set Left Option key and Right Option key to "Esc+".
 
+    Running `/terminal-setup` in iTerm2 enables "Applications in terminal may access clipboard" under Settings → General → Selection so the `/copy` command can write to your system clipboard. The command detects iTerm2 even when run from inside tmux. Restart iTerm2 for the change to take effect.
+
     Add `"terminal.integrated.macOptionIsMeta": true` to your VS Code settings.
 
 For Ghostty, Kitty, and other terminals, look for an Option-as-Alt or Option-as-Meta setting in the terminal's configuration file.
