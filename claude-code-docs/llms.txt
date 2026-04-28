@@ -69,6 +69,7 @@
 - [Claude Code GitHub Actions](https://code.claude.com/docs/en/github-actions.md): Learn about integrating Claude Code into your development workflow with Claude Code GitHub Actions
 - [Claude Code with GitHub Enterprise Server](https://code.claude.com/docs/en/github-enterprise-server.md): Connect Claude Code to your self-hosted GitHub Enterprise Server instance for web sessions, code review, and plugin marketplaces.
 - [Claude Code GitLab CI/CD](https://code.claude.com/docs/en/gitlab-ci-cd.md): Learn about integrating Claude Code into your development workflow with GitLab CI/CD
+- [Glossary](https://code.claude.com/docs/en/glossary.md): Definitions for Claude Code terminology. Learn what agentic loop, compaction, CLAUDE.md, hooks, subagents, MCP, and other core concepts mean.
 - [Claude Code on Google Vertex AI](https://code.claude.com/docs/en/google-vertex-ai.md): Learn about configuring Claude Code through Google Vertex AI, including setup, IAM configuration, and troubleshooting.
 - [Run Claude Code programmatically](https://code.claude.com/docs/en/headless.md): Use the Agent SDK to run Claude Code programmatically from the CLI, Python, or TypeScript.
 - [Hooks reference](https://code.claude.com/docs/en/hooks.md): Reference for Claude Code hook events, configuration schema, JSON input/output formats, exit codes, async hooks, HTTP hooks, prompt hooks, and MCP tool hooks.
