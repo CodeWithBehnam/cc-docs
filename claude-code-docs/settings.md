@@ -465,7 +465,7 @@ Settings apply in order of precedence. From highest to lowest:
    * Within the managed tier, precedence is: server-managed > MDM/OS-level policies > file-based (`managed-settings.d/*.json` + `managed-settings.json`) > HKCU registry (Windows only). Only one managed source is used; sources do not merge across tiers. Within the file-based tier, drop-in files and the base file are merged together.
 
 2. **Command line arguments**
-   * Temporary overrides for a specific session
+   * Temporary overrides for a specific session. JSON passed via `--settings <file-or-json>` merges with file-based settings using the same rules as the other layers: a key set here overrides the same key in local, project, or user settings, and omitting a key leaves the lower-layer value in place
 
 3. **Local project settings** (`.claude/settings.local.json`)
    * Personal project-specific settings
