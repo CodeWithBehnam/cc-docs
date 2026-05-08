@@ -12,11 +12,27 @@ Type `/` to see every command available to you, or type `/` followed by letters 
 
 A command is only recognized at the start of your message. Text that follows the command name is passed to it as arguments.
 
+## Commands across a typical workflow
+
+Most commands are useful at a specific point in a session, from setting up a project to shipping a change.
+
+**First session in a repo.** Run `/init` to generate a starter `CLAUDE.md`, then `/memory` to refine it. Use `/mcp` and `/agents` to set up any servers or subagents the project needs, and `/permissions` to set the approval rules you want.
+
+**During a task.** `/plan` switches into plan mode before a large change. `/model` and `/effort` adjust how much reasoning you're spending. When the conversation gets long, `/context` shows where the window is going and `/compact` summarizes it down; use `/btw` for a quick aside that shouldn't bloat history.
+
+**Before you ship.** `/diff` shows what changed, `/simplify` reviews recent files and applies quality and efficiency fixes, and `/review` or `/security-review` give a deeper read-only pass.
+
+**Between sessions.** `/clear` starts fresh on a new task while keeping project memory. `/resume` and `/branch` let you return to or fork an earlier conversation. `/teleport` pulls a web session into this terminal, and `/remote-control` lets you continue this local session from another device.
+
+**When something is wrong.** `/rewind` rolls code and conversation back to a checkpoint. `/doctor` and `/debug` diagnose install and runtime issues, and `/feedback` reports a bug with session context attached.
+
+## All commands
+
 The table below lists all the commands included in Claude Code. Entries marked **[Skill](/en/skills#bundled-skills)** are bundled skills. They use the same mechanism as skills you write yourself: a prompt handed to Claude, which Claude can also invoke automatically when relevant. Everything else is a built-in command whose behavior is coded into the CLI. To add your own commands, see [skills](/en/skills).
 
-Not every command appears for every user. Availability depends on your platform, plan, and environment. For example, `/desktop` only shows on macOS and Windows, and `/upgrade` only shows on Pro and Max plans.
-
 In the table below, `<arg>` indicates a required argument and `[arg]` indicates an optional one.
+
+  Not every command appears for every user. Availability depends on your platform, plan, and environment. For example, `/desktop` only shows on macOS and Windows, and `/upgrade` only shows on Pro and Max plans.
 
 | Command                                         | Purpose                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | :---------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
