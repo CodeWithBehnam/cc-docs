@@ -35,7 +35,7 @@ If your devices are enrolled in an MDM or endpoint management solution, endpoint
 
     In [Claude.ai](https://claude.ai), navigate to **Admin Settings > Claude Code > Managed settings**.
 
-    Add your configuration as JSON. All [settings available in `settings.json`](/en/settings#available-settings) are supported, including [hooks](/en/hooks), [environment variables](/en/env-vars), and [managed-only settings](/en/permissions#managed-only-settings) like `allowManagedPermissionRulesOnly`.
+    Add your configuration as JSON. All [settings available in `settings.json`](/en/settings#available-settings) are supported except those restricted to OS-level policy delivery; see [Current limitations](#current-limitations) for that short list. This includes [hooks](/en/hooks), [environment variables](/en/env-vars), and [managed-only settings](/en/permissions#managed-only-settings) like `allowManagedPermissionRulesOnly`.
 
     This example enforces a permission deny list, prevents users from bypassing permissions, and restricts permission rules to those defined in managed settings:
 
@@ -87,7 +87,7 @@ If your devices are enrolled in an MDM or endpoint management solution, endpoint
     }
     ```
 
-    Because hooks execute shell commands, users see a [security approval dialog](#security-approval-dialogs) before they're applied. See [Configure auto mode](/en/auto-mode-config) for how the `autoMode` entries affect what the classifier blocks and important warnings about the `allow` and `soft_deny` fields.
+    Because hooks execute shell commands, users see a [security approval dialog](#security-approval-dialogs) before they're applied. See [Configure auto mode](/en/auto-mode-config) for how the `autoMode` entries affect what the classifier blocks and important warnings about the `environment`, `allow`, `soft_deny`, and `hard_deny` fields.
 
     Save your changes. Claude Code clients receive the updated settings on their next startup or hourly polling cycle.
 
@@ -114,6 +114,7 @@ Server-managed settings have the following limitations:
 
 * Settings apply uniformly to all users in the organization. Per-group configurations are not yet supported.
 * [MCP server configurations](/en/mcp#managed-mcp-configuration) cannot be distributed through server-managed settings.
+* Settings restricted to OS-level policy sources, such as `policyHelper` and `wslInheritsWindowsSettings`, are not honored. Deploy them through MDM or a system `managed-settings.json` file instead.
 
 ## Settings delivery
 
