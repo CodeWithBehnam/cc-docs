@@ -20,6 +20,8 @@ Most commands are useful at a specific point in a session, from setting up a pro
 
 **During a task.** `/plan` switches into plan mode before a large change. `/model` and `/effort` adjust how much reasoning you're spending. When the conversation gets long, `/context` shows where the window is going and `/compact` summarizes it down; use `/btw` for a quick aside that shouldn't bloat history.
 
+**Running work in parallel.** `/agents` opens the manager for the [subagents](/en/sub-agents) Claude can delegate side tasks to, and `/tasks` lists what's running in the background of the current session. `/background` detaches the whole session to keep running as a [background agent](/en/agent-view) and frees your terminal. For a large change that spans the codebase, `/batch` decomposes it into independent units and runs each in its own [worktree](/en/worktrees). See [Run agents in parallel](/en/agents) for how these approaches relate.
+
 **Before you ship.** `/diff` shows what changed, `/simplify` reviews recent files and applies quality and efficiency fixes, and `/review` or `/security-review` give a deeper read-only pass.
 
 **Between sessions.** `/clear` starts fresh on a new task while keeping project memory. `/resume` and `/branch` let you return to or fork an earlier conversation. `/teleport` pulls a web session into this terminal, and `/remote-control` lets you continue this local session from another device.

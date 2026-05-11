@@ -8,7 +8,9 @@
 
 Agent view, opened with `claude agents`, is one screen for all your background sessions: what's running, what needs your input, and what's done. Dispatch new sessions, watch their state at a glance instead of scrolling through transcripts, and step in only when one needs you. Sessions keep running in the background without a terminal attached.
 
-Use agent view when you have several independent tasks Claude can work on at once, such as fixing a bug, reviewing a pull request, or investigating a log. When you want to work through a problem together, attach to a session and use Claude Code interactively as usual. For workers that report results back into a single conversation, use [subagents](/en/sub-agents) instead.
+Use agent view when you have several independent tasks Claude can work on at once, such as fixing a bug, reviewing a pull request, or investigating a log. When you want to work through a problem together, attach to a session and use Claude Code interactively as usual.
+
+Sessions in agent view run independently and report only to you. To compare with subagents, agent teams, and worktrees, see [Run agents in parallel](/en/agents).
 
   Agent view is a research preview and requires Claude Code v2.1.139 or later. Check your version with `claude --version`. The interface and keyboard shortcuts may change as the feature evolves, and administrators can disable agent view for an organization with the [`disableAgentView`](#how-background-sessions-are-hosted) managed setting.
 
@@ -275,6 +277,7 @@ Agent view is a research preview. Current limitations to be aware of:
 
 Now that you understand agent view, explore these related features:
 
+* [Run agents in parallel](/en/agents): compare agent view with subagents, agent teams, and worktrees
 * [Subagents](/en/sub-agents): define reusable agent configurations with custom prompts, tools, and isolation
 * [Agent teams](/en/agent-teams): coordinate multiple sessions that message each other
 * [Claude Code on the web](/en/claude-code-on-the-web): run sessions in a managed cloud environment instead of locally
