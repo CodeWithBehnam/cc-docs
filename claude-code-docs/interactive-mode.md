@@ -8,7 +8,7 @@
 
 ## Keyboard shortcuts
 
-  Keyboard shortcuts may vary by platform and terminal. Press `?` to see available shortcuts for your environment.
+  Keyboard shortcuts may vary by platform and terminal. In [fullscreen rendering](/en/fullscreen), press `?` in the transcript viewer to see available shortcuts there.
 
   **macOS users**: Option/Alt key shortcuts (`Alt+B`, `Alt+F`, `Alt+Y`, `Alt+M`, `Alt+P`) require configuring Option as Meta in your terminal:
 
@@ -82,10 +82,12 @@
 
 ### Transcript viewer
 
-When the transcript viewer is open (toggled with `Ctrl+O`), these shortcuts are available. `Ctrl+E` can be rebound via [`transcript:toggleShowAll`](/en/keybindings).
+When the transcript viewer is open (toggled with `Ctrl+O`), these shortcuts are available. In [fullscreen rendering](/en/fullscreen), press `?` to show the full shortcut reference panel inside the viewer. `Ctrl+E` can be rebound via [`transcript:toggleShowAll`](/en/keybindings).
 
 | Shortcut             | Description                                                                                                                                                                                                           |
 | :------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `?`                  | Toggle the keyboard shortcut help panel. Requires [fullscreen rendering](/en/fullscreen)                                                                                                                              |
+| `{` / `}`            | Jump to the previous or next user prompt, like vim paragraph motion. Requires [fullscreen rendering](/en/fullscreen)                                                                                                  |
 | `Ctrl+E`             | Toggle show all content                                                                                                                                                                                               |
 | `[`                  | Write the full conversation to your terminal's native scrollback so `Cmd+F`, tmux copy mode, and other native tools can search it. Requires [fullscreen rendering](/en/fullscreen#search-and-review-the-conversation) |
 | `v`                  | Write the conversation to a temporary file and open it in `$VISUAL` or `$EDITOR`. Requires [fullscreen rendering](/en/fullscreen)                                                                                     |

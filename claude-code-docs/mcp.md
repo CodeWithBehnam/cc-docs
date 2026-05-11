@@ -281,6 +281,10 @@ claude mcp add --transport sse private-api https://api.company.com/sse \
 
 Stdio servers run as local processes on your machine. They're ideal for tools that need direct system access or custom scripts.
 
+Claude Code sets `CLAUDE_PROJECT_DIR` in the spawned server's environment to the project root, so your server can resolve project-relative paths without depending on the working directory. This is the same directory hooks receive in their `CLAUDE_PROJECT_DIR` variable. Read it from inside your server process, for example `process.env.CLAUDE_PROJECT_DIR` in Node or `os.environ["CLAUDE_PROJECT_DIR"]` in Python. Your server can also call the MCP `roots/list` request, which returns the directory Claude Code was launched from.
+
+This variable is set in the server's environment, not in Claude Code's own environment, so referencing it via `${VAR}` expansion in a project- or user-scoped `.mcp.json` `command` or `args` requires a default such as `${CLAUDE_PROJECT_DIR:-.}`. Plugin-provided MCP configurations substitute `${CLAUDE_PROJECT_DIR}` directly and don't need the default.
+
 ```bash
 # Basic syntax
 claude mcp add [options] <name> -- <command> [args...]
@@ -394,7 +398,7 @@ Or inline in `plugin.json`:
 **Plugin MCP features**:
 
 * **Automatic lifecycle**: At session startup, servers for enabled plugins connect automatically. If you enable or disable a plugin during a session, run `/reload-plugins` to connect or disconnect its MCP servers
-* **Environment variables**: use `${CLAUDE_PLUGIN_ROOT}` for bundled plugin files and `${CLAUDE_PLUGIN_DATA}` for [persistent state](/en/plugins-reference#persistent-data-directory) that survives plugin updates
+* **Environment variables**: use `${CLAUDE_PLUGIN_ROOT}` for bundled plugin files, `${CLAUDE_PLUGIN_DATA}` for [persistent state](/en/plugins-reference#persistent-data-directory) that survives plugin updates, and `${CLAUDE_PROJECT_DIR}` for the stable project root
 * **User environment access**: Access to same environment variables as manually configured servers
 * **Multiple transport types**: Support stdio, SSE, and HTTP transports (transport support may vary by server)
 

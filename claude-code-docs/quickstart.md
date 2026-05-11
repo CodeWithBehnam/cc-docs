@@ -275,10 +275,10 @@ For more, see [best practices](/en/best-practices) and [common workflows](/en/co
     build a dashboard showing products that are most frequently returned by our UK customers
     ```
 
-    * Press `?` to see all available keyboard shortcuts
+    * Type `/` to see all commands and skills
     * Use Tab for command completion
     * Press ↑ for command history
-    * Type `/` to see all commands and skills
+    * Press `Shift+Tab` to cycle permission modes
 
 ## What's next?
 
