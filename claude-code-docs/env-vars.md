@@ -4,9 +4,78 @@
 
 # Environment variables
 
-> Complete reference for environment variables that control Claude Code behavior.
+> Reference for environment variables that control Claude Code behavior.
 
-Claude Code supports the following environment variables to control its behavior. Set them in your shell before launching `claude`, or configure them in [`settings.json`](/en/settings#available-settings) under the `env` key to apply them to every session or roll them out across your team.
+Environment variables can control Claude Code behavior such as model selection, authentication, request routing, and feature toggles. Many of the same behaviors can also be configured through a [settings file](/en/settings) field, a [CLI flag](/en/cli-reference), or an in-session command like `/model`.
+
+This page covers how to:
+
+* [Set environment variables](#set-environment-variables) in your shell or in a settings file
+* [Check which value applies](#precedence) when a behavior can be set more than one way
+* [Look up the variables Claude Code reads](#variables)
+
+## Set environment variables
+
+A variable you set in your shell lasts for that terminal session, while a variable in a settings file applies every time `claude` runs.
+
+### In your shell
+
+Set the variable before launching `claude`:
+
+    ```bash
+    export API_TIMEOUT_MS="1200000"
+    claude
+    ```
+
+    To set it for every session, add the `export` line to `~/.bashrc`, `~/.zshrc`, or your shell's profile file.
+
+    ```powershell
+    $env:API_TIMEOUT_MS = "1200000"
+    claude
+    ```
+
+    To set it for every session, run `[Environment]::SetEnvironmentVariable("API_TIMEOUT_MS", "1200000", "User")` and open a new terminal.
+
+    ```batch
+    set API_TIMEOUT_MS=1200000
+    claude
+    ```
+
+    To set it for every session, run `setx API_TIMEOUT_MS "1200000"` and open a new terminal.
+
+### In settings files
+
+Add variables under the `env` key in a `settings.json` file. Claude Code reads them directly from the file at startup, so they take effect no matter how `claude` was launched.
+
+```json ~/.claude/settings.json
+{
+  "env": {
+    "API_TIMEOUT_MS": "1200000",
+    "BASH_DEFAULT_TIMEOUT_MS": "300000"
+  }
+}
+```
+
+The file you choose controls who the variables apply to:
+
+| File                          | Applies to                                                   |
+| :---------------------------- | :----------------------------------------------------------- |
+| `~/.claude/settings.json`     | You, in every project                                        |
+| `.claude/settings.json`       | Everyone working in the project, checked into source control |
+| `.claude/settings.local.json` | You, in this project only, not checked in                    |
+| Managed settings              | Everyone in your organization, deployed by an admin          |
+
+See [Settings files](/en/settings#settings-files) for where each file lives and [Settings precedence](/en/settings#settings-precedence) for how they combine when more than one sets the same variable.
+
+## Precedence
+
+Where the same behavior has both an environment variable and a settings field, the environment variable takes precedence. For example, `ANTHROPIC_MODEL` overrides the `model` setting, and `CLAUDE_CODE_AUTO_CONNECT_IDE` overrides `autoConnectIde`. The settings field applies when the environment variable is not set.
+
+How an environment variable interacts with CLI flags and in-session commands varies per feature: `--model` and `/model` override `ANTHROPIC_MODEL`, while `CLAUDE_CODE_EFFORT_LEVEL` overrides `/effort`. When a variable interacts with another configuration source, its row in the [Variables](#variables) list states the precedence or links to the page that documents it.
+
+Claude Code reads environment variables at startup, so changes take effect the next time you launch `claude`.
+
+## Variables
 
 | Variable                                                | Purpose                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | :------------------------------------------------------ | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -260,7 +329,7 @@ Standard OpenTelemetry exporter variables (`OTEL_METRICS_EXPORTER`, `OTEL_LOGS_E
 
 ## See also
 
-* [Settings](/en/settings): configure environment variables in `settings.json` so they apply to every session
+* [Settings](/en/settings): all `settings.json` configuration, including the `env` key
 * [CLI reference](/en/cli-reference): launch-time flags
 * [Network configuration](/en/network-config): proxy and TLS setup
 * [Monitoring](/en/monitoring-usage): OpenTelemetry configuration
