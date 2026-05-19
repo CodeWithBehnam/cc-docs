@@ -260,6 +260,8 @@ export DISABLE_PROMPT_CACHING=1
 export ENABLE_PROMPT_CACHING_1H=1
 ```
 
+The 1-hour cache TTL is billed at a higher rate than the 5-minute default. See [cache lifetime](/en/prompt-caching#cache-lifetime).
+
 #### Map each model version to an inference profile
 
 The `ANTHROPIC_DEFAULT_*_MODEL` environment variables configure one inference profile per model family. If your organization needs to expose several versions of the same family in the `/model` picker, each routed to its own application inference profile ARN, use the `modelOverrides` setting in your [settings file](/en/settings#settings-files) instead.
