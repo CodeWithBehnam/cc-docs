@@ -127,7 +127,7 @@ On local environments, you commonly may use the Azure CLI:
 az login
 ```
 
-  When using Microsoft Foundry, the `/login` and `/logout` commands are disabled since authentication is handled through Azure credentials.
+  When using Microsoft Foundry, the `/logout` command is unavailable since authentication is handled through Azure credentials.
 
 ### 3. Configure Claude Code
 
