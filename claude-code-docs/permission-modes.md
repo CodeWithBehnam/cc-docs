@@ -274,6 +274,7 @@ Protected directories:
 * `.vscode`
 * `.idea`
 * `.husky`
+* `.cargo`
 * `.claude`, except for `.claude/commands`, `.claude/agents`, `.claude/skills`, and `.claude/worktrees` where Claude routinely creates content
 
 Protected files:
