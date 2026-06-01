@@ -274,7 +274,7 @@ Each feature has its own guide with setup instructions, examples, and configurat
 
     Connect Claude to external services
 
-    Automate workflows with hooks
+    Automate actions with hooks
 
     Bundle and share feature sets
 
