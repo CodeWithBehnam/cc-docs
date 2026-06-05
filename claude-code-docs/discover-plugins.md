@@ -272,6 +272,14 @@ When you install a plugin that declares dependencies, the install output lists w
 
 You can also manage plugins with direct commands.
 
+List installed plugins without opening the menu:
+
+```shell
+/plugin list
+```
+
+Pass `--enabled` or `--disabled` to show only plugins in that state.
+
 Disable a plugin without uninstalling:
 
 ```shell

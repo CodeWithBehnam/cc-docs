@@ -218,6 +218,8 @@ Add it to your [settings.json file](/en/settings) to pin a floor explicitly:
 
 In [managed settings](/en/permissions#managed-settings), this enforces an organization-wide minimum that user and project settings cannot override.
 
+The `minimumVersion` pin only constrains updates. To make Claude Code refuse to start outside a version range, use the managed settings `requiredMinimumVersion` and `requiredMaximumVersion` instead. Updates also respect the `requiredMaximumVersion` ceiling. See [available settings](/en/settings#available-settings).
+
 ### Disable auto-updates
 
 Set `DISABLE_AUTOUPDATER` to `"1"` in the `env` key of your [`settings.json`](/en/settings#available-settings) file:

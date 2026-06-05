@@ -620,6 +620,21 @@ Logged when an API request to Claude fails.
 * `effort`: [Effort level](/en/model-config#adjust-effort-level) applied to the request. Absent when the model does not support effort.
 * `agent.name`, `skill.name`, `plugin.name`, `marketplace.name`, `mcp_server.name`, `mcp_tool.name`: Skill, plugin, agent, and MCP attribution for the request. See [Cost counter](#cost-counter) for definitions and redaction behavior.
 
+#### API refusal event
+
+Logged when an API request returns `stop_reason: "refusal"`. Refusals arrive on a successful response stream rather than as an HTTP error, so the `api_error` event does not fire for them. This event lets you track refusal frequency.
+
+**Event Name**: `claude_code.api_refusal`
+
+**Attributes**:
+
+* All [standard attributes](#standard-attributes)
+* `event.name`: `"api_refusal"`
+* `event.timestamp`: ISO 8601 timestamp
+* `event.sequence`: monotonically increasing counter for ordering events within a session
+* `model`: Model identifier from the request
+* `request_id`: Anthropic API request ID from the response's `request-id` header, such as `"req_011..."`. Present only when the API returns one.
+
 #### API request body event
 
 Logged for each API request attempt when `OTEL_LOG_RAW_API_BODIES` is set. One event is emitted per attempt, so retries with adjusted parameters each produce their own event.
