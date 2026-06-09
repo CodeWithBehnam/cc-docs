@@ -584,7 +584,7 @@ A managed settings file deployed to disk on each machine applies to Desktop sess
 
 IT teams can manage the desktop app through MDM on macOS or group policy on Windows. Available policies include enabling or disabling the Claude Code feature, controlling auto-updates, and setting a custom deployment URL.
 
-* **macOS**: configure via `com.anthropic.Claude` preference domain using tools like Jamf or Kandji
+* **macOS**: configure via `com.anthropic.claudefordesktop` preference domain using tools like Jamf or Kandji
 * **Windows**: configure via registry at `SOFTWARE\Policies\Claude`
 
 ### Authentication and SSO

@@ -70,6 +70,8 @@ Explore and Plan skip your CLAUDE.md files and the parent session's git status t
     | statusline-setup  | Sonnet | When you run `/statusline` to configure your status line |
     | claude-code-guide | Haiku  | When you ask questions about Claude Code features        |
 
+Built-in subagents are always registered in interactive sessions. To block a specific built-in type, add it to `permissions.deny` as shown in [Disable specific subagents](#disable-specific-subagents). To prevent Claude from delegating to any subagent, deny the `Agent` tool itself with [`permissions.deny`](/en/permissions#tool-specific-permission-rules). In [non-interactive mode](/en/headless) and the [Agent SDK](/en/agent-sdk/overview), set [`CLAUDE_AGENT_SDK_DISABLE_BUILTIN_AGENTS=1`](/en/env-vars) to remove all built-in types and supply only your own.
+
 Beyond these built-in subagents, you can create your own with custom prompts, tool restrictions, permission modes, hooks, and skills. The following sections show how to get started and customize subagents.
 
 ## Quickstart: create your first subagent
