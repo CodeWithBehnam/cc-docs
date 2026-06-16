@@ -48,6 +48,8 @@ A custom output style is a Markdown file: frontmatter for metadata, then the ins
     * Project: `.claude/output-styles`
     * Managed policy: `.claude/output-styles` inside the [managed settings directory](/en/settings#settings-files)
 
+    Project output styles load from every `.claude/output-styles/` between the working directory and the repository root. {/* min-version: 2.1.178 */}As of v2.1.178, when more than one of these nested directories defines a style with the same name, Claude Code uses the one closest to the working directory.
+
     Decide whether to keep Claude Code's software engineering instructions. Set `keep-coding-instructions: true` if you're changing how Claude communicates but still want it coding the same way. Leave it out if Claude won't be doing software engineering.
 
     This example leads every explanation with a diagram while keeping Claude's coding behavior:
