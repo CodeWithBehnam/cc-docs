@@ -28,7 +28,7 @@
 
 ---
 
-> **Last docs pull:** <!-- LAST_UPDATED -->2026-06-18 13:21 UTC / 06:21 PT / 09:21 ET / 15:21 CET / 18:51 IST / 22:21 JST<!-- /LAST_UPDATED -->
+> **Last docs pull:** <!-- LAST_UPDATED -->2026-06-18 15:12 UTC / 08:12 PT / 11:12 ET / 17:12 CET / 20:42 IST / 00:12+1 JST<!-- /LAST_UPDATED -->
 
 A GitHub Actions workflow runs every hour, downloads the latest docs, and commits any changes automatically.
 
