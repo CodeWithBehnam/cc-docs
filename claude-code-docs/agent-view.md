@@ -243,7 +243,7 @@ Prefix or mention parts of the prompt to control how the session starts:
 | `#<number>` or a pull request URL | If a session is already working on that PR, select it instead of dispatching                                                                                   |
 | `Shift+Enter`                     | Dispatch and immediately attach to the new session                                                                                                             |
 
-A small set of commands run in agent view itself instead of dispatching: `/exit` and `/quit` close agent view, and `/logout` signs you out. Every other command and skill is sent to a new background session as its first prompt.
+A small set of commands run in agent view itself instead of dispatching: `/exit` and `/quit` close agent view, `/logout` signs you out, and `/model` sets the [dispatch model](#set-the-model). Skills, your own commands, and prompt-expanding built-ins such as `/init` are sent to a new background session as their first prompt. Other built-in commands show an `attach to a session to run it` hint instead.
 
 Packaging a recurring task as a [skill](/en/skills) lets you start the same workflow from agent view repeatedly without retyping the prompt.
 
@@ -359,6 +359,15 @@ A [subagent](/en/sub-agents) the background session spawns inherits the session'
 ### Set the model
 
 The model name shown in the agent view header is the dispatch default. New sessions you start from the input use this model, which comes from the [`model` setting](/en/settings#available-settings) in your user settings. Set it by selecting a model in the [`/model` picker](/en/model-config), or edit the setting directly. To override it for the whole agent view session, pass `--model` when opening agent view. See [Permission mode, model, and effort](#permission-mode-model-and-effort).
+
+To change the dispatch default from inside agent view, type `/model` followed by a model name in the dispatch input and press `Enter`. The header updates to show that model with a `(session)` marker, and sessions you dispatch afterward use it. Type `/model default` to clear the override and return to the dispatch default. This override lasts for the rest of the current `claude agents` run, does not write to your settings file, and requires Claude Code v2.1.172 or later. {/* min-version: 2.1.172 */} The following example dispatches one session on Opus and the next on Sonnet:
+
+```text
+/model opus
+refactor auth
+/model sonnet
+run the test suite
+```
 
 Each background session can run on a different model. To override it for one session:
 
