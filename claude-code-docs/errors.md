@@ -156,6 +156,18 @@ Auto mode could not evaluate this action and is blocking it for safety — run w
 * Retry the action; this usually succeeds on the next attempt
 * Run `claude --debug` and repeat the action to see the underlying classifier response in the debug log
 
+When a separate API safety check blocked the classifier request because of earlier conversation content:
+
+```text
+Auto mode could not evaluate this action and is blocking it for safety — a safety check separate from auto mode blocked this request because of earlier conversation content — it isn't about the action itself — run with --debug for details
+```
+
+**What to do:**
+
+* This is not a decision about your action. A safety filter on the API was triggered by existing content in your conversation when auto mode sent the conversation to the classifier
+* Retrying will not help; the same conversation content will trigger the filter again
+* Switch to a different [permission mode](/en/permission-modes) so you can approve the action when prompted, or start a fresh conversation without the triggering content
+
 When the conversation has grown larger than the classifier's context window:
 
 ```text
