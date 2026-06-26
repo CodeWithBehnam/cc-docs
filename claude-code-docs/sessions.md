@@ -8,13 +8,7 @@
 
 A session is a saved conversation tied to a project directory. Claude Code stores it locally as you work, so you can resume where you left off, branch to try a different approach, or switch between tasks.
 
-The [desktop app](/en/desktop#work-in-parallel-with-sessions), [Claude Code on the web](/en/claude-code-on-the-web), and the [VS Code extension](/en/vs-code#resume-past-conversations) each maintain their own session history. This page covers the CLI:
-
-* [Resume](#resume-a-session) a previous conversation by flag, name, or PR
-* [Name](#name-your-sessions) sessions so you can find them later
-* [Browse](#use-the-session-picker) sessions with the `/resume` picker
-* [Branch](#branch-a-session) a conversation to try a different approach
-* [Export](#export-and-locate-session-data) transcripts, access them from scripts, and find them on disk
+The [desktop app](/en/desktop#work-in-parallel-with-sessions), [Claude Code on the web](/en/claude-code-on-the-web), and the [VS Code extension](/en/vs-code#resume-past-conversations) each maintain their own session history. This page covers the CLI.
 
 ## Resume a session
 
