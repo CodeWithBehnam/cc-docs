@@ -55,6 +55,8 @@ The quickest way to see a workflow in action is to run `/deep-research`, the [bu
 
     When the run finishes, the report lands in your session. It cites the sources each claim came from, with claims that didn't survive cross-checking already filtered out.
 
+    {/* min-version: 2.1.196 */}As of v2.1.196, when the verifier agents can't check a claim, such as after a rate limit or API error, the report lists that claim as unverified instead of counting it as refuted.
+
 To run a workflow for your own task, [have Claude write one](#have-claude-write-a-workflow), and once a run does what you wanted you can [save it](#save-the-workflow-for-reuse) as a command of your own.
 
 ### Bundled workflows
