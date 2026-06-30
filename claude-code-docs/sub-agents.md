@@ -79,7 +79,7 @@ This walkthrough guides you through creating a user-level subagent with the `/ag
 
     In Claude Code, run:
 
-    ```text
+    ```text wrap
     /agents
     ```
 
@@ -87,7 +87,7 @@ This walkthrough guides you through creating a user-level subagent with the `/ag
 
     Select **Generate with Claude**. When prompted, describe the subagent:
 
-    ```text
+    ```text wrap
     A code improvement agent that scans files and suggests improvements
     for readability, performance, and best practices. It should explain
     each issue, show the current code, and provide an improved version.
@@ -105,7 +105,7 @@ This walkthrough guides you through creating a user-level subagent with the `/ag
 
     Review the configuration summary. Press `s` or `Enter` to save, or press `e` to save and edit the file in your editor. The subagent is available immediately. Try it:
 
-    ```text
+    ```text wrap
     Use the code-improver agent to suggest improvements in this project
     ```
 
@@ -249,7 +249,7 @@ The following fields can be used in the YAML frontmatter. Only `name` and `descr
 The `model` field controls which [AI model](/en/model-config) the subagent uses:
 
 * **Model alias**: use one of the available aliases: `sonnet`, `opus`, `haiku`, or `fable`
-* **Full model ID**: use a full model ID such as `claude-opus-4-8` or `claude-sonnet-4-6`. Accepts the same values as the `--model` flag
+* **Full model ID**: use a full model ID such as `claude-opus-4-8` or `claude-sonnet-5`. Accepts the same values as the `--model` flag
 * **inherit**: use the same model as the main conversation
 * **Omitted**: defaults to `inherit` and uses the same model as the main conversation
 
@@ -618,14 +618,14 @@ When automatic delegation isn't enough, you can request a subagent yourself. Thr
 
 For natural language, there's no special syntax. Name the subagent and Claude typically delegates:
 
-```text
+```text wrap
 Use the test-runner subagent to fix failing tests
 Have the code-reviewer subagent look at my recent changes
 ```
 
 **@-mention the subagent.** Type `@` and pick the subagent from the typeahead, the same way you @-mention files. This ensures that specific subagent runs rather than leaving the choice to Claude:
 
-```text
+```text wrap
 @"code-reviewer (agent)" look at the auth changes
 ```
 
@@ -691,7 +691,7 @@ When [`CLAUDE_CODE_FORK_SUBAGENT`](#fork-the-current-conversation) is set to `1`
 
 One of the most effective uses for subagents is isolating operations that produce large amounts of output. Running tests, fetching documentation, or processing log files can consume significant context. By delegating these to a subagent, the verbose output stays in the subagent's context while only the relevant summary returns to your main conversation.
 
-```text
+```text wrap
 Use a subagent to run the test suite and report only the failing tests with their error messages
 ```
 
@@ -699,7 +699,7 @@ Use a subagent to run the test suite and report only the failing tests with thei
 
 For independent investigations, spawn multiple subagents to work simultaneously:
 
-```text
+```text wrap
 Research the authentication, database, and API modules in parallel using separate subagents
 ```
 
@@ -713,7 +713,7 @@ For tasks that need sustained parallelism or exceed your context window, [agent 
 
 For multi-step workflows, ask Claude to use subagents in sequence. Each subagent completes its task and returns results to Claude, which then passes relevant context to the next subagent.
 
-```text
+```text wrap
 Use the code-reviewer subagent to find performance issues, then use the optimizer subagent to fix them
 ```
 
@@ -782,7 +782,7 @@ Claude uses the `SendMessage` tool with the agent's ID as the `to` field to resu
 
 To resume a subagent, ask Claude to continue the previous work:
 
-```text
+```text wrap
 Use the code-reviewer subagent to review the authentication module
 [Agent completes]
 
@@ -834,7 +834,7 @@ Enabling fork mode changes Claude Code in two ways:
 
 You can start a fork yourself with `/fork` followed by a directive, with or without the variable set. Claude Code names the fork from the first words of the directive. The following example forks the conversation to draft test cases while you continue with the implementation in the main session:
 
-```text
+```text wrap
 /fork draft unit tests for the parser changes so far
 ```
 
