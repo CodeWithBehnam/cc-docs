@@ -48,11 +48,13 @@ This quickstart walks you through creating a plugin with a custom skill. You'll 
 
 ### Create your first plugin
 
-    Every plugin lives in its own directory containing your skills, agents, or hooks, optionally alongside a `.claude-plugin/plugin.json` manifest. Create one now:
+    Every plugin lives in its own directory containing your skills, agents, or hooks, optionally alongside a `.claude-plugin/plugin.json` manifest. The location doesn't matter for this quickstart because you'll point Claude Code at the directory with `--plugin-dir` in the test step. Create it anywhere convenient, such as a scratch folder or a projects directory:
 
     ```bash
     mkdir my-first-plugin
     ```
+
+    The remaining steps run from the parent directory and reference paths like `my-first-plugin/...` relative to it.
 
     The manifest file at `.claude-plugin/plugin.json` defines your plugin's identity: its name, description, and version. Claude Code uses this metadata to display your plugin in the plugin manager.
 
@@ -370,7 +372,7 @@ If you already have skills or hooks in your `.claude/` directory, you can conver
 
 ### Migration steps
 
-    Create a new plugin directory:
+    Create a new plugin directory in your project root, alongside the existing `.claude/` folder, so the relative `cp` paths in the next step resolve:
 
     ```bash
     mkdir -p my-plugin/.claude-plugin
