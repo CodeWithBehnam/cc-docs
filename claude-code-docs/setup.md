@@ -369,7 +369,7 @@ All repositories are signed with the [Claude Code release signing key](#binary-i
 
 ### Install with npm
 
-You can also install Claude Code as a global npm package. The package requires [Node.js 18 or later](https://nodejs.org/en/download).
+You can also install Claude Code as a global npm package. As of v2.1.198, the npm package requires [Node.js 22 or later](https://nodejs.org/en/download). On an older Node.js version, npm prints an `EBADENGINE` warning during install rather than failing; the install completes and `claude` still runs, since the package downloads a native binary that doesn't use your Node.js at runtime.
 
 ```bash
 npm install -g @anthropic-ai/claude-code
