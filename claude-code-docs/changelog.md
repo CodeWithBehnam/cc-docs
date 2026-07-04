@@ -10,6 +10,10 @@ This page is generated from the [CHANGELOG.md on GitHub](https://github.com/anth
 
 Run `claude --version` to check your installed version.
 
+<Update label="2.1.201" description="July 3, 2026">
+  * Claude Sonnet 5 sessions no longer use the mid-conversation system role for harness reminders
+</Update>
+
 <Update label="2.1.200" description="July 3, 2026">
   * Changed `AskUserQuestion` dialogs to no longer auto-continue by default; opt into an idle timeout via `/config`
   * Changed the "default" permission mode to "Manual" across the CLI, `--help`, VS Code, and JetBrains; `--permission-mode manual` and `"defaultMode": "manual"` are accepted alongside `default`
