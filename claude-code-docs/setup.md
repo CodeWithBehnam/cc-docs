@@ -300,7 +300,13 @@ Claude Code publishes signed apt, dnf, and apk repositories. Each repository off
 
 All repositories are signed with the [Claude Code release signing key](#binary-integrity-and-code-signing). Before trusting the key, verify it as described in each tab.
 
-    For Debian and Ubuntu. The following commands configure the `stable` channel:
+    For Debian and Ubuntu. The install commands below download the signing key with `curl`, which fresh Debian and Ubuntu installations may not include. If the download fails with `sudo: curl: command not found`, install curl first:
+
+    ```bash
+    sudo apt install curl
+    ```
+
+    The following commands configure the `stable` channel:
 
     ```bash
     sudo install -d -m 0755 /etc/apt/keyrings
