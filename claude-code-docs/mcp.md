@@ -187,11 +187,12 @@ An MCP server can also push messages directly into your session so Claude can re
 
   Tips:
 
-  * Use the `--scope` flag to specify where the configuration is stored:
+  * Use the `-s` or `--scope` flag to specify where the configuration is stored:
     * `local` (default): available only to you in the current project. Older versions called this scope `project`
     * `project`: shared with everyone in the project via the `.mcp.json` file
     * `user`: available to you across all projects. Older versions called this scope `global`
-  * Set environment variables with `--env` flags (for example, `--env KEY=value`)
+  * Set environment variables with `-e` or `--env` flags (for example, `-e KEY=value`)
+  * The `--transport` and `--header` flags also accept `-t` and `-H` short forms
   * Configure MCP server startup timeout using the `MCP_TIMEOUT` environment variable (for example, `MCP_TIMEOUT=10000 claude` sets a 10-second timeout)
   * Set a per-server tool execution timeout by adding a `timeout` field in milliseconds to that server's `.mcp.json` entry, for example `"timeout": 600000` for ten minutes. This overrides the `MCP_TOOL_TIMEOUT` environment variable for that server only
   * Claude Code displays a warning when MCP tool output exceeds 10,000 tokens. To increase this limit, set the `MAX_MCP_OUTPUT_TOKENS` environment variable (for example, `MAX_MCP_OUTPUT_TOKENS=50000`)
