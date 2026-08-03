@@ -1,71 +1,21 @@
 ---
 name: prompt-engineering-patterns
-description: Master advanced prompt engineering techniques to maximize LLM performance, reliability, and controllability in production. Use when optimizing prompts, improving LLM outputs, or designing production prompt templates.
+description: Design system prompts, structure few-shot examples, implement chain-of-thought reasoning, enforce structured outputs with Pydantic, and optimize token usage for production LLM applications. Use when writing a system prompt, building few-shot examples, adding chain of thought, tuning prompt performance, designing prompt templates, using JSON mode, or debugging inconsistent LLM outputs.
 ---
 
 # Prompt Engineering Patterns
 
-Master advanced prompt engineering techniques to maximize LLM performance, reliability, and controllability.
+## Prompt Iteration Workflow
 
-## When to Use This Skill
+Follow this sequence when designing or improving prompts:
 
-- Designing complex prompts for production LLM applications
-- Optimizing prompt performance and consistency
-- Implementing structured reasoning patterns (chain-of-thought, tree-of-thought)
-- Building few-shot learning systems with dynamic example selection
-- Creating reusable prompt templates with variable interpolation
-- Debugging and refining prompts that produce inconsistent outputs
-- Implementing system prompts for specialized AI assistants
-- Using structured outputs (JSON mode) for reliable parsing
+1. **Start simple** - Write a direct instruction with no examples or constraints
+2. **Test on edge cases** - Run the prompt against 5-10 diverse inputs including boundary cases
+3. **Add constraints or examples** - If outputs are inconsistent, add format constraints or few-shot examples
+4. **Enforce output schema** - Use Pydantic structured output for any prompt that feeds downstream code
+5. **Measure and iterate** - Compare accuracy, consistency, and token usage across prompt versions
 
-## Core Capabilities
-
-### 1. Few-Shot Learning
-
-- Example selection strategies (semantic similarity, diversity sampling)
-- Balancing example count with context window constraints
-- Constructing effective demonstrations with input-output pairs
-- Dynamic example retrieval from knowledge bases
-- Handling edge cases through strategic example selection
-
-### 2. Chain-of-Thought Prompting
-
-- Step-by-step reasoning elicitation
-- Zero-shot CoT with "Let's think step by step"
-- Few-shot CoT with reasoning traces
-- Self-consistency techniques (sampling multiple reasoning paths)
-- Verification and validation steps
-
-### 3. Structured Outputs
-
-- JSON mode for reliable parsing
-- Pydantic schema enforcement
-- Type-safe response handling
-- Error handling for malformed outputs
-
-### 4. Prompt Optimization
-
-- Iterative refinement workflows
-- A/B testing prompt variations
-- Measuring prompt performance metrics (accuracy, consistency, latency)
-- Reducing token usage while maintaining quality
-- Handling edge cases and failure modes
-
-### 5. Template Systems
-
-- Variable interpolation and formatting
-- Conditional prompt sections
-- Multi-turn conversation templates
-- Role-based prompt composition
-- Modular prompt components
-
-### 6. System Prompt Design
-
-- Setting model behavior and constraints
-- Defining output formats and structure
-- Establishing role and expertise
-- Safety guidelines and content policies
-- Context setting and background information
+Move to the next level only when the current level fails. Simpler prompts are cheaper, faster, and easier to maintain.
 
 ## Quick Start
 
@@ -440,34 +390,3 @@ response = client.messages.create(
 )
 ```
 
-## Best Practices
-
-1. **Be Specific**: Vague prompts produce inconsistent results
-2. **Show, Don't Tell**: Examples are more effective than descriptions
-3. **Use Structured Outputs**: Enforce schemas with Pydantic for reliability
-4. **Test Extensively**: Evaluate on diverse, representative inputs
-5. **Iterate Rapidly**: Small changes can have large impacts
-6. **Monitor Performance**: Track metrics in production
-7. **Version Control**: Treat prompts as code with proper versioning
-8. **Document Intent**: Explain why prompts are structured as they are
-
-## Common Pitfalls
-
-- **Over-engineering**: Starting with complex prompts before trying simple ones
-- **Example pollution**: Using examples that don't match the target task
-- **Context overflow**: Exceeding token limits with excessive examples
-- **Ambiguous instructions**: Leaving room for multiple interpretations
-- **Ignoring edge cases**: Not testing on unusual or boundary inputs
-- **No error handling**: Assuming outputs will always be well-formed
-- **Hardcoded values**: Not parameterizing prompts for reuse
-
-## Success Metrics
-
-Track these KPIs for your prompts:
-
-- **Accuracy**: Correctness of outputs
-- **Consistency**: Reproducibility across similar inputs
-- **Latency**: Response time (P50, P95, P99)
-- **Token Usage**: Average tokens per request
-- **Success Rate**: Percentage of valid, parseable outputs
-- **User Satisfaction**: Ratings and feedback
