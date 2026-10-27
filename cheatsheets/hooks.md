@@ -34,9 +34,11 @@
 
 | Code | Meaning |
 | :--- | :--- |
-| `0` | Allow; stdout injected into Claude's context (for `SessionStart`, `UserPromptSubmit`) |
+| `0` | Hook succeeded, not automatic tool approval. For `PreToolUse`, a silent exit 0 leaves normal permission checks in place; `SessionStart` and `UserPromptSubmit` can add plain stdout to context. |
 | `2` | Block; stderr message fed back to Claude as feedback |
-| other | Allow; stderr logged but not shown to Claude (visible in verbose mode `Ctrl+O`) |
+| other | Non-blocking hook error for most events; not a permission approval. Check the event-specific behavior before relying on this status. |
+
+> **Permission safety:** A `PreToolUse` hook exiting `0` without an explicit structured decision does not grant permission to run a tool. See [the official hooks reference](https://code.claude.com/docs/en/hooks#exit-code-0).
 
 ## Structured JSON Output (exit 0)
 
